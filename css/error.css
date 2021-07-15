@@ -1,0 +1,61 @@
+/**
+ * @copyright	Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+/* Start Common Styles */
+
+html {
+	height: 100.01%;
+	margin-bottom: 1px;
+}
+
+body {
+	margin: 0px;
+	padding: 30px 10px;
+	height: 100.01%;
+	background: #FFFFFF;
+	font-family: helvetica, arial, sans-serif;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 1.4em;
+	margin-top: 0px;
+}
+a{
+	color:blue;
+	text-decoration:underline;
+	font-weight: normal;
+}
+.error {
+	max-width: 767px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#outline {
+	width: 100%;
+	
+	
+}
+#errorboxoutline {
+	width: 100%;
+}
+#errorboxheader {
+	width: 100%;
+}
+.errorMessage, .errorUrl {
+	display:block;
+	width: 100%;
+	background-color:yellow;
+	padding:5px 0;
+	color:black;
+	margin: 0.5em 0;
+}
+#errorboxbody {
+}
+#techinfo {
+}
+#techinfo p {
+	/*color: #CCCCCC;*/
+}

@@ -1,0 +1,12 @@
+// AUFPASSEN! Siehe _variables.scss. Da steht auch ein Pfad!
+
+// Scheiß node-sass kann das natürlich nicht.
+// $fontawesome-free-path: "../../../media/plg_system_bs3ghsvs/fontawesome-free";
+// @import "#{$fontawesome-free-path}/scss/fontawesome";
+// @import "#{$fontawesome-free-path}/scss/solid";
+// @import "#{$fontawesome-free-path}/scss/brands";
+
+// Scheiß node-sass braucht das nämlich so. Wenn ich zusätzlich meinen PHPSCSS-Compiler weiter verwenden möchte.
+@import "../../../media/plg_system_bs3ghsvs/fontawesome-free/scss/fontawesome";
+@import "../../../media/plg_system_bs3ghsvs/fontawesome-free/scss/solid";
+@import "../../../media/plg_system_bs3ghsvs/fontawesome-free/scss/brands";

@@ -1,0 +1,53 @@
+#CfMenueOben
+{
+	margin-top: $block-space-custom;
+	margin-bottom: $block-space-custom;
+
+	@include media-breakpoint-down(md)
+	{
+		margin-top: $block-space-custom/2;
+		margin-bottom: $block-space-custom/2;
+	}
+}
+#CfButtonGruppe,
+#CfBreadcrumb
+{
+	padding: $block-space-custom/2;
+}
+
+#CfUnterComponent
+{
+	margin-top: $block-space-custom;
+}
+
+.mt-section-space-custom,
+//#div4mainPadder,
+#CfFooter,
+#CfUnterMain
+{
+	margin-top: $section-space-custom;
+}
+#CfCopyright
+{
+	margin-bottom: $section-space-custom*2;
+}
+// Auch pagebreakghsvs-Sliders
+.accordion
+{
+	margin-bottom: $block-space-custom;
+}
+
+
+.div4article-info,
+.paginationToClone
+{
+	margin-top: $block-space-custom;
+}
+.page-header
+{
+	h2
+	{
+		margin-top: $block-space-custom;
+	}
+	margin-bottom: $spacer;
+}

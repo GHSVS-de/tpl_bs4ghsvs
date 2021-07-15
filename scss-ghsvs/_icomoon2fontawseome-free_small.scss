@@ -1,0 +1,222 @@
+// Enthält benötigte, bspw. in JS.
+
+// .icon-chevron-right::before,
+// .icon-rightarrow::before,
+// .icon-arrow-right::before {
+   // @extend .caret-right:before;
+//}
+
+.icon-spinner
+{
+	@extend .#{$fa-css-prefix}-spin;
+	@extend .#{$fa-css-prefix}-lg;
+
+	&::before
+	{
+		@extend .#{$fa-css-prefix}-atom:before;
+	}
+}
+
+
+.icon-zoom-in::before
+{
+	&::before
+	{
+		@extend .#{$fa-css-prefix}-search-plus:before;
+	}
+}
+
+.glyphicon-chevron-right,
+.icon-chevron-right
+{
+	&::before
+	{
+		@extend .#{$fa-css-prefix}-chevron-right:before;
+	}
+}
+.glyphicon-download-alt,
+.icon-download
+{
+	&::before
+	{
+		@extend .#{$fa-css-prefix}-download:before;
+	}
+}
+
+.icon-link
+{
+	&::before
+	{
+		@extend .#{$fa-css-prefix}-link:before;
+	}
+}
+
+.icon-previous
+{
+	&::before
+	{
+		@extend .#{$fa-css-prefix}-step-backward:before;
+	}
+}
+
+.icon-next
+{
+	&::before
+	{
+		@extend .#{$fa-css-prefix}-step-forward:before;
+	}
+}
+.icon-first
+{
+	&::before
+	{
+		@extend .#{$fa-css-prefix}-fast-backward:before;
+	}
+}
+.icon-last
+{
+	&::before
+	{
+		@extend .#{$fa-css-prefix}-fast-forward:before;
+	}
+}
+.fooicon-plus
+{
+	@extend .fa-lg;
+	cursor: pointer;
+
+	&::before
+	{
+		@extend .#{$fa-css-prefix}-info-circle:before;
+	}
+}
+.fooicon-minus
+{
+	@extend .fa-lg;
+	cursor: pointer;
+
+	&::before
+	{
+		@extend .#{$fa-css-prefix}-minus-square:before;
+	}
+}
+.fooicon-search
+{
+	@extend .fa-lg;
+	cursor: pointer;
+
+	&::before
+	{
+		@extend .#{$fa-css-prefix}-search:before;
+	}
+}
+.fooicon-remove
+{
+	@extend .fa-lg;
+	cursor: pointer;
+
+	&::before
+	{
+		@extend .#{$fa-css-prefix}-trash-alt:before;
+	}
+}
+.fooicon-sort-asc
+{
+	@extend .fa-lg;
+	cursor: pointer;
+	padding-right: ($spacer * 1.25);
+
+	&::before
+	{
+		@extend .#{$fa-css-prefix}-sort-amount-down-alt:before;
+	}
+}
+.fooicon-sort-desc
+{
+	@extend .fa-lg;
+	cursor: pointer;
+	padding-right: ($spacer * 1.25);
+
+	&::before
+	{
+		@extend .#{$fa-css-prefix}-sort-amount-down:before;
+	}
+}
+.fooicon-sort
+{
+	@extend .fa-lg;
+	cursor: pointer;
+	padding-right: ($spacer * 1.25);
+
+	&::before
+	{
+		@extend .#{$fa-css-prefix}-sort:before;
+	}
+}
+
+.togglerIcon
+{
+	@extend .fa-lg;
+	cursor: pointer;
+	margin-right: ($spacer * 0.5);
+
+	&::before
+	{
+		@extend .#{$fa-css-prefix}-plus-square:before;
+	}
+}
+
+.accordion-toggle[aria-expanded="true"]
+{
+	.togglerIcon
+	{
+		&::before
+		{
+			@extend .#{$fa-css-prefix}-minus-square:before;
+		}
+	}
+}
+
+.glyphicon-eye-close
+{
+	&::before
+	{
+		@extend .#{$fa-css-prefix}-eye-slash:before;
+	}
+}
+
+.glyphicon-trash
+{
+	&::before
+	{
+		@extend .#{$fa-css-prefix}-trash-alt:before;
+	}
+}
+
+.glyphicon-fire
+{
+	&::before
+	{
+		font-family: 'Font Awesome 5 Brands' !important;
+		@extend .fa-lg;
+		@extend .fa-free-code-camp:before;
+	}
+}
+
+.glyphicon-cloud-upload
+{
+	&::before
+	{
+		@extend .fa-cloud-upload-alt:before;
+	}
+}
+
+.salvattoreItems span.glyphicon
+{
+	display: inline-block;
+	margin: 0 20px;
+	&.glyphicon-fire
+	{
+		margin-left: 0;
+	}
+}

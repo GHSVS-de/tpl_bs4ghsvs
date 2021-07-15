@@ -1,0 +1,8 @@
+@mixin hover-focus-active-bs4()
+{
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}

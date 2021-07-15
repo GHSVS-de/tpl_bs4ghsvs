@@ -1,0 +1,494 @@
+// Replace JQuery animate
+// html, body
+// {
+// 	scroll-behavior: smooth;
+// }
+
+// FF 72 fix. Scrollbars colored like body background.
+body
+{
+  background-color: transparent;
+}
+#mainBackground
+{
+	background-color: $body-bg;
+}
+
+a.disabled,
+.disabled a,
+a.btn
+{
+	text-decoration: none;
+}
+
+#div4all
+{
+	max-width: $div4all-max-width-custom;
+	margin: 0 auto;
+	background-color: $div4all-bg-custom;
+
+	@media (min-width: ($div4all-max-width-custom + 20))
+	{
+		margin-top: 10px;
+	}
+}
+
+
+
+// .search-resultsAndError
+// {
+// 	min-height: 60px;
+// }
+.search-results
+{
+	dt
+	{
+		margin-top: ($spacer * 2);
+	}
+}
+.result-text
+{
+	word-wrap: break-word;
+}
+.searchintro strong
+{
+	font-weight: inherit;
+}
+
+// habe ich durch Seite x von y -Button ersetzt.
+// .search-pagination
+// {
+// 	margin-bottom: ($spacer * 2);
+// 	margin-top: ($spacer * 2);
+// 	overflow: scroll;
+
+// 	// ul
+// 	.pagination-list
+// 	{
+// 		@extend .pagination;
+// 		@extend .justify-content-center;
+
+// 		li
+// 		{
+// 			@extend .page-item;
+
+// 			&.disabled a
+// 			{
+// 				color: $gray-300;
+// 			}
+// 			&.active
+// 			{
+// 				a
+// 				{
+// 					@include bold();
+// 					@extend .rounded-pill;
+// 					//border-width: 2px;
+// 					border-color: $success;
+// 				}
+// 			}
+// 			a
+// 			{
+// 				@extend .page-link;
+// 			}
+// 		}
+// 	}
+// }
+
+.block-download
+{
+	background-color: #e2e3e5;
+	border: 1px solid $black;
+	padding: $spacer ($spacer * 0.75);
+	@extend .text-center;
+}
+#easycalccheckplus
+{
+	label
+	{
+		display: block;
+		margin-bottom: 0.5rem;
+		font-style: italic;
+		//font-size: 0.9rem;
+		&::after
+		{
+			content: "*";
+			color: $red;
+		}
+	}
+
+	input
+	{
+		@extend .form-control;
+		margin-bottom: 1rem;
+	}
+}
+
+#CfCopyright
+{
+	background-color: $red;
+	color: $light;
+}
+
+// Dynamic BODY class
+.HidePageHeader
+{
+	.site-description
+	{
+		display: none;
+	}
+	@include media-breakpoint-down(sm)
+	{
+		.div4headteaser
+		{
+			display: none;
+		}
+		#SITELOGO
+		{
+			max-height: 85px;
+		}
+		.navbar-toggler
+		{
+			//margin: 0 auto;
+		}
+		.teilenSuchenButtons
+		{
+			text-align: center !important;
+		}
+		#CfHeader
+		{
+			background-color: $red;
+		}
+	}
+
+
+}
+
+.articleBody,
+.article-list-simple
+{
+	ul, ol
+	{
+		padding-left: ($spacer * 0.5);
+	}
+	li
+	{
+		margin-bottom: ($spacer * 0.5);
+		list-style-position: inside;
+	}
+	ul > li > ul
+	{
+		margin-top: ($spacer * 0.5);
+	}
+}
+
+
+
+.articleStatus
+{
+	font-size: 1.1rem;
+}
+.articleStatus_1
+{
+	@extend .block-danger;
+}
+.articlesubtitle
+{
+	@extend .text-muted;
+	@extend .small;
+	font-style: italic;
+	//display: block;
+	//margin-top: ($spacer * 0.5);
+}
+
+
+
+// .iconGhsvs
+// {
+// 	@extend .mt-1;
+// }
+
+// .image_intro
+// {
+// 	.aWithButtonOverlay
+// 	{
+// 		display: block;
+// 		text-align: center;
+// 		position: relative;
+// 	}
+// 	.centeredButton
+// 	{
+//   	top: 50%;
+//   	left: auto;
+// 		right: 3px;
+// 		bottom: auto;
+// 		opacity: 0.9;
+// 		// Firefox schneidet unten border ab. Deshalb 49%.
+//   	transform: translateY(-49%);
+// 		position: absolute;
+// 	}
+// }
+
+.articleIntrotext
+{
+	@extend .lead;
+}
+
+// .page_subheading
+// {
+// 	font-size: 70%;
+// }
+
+//.page-header
+//{
+	// Im Normalfall ein H1 und darin die Haupt-Seitenüberschrift (span.page_heading_main)
+	// plus Unterüberschrift (span.page_subheading).
+	.page_heading
+	{
+		font-family: var(--#{$variable-prefix}font-serif);
+
+		.option-com_content.view-article:not(.isFrontpage) &
+		{
+			@include font-size($h1-font-size / 1.5);
+		}
+	}
+	.page_heading_main
+	{
+		letter-spacing: 1px;
+	}
+//}
+
+#CfBreadcrumb
+{
+	@include gradient-bg($light);
+	border-top: 1px solid $gray-200;
+	border-bottom: 1px solid $gray-400;
+	// Teilen-Button rechts.
+	.mod_custom_blankghsvs
+	{
+		padding-left: 0.25rem;
+		margin-left: auto;
+		.svgSpan
+		{
+			color: $red;
+		}
+	}
+}
+
+#CfUnterMain
+{
+	background-color: $yellow-500;
+	// Teilen-Button unten auf Seiten.
+	.mod_custom_blankghsvs
+	{
+		text-align: center;
+		button
+		{
+			@include font-size(2rem);
+		}
+	}
+}
+
+.footerAvatar
+{
+	img
+	{
+		@include rotate-custom(-24deg);
+	}
+	// Da sonst unten Scrollbar auf Seite durch Bilderecken:
+	overflow: hidden;
+}
+
+
+.site-description
+{
+	@include font-size(2rem);
+	letter-spacing: 1px;
+	font-family: 	var(--#{$variable-prefix}font-handschrift);
+}
+
+
+.close
+{
+	cursor: pointer;
+}
+
+.list-item-inside
+{
+	list-style-position: inside;
+}
+
+.readmore .btn
+{
+	@extend .btn-primary;
+}
+
+.spoilerghsvs
+{
+	margin-bottom: ($spacer * 1.5);
+	button
+	{
+		margin-top: ($spacer * 0.5);
+	}
+}
+.spoilerbody
+{
+	padding-top: $spacer;
+}
+
+.highlight
+{
+	@extend .alert-warning;
+}
+
+// JS driven #system-message-container
+.modalFallback
+{
+	background-color: $white;
+	left: 0;
+	right: 0;
+	position: fixed;
+	top: 5%;
+	min-width: 80%;
+	max-width: 95%;
+	margin: 0 auto;
+	z-index: $zindex-modal;
+}
+
+.invalid
+{
+	border: 2px solid $danger;
+	color: red;
+	&::placeholder
+	{
+		color: red;
+	}
+}
+label.invalid
+{
+	padding: 5px;
+}
+.div4article-info
+{
+	padding: ($spacer * 1);
+	border: 1px solid $gray-300;
+	border-radius: $border-radius-lg;
+	background-color: $gray-200;
+}
+dl.article-info
+{
+	font-style: italic;
+	margin-bottom: 0;
+	dd
+	{
+		display: inline-block;
+		margin-right: ($spacer * 0.25);
+		margin-left: 0;
+		margin-bottom: 0;
+	}
+}
+.label
+{
+	@extend .badge;
+	margin-bottom: ($spacer * 0.25);
+}
+a.badge
+{
+	margin-bottom: ($spacer * 0.5);
+	white-space: normal;
+}
+.label-default
+{
+	color:$white;
+	background-color: $gray-600;
+}
+.label-categorytag
+{
+	@extend .label-default;
+}
+
+// com_search
+.form-group.phrases
+{
+	select
+	{
+		@extend .form-control;
+	}
+}
+
+// footable
+.td4link
+{
+	text-align: center;
+}
+.td4title .footable-toggle
+{
+	margin-right: ($spacer * 0.75) !important;
+}
+.footable-filtering-search
+{
+	.input-group-btn.open
+	{
+		.dropdown-menu
+		{
+			@extend .show;
+		}
+		@extend .dropstart;
+	}
+}
+
+table.footable > thead > tr.footable-filtering > th ul.dropdown-menu > li > a.checkbox input[type="checkbox"]
+{
+ position: relative;
+ margin-left: 0;
+ margin-right: ($spacer * 0.25);
+}
+
+
+@include media-breakpoint-up(md)
+{
+	.bg-md-transparent
+	{
+		background-color: transparent !important;
+	}
+}
+
+.alert-message
+{
+	color:#0c5460;
+	background-color: #d1ecf1;
+}
+
+
+// Accordions/Slides
+button
+{
+	.showIfActive
+	{
+		display:none;
+	}
+
+	&[aria-expanded="true"]
+	{
+		.showIfActive
+		{
+			display:inline;
+		}
+		.hideIfActive
+		{
+			display:none;
+		}
+	}
+}
+
+.bg-modal
+{
+	background-color: $modal-bg-custom !important;
+}
+
+@include media-breakpoint-down(md)
+{
+	.breakpointHidden
+	{
+		display: none;
+	}
+}

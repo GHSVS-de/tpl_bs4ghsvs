@@ -1,0 +1,24 @@
+.list-striped
+{
+	vertical-align: middle;
+	margin-left: 0;
+}
+.list-striped li
+{
+	border-bottom: 1px solid $gray-300;
+	padding: .25rem;
+	position:relative;
+	a
+	{
+		@extend .stretched-link;
+	}
+}
+.list-striped li:nth-child(odd)
+{
+	background-color: $gray-200;
+}
+.list-striped li:hover
+{
+	background-color: $gray-300;;
+}
+

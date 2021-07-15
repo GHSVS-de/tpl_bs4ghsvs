@@ -1,0 +1,35 @@
+
+[class^="icon-"]:not(.input-group-text),
+[class*=" icon-"]:not(.input-group-text),
+[class^="glyphicon-"]:not(.input-group-text),
+[class*=" glyphicon-"]:not(.input-group-text),
+[class^="fooicon-"]:not(.input-group-text),
+[class*=" fooicon-"]:not(.input-group-text),
+.togglerIcon
+{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+}
+[class^="icon-"]::before,
+[class*=" icon-"]::before,
+[class^="glyphicon-"]::before,
+[class*=" glyphicon-"]::before,
+[class^="fooicon-"]::before,
+[class*=" fooicon-"]::before,
+.togglerIcon::before
+{
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    speak: none;
+}
+[class^="icon-"].disabled,
+[class*=" icon-"].disabled,
+[class^="glyphicon-"].disabled,
+[class*=" glyphicon-"].disabled,
+[class^="fooicon-"].disabled,
+[class*=" fooicon-"].disabled
+{
+    font-weight: $font-weight-normal;
+}

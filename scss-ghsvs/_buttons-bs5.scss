@@ -1,0 +1,53 @@
+#CfButtonGruppe
+{
+	background-color:$green-100;
+
+	.btn
+	{
+		@extend .btn-sm;
+		margin: 2px;
+	}
+}
+
+.btn-warning.btn-warning-focus-custom
+{
+	$background: $warning;
+  $border: $warning;
+  $color: color-contrast($background);
+  $hover-background: if($color == $color-contrast-light, shade-color($background, $btn-hover-bg-shade-amount), tint-color($background, $btn-hover-bg-tint-amount));
+	$hover-color: color-contrast($hover-background);
+	$hover-border: if($color == $color-contrast-light, shade-color($border, $btn-hover-border-shade-amount), tint-color($border, $btn-hover-border-tint-amount));
+
+	color: $hover-color;
+	@include gradient-bg($hover-background);
+	border-color: $hover-border;
+	@if $enable-shadows {
+		@include box-shadow($btn-box-shadow, 0 0 0 $btn-focus-width rgba(mix($color, $border, 15%), .5));
+	} @else {
+		// Avoid using mixin so we can pass custom focus shadow properly
+		box-shadow: 0 0 0 $btn-focus-width rgba(mix($color, $border, 15%), .5);
+	}
+
+	@include hover-focus-active-bs4
+	{
+		color: $white;
+		background-color: $red;
+	}
+}
+
+.btn-default
+{
+	$background: $white;
+	$border: $dark;
+	$color: $dark;
+	$hover-background: $dark;
+	$hover-border: $light;
+	$hover-color: $light;
+
+	//background, border, color, hover-background
+	@include button-variant($background, $border, $color, $hover-background, $hover-border, $hover-color);
+}
+.btn-catcolor
+{
+	@extend .btn-default;
+}

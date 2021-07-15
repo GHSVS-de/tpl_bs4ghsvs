@@ -1,0 +1,22 @@
+// Addon NoScript braucht DIV statt NOSCRIPT.
+
+html.jsActive div#noscriptdiv
+{
+	display: none;
+}
+html.jsNotActive div#noscriptdiv
+{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+	width: 100%;
+  background-color: $yellow;
+  padding: 1rem;
+  font-weight: bold;
+  line-height: 1.2rem;
+  color: $red;
+  z-index: $zindex-dropdown - 100;
+  display: block;
+  text-align: center;
+  opacity: 80;
+}

@@ -1,0 +1,7 @@
+.language-apacheconf, .language-bash, .language-csp, .language-css, .language-diff, .language-gitignore, .language-html, .language-javascript, .language-json, .language-less, .language-none, .language-php, .language-phpdoc, .language-regex, .language-scss, .language-sql, .language-svg, .language-xml {
+  cursor: inherit;
+}
+.line-numbers, .kbd-klickweg {
+  cursor: inherit;
+}
+/*# sourceMappingURL=editor-prism.css.map */

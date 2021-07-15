@@ -1,0 +1,86 @@
+{
+	"comment": "See https://hash.online-convert.com/sha384-generator, https://getbootstrap.com/docs/4.4/getting-started/introduction/, https://www.bootstrapcdn.com/",
+
+	"bootstrapJs": {
+		"LoadComment": "'cdn' oder 'media' or empty for 'ignore'",
+		"Load": "media",
+		"media": "plg_system_bs3ghsvs/bootstrap",
+		"otherFileNameComment": "Falls abweichend vom 'Standard'-Dateinamen 'bootstrap'. Ohne .min.js oder .js",
+		"otherFileName": "bootstrap.bundle",
+		"cdnMin": "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js",
+		"cdnIntegrityMin": "sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm",
+		"cdn": "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.js",
+		"cdnIntegrity": "sha384-FhLadiSx562CHg1MeZgAwnrYbHS58gnpCpvPQn6Sv7SqLRCyEKRXE1if+Zx36XNm"
+	},
+
+	"bootstrapCss": {
+		"LoadComment": "'cdn' oder 'media' or empty for 'ignore'",
+		"Load": "",
+		"media": "plg_system_bs3ghsvs/bootstrap",
+		"otherFileNameComment": "Falls abweichend vom 'Standard'-Dateinamen 'bootstrap'. Ohne .min.css oder .css",
+		"otherFileName": "",
+		"cdnMin": "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
+		"cdnIntegrityMin": "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh",
+		"cdn": "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.css",
+		"cdnIntegrity": "sha384-vXOtxoYb1ilJXRLDg4YD1Kf7+ZDOiiAeUwiH9Ds8hM8Paget1UpGPc/KlaO33/nt"
+	},
+
+	"jquery": {
+		"comment": "See https://code.jquery.com/jquery/, https://code.jquery.com/",
+		"LoadComment": "'cdn' oder 'media' or empty for 'ignore'",
+		"Load": "media",
+		"media": "plg_system_bs3ghsvs/jquery",
+		"otherFileNameComment": "Statt nur 'jquery', z.B. '3.4.1/jquery-3.4.1'. Ohne min.js oder .js",
+		"otherFileName": "",
+		"cdnMin": "https://code.jquery.com/jquery-3.4.1.min.js",
+		"cdnIntegrityMin": "sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh",
+		"cdn": "https://code.jquery.com/jquery-3.4.1.js",
+		"cdnIntegrity": "sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+	},
+
+	"jquery-slim": {
+		"comment": "Umbenennen zu 'jquery', wenn slim gewünscht. See https://code.jquery.com/jquery/, https://code.jquery.com/",
+		"LoadComment": "'cdn' oder 'media' or empty for 'ignore'",
+		"Load": "media",
+		"media": "plg_system_bs3ghsvs/jquery",
+		"otherFileNameComment": "Statt nur 'jquery-slim'. z.B. '3.4.1/jquery-3.4.1.slim'. Ohne min.js oder .js",
+		"otherFileName": "",
+		"cdnMin": "https://code.jquery.com/jquery-3.4.1.slim.min.js",
+		"cdnIntegrityMin": "sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=",
+		"cdn": "https://code.jquery.com/jquery-3.4.1.slim.js",
+		"cdnIntegrity": "sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+	},
+
+	"jquery-migrate": {
+		"comment": "See https://jquery.com/download/ . Musst du da blöd runterladen.",
+		"LoadComment": "'cdn' oder 'media' or empty for 'ignore'",
+		"Load": "media",
+		"media": "plg_system_bs3ghsvs/jquery-migrate",
+		"otherFileNameComment": "Statt nur 'jquery-migrate'. Ohne min.js oder .js",
+		"otherFileName": "",
+		"cdnMin": "https://code.jquery.com/jquery-migrate-3.1.0.min.js",
+		"cdnIntegrityMin": "sha256-ycJeXbll9m7dHKeaPbXBkZH8BuP99SmPm/8q5O+SbBc=",
+		"cdn": "https://code.jquery.com/jquery-migrate-3.1.0.js",
+		"cdnIntegrity": "sha256-oA/lsZCgEPkbv/byAkeXSTEZTsGOPZCrtbyFBHmcGKM="
+	},
+
+	"animsitionJs": {
+		"comment": "See https://cdnjs.com/libraries/animsition. Hover-Copy-Buttons",
+		"media": "plg_system_bs3ghsvs/animsition",
+		"cdnLoad": "",
+		"cdnMin": "https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js",
+		"cdnIntegrityMin": "sha256-8y2mv4ETTGZLMlggdrgmCzthTVCNXGUdCQe1gd8qkyM=",
+		"cdn": "https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.js",
+		"cdnIntegrity": "sha256-YQkf9jYnourelxgkF+9yUvcg6n2H8jr4/Y0eFGweT1I="
+	},
+
+	"animsitionCss": {
+		"comment": "See https://cdnjs.com/libraries/animsition. Hover-Copy-Buttons",
+		"media": "plg_system_bs3ghsvs/animsition",
+		"cdnLoad": "0",
+		"cdnMin": "https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css",
+		"cdnIntegrityMin": "sha256-FAIOZJGGkyuIp/gVrVL/k52z4rpCKMrRlYMdGCWstUo=",
+		"cdn": "https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.css",
+		"cdnIntegrity": "sha256-eacfEFFt07So0i0jcf0GCoJfYEnTpTelDK3/9zN+P0g="
+	}
+}

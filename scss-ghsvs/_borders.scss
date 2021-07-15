@@ -1,0 +1,10 @@
+.border-dashed-top,
+.border-dashed-y
+{
+	@include border-top-dashed();
+}
+.border-dashed-bottom,
+.border-dashed-y
+{
+	@include border-bottom-dashed();
+}

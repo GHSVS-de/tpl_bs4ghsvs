@@ -1,0 +1,148 @@
+/* ToDo für BS5:
+-- Ich habe aus BS3 die .label-Klasse "gerettet".
+Die verwendet mixin badge-variant(...), die es aber auch nicht mehr gibt.
+Deaktiivert in templates\bs4ghsvs\scss\_overridesghsvs.scss
+
+
+*/
+
+@import "importerMin";
+
+@import "text-styles";
+
+// DRAN DENKEN auf Echtseite deaktivieren!!!!!!!!!!!!!!!
+// @import "text-styles-fuer-Arbeitsseite.scss";
+
+
+@import "bootstrap/root";
+@import "root";
+
+@import "bootstrap/reboot";
+@import "bootstrap/type";
+@import "bootstrap/images";
+@import "figure-and-images";
+
+// Neu in BS5
+@import "bootstrap/containers";
+
+@import "spacings-custom";
+
+// Nicht mehr in BS5. Variablen fehlen, falls aus BS4 übernehmen willst.
+//@import "bootstrap/code";
+@import "code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "forms-custom";
+@import "bootstrap/buttons";
+
+// Hat mehrere Bugs in BS5. Später testen.
+// @import "buttons";
+@import "buttons-bs5";
+
+@import "bootstrap/transitions";
+@import "bootstrap/dropdown";
+@import "dropdown";
+@import "bootstrap/button-group";
+
+// Nicht mehr in BS5.
+// @import "bootstrap/input-group";
+
+// Nicht mehr in BS5.
+// @import "bootstrap/custom-forms";
+
+
+@import "bootstrap/nav";
+@import "nav-custom";
+@import "bootstrap/navbar";
+
+// Hat mehrere Bugs in BS5. Später testen.
+// @import "navbar"; Stattdessen:
+@import "navbar-custom-bs5";
+
+@import "bootstrap/card";
+@import "card-custom";
+
+
+// Neu in BS5. Verwende ich aber noch nicht so, dass sich das lohnt.
+//@import "bootstrap/accordion";
+
+// Kann kein word-wrap:
+// @import "bootstrap/breadcrumb";
+// Zurück zum Inline-Styling:
+@import "breadcrumb-custom";
+
+
+//@import "bootstrap/pagination";
+@import "bootstrap/badge";
+
+// Nicht mehr in BS5. Verwendete ich auch in BS4 nicht.
+// @import "bootstrap/jumbotron";
+
+
+@import "bootstrap/alert";
+
+// Verwendete ich auch in BS4 nicht.
+// @import "bootstrap/progress";
+
+// Nicht mehr in BS5.
+// @import "bootstrap/media";
+
+
+@import "bootstrap/list-group";
+@import "list-group";
+@import "list";
+
+// BS5. Nervt wegen SVG.
+// @import "bootstrap/close";
+@import "close";
+
+
+@import "bootstrap/toasts";
+@import "toasts-custom";
+@import "bootstrap/modal";
+
+// Verwendete ich ALLE auch in BS4 nicht.
+// @import "bootstrap/tooltip";
+// @import "bootstrap/popover";
+// @import "bootstrap/carousel";
+// @import "bootstrap/spinners";
+
+// Neu in BS5.
+// @import "bootstrap/offcanvas";
+
+// Nicht mehr in BS5.
+// @import "bootstrap/print";
+
+// Neu in BS5
+@import "bootstrap/helpers";
+
+// Neu in BS5
+@import "bootstrap/utilities/api";
+
+// @import "fontawesome-free";
+
+// _base wird benötigt, wenn eine der beiden nachfolgenden geladen wird.
+// @import "icomoon2fontawseome-free_base";
+// @import "icomoon2fontawseome-free";
+// @import "icomoon2fontawseome-free_small";
+
+@import "bs4-bs5-translator";
+
+@import "mod_teaserghsvs";
+@import "noscript";
+@import "shariff";
+@import "borders";
+
+// fontawesome abhängig
+// @import "caret";
+
+@import "collapse";
+//@import "pagination";
+@import "salvattore";
+@import "syntaxhighlighter";
+@import "venobox";
+@import "svg-icons";
+@import "tocGhsvs";
+@import "pagebreak-sliders-custom";
+@import "overridesghsvs";

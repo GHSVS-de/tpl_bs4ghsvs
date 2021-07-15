@@ -1,0 +1,36 @@
+.footable-page-nav
+{
+	@extend .page-item;
+}
+.footable-page-link
+{
+	@extend .page-link;
+}
+
+.articlePagination
+{
+	&.below
+	{
+		padding-top: ($spacer * 0.5);
+		padding-bottom: ($spacer * 0.5);
+	}
+	&.above
+	{
+		.articleLabel
+		{
+			@extend .sr-only;
+		}
+		.btn
+		{
+			background-color: transparent;
+			color: $black;
+			border-color: $gray-300;
+		}
+	}
+}
+
+// Seite x von y. Blogs.
+.paginationToClone
+{
+	text-align: center;
+}

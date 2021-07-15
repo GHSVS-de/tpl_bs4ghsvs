@@ -1,0 +1,7 @@
+.toast-container
+{
+  > :last-child
+	{
+    margin-bottom: $toast-spacing;
+  }
+}

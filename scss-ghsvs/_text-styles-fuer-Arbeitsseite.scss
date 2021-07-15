@@ -1,0 +1,156 @@
+// Diese scss wird nur aktiviert, wenn bei Überarbeitung der Seite, also auf Arbeitsseite, bestimmte Klassen deutlicher unterschieden werden sollen, z.B. durch Farbgebung.
+// Sie wird nach _text-styles.scss geladen, aber auf Echtseite deaktiviert!!!
+
+
+/* STARTMARKER _text-styles-fuer-Arbeitsseite.scss */
+
+.EXCLUDEVENOBOX {
+  cursor: inherit;
+}
+.breakall {
+  word-break: break-all;
+}
+.code-filename {
+  font-family: var(--#{$variable-prefix}font-monospace);
+  background-color: $code-bg-custom;
+	color: darken(blue, 0%);
+	font-size: $code-font-size;
+}
+// Erweiterungsnamen, Software-Namen
+.code-eigenname {
+	color: darken($purple, 0%);
+	font-style: italic;
+	@include bold();
+}
+.code-fachausdruck {
+  font-family: var(--#{$variable-prefix}font-monospace);
+  //background-color: $code-bg-custom;;
+	color: darken(blue, 0%);
+	font-style: italic;
+}
+.code-zeilenverweis {
+	@include bold();
+	color: darken(#28a745, 15%);
+}
+.codeContainer
+{
+	cursor: inherit;
+	&::before
+	{
+		content: "has a .codeContainer:";
+		@include bold();
+		color: $red;
+	}
+}
+abbr
+{
+	background-color: lighten(yellow, 30%);
+	letter-spacing: 1px;
+}
+.code-inline {
+  font-family: var(--#{$variable-prefix}font-monospace);
+  background-color: #000;
+	color: white;
+}
+
+.text-courier,
+.text-monospace {
+  font-family: var(--#{$variable-prefix}font-monospace);
+}
+.text-fett,
+.text-bold {
+  @include bold();
+}
+.text-fett-blau {
+  color: $blue !important;
+  @include bold();
+}
+.text-fett-gruen {
+  color: $green !important;
+  @include bold();
+}
+.text-fett-lila,
+.text-fett-purple {
+  color: $purple !important;
+  @include bold();
+}
+.text-fett-orange {
+  color: $orange !important;
+  @include bold();
+}
+.text-fett-rot {
+  color: $red !important;
+  @include bold();
+}
+.text-fett-unterstrichen {
+  @include bold();
+  text-decoration: underline !important;
+}
+.text-fett-zentriert {
+  @include bold();
+  text-align: center !important;
+}
+.text-kursiv,
+.text-italic {
+  font-style: italic !important;
+	font-weight: $font-weight-normal;
+}
+.text-large,
+.large {
+  font-size: 32px !important;
+}
+.text-large-lineheight {
+  font-size: 32px !important;
+  line-height: 35.2px !important;
+}
+.text-lila,
+.text-purple {
+  color: $purple !important;
+}
+.text-links
+{
+  text-align: left !important;
+}
+.text-medium {
+  font-size: 20px !important;
+}
+.text-medium-lineheight {
+  font-size: 20px !important;
+  line-height: 22px !important;
+}
+.text-lineheight-small {
+  line-height: 1.1 !important;
+}
+.text-rot,
+.text-red {
+  color: $red;
+}
+.text-smaller {
+  font-size: 90%;
+}
+.text-mini {
+  font-size: 65%;
+}
+.text-unterstrichen,
+.text-underline {
+  text-decoration: underline !important;
+}
+.text-zentriert {
+  text-align: center !important;
+}
+
+@each $color, $value in $theme-colors {
+  .block-#{$color} {
+    border-color: theme-color(#{$color}) !important;
+		background-color: theme-color(light);
+		@include block();
+  }
+}
+@each $color, $value in $theme-colors {
+  .inline-#{$color} {
+		background-color: theme-color-level($color, -10);
+  }
+}
+
+
+/* ENDMARKER _text-styles-fuer-Arbeitsseite.scss */

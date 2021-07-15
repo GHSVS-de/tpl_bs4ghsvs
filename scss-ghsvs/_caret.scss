@@ -1,0 +1,23 @@
+[class^="caret-"]::before,
+[class*=" caret-"]::before
+{
+	font-family: "Font Awesome 5 Free";
+	font-style: normal;
+	speak: none;
+}
+
+@each $abbrev in (right, left, up, down)
+{
+	.caret-#{$abbrev}
+	{
+		margin-left: 0.5rem;
+		&:before
+		{
+			@extend .#{$fa-css-prefix}-caret-#{$abbrev}:before;
+		}
+		// @extend .#{$fa-css-prefix}-lg;
+	}
+}
+
+
+

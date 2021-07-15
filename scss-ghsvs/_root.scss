@@ -1,0 +1,6 @@
+:root {
+  // Use `inspect` for lists so that quoted items keep the quotes.
+  // See https://github.com/sass/sass/issues/2383#issuecomment-336349172
+  --#{$variable-prefix}font-serif: #{inspect($font-family-serif-custom)};
+  --#{$variable-prefix}font-handschrift: #{inspect($fontFamilyHandschrift)};
+}

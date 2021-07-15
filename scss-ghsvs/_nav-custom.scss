@@ -1,0 +1,20 @@
+a.nav-link
+{
+	text-decoration: if($link-decoration == none, null, $link-decoration);
+	@include hover-focus-active-bs4
+	{
+		text-decoration: $link-hover-decoration;
+	}
+}
+.nav-link
+{
+	@include hover-focus-active-bs4
+	{
+		color: $navbar-link-hover-color-custom;
+		background-color: $navbar-link-hover-bg-custom;
+	}
+}
+#CfFooter [role="navigation"] ul
+{
+	@include navBorders();
+}

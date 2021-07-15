@@ -1,0 +1,58 @@
+
+
+
+
+
+
+
+
+$pre-color: $black;
+
+
+
+$badge-font-size: 100%;
+
+$list-group-active-bg: $orange;
+$list-group-active-border-color: $list-group-active-bg;
+
+
+
+
+
+
+
+
+
+$card-cap-bg: $gray-100;
+
+// Synchronisere mit "navbar-expand-md" Menü-Klasse!
+$nav-collapse-breakpoint: md;
+
+$nav-pills-link-active-color: $black;
+$nav-pills-link-active-bg: $orange;
+
+$dropdown-min-width: 12rem;
+$dropdown-link-color: $link-color;
+
+
+
+
+
+
+$caret-width:                 .5em;
+
+$alert-padding-x: 0.75rem;
+
+$enable-responsive-font-sizes: true;
+$enable-rounded: false;
+
+// Funktioniert nicht mit node-sass wegen "Error: Import directives may not be used within control directives or mixins".
+// $enable-fontawseome-free: true;
+// $enable-icomoon2fontawseome-free: false;
+
+// AUFPASSEN! Siehe _fontawesome-free.scss. Da steht auch ein Pfad!
+$fontawesome-free-path: "../../../media/plg_system_bs3ghsvs/fontawesome-free";
+$fa-font-path: "#{$fontawesome-free-path}/webfonts";
+
+// Alle Transitions via Bootstrap @include transition(xyz) deaktivieren bedeutet: true
+$enable-prefers-reduced-motion-media-query: false;

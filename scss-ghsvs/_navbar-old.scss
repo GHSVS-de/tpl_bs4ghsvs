@@ -1,0 +1,161 @@
+$enable-rounded: true;
+
+.navbar-default
+{
+  .navbar-toggler {
+    color: $black;
+    border-color: $black;
+		background-color: $white;
+		line-height: 1.5;
+  }
+}
+
+
+.navbar
+{
+	padding-left: 0;
+	padding-right: 0;
+
+	.navbar-collapse
+	{
+		margin-top: 0.5rem;
+		border: 3px solid $gray-300;
+	}
+
+	.dropdown-menu
+	{
+		border: none;
+		background-color: $gray-200;
+		padding-left: 0.25rem;
+		padding-right: 0.25rem;
+		margin: 0;
+	}
+	.nav-link
+	{
+		background-color: $white;
+
+		padding-left: 0.5rem;
+
+		border: 2px solid transparent;
+
+		@include border-color-y-custom($gray-100);
+
+		@include hover-focus-active-bs4
+		{
+			color: $navbar-default-link-hover-color;
+			background-color: $navbar-default-link-hover-bg;
+		}
+		@include transition($transition-base);
+	}
+
+	.nav-item
+	{
+		border: none;
+
+		&.active
+		{
+			// Oberste Ebene
+			& > .nav-link:first-of-type
+			{
+				font-weight: $navbar-active-font-weight-custom;
+			}
+
+			& > a.nav-link
+			{
+				// color: $white;
+				color: $black;
+				background-color: $orange;
+				@include border-color-y-custom($orange);
+			}
+			& > .nav-header[aria-expanded="false"]
+			{
+				@include border-color-y-custom($orange);
+			}
+		}
+
+		&.current
+		{
+			.nav-link
+			{
+				font-weight: $navbar-active-font-weight-custom;
+				@include disabled();
+			}
+		}
+	}
+
+	// Das main UL
+	.nav-pills-ghsvs
+	{
+		.nav-header
+		{
+			@include hover-focus-active
+			{
+				color: $dropdown-link-hover-color;
+				background-color: $dropdown-link-hover-bg;
+			}
+		}
+	}
+}
+
+// Pills styling.
+@include media-breakpoint-up($nav-collapse-breakpoint)
+{
+	.navbar
+	{
+		padding-top: 0.25rem;
+
+		.navbar-collapse
+		{
+			margin-top: 0;
+			border: none;
+		}
+
+		.nav-pills-ghsvs
+		{
+			// First level.
+			> li
+			{
+				&:not(:last-child)
+				{
+					margin-right: 0.5rem;
+				}
+
+				& > .nav-link
+				{
+					border-color: $gray-400;
+					@include border-top-left-radius(18px);
+					@include border-top-right-radius(36px);
+					@include border-bottom-right-radius(60px);
+					padding-right: 1.2rem;
+				}
+			}
+
+			.nav-item.active
+			{
+				.nav-header[aria-expanded="false"]
+				{
+					@include border-color-x-custom($orange);
+				}
+			}
+
+			.dropdown-menu
+			{
+				padding: 0;
+				background-color: transparent;
+
+				.nav-item .nav-link
+				{
+					border: $dropdown-border-width solid $dropdown-border-color;
+				}
+
+				.nav-item:first-of-type .nav-link
+				{
+					@include border-top-right-radius(60px);
+					//@include border-top-right-radius(60px);
+				}
+			}
+		}
+	}
+}
+
+$enable-rounded: false;

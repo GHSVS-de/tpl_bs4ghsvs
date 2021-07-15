@@ -1,0 +1,31 @@
+/* _tocGhsvs.scss */
+
+.div4Toc
+{
+	.list-group-item
+	{
+		background-color: transparent;
+		padding: 0.25rem 0.5rem;
+
+		&.po-h2
+		{
+			@extend .list-group-item-warning;
+		}
+		&.po-h3
+		{
+			@extend .list-group-item-info;
+		}
+	}
+
+	// tocGhsvs, Inhaltsverzeichnis
+	span.listEntryPrefix
+	{
+		@extend .visually-hidden;
+	}
+	// SPANS im toc ohne Sprungmarke, weil Überschrift versteckt ist.
+	span.isItVisibleFalse
+	{
+		font-style: italic;
+	}
+
+}

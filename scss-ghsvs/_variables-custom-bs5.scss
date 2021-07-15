@@ -1,0 +1,129 @@
+// Alle mit -custom gepostfixten sind von mir. Entweder gibt es sie nicht mehr in BS5 oder sch9on unter BS4 "erfunden".
+
+$enable-rounded: false;
+$enable-external-link-custom: false;
+$enable-smooth-scroll: false;
+$enable-shadows: false;
+
+// Wenn du nur ghsvs.de setzt, werden auch Subdomains als NICHT-external identifiziert.
+$HTTP_HOST-custom: "ghsvs.de";
+//$HTTP_HOST-custom: "relaunch-bs3.ghsvs.de";
+
+$div4all-bg-custom: $light;
+$div4all-max-width-custom: 1600px;
+$text-area-max-width-custom: 1024px;
+
+$section-space-custom: ($paragraph-margin-bottom * 2);
+$block-space-custom: $paragraph-margin-bottom;
+
+// Quasi überschreiben Browser/OS-Defaults
+$font-size-root: 18px; // BS5: null
+
+$body-bg: $red;
+
+// cards, blocks and things
+$card-bg: $div4all-bg-custom;
+
+// code, pre, kbd and things.
+$code-bg-custom: #fafafa;
+$pre-padding-custom: ($spacer * 0.75);
+$kbd-color: $black;
+$kbd-bg: $gray-200;
+
+// fonts, headings and things.
+$font-family-serif-custom: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+$fontFamilyHandschrift: "Just Me Again Down Here", Georgia,  "Times New Roman", cursive;
+$font-weight-bold-semi-custom: 600;
+$headings-font-weight: $font-weight-bold-semi-custom;
+$h1-font-size: $font-size-base * 2;
+$h2-font-size: $font-size-base * 1.75;
+$h3-font-size: $font-size-base * 1.5;
+$h4-font-size: $font-size-base * 1.25;
+$h5-font-size: $font-size-base * 1.1;
+
+// In headlines 1rem is a bad solution.
+$code-font-size: 1em;
+$kbd-font-size: 1em;
+
+$lead-font-weight: null;
+$lead-font-size: $font-size-base * 1.1;
+
+// links, breadcrumb and things
+$breadcrumb-padding-y: .5rem;
+$breadcrumb-padding-x: 0;
+$breadcrumb-margin-bottom: 0;
+$breadcrumb-bg: null;
+$breadcrumb-divider: quote(">");
+$breadcrumb-font-size: (0.9 * $font-size-base);
+$breadcrumb-item-padding-x: .25rem;
+
+$link-decoration: underline;
+$link-hover-decoration: none;
+
+// modals, popups, toasts, .block- and things
+$btn-close-font-size-custom: ($font-size-base * 1.5);
+
+$btn-close-width:            1.5em;
+$btn-close-height:           $btn-close-width;
+$btn-close-padding-x:        .25em;
+$btn-close-padding-y:        $btn-close-padding-x;
+$btn-close-color:            $black;
+// Sonst erbt von Browser. Falls <button>.
+$btn-close-bg: none;
+$btn-close-focus-shadow:     $input-btn-focus-box-shadow;
+$btn-close-opacity:          .5;
+$btn-close-hover-opacity:    .75;
+$btn-close-focus-opacity:    1;
+$btn-close-disabled-opacity: .25;
+$btn-close-white-filter:     invert(1) grayscale(100%) brightness(200%);
+
+$toast-font-size: 1rem;
+$toast-padding-y: 0.25rem;
+$toast-max-width: null;
+$toast-background-color: $yellow-200;
+
+$block-color-scale-custom: 100%;
+
+// nav, navbar, menu, dropdown and things
+$navbar-active-font-weight-custom: $font-weight-bold;
+// Siehe auch $component-active-bg.
+$navbar-link-hover-color-custom: $white;
+$navbar-link-hover-bg-custom: $component-active-bg;
+//$navbar-toggler-color-custom: $blue;
+$navbar-toggler-border-color-custom: $dark;
+$navbar-toggler-background-color-custom: $warning;
+$navBorders-width-custom: 0px;
+$navBorders-width-wide-custom: ($spacer*0.35);
+// Muss über sticky sein
+$zindex-dropdown: ($zindex-sticky+1);
+// Auch Toggler-Menü
+$modal-bg-custom: $yellow-100;
+
+// forms and things.
+// Removed in BS5
+$form-group-margin-bottom-custom: 1rem;
+
+// image, figure and things
+$figure-caption-font-size: $font-size-base;
+$figure-caption-color: $body-color;
+$figure-caption-text-align-custom: center;
+$figure-caption-font-weight-custom: $font-weight-base;
+$figure-caption-line-height-custom: $line-height-base;
+$figure-caption-font-style-custom: italic;
+$figure-caption-bg-custom: $yellow-light;
+$figure-caption-font-family-custom: $font-family-base;
+$figure-max-width: 480px;
+$figure-max-width-sm: 190px;
+$figure-img-max-height-custom: 350px;
+
+// maps and things
+// $myCustomSpacers: (
+// 	"4rem": ($spacer * 4),
+// 	"6rem": ($spacer * 6)
+// );
+$myCustomSpacers: (
+	"2rem": ($spacer * 2)
+);
+
+
+$spacers: map-merge($spacers, $myCustomSpacers);

@@ -1,0 +1,32 @@
+// Inline code
+code,
+abbr
+{
+	background-color: $code-bg-custom;
+}
+
+// Blocks of code
+pre
+{
+	background-color: $code-bg-custom;
+	padding: $pre-padding-custom;
+}
+
+// Macht Probleme in Prismjs, wo ich jetzt gar keinen Umbruch mehr haben will.
+// Basis-Problem waren fehlende Zeilennummern in pagebreakghsvs, die ich jetzt
+// per CSS erzwinge. Aber es gibt ja den Copy-Button.
+pre {
+  // word-break: break-all;
+  // word-wrap: break-word;
+  border: 1px solid $gray-400;
+}
+pre code
+{
+	//white-space: pre-wrap;
+/*  padding: 0;
+  font-size: inherit;
+  color: inherit;
+
+  background-color: transparent;
+  border-radius: 0;*/
+}

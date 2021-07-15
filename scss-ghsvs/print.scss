@@ -1,0 +1,157 @@
+// Weil node-sass zu dämlich ist für Pfadvariablen wie:
+// $bootstrap_path: "../../../media/plg_system_bs3ghsvs/scss/bootstrap/";
+// musst leider hart einkodieren.
+
+@import "importerMin";
+
+body.bodyPrint.ausdruck
+{
+	[class^="block-"],
+	[class*=" block-"]
+	{
+		border-color: $black !important;
+		color: $black !important;
+		background-color: #fff;
+	}
+	.page-header, .articleIntrotext
+	{
+		background-color: #fff !important;
+
+		*
+		{
+			color: $black !important;
+		}
+	}
+	.btn-catcolor
+	{
+		background-color: #fff !important;
+		border-color: $black !important;
+		color: $black !important;
+	}
+	max-width: 1000px;
+
+	display: block;
+	background-color: #fff;
+	color: #000;
+
+	a
+	{
+		text-decoration: none !important;
+	}
+
+	a[href^="http"]:after {
+		content: " (" attr(href) ")";
+		text-decoration: underline !important;
+	}
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
+	.ir a:after,
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after {
+		content: "";
+	}
+	.lead,
+	.articleIntrotext
+	{
+		font-weight: normal;
+	}
+
+	.div4article-info
+	{
+		background-color: #fff;
+	}
+
+	.printintro
+	{
+		color: #333;
+		padding:10px;
+		margin-bottom:10px;
+		border-bottom: 1px solid #ccc;
+	}
+	.printButton
+	{
+		border: 1px solid black;
+		background-color:#ddd;
+		font-weight:bold;
+	}
+	/*padding-right:20px;*/
+	.pager,
+	.btn-group.pull-right,
+	.btn-group.float-end,
+	.btnGroupGhsvs,
+	.page-headerHandschrift,
+	.noprint,
+	.buttonGruppeGhsvs,
+	.iconGhsvs,
+	.block-download
+	{
+		@include dontPrintThis;
+	}
+	.spoilerghsvs .spoilerbody.collapse
+	{
+		@include PrintThis;
+	}
+	.item-page{
+		max-width:none !important;
+		border:none !important;
+		padding: 10px;
+	}
+
+pre {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    color: #000;
+    display: block;
+    font-size: 14;
+    line-height: 1.42857;
+    margin: 0 0 10px;
+    padding: 5px;
+word-break: break-all;
+word-wrap: break-word;
+white-space: pre;
+white-space: -moz-pre-wrap;
+white-space: pre-wrap;
+white-space: pre\9;
+}
+
+	.collapse,
+	.printThis
+	{
+		@include PrintThis;
+	}
+}
+
+@media print {
+	.printButton,
+	.noprint,
+	.icons,
+	.div4headteaser,
+	.CfMenueOben,
+	.CfUeberAllemInDiv4main,
+	.CfMenueUnten,
+	.buttonGruppeGhsvs,
+	.seitenpagination,
+	.pagenav-outer
+	{
+		@include dontPrintThis;
+	}
+
+	.collapse,
+	.printThis
+	{
+		@include PrintThis;
+	}
+
+
+	*,
+	*:before,
+	*:after {
+					//GHSVS 2015-08-26
+					background:inherit !important;
+					color: inherit !important; // Black prints faster: h5bp.com/s
+	}
+
+
+}

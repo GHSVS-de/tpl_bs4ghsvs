@@ -1,0 +1,37 @@
+div.shariff
+{
+	.svg-icon
+	{
+		font-size: 1.333rem;
+	}
+	
+	ul li.shariff-button
+	{
+		@media (max-width: 359px)
+		{
+			width: auto;
+		}
+		
+		height: auto;
+
+		a
+		{
+			height: auto !important;
+			text-align: center;
+			padding: 5px 5px 0  5px;
+	
+			&:after
+			{
+				content: attr(title);
+				display: block;
+				font-size: 0.9rem;
+				padding: 4px;
+			}
+			
+			.share_text
+			{
+				display: none !important;
+			}
+		}
+	}
+}

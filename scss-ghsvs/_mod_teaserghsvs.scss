@@ -1,0 +1,45 @@
+.teaserghsvs
+{
+	// ist ein h1
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+
+
+	
+	font-size: 1.1rem;
+
+	// SPANs im Teaser (teaserpre, teasermiddle, teaserpost)
+	span
+	{
+		display: inline;
+		letter-spacing: 1px;
+		// Replaced by whitespace in default.php
+		// margin-right: 0.5rem;
+		
+		&:last-of-type
+		{
+			margin-right: 0;
+		}
+	}
+
+
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+{
+
+}
+
+.teaserprepre,
+.teasermiddle,
+.teaserpostpost
+{
+	color: lighten($red, 10%);text-shadow: 1px 0px 0px black;
+}
+.teaserpre,
+.teaserpost
+{
+	color: darken($orange, 0%);
+	text-shadow: 1px 0px 0px black;
+}

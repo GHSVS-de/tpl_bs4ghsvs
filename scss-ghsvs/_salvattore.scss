@@ -1,0 +1,211 @@
+$gray-lighter5: #fafafa;
+$blue-light: lighten($blue, 45%);
+$green-light2: lighten($green, 40%);
+$green-light: #CFC;
+$orange-light: #FC9;
+$rearrangeWidth: 609px;
+$screen-sm2: 840px;
+$screen-md2: 1024px;
+
+div.salvattoreItems
+{
+	text-align: center;
+	padding-bottom: ($spacer * 1);
+	padding-top: ($spacer * 1);
+	background: lighten(#00aaff, 48%);
+}
+div.salvattoreColumns
+{
+	margin-top: ($spacer * 1);
+	background: $gray-lighter5;
+}
+
+.jsNotActive
+{
+	div.salvattoreItems
+	{
+		@extend .col-md-6;
+		@extend .col-lg-4;
+		@extend .col-xl-3;
+	}
+
+	div.salvattoreColumns
+	{
+		@include make-row();
+	}
+}
+
+.jsActive
+{
+	.blog .salvattoreColumns
+	{
+		padding:0 0 15px 0;
+		
+		& > div:nth-child(2n+0) {
+			&> div:nth-child(2n+0) {
+				background: lighten($orange, 20%);
+			}
+		}
+		& > div:nth-child(3n+0) {
+			&> div:nth-child(2n+0) {
+				background: lighten($yellow, 20%);
+			}
+		}
+		
+		// 1. Spalte 1.Item
+		& > div:nth-child(1) {
+			&> div:nth-child(1) {
+				background: $yellow-light;
+			}
+		}
+		// 1. Spalte 2.Item
+		& > div:nth-child(1) {
+			&> div:nth-child(2) {
+				background: $blue-light;
+			}
+		}
+		// 1. Spalte jedes 3.Item
+		& > div:nth-child(1) {
+			&> div:nth-child(3n+0) {
+				background: $green-light2;
+			}
+		}
+		// 1. Spalte 4.Item
+		& > div:nth-child(1) {
+			&> div:nth-child(4n+0) {
+				background: $green-light;
+			}
+		}
+		// 1. Spalte jedes 5.Item
+		& > div:nth-child(1) {
+			&> div:nth-child(5n+0) {
+				background: $yellow-light;
+			}
+		}
+		// 1. Spalte jedes 7.Item
+		& > div:nth-child(1) {
+			&> div:nth-child(7n+0) {
+				background: $orange-light;
+			}
+		}
+		// 2. Spalte 1. Item
+		& > div:nth-child(2) {
+			&> div:nth-child(1) {
+				background: $green-light;
+			}
+		}
+		// 3. Spalte 1.Item
+		& > div:nth-child(3) {
+			&> div:nth-child(1) {
+				background: $blue-light;
+			}
+		}
+		// 3. Spalte 6.Item
+		& > div:nth-child(3) {
+			&> div:nth-child(6) {
+				background: $green-light !important;
+			}
+		}
+		// 1. Spalte jedes 3.Item
+		& > div:nth-child(3) {
+			&> div:nth-child(3n+0) {
+				background: $yellow-light;
+			}
+		}
+		// 4. Spalte 1.Item
+		& > div:nth-child(4) {
+			&> div:nth-child(1) {
+				background: $orange-light;
+			}
+		}
+		// 4. Spalte 5.Item
+		& > div:nth-child(4) {
+			&> div:nth-child(5) {
+				background: $green-light;
+			}
+		}
+	}
+}
+
+.jsActive
+{
+	.size-1of4,
+	.size-1of3,
+	.size-1of2,
+	.size-1of1
+	{
+		position: relative;
+		float: left;
+		min-height: 1px;
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+	
+	.size-1of4
+	{
+		width: 25%;
+	}
+	.size-1of3
+	{
+		width: 33.33333333%;
+	}
+	.size-1of2
+	{
+		width: 50%;
+	}
+	.size-1of1
+	{
+		width: 100%;
+	}
+	
+	div.column
+	{
+		padding-left:0;
+		padding-right:0;
+	}
+	div.salvattoreItems
+	{
+		padding-left: ($grid-gutter-width / 2);
+		padding-right: ($grid-gutter-width / 2);
+
+		div.page-header
+		{
+			@extend .bg-transparent;
+			@extend .border-top-0;
+			@extend .py-0;
+			
+			h2
+			{
+				@extend .h5;
+			}
+		}
+
+	}
+}
+
+.jsActive
+{
+	.blog .salvattoreColumns
+	{
+		&[data-columns]::before
+		{
+			
+			@media screen and (max-width: $rearrangeWidth) {
+				content: '1 .column.size-1of1';
+			}
+			
+			@media screen and (min-width: $rearrangeWidth) and (max-width: ($screen-sm2 - 1)){ // -839
+				content: '2 .column.size-1of2';
+			}
+	
+			@media (min-width: $screen-sm2) and (max-width: ($screen-md2 - 1)) { //840 - 1023
+				content: '3 .column.size-1of3';
+			}
+	
+			@media (min-width: $screen-md2){ //1024
+				content: '4 .column.size-1of4';
+			}
+	
+		}
+	}
+}

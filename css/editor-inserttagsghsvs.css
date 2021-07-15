@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/*
+Klassen, die mit Plugin plg_editors-xtd_inserttagsghsvs gesetzt werden.
+
+Leider zeigt JCE seit Version ? im sog. Pfad, eigene CSS-Klassen
+nicht immer an, wenn sie ihm nicht auch per CSSS-Datei untergejubelt
+werden. Deshalb diese Datei.
+Im JCE-Profil als letzte zu ladende Datei.
+Falls diese Klassen nicht sowieso in template.css vorhanden sind.
+
+Anders hier gehören die Klassen rein, die nicht anderweitig von JCE
+geladen werden. Umgekehrt sollten die raus, die anderweitig schon drinnen,
+wegen der StilVorschau im JCE.
+*/
+.kbd-klickweg {
+  cursor: inherit;
+}
+/*# sourceMappingURL=editor-inserttagsghsvs.css.map */

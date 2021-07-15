@@ -1,0 +1,176 @@
+/* _figure-and-images.scss */
+
+img
+{
+	max-width: 100%;
+}
+
+.article_image-limiter
+{
+	max-width: 650px;
+}
+
+//// OLD
+// figure
+// {
+
+//
+// 	max-width: 480px;
+// 	@extend .d-inline-block;
+
+// 	img
+// 	{
+// 		width: 100%;
+// 	}
+
+// 	// Blog leading items
+// 	&.leadItem
+// 	{
+// 		max-width: 600px;
+// 	}
+// }
+//// /OLD
+
+
+figure.autoLimited
+{
+	//padding: 0.25rem 0;
+	padding: 2px 1px;
+	//@extend .border;
+	//@extend .border-secondary;
+	//border-top: 2px solid $gray-700;
+	border: 2px dotted $red-300;
+	background-color: $dark;
+	text-align: center;
+
+	img
+	{
+		width: auto;
+		max-height: $figure-img-max-height-custom;
+	}
+
+	&:not(.ghsvs_img-full)
+	{
+		// @extend .d-inline-block;
+		// Das macht keinen Sinn sagt Firefox bei floatenden Elementen.
+		//display: inline-block;
+
+		// Sonst bricht das figcaption aus.
+		@include media-breakpoint-only(sm)
+		{
+			//max-width: ($figure-max-width-sm);
+
+			img
+			{
+				//max-width: ($figure-max-width-sm - 10);
+			}
+		}
+		@include media-breakpoint-up(md)
+		{
+			//max-width: ($figure-max-width);
+
+			img
+			{
+				//max-width: ($figure-max-width - 10);
+			}
+		}
+
+
+	}
+}
+
+.ghsvs_img-full
+{
+	//@include ghsvs_img-full();
+}
+
+// Kann dann auf Kunden-WUnsch hier geändert werden.
+// Ist die Default-Einstellung, falls articleImages.xml im bs3ghsvs-
+// Plugin geladen wird.
+.ghsvs_img-default
+{
+	@include media-breakpoint-only(xs)
+	{
+		//@include ghsvs_img-full();
+	}
+
+	@include media-breakpoint-up(sm)
+	{
+		// @include ghsvs_img-right();
+	}
+}
+
+.ghsvs_img-right
+{
+	@include media-breakpoint-up(sm)
+	{
+		//@include ghsvs_img-right();
+	}
+}
+
+.ghsvs_img-left
+{
+	//@include ghsvs_img-left();
+}
+
+// Erweiterte BS5-Klasse.
+.figure-caption {
+	font-family: $figure-caption-font-family-custom;
+	font-weight: $figure-caption-font-weight-custom;
+	line-height: $figure-caption-line-height-custom;
+	background-color: $figure-caption-bg-custom;
+	text-align: $figure-caption-text-align-custom;
+	font-style: $figure-caption-font-style-custom;
+	@extend .mt-1;
+}
+
+.iconGhsvs .btn-dark
+{
+	border: 1px solid $light;
+	margin-top: .25rem;
+	border-radius: 50%;
+}
+
+// .iconGhsvs
+// {
+// 	position: absolute;
+// 	top: 1px;
+// 	right: 1px;
+
+// 	button
+// 	{
+// 		//@extend .btn-light;
+// 		//@extend .btn-sm;
+// 		opacity: 1;
+// 		border-radius: 50px;
+// 		padding: 0 .1rem .1rem 0;
+// 	}
+// }
+
+// .image_intro
+// {
+// 	.aWithButtonOverlay
+// 	{
+// 		display: block;
+// 		text-align: center;
+// 		position: relative;
+// 	}
+// 	.centeredButton
+// 	{
+//   	top: 50%;
+//   	left: auto;
+// 		right: 3px;
+// 		bottom: auto;
+// 		opacity: 0.9;
+// 		// Firefox schneidet unten border ab. Deshalb 49%.
+//   	transform: translateY(-49%);
+// 		position: absolute;
+// 	}
+// }
+
+// Wenn in .lead zu groß etc.
+figcaption
+{
+	@extend .figure-caption;
+	padding: ($spacer * 0.25);
+}

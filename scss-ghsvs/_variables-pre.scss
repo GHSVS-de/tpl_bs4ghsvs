@@ -1,0 +1,47 @@
+// Some global variables must be overriden early because they
+// are used often in /bootstrap/_variables.scss to define other variables.
+
+// For some others it's easier to define them here for later use or a must.
+
+// "If a variable has already been assigned, then it won't be re-assigned by the !default values in Bootstrap."
+
+//$border-radius: 0;
+//$border-radius-lg: 0;
+//$border-radius-sm: 0;
+
+//https://coolors.co/990134-337357-2d3047-ff8552-fff275
+$red: #990134;
+//$orange: #FF8552;
+//$blue: #2D3047;
+//$yellow: #FF8552;
+//$green:#337357;
+
+//
+// $orange: #b35f00;
+//$blue: #0070eb;
+//$yellow: #ffc40d;
+
+$yellow-light: #ffffcc;
+
+// $green: darken(#28a745, 10%);
+
+// $blue: #2F3061;
+// $indigo:  #6610f2 !default;
+// $purple: #7a43b6;
+// $pink: #971250;
+// $red: #990134;
+// $orange: #FF9505;
+// $yellow: #EAF27C;
+// $green:#036016;
+// $teal:    #20c997 !default;
+// $cyan:    #0dcaf0 !default;
+//$white: #F8F4F9;
+
+//$gray-100: #fcfcfd;
+
+$link-color: $red;
+
+$spacer: 1rem;
+
+// Keine Ahnung, warum das hier sein muss. Also in variables-pre
+$component-active-bg: $red;

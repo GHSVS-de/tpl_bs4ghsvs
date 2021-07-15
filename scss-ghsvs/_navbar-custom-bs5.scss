@@ -1,0 +1,68 @@
+/* navbar-bs5.scss */
+
+.navbar-custom
+{
+
+	@include media-breakpoint-down(md)
+	{
+		.navbar-nav
+		{
+			margin: $spacer 0;
+			background-color: $modal-bg-custom;
+		}
+	}
+
+	.nav-item
+	{
+		// border: ($spacer*0.35) solid transparent;
+		/* Das ist schick. Durchgehende Linie oben und unten. Spart andere
+		Auszeichnung mit bg oder Scheiß. */
+		// @include border-color-y-custom($gray-900);
+
+		@include navBorders();
+
+		@include media-breakpoint-down(md)
+		{
+			border-width: $navBorders-width-custom;
+		}
+
+		@include media-breakpoint-down(md)
+		{
+			.nav-link
+			{
+				padding: $nav-link-padding-y $nav-link-padding-x;
+			}
+		}
+
+		&.active
+		{
+			// @include border-color-y-custom($orange);
+
+			> .nav-link
+			{
+				font-weight: $font-weight-bold;
+				animation: blink 1s;
+				animation-iteration-count: 2;
+			}
+		}
+	}
+
+	.dropdown-toggle
+	{
+		cursor: cell;
+	}
+
+  .navbar-toggler {
+    //color: $navbar-toggler-color-custom;
+    border-color: $navbar-toggler-border-color-custom;
+		background-color: $navbar-toggler-background-color-custom;
+  }
+
+  .navbar-toggler-icon {
+    background-image: escape-svg($navbar-light-toggler-icon-bg);
+  }
+
+  .navbar-text {
+    color: $navbar-light-color;
+  }
+}

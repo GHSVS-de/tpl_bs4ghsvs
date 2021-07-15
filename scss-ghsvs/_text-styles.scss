@@ -1,0 +1,167 @@
+
+/* STARTMARKER _text-styles.scss */
+
+.EXCLUDEVENOBOX {
+  cursor: inherit;
+}
+.breakall {
+  word-break: break-all;
+}
+.code-filename {
+  font-family: $font-family-code;
+  background-color: $code-bg-custom;;
+	color: darken(blue, 0%);
+	font-size: $code-font-size;
+}
+
+.code-htmltag,
+abbr
+{
+	font-family: $font-family-code;
+	color: lighten($black, 10%);
+	font-size: $code-font-size;
+}
+
+// Erweiterungsnamen, Software-Namen
+.code-eigenname {
+	font-style: italic;
+}
+.code-fachausdruck {
+	font-family: $font-family-code;
+	color: darken(blue, 0%);
+	font-style: italic;
+}
+.code-zeilenverweis {
+	@include bold();
+	color: darken(#28a745, 15%);
+}
+
+.code-inline {
+	font-family: $font-family-code;
+	background-color: $code-bg-custom;
+	white-space: pre-wrap;
+	font-size: $code-font-size;
+	color: $code-color;
+}
+
+.text-courier,
+.text-monospace {
+  font-family: $font-family-code;
+}
+.text-fett,
+.text-bold {
+  @include bold();
+}
+.text-fett-blau {
+  color: $blue !important;
+  @include bold();
+}
+.text-fett-gruen {
+  color: $green !important;
+  @include bold();
+}
+.text-fett-lila,
+.text-fett-purple {
+  color: $purple !important;
+  @include bold();
+}
+.text-fett-orange {
+  color: $orange !important;
+  @include bold();
+}
+.text-fett-rot {
+  color: $red !important;
+  @include bold();
+}
+.text-fett-unterstrichen {
+  @include bold();
+  text-decoration: underline !important;
+}
+.text-fett-zentriert {
+  @include bold();
+  text-align: center !important;
+}
+.text-kursiv,
+.text-italic {
+  font-style: italic !important;
+	// font-weight: 500;
+}
+.text-large,
+.large {
+  font-size: 32px !important;
+}
+.text-large-lineheight {
+  font-size: 32px !important;
+  line-height: 35.2px !important;
+}
+.text-lila,
+.text-purple {
+  color: $purple !important;
+}
+.text-links
+{
+  text-align: left !important;
+}
+.text-medium {
+  font-size: 1.2rem !important;
+}
+.text-medium-lineheight {
+  font-size: 1.2rem !important;
+  //line-height: 22px !important;
+}
+.text-lineheight-small {
+  line-height: 1.1 !important;
+}
+.text-rot,
+.text-red {
+  color: $red;
+}
+.text-smaller {
+  font-size: 90%;
+}
+.text-mini {
+  font-size: 65%;
+}
+.text-unterstrichen,
+.text-underline {
+  text-decoration: underline !important;
+}
+.text-zentriert {
+  text-align: center !important;
+}
+
+// @each $color, $value in $theme-colors {
+//   .block-#{$color} {
+//     border-color: var(--#{$variable-prefix}#{$color}) !important;
+// 		background-color: var(--#{$variable-prefix}light);
+// 		@include block();
+//   }
+// }
+
+@each $state, $value in $theme-colors {
+  $alert-background: shift-color($value, $alert-bg-scale);
+  $alert-border: $value;
+  $alert-color: shift-color($value, $block-color-scale-custom);
+  @if (contrast-ratio($alert-background, $alert-color) < $min-contrast-ratio) {
+    $alert-color: mix($value, color-contrast($alert-background), abs($block-color-scale-custom));
+  }
+  .block-#{$state} {
+    @include alert-variant($alert-background, $alert-border, $alert-color);
+		@include block();
+  }
+	.inline-#{$state} {
+		@include gradient-bg($alert-background);
+		color: $alert-color;
+  }
+}
+
+// Dummies für JCE.
+.hyphenate
+{
+	cursor: default;
+}
+.donthyphenate
+{
+	cursor: default;
+}
+/* ENDMARKER _text-styles.scss */

@@ -1,0 +1,14 @@
+/* _forms-custom.scss */
+.form-control
+{
+  &::placeholder
+	{
+    font-size: 0.9rem;
+  }
+}
+
+// Removed in BS5. It's a pain to revise the forms again.
+.form-group
+{
+  margin-bottom: $form-group-margin-bottom-custom;
+}
