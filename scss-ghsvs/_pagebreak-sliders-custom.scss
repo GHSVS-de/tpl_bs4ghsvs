@@ -1,8 +1,25 @@
+/* _pagebreak-sliders-custom.scss pagebrteakGhsvs-Zeugs */
 
 @include media-breakpoint-down(md)
 {
+	// The second part of the title.
 	.pageBreakSlideTitle
 	{
 		display: none;
+	}
+}
+
+.pageBreakGhsvsCard
+{
+	.btn.accordion-toggle
+	{
+		// Sieht sonst Sch. auf schmalen Bildschirmen aus, wenn Zeile umbricht.
+		text-align: left;
+	}
+
+	.card-body
+	{
+		-webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+		box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
 	}
 }
