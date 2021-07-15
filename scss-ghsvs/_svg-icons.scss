@@ -14,8 +14,8 @@ span.svgSpan
 
 .#{$svg-css-prefix}-lg svg
 {
-  font-size: (4em / 3);
-  line-height: (3em / 4);
+	font-size: divide(4em, 3);
+  line-height: (3em * .25);
   // vertical-align: -.0667em;
 }
 
@@ -59,20 +59,23 @@ span.svgSpan
 $svg-external-link: url('data:image/svg+xml,<svg viewBox="0 0 16 16" fill="#{$link-color}" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/><path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/></svg>');
 @if $enable-external-link-custom
 {
-	a[href^="http://"]:not([href*="#{$HTTP_HOST-custom}"]),
-	a[href^="https://"]:not([href*="#{$HTTP_HOST-custom}"]),
-	a[href^="//"]:not([href*="#{$HTTP_HOST-custom}"])
+	body:not(.bodyPrint)
 	{
-		&::after
+		a[href^="http://"]:not([href*="#{$HTTP_HOST-custom}"]),
+		a[href^="https://"]:not([href*="#{$HTTP_HOST-custom}"]),
+		a[href^="//"]:not([href*="#{$HTTP_HOST-custom}"])
 		{
-			display: inline-block;
-			width: 1em;
-			height: 1em;
-			margin-left: 0.3em;
-			content: "";
-			background-image: escape-svg($svg-external-link);
-			background-repeat: no-repeat;
-			background-size: 100% 100%;
+			&::after
+			{
+				display: inline-block;
+				width: 1em;
+				height: 1em;
+				margin-left: 0.3em;
+				content: "";
+				background-image: escape-svg($svg-external-link);
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
 		}
 	}
 }

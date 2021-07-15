@@ -5,14 +5,14 @@
 
 	@include media-breakpoint-down(md)
 	{
-		margin-top: $block-space-custom/2;
-		margin-bottom: $block-space-custom/2;
+		margin-top: $block-space-custom * .5;
+		margin-bottom: $block-space-custom * .5;
 	}
 }
 #CfButtonGruppe,
 #CfBreadcrumb
 {
-	padding: $block-space-custom/2;
+	padding: $block-space-custom * .5;
 }
 
 #CfUnterComponent

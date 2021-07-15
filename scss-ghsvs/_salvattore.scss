@@ -40,7 +40,7 @@ div.salvattoreColumns
 	.blog .salvattoreColumns
 	{
 		padding:0 0 15px 0;
-		
+
 		& > div:nth-child(2n+0) {
 			&> div:nth-child(2n+0) {
 				background: lighten($orange, 20%);
@@ -51,7 +51,7 @@ div.salvattoreColumns
 				background: lighten($yellow, 20%);
 			}
 		}
-		
+
 		// 1. Spalte 1.Item
 		& > div:nth-child(1) {
 			&> div:nth-child(1) {
@@ -140,7 +140,7 @@ div.salvattoreColumns
 		padding-right: 15px;
 		padding-left: 15px;
 	}
-	
+
 	.size-1of4
 	{
 		width: 25%;
@@ -157,7 +157,7 @@ div.salvattoreColumns
 	{
 		width: 100%;
 	}
-	
+
 	div.column
 	{
 		padding-left:0;
@@ -165,15 +165,15 @@ div.salvattoreColumns
 	}
 	div.salvattoreItems
 	{
-		padding-left: ($grid-gutter-width / 2);
-		padding-right: ($grid-gutter-width / 2);
+		padding-left: ($grid-gutter-width * .5);
+		padding-right: ($grid-gutter-width * .5);
 
 		div.page-header
 		{
 			@extend .bg-transparent;
 			@extend .border-top-0;
 			@extend .py-0;
-			
+
 			h2
 			{
 				@extend .h5;
@@ -189,23 +189,23 @@ div.salvattoreColumns
 	{
 		&[data-columns]::before
 		{
-			
+
 			@media screen and (max-width: $rearrangeWidth) {
 				content: '1 .column.size-1of1';
 			}
-			
+
 			@media screen and (min-width: $rearrangeWidth) and (max-width: ($screen-sm2 - 1)){ // -839
 				content: '2 .column.size-1of2';
 			}
-	
+
 			@media (min-width: $screen-sm2) and (max-width: ($screen-md2 - 1)) { //840 - 1023
 				content: '3 .column.size-1of3';
 			}
-	
+
 			@media (min-width: $screen-md2){ //1024
 				content: '4 .column.size-1of4';
 			}
-	
+
 		}
 	}
 }

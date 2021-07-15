@@ -248,7 +248,7 @@ a.btn
 
 		.option-com_content.view-article:not(.isFrontpage) &
 		{
-			@include font-size($h1-font-size / 1.5);
+			@include font-size(divide($h1-font-size, 1.5));
 		}
 	}
 	.page_heading_main
@@ -491,4 +491,9 @@ button
 	{
 		display: none;
 	}
+}
+
+.alert-error
+{
+	@extend .alert-danger;
 }
