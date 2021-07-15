@@ -33,7 +33,7 @@ Für about-africa
 			<option value="blog">blog</option>
 			<!--<option value="blogghsvs">blogghsvs</option>-->
 		</field>
-			
+
 <!--Brauch ich nur als Erkenner für dieses, mein Layout.-->
 		<field name="layout_type_ghsvs"
 			type="list"
@@ -58,7 +58,7 @@ Für about-africa
 			<option value="0">JHIDE</option>
 			<option value="1">JSHOW</option>
 		</field>
-			
+
 			<field name="show_category_title" type="list" default="0"
 			 readonly="false"
 				label="Kategorietitel [show_category_title]"
@@ -164,13 +164,13 @@ Für about-africa
 				<option value="0">JNO</option>
 			</field>
 
-   <field name="show_dropdown_sprungmarken" type="list" default="1"
-			 label="Sprungmarken-Dropdown [show_dropdown_sprungmarken]"
+   <field name="show_dropdown_sprungmarken" type="list" default="0"
+			 label="Sprungmarken-Dropdown [show_dropdown_sprungmarken]. DEPRECATED!"
 				description="Button anzeigen: Hüpfen auf dieser Seite">
 				<option value="1">JYES</option>
 				<option value="0">JNO</option>
 			</field>
-			
+
    <field name="accesslevel_for_toggler" type="accesslevel" required="true"
 			 multiple="true"
 			 label="Zugriffsebene Blog/List-Toggler [accesslevel_for_toggler]"
@@ -188,7 +188,7 @@ Für about-africa
 				<option value="author">JAUTHOR</option>
 				<option value="hits">JGLOBAL_HITS</option>
 			</field>
-			
+
 			<field name="bloglayout" type="spacer" class="text"
 					label="JGLOBAL_SUBSLIDER_BLOG_LAYOUT_LABEL"
 			/>
@@ -206,7 +206,7 @@ Für about-africa
 				size="3"
 				useglobal="true"
 			/>
-			
+
 			<field name="introtext_limit_ghsvs" type="list" default="410"
 			 label="INTROTEXT_LIMIT_GHSVS_LBL"
 				description="INTROTEXT_LIMIT_GHSVS_DESC">
