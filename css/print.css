@@ -1,3 +1,10 @@
+@-webkit-keyframes blink {
+  50% {
+    background-color: #990134;
+    color: #fff;
+    text-decoration: none;
+  }
+}
 @keyframes blink {
   50% {
     background-color: #990134;
@@ -12,7 +19,8 @@ body.bodyPrint.ausdruck {
   color: #000;
   /*padding-right:20px;*/
 }
-body.bodyPrint.ausdruck [class^="block-"], body.bodyPrint.ausdruck [class*=" block-"] {
+body.bodyPrint.ausdruck [class^=block-],
+body.bodyPrint.ausdruck [class*=" block-"] {
   border-color: #000 !important;
   color: #000 !important;
   background-color: #fff;
@@ -31,17 +39,20 @@ body.bodyPrint.ausdruck .btn-catcolor {
 body.bodyPrint.ausdruck a {
   text-decoration: none !important;
 }
-body.bodyPrint.ausdruck a[href^="http"]:after {
+body.bodyPrint.ausdruck a[href^=http]:after {
   content: " (" attr(href) ")";
   text-decoration: underline !important;
 }
 body.bodyPrint.ausdruck abbr[title]:after {
   content: " (" attr(title) ")";
 }
-body.bodyPrint.ausdruck .ir a:after, body.bodyPrint.ausdruck a[href^="javascript:"]:after, body.bodyPrint.ausdruck a[href^="#"]:after {
+body.bodyPrint.ausdruck .ir a:after,
+body.bodyPrint.ausdruck a[href^="javascript:"]:after,
+body.bodyPrint.ausdruck a[href^="#"]:after {
   content: "";
 }
-body.bodyPrint.ausdruck .lead, body.bodyPrint.ausdruck .articleIntrotext {
+body.bodyPrint.ausdruck .lead,
+body.bodyPrint.ausdruck .articleIntrotext {
   font-weight: normal;
 }
 body.bodyPrint.ausdruck .div4article-info {
@@ -58,7 +69,15 @@ body.bodyPrint.ausdruck .printButton {
   background-color: #ddd;
   font-weight: bold;
 }
-body.bodyPrint.ausdruck .pager, body.bodyPrint.ausdruck .btn-group.pull-right, body.bodyPrint.ausdruck .btn-group.float-end, body.bodyPrint.ausdruck .btnGroupGhsvs, body.bodyPrint.ausdruck .page-headerHandschrift, body.bodyPrint.ausdruck .noprint, body.bodyPrint.ausdruck .buttonGruppeGhsvs, body.bodyPrint.ausdruck .iconGhsvs, body.bodyPrint.ausdruck .block-download {
+body.bodyPrint.ausdruck .pager,
+body.bodyPrint.ausdruck .btn-group.pull-right,
+body.bodyPrint.ausdruck .btn-group.float-end,
+body.bodyPrint.ausdruck .btnGroupGhsvs,
+body.bodyPrint.ausdruck .page-headerHandschrift,
+body.bodyPrint.ausdruck .noprint,
+body.bodyPrint.ausdruck .buttonGruppeGhsvs,
+body.bodyPrint.ausdruck .iconGhsvs,
+body.bodyPrint.ausdruck .block-download {
   display: none !important;
   visibility: hidden !important;
 }
@@ -88,22 +107,39 @@ body.bodyPrint.ausdruck pre {
   white-space: pre-wrap;
   white-space: pre\9 ;
 }
-body.bodyPrint.ausdruck .collapse, body.bodyPrint.ausdruck .printThis {
+body.bodyPrint.ausdruck .collapse,
+body.bodyPrint.ausdruck .printThis {
   display: block !important;
   visibility: visible !important;
 }
+
 @media print {
-  .printButton, .noprint, .icons, .div4headteaser, .CfMenueOben, .CfUeberAllemInDiv4main, .CfMenueUnten, .buttonGruppeGhsvs, .seitenpagination, .pagenav-outer {
+  .printButton,
+.noprint,
+.icons,
+.div4headteaser,
+.CfMenueOben,
+.CfUeberAllemInDiv4main,
+.CfMenueUnten,
+.buttonGruppeGhsvs,
+.seitenpagination,
+.pagenav-outer {
     display: none !important;
     visibility: hidden !important;
   }
-  .collapse, .printThis {
+
+  .collapse,
+.printThis {
     display: block !important;
     visibility: visible !important;
   }
-  *, *:before, *:after {
+
+  *,
+*:before,
+*:after {
     background: inherit !important;
     color: inherit !important;
   }
 }
+
 /*# sourceMappingURL=print.css.map */
