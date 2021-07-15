@@ -14,111 +14,111 @@ Deaktiivert in templates\bs4ghsvs\scss\_overridesghsvs.scss
 // @import "text-styles-fuer-Arbeitsseite.scss";
 
 
-@import "bootstrap/root";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/root";
 @import "root";
 
-@import "bootstrap/reboot";
-@import "bootstrap/type";
-@import "bootstrap/images";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/reboot";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/type";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/images";
 @import "figure-and-images";
 
 // Neu in BS5
-@import "bootstrap/containers";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/containers";
 
 @import "spacings-custom";
 
 // Nicht mehr in BS5. Variablen fehlen, falls aus BS4 übernehmen willst.
-//@import "bootstrap/code";
+//@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/code";
 @import "code";
-@import "bootstrap/grid";
-@import "bootstrap/tables";
-@import "bootstrap/forms";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/grid";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/tables";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/forms";
 @import "forms-custom";
-@import "bootstrap/buttons";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/buttons";
 
 // Hat mehrere Bugs in BS5. Später testen.
 // @import "buttons";
 @import "buttons-bs5";
 
-@import "bootstrap/transitions";
-@import "bootstrap/dropdown";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/transitions";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/dropdown";
 @import "dropdown";
-@import "bootstrap/button-group";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/button-group";
 
 // Nicht mehr in BS5.
-// @import "bootstrap/input-group";
+// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/input-group";
 
 // Nicht mehr in BS5.
-// @import "bootstrap/custom-forms";
+// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/custom-forms";
 
 
-@import "bootstrap/nav";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/nav";
 @import "nav-custom";
-@import "bootstrap/navbar";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/navbar";
 
 // Hat mehrere Bugs in BS5. Später testen.
 // @import "navbar"; Stattdessen:
 @import "navbar-custom-bs5";
 
-@import "bootstrap/card";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/card";
 @import "card-custom";
 
 
 // Neu in BS5. Verwende ich aber noch nicht so, dass sich das lohnt.
-//@import "bootstrap/accordion";
+//@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/accordion";
 
 // Kann kein word-wrap:
-// @import "bootstrap/breadcrumb";
+// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/breadcrumb";
 // Zurück zum Inline-Styling:
 @import "breadcrumb-custom";
 
 
-//@import "bootstrap/pagination";
-@import "bootstrap/badge";
+//@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/pagination";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/badge";
 
 // Nicht mehr in BS5. Verwendete ich auch in BS4 nicht.
-// @import "bootstrap/jumbotron";
+// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/jumbotron";
 
 
-@import "bootstrap/alert";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/alert";
 
 // Verwendete ich auch in BS4 nicht.
-// @import "bootstrap/progress";
+// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/progress";
 
 // Nicht mehr in BS5.
-// @import "bootstrap/media";
+// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/media";
 
 
-@import "bootstrap/list-group";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/list-group";
 @import "list-group";
 @import "list";
 
 // BS5. Nervt wegen SVG.
-// @import "bootstrap/close";
+// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/close";
 @import "close";
 
 
-@import "bootstrap/toasts";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/toasts";
 @import "toasts-custom";
-@import "bootstrap/modal";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/modal";
 
 // Verwendete ich ALLE auch in BS4 nicht.
-// @import "bootstrap/tooltip";
-// @import "bootstrap/popover";
-// @import "bootstrap/carousel";
-// @import "bootstrap/spinners";
+// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/tooltip";
+// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/popover";
+// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/carousel";
+// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/spinners";
 
 // Neu in BS5.
-// @import "bootstrap/offcanvas";
+// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/offcanvas";
 
 // Nicht mehr in BS5.
-// @import "bootstrap/print";
+// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/print";
 
 // Neu in BS5
-@import "bootstrap/helpers";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/helpers";
 
 // Neu in BS5
-@import "bootstrap/utilities/api";
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/utilities/api";
 
 // @import "fontawesome-free";
 
@@ -139,9 +139,12 @@ Deaktiivert in templates\bs4ghsvs\scss\_overridesghsvs.scss
 
 @import "collapse";
 //@import "pagination";
-@import "salvattore";
+//@import "salvattore";
 @import "syntaxhighlighter";
-@import "venobox";
+
+// Jetzt eigene Datei
+// @import "venobox";
+
 @import "svg-icons";
 @import "tocGhsvs";
 @import "pagebreak-sliders-custom";
