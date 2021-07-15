@@ -2,7 +2,7 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
 <extension version="3.9" type="template" client="site" method="upgrade">
 	<name>bs4ghsvs</name>
-	<version>2021.03.26</version>
+	<version>2021.07.15</version>
 	<versionHistory>
 	</versionHistory>
 	<creationDate>2019-10-29</creationDate>
@@ -24,7 +24,7 @@
 	<minimumPhp>7.4</minimumPhp>
 	<!-- <maximumPhp>5.4.0</maximumPhp> -->
 	<minimumJoomla>3.9.25</minimumJoomla>
-	<maximumJoomla>3.10.99999</maximumJoomla>
+	<maximumJoomla></maximumJoomla>
 	<allowDowngrades>1</allowDowngrades>
 
 	<files>
