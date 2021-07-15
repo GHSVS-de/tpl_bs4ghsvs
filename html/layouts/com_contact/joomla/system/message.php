@@ -37,8 +37,10 @@ div.modalxxx .close{
 		<div id="system-message">
 			<?php foreach ($msgList as $type => $msgs) : ?>
 				<div class="alert alert-<?php echo $type; ?>">
-					<a class="btn-close" data-bs-dismiss="alert">×</a>
-<?php echo LayoutHelper::render('ghsvs.closeButtonTop');; ?>
+					<!-- <a class="btn-close" data-bs-dismiss="alert">×</a> -->
+					<?php
+					echo LayoutHelper::render('ghsvs.closeButtonTop',
+						['options' => ['dismissType' => 'alert']]); ?>
 					<?php if (!empty($msgs)) : ?>
 						<h4 class="alert-heading"><?php echo JText::_($type); ?></h4>
 						<div>
