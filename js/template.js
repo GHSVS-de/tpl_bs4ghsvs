@@ -159,6 +159,7 @@ var ResizerGHSVS = function()
 	// if (!HidePageHeader)
 	{
 		teaserAutoheight(575.98);
+		jQuery.fn.addActiveStateToDivider();
 		// console.log("kakaakckakkskasksak");
 	}
 	jQuery.fn.stickyCompensation("#CfButtonGruppe.sticky-top", ".isATocId", 30);
