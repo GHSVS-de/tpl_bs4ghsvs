@@ -4,8 +4,8 @@ defined('_JEXEC') or die;
 $this->_scripts = $this->_styleSheets = $this->_script = $this->_style = $this->_script = $this->_custom = $this->_scriptText = array();
 $this->link = '';
 $this->setMetadata('robots', 'noindex,nofollow');
-$this->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/template.css');
-$this->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/print.css');
+$this->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/template.min.css');
+$this->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/print.min.css');
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
