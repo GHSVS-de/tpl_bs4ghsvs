@@ -25,7 +25,7 @@
 		"cdnIntegrity": "sha384-vXOtxoYb1ilJXRLDg4YD1Kf7+ZDOiiAeUwiH9Ds8hM8Paget1UpGPc/KlaO33/nt"
 	},
 
-	"jquery": {
+	"jquery--full": {
 		"comment": "See https://code.jquery.com/jquery/, https://code.jquery.com/",
 		"LoadComment": "'cdn' oder 'media' or empty for 'ignore'",
 		"Load": "media",
@@ -38,13 +38,13 @@
 		"cdnIntegrity": "sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 	},
 
-	"jquery-slim": {
+	"jquery": {
 		"comment": "Umbenennen zu 'jquery', wenn slim gewünscht. See https://code.jquery.com/jquery/, https://code.jquery.com/",
 		"LoadComment": "'cdn' oder 'media' or empty for 'ignore'",
 		"Load": "media",
 		"media": "plg_system_bs3ghsvs/jquery",
 		"otherFileNameComment": "Statt nur 'jquery-slim'. z.B. '3.4.1/jquery-3.4.1.slim'. Ohne min.js oder .js",
-		"otherFileName": "",
+		"otherFileName": "jquery.slim",
 		"cdnMin": "https://code.jquery.com/jquery-3.4.1.slim.min.js",
 		"cdnIntegrityMin": "sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=",
 		"cdn": "https://code.jquery.com/jquery-3.4.1.slim.js",
