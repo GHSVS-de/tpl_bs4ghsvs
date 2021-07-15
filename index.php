@@ -5,80 +5,69 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Uri\Uri;
 use Joomla\CMS\Language\Text;
-use Joomla\Registry\Registry;
 use Joomla\CMS\Plugin\PluginHelper;
 
 $isRobot = $this->params->get('isRobot');
-$done = false;
 
-// Is plg_system_astroidghsvs installed and activated?
-$pluginParams = PluginHelper::getPlugin('system', 'astroidghsvs');
-
-if ($pluginParams)
+if ($done = PluginHelper::isEnabled('system', 'astroidghsvs'))
 {
-	$pluginParams = new Registry($pluginParams->params);
+	JLoader::register('AstroidGhsvsHelper',
+		JPATH_PLUGINS . '/system/astroidghsvs/src/Helper/AstroidGhsvsHelper.php');
 
-	if ($isRobot)
-	{
-		$pluginParams->set('forceSCSSCompilingGhsvs', -1);
-	}
-}
-else
-{
-	$pluginParams = new Registry();
-	$pluginParams->set('forceSCSSCompilingGhsvs', -1);
-}
-
-if (file_exists(__DIR__ . '/helper.php'))
-{
-	JLoader::register('AstroidTemplateHelper', __DIR__ . '/helper.php');
-	AstroidTemplateHelper::$pluginParams = $pluginParams;
-
-	/**
-	 * OPTIONAL possibility to override all or some parameters of helper's
-	 *  '$compileSettingsDefault'.
-	 * But you don't have to! Leave array empty if you like default settings.
+	/*
+	 * OPTIONAL possibility to override all or some parameters of
+	 *  AstroidGhsvsHelper::$compileSettingsDefault (= Settings of plg__astroidghsvs).
+	 * But you don't have to! Leave array empty or remove if you like default
+	 * 	settings.
 	 * Heads up! The Helper does not protect you in the case of incorrect
 	 * 	entries like wrong folders or so.
 	 */
-	AstroidTemplateHelper::$compileSettingsCustom = [
-		'sourceMaps' => (bool) $pluginParams->get('sourceMaps', false),
-		'scssFolder' => $pluginParams->get('scssFolder', 'scss-ghsvs'),
-		'placeHolderMode' => (bool) $pluginParams->get('placeHolderMode', true),
-		'forceSCSSCompilingGhsvs' => (int) $pluginParams->get(
-			'forceSCSSCompilingGhsvs', 0
-		),
-		'includeStyleId' => (bool) $pluginParams->get('includeStyleId', true),
-		'forceSCSSUtf8Ghsvs' => (int) $pluginParams->get('forceSCSSUtf8Ghsvs', 0),
-	];
+	/*AstroidGhsvsHelper::$compileSettingsCustom = [
+		'sourceMaps' => false,
+		'scssFolder' => 'scss-ghsvs',
+		// ## Needs AstroidGhsvsHelper::$replaceThis comment in template index.php:
+		'placeHolderMode' => true,
+		// ## Set to -1 if you want to disable compiling completely.
+		'forceSCSSCompilingGhsvs' => 0,
+		'includeStyleId' => true,
+	];*/
 
-	// These scss files (enter without extension!) must be in scss folder of
-	//  this template (see parameter 'scssFolder' (default: 'scss-ghsvs'))!
-	//
-	// Only 'template' will include Astroid variables automatically. Others not.
-	// 	(See parameter 'mainCssName' (default: 'template')).
-	// 'template' will compile 'scss-ghsvs/template.scss' to 'css/template.css'
-	//  and 'css/template.min.css'
-	//  and according sourcemap files if activated (see parameter 'sourceMaps'
-	//  (default: false)).
-	// The resulting CSS files will be included in the template if not marked
-	//  with a '|noInsert'. See
-	// Der Befehl zum Kompilieren wird in einem System-Plugin in
-	//  "public function onAfterAstroidRender()" abgefeuert.
-	/**
-	 *
-	 */
-	AstroidTemplateHelper::$filesToCompile = array(
-		'editor-inserttagsghsvs|noInsert',
-		'editor-prism|noInsert',
-		'print|noInsert',
-		'prism-ghsvs|noInsert',
-		'template',
-	);
+	if ($isRobot)
+	{
+		AstroidGhsvsHelper::$compileSettingsCustom = [
+			'forceSCSSCompilingGhsvs' => -1,
+		];
+		$done = false;
+	}
+	else
+	{
+		/*
+		These scss files (enter without extension!) must be in scss folder of
+		this template (see parameter 'scssFolder' (default: 'scss-ghsvs'))!
+		Only 'template' will include Astroid variables automatically. Others not.
+			(See parameter 'mainCssName' (default: 'template')).
+		'template' will compile 'scss-ghsvs/template.scss' to 'css/template.css'
+		and 'css/template.min.css'
+		and according sourcemap files if activated (see parameter 'sourceMaps'
+		(default: false)).
+		The resulting CSS files will be included in the template if not marked
+		with a '|noInsert'. See
+		Der Befehl zum Kompilieren wird in einem System-Plugin in
+		"public function onAfterAstroidRender()" abgefeuert.
+		*/
+		AstroidGhsvsHelper::$filesToCompile = [
+			'editor-inserttagsghsvs|noInsert',
+			'editor-prism|noInsert',
+			'print|noInsert',
+			'prism-ghsvs|noInsert',
+			'venobox|noInsert',
+			'template',
+		];
 
-	/* Because this is a non-Astroid template the plugin method
-	onAfterAstroidRender() is not fired. Therefore: */
-	$done = AstroidTemplateHelper::runScssGhsvs('');
+		/* Because this is a non-Astroid template the plugin method
+		onAfterAstroidRender() is not fired. Therefore: */
+		$done = AstroidGhsvsHelper::runScssGhsvs('');
+	}
 }
 
 // Don't show header after x pages seen
@@ -148,6 +137,12 @@ if ($HidePageHeader === true)
 	$BodyClasses[] = 'HidePageHeader';
 }
 $BodyClasses = trim(implode(' ', $BodyClasses));
+
+// Check for a custom CSS file
+HTMLHelper::_('stylesheet', 'custom.css', array('version' => 'auto', 'relative' => true));
+
+// Check for a custom js file
+HTMLHelper::_('script', 'custom.js', array('version' => 'auto', 'relative' => true));
 ?>
 <!DOCTYPE html>
 <html  class="no-js jsNotActive"
