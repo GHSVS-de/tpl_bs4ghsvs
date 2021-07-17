@@ -19,7 +19,8 @@ Array[0] of arrays. Relevant collected resized images with size keys like _u, _l
 */
 extract($displayData);
 
-if (empty($imgs) && empty($image))
+#if (empty($imgs) && empty($image))
+if (empty($image))
 {
 	return;
 }
