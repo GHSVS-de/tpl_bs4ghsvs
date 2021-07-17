@@ -74,7 +74,7 @@ foreach ($PaginationPages as $key => $page)
 	<?php echo $displayData['pagination']->getPagesCounter(); ?>
 	 {svg{bi/book}}
 </button>
-<ul class="dropdown-menu <?php echo $alignClass; ?>" role="menu"
+<ul class="dropdown-menu <?php echo $alignClass; ?>"
 	aria-labelledby="seitenPaginationButton">
 <?php foreach ($items as $item)
 {
