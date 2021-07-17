@@ -246,7 +246,7 @@ a.btn
 	{
 		font-family: var(--#{$variable-prefix}font-serif);
 
-		.option-com_content.view-article:not(.isFrontpage) &
+		.option-com_content.view-article:not(.isFrontpage):not(.pageHeadingNormalBody) &
 		{
 			@include font-size(divide($h1-font-size, 1.5));
 		}
