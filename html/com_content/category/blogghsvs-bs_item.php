@@ -19,7 +19,7 @@ if ((int) $this->item->params->get('link_titles_blog_ghsvs', '') === 1)
 	$this->item->params->set('link_titles', 1);
 }
 
-HTMLHelper::addIncludePath(JPATH_COMPONENT.'/helpers/html');
+HTMLHelper::addIncludePath(JPATH_COMPONENT . '/helpers/html');
 $canEdit = $this->item->params->get('access-edit');
 $info    = $this->item->params->get('info_block_position', 0);
 ?>
