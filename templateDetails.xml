@@ -31,21 +31,18 @@
 		<filename>component.php</filename>
 		<filename>error.php</filename>
 		<filename>favicon.ico</filename>
-		<filename>helper.php</filename>
 		<filename>index.php</filename>
 		<filename>installerScript.php</filename>
+		<filename>LICENSE.txt</filename>
 		<filename>print.php</filename>
 		<filename>templateDetails.xml</filename>
-		<filename>LICENSE.txt</filename>
 		<folder>css</folder>
-		<folder>css-raw</folder>
 		<folder>html</folder>
 		<folder>images</folder>
 		<folder>js</folder>
 		<folder>language</folder>
 		<!--Wird für Beitrag 133 weiterhin benötigt: -->
 		<folder>less</folder>
-		<folder>scss</folder>
 		<folder>scss-ghsvs</folder>
 	</files>
 	<positions>
