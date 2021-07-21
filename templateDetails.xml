@@ -16,9 +16,7 @@
 		<server type="extension" priority="1" name="TPL_BS4GHSVS">https://raw.githubusercontent.com/GHSVS-de/upadateservers/master/bs4ghsvs-update.xml</server>
 	</updateservers> -->
 
-	<!-- <changelogurl>
-		https://raw.githubusercontent.com/GHSVS-de/upadateservers/master/bs4ghsvs-changelog.xml
-	</changelogurl> -->
+	<!-- <changelogurl>https://raw.githubusercontent.com/GHSVS-de/upadateservers/master/bs4ghsvs-changelog.xml</changelogurl> -->
 
 	<scriptfile>installerScript.php</scriptfile>
 	<minimumPhp>7.4</minimumPhp>
