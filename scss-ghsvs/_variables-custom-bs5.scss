@@ -9,7 +9,7 @@ $enable-shadows: false;
 $HTTP_HOST-custom: "ghsvs.de";
 //$HTTP_HOST-custom: "relaunch-bs3.ghsvs.de";
 
-$div4all-bg-custom: $light;
+$div4all-bg-custom: $white;
 $div4all-max-width-custom: 1600px;
 $text-area-max-width-custom: 1024px;
 
@@ -25,7 +25,7 @@ $body-bg: $red;
 $card-bg: $div4all-bg-custom;
 
 // code, pre, kbd and things.
-$code-bg-custom: #fafafa;
+$code-bg-custom: $white;
 $pre-padding-custom: ($spacer * 0.75);
 $kbd-color: $black;
 $kbd-bg: $gray-200;

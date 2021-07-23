@@ -14,12 +14,6 @@ body
 	background-color: $body-bg;
 }
 
-a.disabled,
-.disabled a,
-a.btn
-{
-	text-decoration: none;
-}
 
 #div4all
 {
@@ -33,6 +27,12 @@ a.btn
 	}
 }
 
+a.disabled,
+.disabled a,
+a.btn
+{
+	text-decoration: none;
+}
 
 
 // .search-resultsAndError
@@ -259,7 +259,7 @@ a.btn
 
 #CfBreadcrumb
 {
-	@include gradient-bg($light);
+	@include gradient-bg($white);
 	border-top: 1px solid $gray-200;
 	border-bottom: 1px solid $gray-400;
 	// Teilen-Button rechts.

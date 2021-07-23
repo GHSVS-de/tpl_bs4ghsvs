@@ -154,3 +154,34 @@ h2, h3, h4, h5, h6
 		margin-top: 1rem;
 	}
 }
+
+// Contrast with bg white!
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata
+{
+	color: #4b5562;
+}
+
+.token.punctuation
+{
+	color: #595959;
+}
+.token.regex, .token.important, .token.variable
+{
+	color: #b00e0e;
+}
+.token.property, .token.tag, .token.boolean, .token.number, .token.constant, .token.symbol, .token.deleted
+{
+	color: #2326ff;
+}
+.token.function,
+.token.class-name
+{
+	color: #8c04be;
+}
+.token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted
+{
+	color: #426202;
+}
