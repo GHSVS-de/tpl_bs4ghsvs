@@ -38,14 +38,14 @@ if (($dismissEvery = 20) < count($list))
 			'class' => 'btn-sm text-end',
 		]]);
 }
+$itemCounter = 0;
 ?>
 <div id="<?php echo $modalId; ?>"
 	class="modal fade"
 	tabindex="-1"
 	role="dialog"
 	aria-labelledby="<?php echo $modalId; ?>Title"
-	aria-hidden="true"
->
+	aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content bg-modal">
 			<div class="modal-header">
@@ -57,56 +57,41 @@ if (($dismissEvery = 20) < count($list))
 				</p>
 				<?php echo LayoutHelper::render('ghsvs.closeButtonTop'); ?>
 			</div><!--/modal-header-->
-			<div class="modal-body container-fluid">
-				<div class="row">
-					<div class="col-12">
-						<div class="list-group">
-						<?php
-						$countItems = 0;
+			<div class="modal-body">
+				<div class="list-group">
+					<?php foreach ($list as $item)
+					{
+						$itemCounter++;
+						$aAttributes = [
+							'class' => 'list-group-item list-group-item-action',
+							'href' => $item->link,
+						];
 
-						foreach ($list as $item)
+						if ($item->active)
 						{
-							$aAttributes = [
-								'class' => 'list-group-item list-group-item-action',
-								'href' => $item->link,
-							];
-							$countItems++;
+							$aAttributes['aria-current'] = 'page';
+							$aAttributes['class'] .= ' active disabled';
+						}
 
-							if ($countItems % $dismissEvery === 0)
-							{
-								echo $dismissButton;
-							}
-
-							$ariaCurrent = '';
-							$liclass = 'list-group-item';
-
-							if ($item->active)
-							{
-								$aAttributes['aria-current'] = 'page';
-								$aAttributes['class'] .= ' active disabled';
-							}
-
-
-							?>
-
-							 	<a <?php echo ArrayHelper::toString($aAttributes); ?>>
-									<?php echo $item->title; ?>
-									<?php
-									// Kategorie anzeigen im Modul aktiviert.
-									if ($item->displayCategoryTitle)
-									{?>
-									<span class="font-italic">
-										(Kategorie: <?php echo $item->category_title; ?>)
-									</span>
-									<?php
-									}?>
-								</a>
-
-						<?php
+						if ($itemCounter % $dismissEvery === 0)
+						{
+							echo $dismissButton;
 						} ?>
-						</div>
-					</div>
-				</div>
+						<a <?php echo ArrayHelper::toString($aAttributes); ?>>
+							<?php echo $item->title; ?>
+							<?php
+							// Kategorie anzeigen im Modul aktiviert.
+							if ($item->displayCategoryTitle)
+							{ ?>
+							<span class="font-italic">
+								(Kategorie: <?php echo $item->category_title; ?>)
+							</span>
+							<?php
+							} ?>
+						</a>
+					<?php
+					} ?>
+				</div><!--/list-group-->
 			</div><!--/modal-body-->
 			<div class="modal-footer">
 				<?php echo LayoutHelper::render('ghsvs.closeButton'); ?>
