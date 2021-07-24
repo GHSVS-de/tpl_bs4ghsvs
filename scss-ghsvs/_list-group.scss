@@ -2,3 +2,8 @@
 {
 	color: $light;
 }
+a.list-group-item-action
+{
+	text-decoration: if($link-decoration == underline, underline, null);
+	color: $link-color;
+}

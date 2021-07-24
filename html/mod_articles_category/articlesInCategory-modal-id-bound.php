@@ -1,9 +1,9 @@
 <?php
 defined('_JEXEC') or die;
 
+use Joomla\Utilities\ArrayHelper;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
-use Joomla\Utilities\ArrayHelper;
 use Joomla\CMS\Layout\LayoutHelper;
 
 if (
@@ -31,8 +31,13 @@ $catsTitle = count($cats) > 1 ? 'PLG_SYSTEM_BS3GHSVS_CATEGORIES' : 'JCATEGORY';
 $catsTitle = Text::_($catsTitle) . ' "' . implode('", "', $cats) . '"';
 
 // Alle x Einträge ein Close-Button, da teils sehr viele.
-$dismissButton = LayoutHelper::render('ghsvs.closeButtonTop');
-$dismissEvery = 20;
+if (($dismissEvery = 20) < count($list))
+{
+	$dismissButton = LayoutHelper::render('ghsvs.closeButtonTop',
+		['options' => [
+			'class' => 'btn-sm text-end',
+		]]);
+}
 ?>
 <div id="<?php echo $modalId; ?>"
 	class="modal fade"
@@ -50,52 +55,56 @@ $dismissEvery = 20;
 						(<?php echo $catsTitle; ?>)
 					</small>
 				</p>
-				<?php echo $dismissButton; ?>
+				<?php echo LayoutHelper::render('ghsvs.closeButtonTop'); ?>
 			</div><!--/modal-header-->
 			<div class="modal-body container-fluid">
 				<div class="row">
 					<div class="col-12">
-						<ul class="list-group">
+						<div class="list-group">
 						<?php
-						$countLi = 0;
+						$countItems = 0;
 
 						foreach ($list as $item)
 						{
-							$countLi++;
+							$aAttributes = [
+								'class' => 'list-group-item list-group-item-action',
+								'href' => $item->link,
+							];
+							$countItems++;
 
-							if ($countLi % $dismissEvery === 0)
-							{ ?>
-							<li class="list-unstyled text-end">
-								<?php echo $dismissButton; ?>
-							</li>
-							<?php }
+							if ($countItems % $dismissEvery === 0)
+							{
+								echo $dismissButton;
+							}
+
 							$ariaCurrent = '';
 							$liclass = 'list-group-item';
 
 							if ($item->active)
 							{
-								$liclass .= ' active disabled';
-								$ariaCurrent = ' aria-current="page"';
+								$aAttributes['aria-current'] = 'page';
+								$aAttributes['class'] .= ' active disabled';
 							}
-							?>
-							 <li class="<?php echo $liclass; ?>">
-							 	<a href="<?php echo $item->link; ?>"<?php echo $ariaCurrent; ?>>
-									<?php echo $item->title; ?></a>
-								<?php
-								// Das signalisiert, dass Kategorie anzeigen im
-								// Modul aktiviert ist.
-								if ($item->displayCategoryTitle)
-								{?>
-								<span class="font-italic">
-									(Kategorie: <?php echo $item->category_title; ?>)
-								</span>
-								<?php
-								}?>
 
-							</li>
+
+							?>
+
+							 	<a <?php echo ArrayHelper::toString($aAttributes); ?>>
+									<?php echo $item->title; ?>
+									<?php
+									// Kategorie anzeigen im Modul aktiviert.
+									if ($item->displayCategoryTitle)
+									{?>
+									<span class="font-italic">
+										(Kategorie: <?php echo $item->category_title; ?>)
+									</span>
+									<?php
+									}?>
+								</a>
+
 						<?php
 						} ?>
-						</ul>
+						</div>
 					</div>
 				</div>
 			</div><!--/modal-body-->

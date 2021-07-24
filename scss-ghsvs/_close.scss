@@ -30,6 +30,11 @@
     user-select: none;
     opacity: $btn-close-disabled-opacity;
   }
+
+	&.btn-sm
+	{
+		font-size: $btn-font-size-sm;
+	}
 }
 
 .btn-close-white {
