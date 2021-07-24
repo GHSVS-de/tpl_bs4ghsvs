@@ -6,6 +6,7 @@ use Joomla\CMS\Helper\ModuleHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\String\StringHelper;
 use Joomla\CMS\Layout\LayoutHelper;
+use Joomla\CMS\Uri\Uri;
 
 if (
 	$params->get('robotsHide', 0) === 1
@@ -16,15 +17,16 @@ if (
 
 echo '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/'. basename(__FILE__) . '-->';
 
-// To calculate a unique id for both participating modules (button and modal) we need a
-// identical base in both modules.
+$uri = Uri::getInstance()->getPath();
+
+/* To calculate a unique id for both participating modules (button and modal)
+	we need a	identical base in both modules. */
 JLoader::register('Bs3ghsvsArticle',
 	JPATH_PLUGINS . '/system/bs3ghsvs/Helper/ArticleHelper.php'
 );
 $modalId = Bs3ghsvsArticle::buildUniqueIdFromJinput(
 	$params->get('connectorKey', '')
 );
-#echo ' 4654sd48sa7d98sD81s8d71dsa <pre>' . print_r($modalId, true) . '</pre>';exit;
 $moduleSubHeader = $params->get('moduleSubHeader', '');
 $modalHeadline = $module->showtitle ? $module->title
 	: ($moduleSubHeader ?: 'TPL_MODAL_FALLBACK');
@@ -40,14 +42,15 @@ else
 }
 
 $class_sfx = $class_sfx ? ' ' . $class_sfx : '';
-$ulClass = 'list-group' . $class_sfx;
 
 foreach ($list as $item)
 {
-	$item->liClass = ['list-group-item'];
-	$item->liClass[] = 'item-' . $item->id . ' level-' . $item->level;
+	/* Collect attributes like aria-* and others for the type subfiles.
+	Can also be a SPAN attribute in case of headings. */
+	$item->aAttributes = [];
+	$item->aAttributes['class'] = 'list-group-item list-group-item-action item-'
+		. $item->id . ' level-' . $item->level . ' aType' . ucfirst($item->type);
 	$aClass = [];
-	$item->add = '';
 
 	/* Die geben wohl die einleitenden &nbsp; mit einer ESC-Folge ein(?)
 	Im Quellcode kommt aber '   Thomas Boyken' raus. trim() hilft nichts.
@@ -56,11 +59,6 @@ foreach ($list as $item)
 	\u00a0\u00a0\u00a0Thomas Boyken und damit dann endlich auf:
 	*/
 	$item->title = StringHelper::trim($item->title, "\u{00a0}");
-
-	/* Collect attributes like aria-* and others for the type subfiles.
-	Can also be a SPAN attribute in case of headings.
-	*/
-	$item->aAttributes = [];
 
 	if ($item->anchor_title)
 	{
@@ -86,12 +84,12 @@ foreach ($list as $item)
 	// At the moment only headings are used as dropdwon SPANs.
 	if ($item->deeper)
 	{
-		$item->liClass[] = 'deeper';
+		$aClass[] = 'deeper';
 	}
 
 	if ($item->id == $default_id)
 	{
-		$item->liClass[] = 'default';
+		$aClass[] = 'default';
 	}
 
 	if (
@@ -99,17 +97,19 @@ foreach ($list as $item)
 		|| ($item->type === 'alias'
 			&& $item->params->get('aliasoptions') == $active_id)
 	){
-		$item->liClass[] = 'current';
-		$item->aAttributes['aria-current'] = 'page';
-		$aClass[] = 'active';
+		// Exclude articles in category.
+		if ($uri === $item->flink)
+		{
+			$item->aAttributes['aria-current'] = 'page';
+			$aClass[] = 'current';
+		}
 
-		// Fürs li eigentlich.
-		$item->add = '';
+		$aClass[] = 'active';
 	}
 
 	if (in_array($item->id, $path))
 	{
-		$item->liClass[] = 'active';
+		$aClass[] = 'active';
 	}
 	elseif ($item->type === 'alias')
 	{
@@ -117,36 +117,27 @@ foreach ($list as $item)
 
 		if (count($path) > 0 && $aliasToId == $path[count($path) - 1])
 		{
-			$item->liClass[] = 'active';
+			$aClass[] = 'active';
 		}
 		elseif (in_array($aliasToId, $path))
 		{
-			$item->liClass[] = 'alias-parent-active';
+			$aClass[] = 'alias-parent-active';
 		}
 	}
 
-	$type = ucfirst($item->type);
-	$item->liClass[] = 'liType' . $type;
-	$aClass[] = 'aType' . $type;
-
 	if ($item->parent)
 	{
-		$item->liClass[] = 'parent';
+		$aClass[] = 'parent';
 	}
 
-	// Just indent because I'm too lazy to build nested UL.
+	// Just indent because I'm too lazy to build nested.
 	$item->prefix = str_repeat($levelPrefix, ($item->level - 1));
-	$item->liClass = implode(' ', $item->liClass);
 
 	if ($aClass)
 	{
-		$item->aAttributes['class'] = implode(' ', $aClass);
+		$item->aAttributes['class'] .= ' ' . implode(' ', array_unique($aClass));
 	}
-
-	// Is in subfiles for chance to override.
-	// $item->aAttributes = ArrayHelper::toString($item->aAttributes);
-}
-?>
+} ?>
 <div id="<?php echo $modalId; ?>" class="modal fade" tabindex="-1" role="dialog"
 	aria-labelledby="<?php echo $modalId; ?>Title" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
@@ -158,39 +149,27 @@ foreach ($list as $item)
 				</p>
 				<?php echo LayoutHelper::render('ghsvs.closeButtonTop'); ?>
 			</div><!--/modal-header-->
-			<div class="modal-body container-fluid">
-				<div class="row">
-					<div class="col-12">
-						<ul class="<?php echo $ulClass; ?>">
-						<?php
-						foreach ($list as &$item)
+			<div class="modal-body">
+				<div class="<?php echo 'list-group' . $class_sfx; ?>">
+					<?php foreach ($list as &$item)
+					{
+						$item->title = $item->prefix . $item->title;
+						switch ($item->type)
 						{
-
-							?>
-							<li class="<?php echo $item->liClass; ?>"<?php echo $item->add; ?>>
-							<?php echo $item->prefix; ?>
-							<?php
-							switch ($item->type) :
-								case 'separator':
-								case 'component':
-								case 'heading':
-								case 'url':
-									require ModuleHelper::getLayoutPath('mod_menu',
-										'ghsvsDefault_' . $item->type);
-									break;
-
-								default:
-									require ModuleHelper::getLayoutPath('mod_menu',
-										'ghsvsDefault_url');
-									break;
-							endswitch;
-							?>
-							</li>
-						<?php
-						} ?>
-						</ul>
-					</div>
-				</div>
+							case 'separator':
+							case 'component':
+							case 'heading':
+							case 'url':
+								require ModuleHelper::getLayoutPath('mod_menu',
+									'ghsvsDefault_' . $item->type);
+								break;
+							default:
+								require ModuleHelper::getLayoutPath('mod_menu',
+									'ghsvsDefault_url');
+								break;
+						}
+					} ?>
+				</div><!--/list-group-->
 			</div><!--/modal-body-->
 			<div class="modal-footer">
 				<?php echo LayoutHelper::render('ghsvs.closeButton'); ?>
