@@ -77,11 +77,9 @@ $document->addScriptDeclaration(
 					</p>
 					<?php echo LayoutHelper::render('ghsvs.closeButtonTop'); ?>
 				</div><!--/modal-header-->
-				<div class="modal-body container-fluid">
-					<div class="row">
-						<div class="col-12" id="tocGhsvsOutput-<?php echo $id; ?>">
+				<div class="modal-body">
+					<div id="tocGhsvsOutput-<?php echo $id; ?>">
 
-						</div>
 					</div>
 				</div><!--/modal-body-->
 				<div class="modal-footer">
