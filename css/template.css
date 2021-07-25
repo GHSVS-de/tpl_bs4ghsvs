@@ -31,7 +31,7 @@ Deaktiivert in templates\bs4ghsvs\scss\_overridesghsvs.scss
 
 .code-filename {
   font-family: var(--bs-font-monospace);
-  background-color: #fafafa;
+  background-color: #fff;
   color: blue;
   font-size: 1em;
 }
@@ -60,7 +60,7 @@ abbr {
 
 .code-inline {
   font-family: var(--bs-font-monospace);
-  background-color: #fafafa;
+  background-color: #fff;
   white-space: pre-wrap;
   font-size: 1em;
   color: #d63384;
@@ -1036,11 +1036,11 @@ figcaption {
 
 code,
 abbr {
-  background-color: #fafafa;
+  background-color: #fff;
 }
 
 pre {
-  background-color: #fafafa;
+  background-color: #fff;
   padding: 0.75rem;
 }
 
@@ -4785,7 +4785,7 @@ a.nav-link:hover, a.nav-link:focus, a.nav-link:active {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #f8f9fa;
+  background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
 }
@@ -4849,10 +4849,6 @@ a.nav-link:hover, a.nav-link:focus, a.nav-link:active {
   margin-bottom: -0.5rem;
   margin-left: -0.5rem;
   border-bottom: 0;
-}
-.card-header-tabs .nav-link.active {
-  background-color: #f8f9fa;
-  border-bottom-color: #f8f9fa;
 }
 
 .card-header-pills {
@@ -5242,29 +5238,29 @@ a.nav-link:hover, a.nav-link:focus, a.nav-link:active {
   border-color: #0f5132;
 }
 
-.list-group-item-info, .div4Toc .list-group-item.po-h3 {
+.list-group-item-info {
   color: #055160;
   background-color: #cff4fc;
 }
-.list-group-item-info.list-group-item-action:hover, .div4Toc .list-group-item-action.list-group-item.po-h3:hover, .list-group-item-info.list-group-item-action:focus, .div4Toc .list-group-item-action.list-group-item.po-h3:focus {
+.list-group-item-info.list-group-item-action:hover, .list-group-item-info.list-group-item-action:focus {
   color: #055160;
   background-color: #badce3;
 }
-.list-group-item-info.list-group-item-action.active, .div4Toc .list-group-item-action.active.list-group-item.po-h3 {
+.list-group-item-info.list-group-item-action.active {
   color: #fff;
   background-color: #055160;
   border-color: #055160;
 }
 
-.list-group-item-warning, .div4Toc .list-group-item.po-h2 {
+.list-group-item-warning {
   color: #664d03;
   background-color: #fff3cd;
 }
-.list-group-item-warning.list-group-item-action:hover, .div4Toc .list-group-item-action.list-group-item.po-h2:hover, .list-group-item-warning.list-group-item-action:focus, .div4Toc .list-group-item-action.list-group-item.po-h2:focus {
+.list-group-item-warning.list-group-item-action:hover, .list-group-item-warning.list-group-item-action:focus {
   color: #664d03;
   background-color: #e6dbb9;
 }
-.list-group-item-warning.list-group-item-action.active, .div4Toc .list-group-item-action.active.list-group-item.po-h2 {
+.list-group-item-warning.list-group-item-action.active {
   color: #fff;
   background-color: #664d03;
   border-color: #664d03;
@@ -5316,6 +5312,11 @@ a.nav-link:hover, a.nav-link:focus, a.nav-link:active {
   color: #f8f9fa;
 }
 
+a.list-group-item-action {
+  text-decoration: underline;
+  color: #990134;
+}
+
 .list-striped {
   vertical-align: middle;
   margin-left: 0;
@@ -5360,6 +5361,9 @@ a.nav-link:hover, a.nav-link:focus, a.nav-link:active {
   -moz-user-select: none;
   user-select: none;
   opacity: 0.25;
+}
+.btn-close.btn-sm, #CfButtonGruppe .btn-close.btn, .btn-group-sm > .btn-close.btn {
+  font-size: 0.875rem;
 }
 
 .btn-close-white {
@@ -10981,6 +10985,14 @@ body:not(.bodyPrint) a[href^="//"]:not([href*="ghsvs.de"])::after {
   background-color: transparent;
   padding: 0.25rem 0.5rem;
 }
+.div4Toc .list-group-item.po-h2:not(:hover):not(:focus) {
+  color: #664d00;
+  background-color: #fff3cd;
+}
+.div4Toc .list-group-item.po-h3:not(:hover):not(:focus) {
+  color: #294f57;
+  background-color: #cff4fc;
+}
 .div4Toc span.isItVisibleFalse {
   font-style: italic;
 }
@@ -11006,21 +11018,21 @@ body {
   background-color: #990134;
 }
 
-a.disabled,
-.disabled a,
-a.btn {
-  text-decoration: none;
-}
-
 #div4all {
   max-width: 1600px;
   margin: 0 auto;
-  background-color: #f8f9fa;
+  background-color: #fff;
 }
 @media (min-width: 1620px) {
   #div4all {
     margin-top: 10px;
   }
+}
+
+a.disabled,
+.disabled a,
+a.btn {
+  text-decoration: none;
 }
 
 .search-results dt {
@@ -11103,11 +11115,11 @@ a.btn {
 .page_heading {
   font-family: var(--bs-font-serif);
 }
-.option-com_content.view-article:not(.isFrontpage) .page_heading {
+.option-com_content.view-article:not(.isFrontpage):not(.pageHeadingNormalBody) .page_heading {
   font-size: calc(1.2583333333rem + 0.1vw);
 }
 @media (min-width: 1200px) {
-  .option-com_content.view-article:not(.isFrontpage) .page_heading {
+  .option-com_content.view-article:not(.isFrontpage):not(.pageHeadingNormalBody) .page_heading {
     font-size: 1.3333333333rem;
   }
 }
@@ -11117,7 +11129,7 @@ a.btn {
 }
 
 #CfBreadcrumb {
-  background-color: #f8f9fa;
+  background-color: #fff;
   border-top: 1px solid #e9ecef;
   border-bottom: 1px solid #ced4da;
 }

@@ -88,4 +88,32 @@ h2 + .code-toolbar, h3 + .code-toolbar, h4 + .code-toolbar, h5 + .code-toolbar, 
   margin-top: 1rem;
 }
 
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #4b5562;
+}
+
+.token.punctuation {
+  color: #595959;
+}
+
+.token.regex, .token.important, .token.variable {
+  color: #b00e0e;
+}
+
+.token.property, .token.tag, .token.boolean, .token.number, .token.constant, .token.symbol, .token.deleted {
+  color: #2326ff;
+}
+
+.token.function,
+.token.class-name {
+  color: #8c04be;
+}
+
+.token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted {
+  color: #426202;
+}
+
 /*# sourceMappingURL=prism-ghsvs.css.map */
