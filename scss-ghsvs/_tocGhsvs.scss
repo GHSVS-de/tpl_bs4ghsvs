@@ -7,13 +7,17 @@
 		background-color: transparent;
 		padding: 0.25rem 0.5rem;
 
-		&.po-h2
+		&.po-h2:not(:hover):not(:focus)
 		{
-			@extend .list-group-item-warning;
+			//@extend .list-group-item-warning;
+			color: #664d00;
+			background-color: #fff3cd;
 		}
-		&.po-h3
+		&.po-h3:not(:hover):not(:focus)
 		{
-			@extend .list-group-item-info;
+			// @extend .list-group-item-info;
+  		color: #294f57;
+  		background-color: #cff4fc;
 		}
 	}
 
@@ -27,5 +31,4 @@
 	{
 		font-style: italic;
 	}
-
 }
