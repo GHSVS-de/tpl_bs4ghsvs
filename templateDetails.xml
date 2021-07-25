@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
-<extension version="3.9" type="template" client="site" method="upgrade">
+<extension type="template" client="site" method="upgrade">
 	<name>bs4ghsvs</name>
-	<version>2021.07.18</version>
+	<version>2021.07.25</version>
 	<versionHistory>
 	</versionHistory>
 	<creationDate>2019-10-29</creationDate>
@@ -39,8 +39,6 @@
 		<folder>images</folder>
 		<folder>js</folder>
 		<folder>language</folder>
-		<!--Wird für Beitrag 133 weiterhin benötigt: -->
-		<folder>less</folder>
 		<folder>scss-ghsvs</folder>
 	</files>
 	<positions>

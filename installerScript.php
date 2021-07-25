@@ -25,7 +25,8 @@ class bs4ghsvsInstallerScript extends InstallerScript
 	 */
 
 	protected $deleteFolders = [
-		'/templates/bs4ghsvs/html/com_tags'
+		'/templates/bs4ghsvs/html/com_tags',
+		'/templates/bs4ghsvs/less'
 	];
 
 	public function preflight($type, $parent)
