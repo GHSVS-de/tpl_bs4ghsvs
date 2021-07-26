@@ -29,6 +29,7 @@ Deaktiivert in templates\bs4ghsvs\scss\_overridesghsvs.scss
   word-break: break-all;
 }
 
+.code-filename,
 code.code-filename {
   font-family: var(--bs-font-monospace);
   background-color: #fafbfc;
@@ -36,6 +37,7 @@ code.code-filename {
   font-size: 1em;
 }
 
+.code-htmltag,
 code.code-htmltag,
 abbr {
   font-family: var(--bs-font-monospace);
