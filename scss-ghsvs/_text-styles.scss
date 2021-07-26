@@ -7,14 +7,14 @@
 .breakall {
   word-break: break-all;
 }
-.code-filename {
+code.code-filename {
   font-family: $font-family-code;
   background-color: $code-bg-custom;;
 	color: darken(blue, 0%);
 	font-size: $code-font-size;
 }
 
-.code-htmltag,
+code.code-htmltag,
 abbr
 {
 	font-family: $font-family-code;
