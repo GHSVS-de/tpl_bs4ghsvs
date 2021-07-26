@@ -12,8 +12,9 @@
     text-decoration: none;
   }
 }
+:not(pre) > code[class*=language-],
 pre[class*=language-] {
-  background: #fff;
+  background: #fafbfc;
 }
 
 pre > code[class*=language-] {
