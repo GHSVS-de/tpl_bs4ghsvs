@@ -1,8 +1,9 @@
 @import "importerMin";
 
+:not(pre) > code[class*="language-"],
 pre[class*="language-"]
 {
-	background: $white;
+	background: $code-bg-custom;
 }
 
 pre > code[class*="language-"]

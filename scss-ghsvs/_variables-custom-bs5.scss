@@ -25,7 +25,8 @@ $body-bg: $red;
 $card-bg: $div4all-bg-custom;
 
 // code, pre, kbd and things.
-$code-bg-custom: $white;
+$code-color: $red;
+$code-bg-custom: #fafbfc;
 $pre-padding-custom: ($spacer * 0.75);
 $kbd-color: $black;
 $kbd-bg: $gray-200;
