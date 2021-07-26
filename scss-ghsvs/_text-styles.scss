@@ -7,6 +7,7 @@
 .breakall {
   word-break: break-all;
 }
+.code-filename,
 code.code-filename {
   font-family: $font-family-code;
   background-color: $code-bg-custom;;
@@ -14,6 +15,7 @@ code.code-filename {
 	font-size: $code-font-size;
 }
 
+.code-htmltag,
 code.code-htmltag,
 abbr
 {
