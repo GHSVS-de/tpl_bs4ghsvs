@@ -14,7 +14,8 @@ class bs4ghsvsInstallerScript extends InstallerScript
 	 * @since  2.0
 	 */
 	protected $deleteFiles = [
-		'/templates/bs4ghsvs/html/com_content/category/blogghsvs-bs_footableghsvs.php'
+		'/templates/bs4ghsvs/html/com_content/category/blogghsvs-bs_footableghsvs.php',
+		'/templates/bs4ghsvs/html/com_content/category/blogghsvs-bs_listeghsvs.php',
 	];
 
 	/**
