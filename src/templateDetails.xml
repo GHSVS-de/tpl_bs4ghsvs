@@ -1,29 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
-<extension type="template" client="site" method="upgrade">
-	<name>bs4ghsvs</name>
-	<version>2021.07.25</version>
+<extension type="{{type}}" client="{{client}}" method="upgrade">
+	<name>{{filename}}</name>
+	<author>{{authorName}}</author>
+	<creationDate>{{creationDate}}</creationDate>
+	<copyright>{{copyright}}</copyright>
+	<license>{{licenseLong}}</license>
+	<authorUrl>{{authorUrl}}</authorUrl>
+	<version>{{version}}</version>
+	<description>{{nameUpper}}_XML_DESC</description>
+
 	<versionHistory>
+		https://updates.ghsvs.de/changelog.php?file={{name}}
 	</versionHistory>
-	<creationDate>2019-10-29</creationDate>
-	<author>G@HService Berlin Neukölln, Volkmar Volli Schlothauer (ghsvs.de)</author>
-	<authorUrl>https://www.ghsvs.de</authorUrl>
-	<copyright>Copyright (C) 2019, G@HService Berlin Neukölln, Volkmar Volli Schlothauer (ghsvs.de). All rights reserved.</copyright>
-	<license>GNU GPLv3 http://www.gnu.org/licenses/gpl-3.0.html; see LICENSE.txt</license>
-	<description>TPL_BS4GHSVS_XML_DESCRIPTION</description>
 
-	<!-- <updateservers>
-		<server type="extension" priority="1" name="TPL_BS4GHSVS">https://raw.githubusercontent.com/GHSVS-de/upadateservers/master/bs4ghsvs-update.xml</server>
-	</updateservers> -->
+	<updateservers><server type="extension" priority="1" name="{{nameUpper}}">https://raw.githubusercontent.com/GHSVS-de/upadateservers/master/{{name}}-update.xml</server></updateservers>
 
-	<!-- <changelogurl>https://raw.githubusercontent.com/GHSVS-de/upadateservers/master/bs4ghsvs-changelog.xml</changelogurl> -->
+	<changelogurl>https://raw.githubusercontent.com/GHSVS-de/upadateservers/master/{{name}}-changelog.xml</changelogurl>
+
+	<infourl>https://updates.ghsvs.de/changelog.php?file={{name}}</infourl>
+
+	<downloadUrl>
+	https://github.com/GHSVS-de/{{name}}/raw/{{version}}/dist/{{zipFilename}}
+	</downloadUrl>
+
+	<versionCompare>
+	https://github.com/GHSVS-de/{{name}}/compare/{{versionCompare}}...{{version}}
+	</versionCompare>
 
 	<scriptfile>installerScript.php</scriptfile>
-	<minimumPhp>7.4</minimumPhp>
-	<!-- <maximumPhp>5.4.0</maximumPhp> -->
-	<minimumJoomla>3.9.25</minimumJoomla>
-	<maximumJoomla></maximumJoomla>
-	<allowDowngrades>1</allowDowngrades>
+	<minimumPhp>{{minimumPhp}}</minimumPhp>
+	<maximumPhp>{{maximumPhp}}</maximumPhp>
+	<minimumJoomla>{{minimumJoomla}}</minimumJoomla>
+	<maximumJoomla>{{maximumJoomla}}</maximumJoomla>
+	<allowDowngrades>{{allowDowngrades}}</allowDowngrades>
 
 	<files>
 		<filename>component.php</filename>
@@ -41,6 +51,7 @@
 		<folder>language</folder>
 		<folder>scss-ghsvs</folder>
 	</files>
+
 	<positions>
 		<position>menue-oben-bs</position>
 		<position>toasts</position>
@@ -56,6 +67,7 @@
 		<position>buttonGruppeGhsvs-bs</position>
 		<position>buttonGruppe</position>
 	</positions>
+
 	<config>
 		<fields name="params">
 			<fieldset name="advanced">
@@ -119,7 +131,7 @@
 				<field name="logo" type="imagelist" default="logo.jpg"
 					label="SINFOTPL_LOGO_LBL"
 					description=""
-					directory="templates/bs4ghsvs/images/logos"
+					directory="templates/{{filename}}/images/logos"
 					exclude="" stripext=""
 					hide_none="true" hide_default="true">
 						<option value="JNONE">SINFOTPL_LOGO_NONE</option>
