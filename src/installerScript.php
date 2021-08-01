@@ -5,7 +5,7 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Installer\InstallerScript;
 use Joomla\CMS\Log\Log;
 
-class bs4ghsvsInstallerScript extends InstallerScript
+class  bs4ghsvsInstallerScript extends InstallerScript
 {
 	/**
 	 * A list of files to be deleted with method removeFiles().
@@ -81,7 +81,7 @@ class bs4ghsvsInstallerScript extends InstallerScript
 
 		if ($type === 'update')
 		{
-			//$this->removeOldUpdateservers();
+			$this->removeOldUpdateservers();
 		}
 
 		return true;
