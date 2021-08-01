@@ -8,7 +8,7 @@
 	<license>{{licenseLong}}</license>
 	<authorUrl>{{authorUrl}}</authorUrl>
 	<version>{{version}}</version>
-	<description>{{nameUpper}}_XML_DESC</description>
+	<description>{{nameUpper}}_XML_DESCRIPTION</description>
 
 	<versionHistory>
 		https://updates.ghsvs.de/changelog.php?file={{name}}
