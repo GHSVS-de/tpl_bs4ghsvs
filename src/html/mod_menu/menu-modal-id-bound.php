@@ -51,6 +51,7 @@ foreach ($list as $item)
 	$item->aAttributes['class'] = 'list-group-item list-group-item-action item-'
 		. $item->id . ' level-' . $item->level . ' aType' . ucfirst($item->type);
 	$aClass = [];
+	$itemParams = $item->getParams();
 
 	/* Die geben wohl die einleitenden &nbsp; mit einer ESC-Folge ein(?)
 	Im Quellcode kommt aber '   Thomas Boyken' raus. trim() hilft nichts.
@@ -95,7 +96,7 @@ foreach ($list as $item)
 	if (
 		$item->id == $active_id
 		|| ($item->type === 'alias'
-			&& $item->params->get('aliasoptions') == $active_id)
+			&& $itemParams->get('aliasoptions') == $active_id)
 	){
 		// Exclude articles in category.
 		if ($uri === $item->flink)
@@ -113,7 +114,7 @@ foreach ($list as $item)
 	}
 	elseif ($item->type === 'alias')
 	{
-		$aliasToId = $item->params->get('aliasoptions');
+		$aliasToId = $itemParams->get('aliasoptions');
 
 		if (count($path) > 0 && $aliasToId == $path[count($path) - 1])
 		{
