@@ -23,6 +23,7 @@ foreach ($list as $item)
 	$item->liClass = ['nav-item'];
 	$item->liClass[] = 'item-' . $item->id . ' level-' . $item->level;
 	$aClass = ['nav-link'];
+	$itemParams = $item->getParams();
 
 	/* Collect attributes like aria-* and others for the type subfiles.
 	Can also be a SPAN attribute in case of headings.
@@ -64,7 +65,7 @@ foreach ($list as $item)
 	if (
 		$item->id == $active_id
 		|| ($item->type === 'alias'
-			&& $item->params->get('aliasoptions') == $active_id)
+			&& $itemParams->get('aliasoptions') == $active_id)
 	){
 		$item->liClass[] = 'current';
 		$item->aAttributes['aria-current'] = 'page';
@@ -82,7 +83,7 @@ foreach ($list as $item)
 	}
 	elseif ($item->type === 'alias')
 	{
-		$aliasToId = $item->params->get('aliasoptions');
+		$aliasToId = $itemParams->get('aliasoptions');
 
 		if (count($path) > 0 && $aliasToId == $path[count($path) - 1])
 		{
