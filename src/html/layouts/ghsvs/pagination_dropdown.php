@@ -20,7 +20,7 @@ $params = $displayData['params'];
 #echo ' 4654sd48sa7d98sD81s8d71dsa <pre>' . print_r($pagination->getPaginationPages(), true) . '</pre>';exit;
 if (
 	(int) $params->get('show_pagination') < 1
-	|| (int) $pagination->get('pages.total') < 2
+	|| (int) $pagination->pagesTotal < 2
 	|| ! ($PaginationPages = $pagination->getPaginationPages())
 ){
 	return;

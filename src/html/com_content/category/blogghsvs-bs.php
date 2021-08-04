@@ -125,7 +125,7 @@ if (
 }
 	?>
 	<?php
-		if (!$this->alternateView && $this->pagination->get('pages.total') > 1)
+		if (!$this->alternateView && $this->pagination->pagesTotal > 1)
 		{
 			$output .= '<div id="PAGINATION-CLONE"></div>';
 		}
