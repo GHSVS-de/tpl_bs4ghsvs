@@ -4,6 +4,11 @@ defined('_JEXEC') or die;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Router\Route;
+
+if (version_compare(JVERSION, '4', 'ge'))
+{
+	$this->contact = $this->item;
+}
 ?>
 <div class="contact<?php echo $this->pageclass_sfx?>">
 	<?php
