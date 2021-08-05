@@ -7,10 +7,11 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
 
 if (
-	$params->get('robotsHide', 0) === 1
-	&& Factory::getApplication()->client->robot
+	!$list
+	|| ($params->get('robotsHide', 0) === 1
+		&& Factory::getApplication()->client->robot)
 ){
-	return '';
+	return;
 }
 
 // To calculate a unique id for both participating modules (button and modal) we need a
