@@ -1,10 +1,17 @@
 # My personal build procedure (WSL 1, Debian, Win 10)
 ## Special step !!!!!Build reduced `bootstrap.bundle` JS!!!!!!
 - To copy later on into target `./src/js/plg_system_bs3ghsvs/bootstrap`
-- GitHub Desktop: Fork https://github.com/twbs/bootstrap
+- Delete everything in `/mnt/z/git-kram/bootstrap/`
+- - but don't delete `./.git`!
+- Get from https://github.com/twbs/bootstrap correct version:
+- - Select in tags dropdown the wished release.
+- - Download ZIP and unzip into `/mnt/z/git-kram/bootstrap/`.
+- Open Github Desktop and let it do it's work ("refresh with new files").
 - `cd /mnt/z/git-kram/bootstrap/`
-- npm install
-- Delete folders `git-kram/bootstrap/dist/` and `git-kram/bootstrap/js/dist/`
+- `unlink package-lock.json`
+- `rm -r dist/`
+- `rm -r js/dist/`
+- `npm install`
 - Change file `git-kram/bootstrap/js/index.umd.js`
 - Comment out unwanted parts. Each twice.
 
@@ -41,7 +48,7 @@ export default {
 - Compile: `npm run js`
 - Copy all files to target from `git-kram/bootstrap/dist/js/`
 
-## Next step: Build package
+## Next step: Build package for this repository
 - Prepare/adapt `./package.json`.
 - `cd /mnt/z/git-kram/tpl_bs4ghsvs`
 
