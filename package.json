@@ -48,7 +48,7 @@
 		"joomla",
 		"system plugin"
 	],
-	"private": false,
+	"private": true,
 	"description": "Joomla site template. Needs plugin plg_system_bs3ghsvs_bs5.",
 	"license": "GPL-3.0",
 	"repository": {
