@@ -11,6 +11,9 @@
 		"tag": "stable",
 		"targetplatform": ".*"
 	},
+	"releaseTxt": {
+		"title": "Joomla site template tpl_bs4ghsvs (Bootstrap 5 variant)"
+	},
 	"changelog": {
 		"projecturl": "https://github.com/GHSVS-de/tpl_bs4ghsvs",
 		"infosDE": "",
@@ -19,6 +22,8 @@
 		"docsEN": "",
 		"lastTests": [
 			"J3.9.28",
+			"J3.10-RC-whatever",
+			"J4-RC-whatever",
 			"PHP8"
 		]
 	},
