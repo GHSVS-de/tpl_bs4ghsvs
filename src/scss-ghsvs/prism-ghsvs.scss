@@ -17,6 +17,7 @@ pre[class*="language-"]
 	overflow: auto;
 
 	// Bugfix. Scrollbar des PRE überdeckt .sticky-top #CfButtonGruppe
+	position: relative;
 	z-index: 10;
 }
 
