@@ -1,8 +1,16 @@
+# Be warned!
+This is not a template that you install and then it runs smoothly. It needs a lot of background knowledge and regular reworking. Versions are not backwards compatible and stuff. It can break your website! It needs other extensions and stuff.
+
+# Sei gewarnt!
+Das ist kein Template, das man installiert und dann läuft es reibungslos. Es braucht reichlich Hintergrundwissen und regelmäßige Nacharbeit. Versionen sind nicht rückwärtskompatibel und Zeugs. Es kann deine Web-Seite zerstören! Es braucht weitere Erweiterungen und Zeugs.
+
+----------------
 # My personal build procedure (WSL 1, Debian, Win 10)
-## Special step !!!!!Build reduced `bootstrap.bundle` JS!!!!!!
-- To copy later on into target `./src/js/plg_system_bs3ghsvs/bootstrap`
+## Special step !!!!! Build reduced `bootstrap.bundle` JS!!!!!!
+- To copy later on into target of this repository `./src/js/plg_system_bs3ghsvs/bootstrap`
 - Delete everything in `/mnt/z/git-kram/bootstrap/`
 - - but don't delete `./.git`!
+- - but don't delete `./node_modules`!
 - Get from https://github.com/twbs/bootstrap correct version:
 - - Select in tags dropdown the wished release.
 - - Download ZIP and unzip into `/mnt/z/git-kram/bootstrap/`.
@@ -59,7 +67,12 @@ export default {
 
 - `node build.js`
 
-### For Joomla update server
+## Build installable ZIP package
+- `node build.js`
+- New, installable ZIP is in `./dist` afterwards.
+- All packed files for this ZIP can be seen in `./package`. **But only if you disable deletion of this folder at the end of `build.js`**.s
+
+### For Joomla update and changelog server
 - Create new release with new tag.
-- Get download link for new `dist/plg_blahaba_blubber...zip` **from newly created tag branch** and add to release description.
-- Extracts(!) of the update and changelog XML for update and changelog servers are in `./dist` as well. Check for necessary additions! Then copy/paste.
+- - See release description in `dist/release.txt`.
+- Extracts(!) of the update and changelog XML for update and changelog servers are in `./dist` as well. Copy/paste and necessary additions.
