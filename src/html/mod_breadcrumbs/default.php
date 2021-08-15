@@ -7,6 +7,11 @@ use Joomla\CMS\Layout\LayoutHelper;
 
 // Stupid outputs by com_tags.
 $option = Factory::getApplication()->input->get('option', '');
+
+if (version_compare(JVERSION, '4', 'ge'))
+{
+  $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
+}
 ?>
 <?php
 /* echo LayoutHelper::render('ghsvs.moduleColDiv.start', array(
