@@ -13,7 +13,7 @@
 		"targetplatform": ".*"
 	},
 	"releaseTxt": {
-		"title": "Joomla site template tpl_bs4ghsvs (Bootstrap 5 variant)"
+		"title": "Joomla site template tpl_bs4ghsvs (Bootstrap 5.1 variant)"
 	},
 	"changelog": {
 		"projecturl": "https://github.com/GHSVS-de/tpl_bs4ghsvs",
