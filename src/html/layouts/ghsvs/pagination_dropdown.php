@@ -13,11 +13,9 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\Registry\Registry;
 
-/* Wegen protected bullshit seitens Joomla, muss ich all den Scheiß einzeln
-übergeben. */
 $pagination = $displayData['pagination'];
 $params = $displayData['params'];
-#echo ' 4654sd48sa7d98sD81s8d71dsa <pre>' . print_r($pagination->getPaginationPages(), true) . '</pre>';exit;
+
 if (
 	(int) $params->get('show_pagination') < 1
 	|| (int) $pagination->pagesTotal < 2
@@ -71,7 +69,8 @@ foreach ($PaginationPages as $key => $page)
 	<span class="visually-hidden">
 		<?php echo Text::_('PLG_SYSTEM_BS3GHSVS_CHANGE_OVERVIEW_PAGE'); ?>
 	</span>
-	<?php echo $displayData['pagination']->getPagesCounter(); ?>
+	<?php echo Text::sprintf('GHSVS_PAGINATION_CURRENT_PAGE',
+		$pagination->pagesCurrent, $pagination->pagesTotal); ?>
 	 {svg{bi/book}}
 </button>
 <ul class="dropdown-menu <?php echo $alignClass; ?>"
