@@ -218,7 +218,7 @@ HTMLHelper::_('script', 'custom.js', array('version' => 'auto', 'relative' => tr
 		if ($this->countModules('buttonGruppe'))
 		{ ?>
 		<div id="CfButtonGruppe" class="container-fluid sticky-top">
-			<div class="cf-inner d-flex justify-content-center flex-wrap">
+			<div class="cf-inner d-flex justify-content-around flex-wrap">
 				<jdoc:include type="modules" name="buttonGruppe" style="none" />
 			</div>
 		</div><!--/#CfButtonGruppe-->
