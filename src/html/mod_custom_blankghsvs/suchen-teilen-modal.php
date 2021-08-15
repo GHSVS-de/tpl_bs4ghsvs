@@ -28,7 +28,7 @@ $modalId = Bs3ghsvsArticle::buildUniqueIdFromJinput(
 	aria-labelledby="<?php echo $modalId; ?>Title"
 	aria-hidden="true"
 >
-	<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content bg-light">
 			<div class="modal-header">
 				<h2 class="modal-title h3" id="<?php echo $modalId; ?>Title">
