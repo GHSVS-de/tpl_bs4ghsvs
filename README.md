@@ -54,10 +54,19 @@ export default {
 ```
 
 - Compile: `npm run js`
-- Copy all files to target from `git-kram/bootstrap/dist/js/`
+
+### !!!Don't forget then!!!
+- Craete new folder `git-kram/bootstrap/dist/js/_ghsvsBootstrapBundleVersion_`.
+- Copy `git-kram/bootstrap/js/index.umd.js` in this new folder.
+- `tpl_bs4ghsvs` needs it like this for build prodedure!!!
+
+### **Old** variant:
+- Copy files to target from `git-kram/bootstrap/dist/js/` inclusive folder `/_ghsvsBootstrapBundleVersion_`.
 
 ## Next step: Build package for this repository
 - Prepare/adapt `./package.json`.
+- Don't forget to adapt parameter `ghsvsBootstrapBundleVersion` !!!!
+
 - `cd /mnt/z/git-kram/tpl_bs4ghsvs`
 
 ## node/npm updates/installation
@@ -70,6 +79,7 @@ export default {
 ## Build installable ZIP package
 - `node build.js`
 - New, installable ZIP is in `./dist` afterwards.
+- Version after `_` in filename is version of self compiled smaller bootstrap.bundle and so.
 - All packed files for this ZIP can be seen in `./package`. **But only if you disable deletion of this folder at the end of `build.js`**.s
 
 ### For Joomla update and changelog server

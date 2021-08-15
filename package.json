@@ -4,6 +4,7 @@
 	"filename": "bs4ghsvs",
 	"version": "2021.08.15",
 	"versionCompare": "2021.08.14",
+	"ghsvsBootstrapBundleVersion": "5.1.0",
 	"update": {
 		"type": "template",
 		"folder": "",
@@ -72,6 +73,7 @@
 		"adm-zip": "0.5.5",
 		"chalk": "^4.1.2",
 		"fs-extra": "10.0.0",
+		"line-reader": "^0.4",
 		"path": "^0.12.7",
 		"rimraf": "3.0.2"
 	},
