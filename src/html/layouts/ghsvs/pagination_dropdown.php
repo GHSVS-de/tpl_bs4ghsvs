@@ -6,8 +6,7 @@ Für zweiteres ein Modul in Position 'buttonGruppe' (oder anderstwo) mit HTML
 Das wird ersetzt durch #PAGINATION_TO_CLONE.
 
 */
-
-defined('JPATH_BASE') or die;
+\defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
