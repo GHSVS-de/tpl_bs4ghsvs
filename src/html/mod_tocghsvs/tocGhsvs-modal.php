@@ -69,7 +69,7 @@ $document->addScriptDeclaration(
 <div class="HIDEIFNOTHINGFOUND<?php echo $id; ?>">
 	<div class="modal fade" id="<?php echo $id; ?>" tabindex="-1" role="dialog"
 		aria-labelledby="<?php echo $id; ?>Title" aria-hidden="true">
-		<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
 			<div class="modal-content bg-light">
 				<div class="modal-header">
 					<p class="modal-title h3" id="<?php echo $id; ?>Title">

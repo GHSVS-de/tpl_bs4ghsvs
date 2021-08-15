@@ -48,7 +48,7 @@ $class = 'list-group-item list-group-item-action';
 	aria-labelledby="<?php echo $modalId; ?>Title"
 	aria-hidden="true"
 >
-	<div class="modal-dialog modal-lg" role="document">
+	<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
 		<div class="modal-content  bg-modal">
 			<div class="modal-header">
 				<p class="modal-title h3" id="<?php echo $modalId; ?>Title">

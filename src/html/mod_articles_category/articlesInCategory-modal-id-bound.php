@@ -30,16 +30,6 @@ $modalHeadline = $module->showtitle ? $module->title
 $cats = array_unique(ArrayHelper::getColumn($list, 'category_title'));
 $catsTitle = count($cats) > 1 ? 'PLG_SYSTEM_BS3GHSVS_CATEGORIES' : 'JCATEGORY';
 $catsTitle = Text::_($catsTitle) . ' "' . implode('", "', $cats) . '"';
-
-// Alle x Einträge ein Close-Button, da teils sehr viele.
-if (($dismissEvery = 20) < count($list))
-{
-	$dismissButton = LayoutHelper::render('ghsvs.closeButtonTop',
-		['options' => [
-			'class' => 'btn-sm text-end',
-		]]);
-}
-$itemCounter = 0;
 ?>
 <div id="<?php echo $modalId; ?>"
 	class="modal fade"
@@ -47,7 +37,7 @@ $itemCounter = 0;
 	role="dialog"
 	aria-labelledby="<?php echo $modalId; ?>Title"
 	aria-hidden="true">
-	<div class="modal-dialog modal-lg" role="document">
+	<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
 		<div class="modal-content bg-modal">
 			<div class="modal-header">
 				<p class="modal-title h3" id="<?php echo $modalId; ?>Title">
@@ -62,7 +52,6 @@ $itemCounter = 0;
 				<div class="list-group">
 					<?php foreach ($list as $item)
 					{
-						$itemCounter++;
 						$aAttributes = [
 							'class' => 'list-group-item list-group-item-action',
 							'href' => $item->link,
@@ -73,11 +62,7 @@ $itemCounter = 0;
 							$aAttributes['aria-current'] = 'page';
 							$aAttributes['class'] .= ' active disabled';
 						}
-
-						if ($itemCounter % $dismissEvery === 0)
-						{
-							echo $dismissButton;
-						} ?>
+						?>
 						<a <?php echo ArrayHelper::toString($aAttributes); ?>>
 							<?php echo $item->title; ?>
 							<?php

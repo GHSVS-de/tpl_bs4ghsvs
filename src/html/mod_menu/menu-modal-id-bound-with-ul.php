@@ -147,7 +147,7 @@ foreach ($list as $item)
 ?>
 <div id="<?php echo $modalId; ?>" class="modal fade" tabindex="-1" role="dialog"
 	aria-labelledby="<?php echo $modalId; ?>Title" aria-hidden="true">
-	<div class="modal-dialog modal-lg" role="document">
+	<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
 		<div class="modal-content bg-modal">
 			<div class="modal-header">
 				<p class="modal-title h3"
@@ -163,7 +163,6 @@ foreach ($list as $item)
 						<?php
 						foreach ($list as &$item)
 						{
-
 							?>
 							<li class="<?php echo $item->liClass; ?>"<?php echo $item->add; ?>>
 							<?php echo $item->prefix; ?>
