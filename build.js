@@ -31,7 +31,7 @@ async function cleanOut (cleanOuts) {
 	for (const file of cleanOuts)
 	{
 		await rimRaf(file).then(
-			answer => console.log(chalk.redBright(`rimrafed: ${file}.`))
+			answer => console.log(chalk.redBright(`rimrafed: "${file}".`))
 		).catch(error => console.error('Error ' + error));
 	}
 }
