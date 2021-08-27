@@ -17,7 +17,12 @@ Deaktiivert in templates\bs4ghsvs\scss\_overridesghsvs.scss
 @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/root";
 @import "root";
 
+// See bug https://github.com/twbs/bootstrap/pull/34679/files
 @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/reboot";
+@import "reboot-bug-fix-5.1.0";
+
+
+
 @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/type";
 @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/images";
 @import "figure-and-images";
