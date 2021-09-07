@@ -1,5 +1,5 @@
 /*!
-  * Bootstrap v5.1.0 (https://getbootstrap.com/)
+  * Bootstrap v5.1.1 (https://getbootstrap.com/)
   * Copyright 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
@@ -11,7 +11,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): util/index.js
+   * Bootstrap (v5.1.1): util/index.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -284,7 +284,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): dom/event-handler.js
+   * Bootstrap (v5.1.1): dom/event-handler.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -347,7 +347,6 @@
             event.delegateTarget = target;
 
             if (handler.oneOff) {
-              // eslint-disable-next-line unicorn/consistent-destructuring
               EventHandler.off(element, event.type, selector, fn);
             }
 
@@ -573,7 +572,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): dom/data.js
+   * Bootstrap (v5.1.1): dom/data.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -627,7 +626,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): base-component.js
+   * Bootstrap (v5.1.1): base-component.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -637,7 +636,7 @@
    * ------------------------------------------------------------------------
    */
 
-  const VERSION = '5.1.0';
+  const VERSION = '5.1.1';
 
   class BaseComponent {
     constructor(element) {
@@ -693,7 +692,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): util/component-functions.js
+   * Bootstrap (v5.1.1): util/component-functions.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -719,7 +718,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): alert.js
+   * Bootstrap (v5.1.1): alert.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -808,7 +807,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): button.js
+   * Bootstrap (v5.1.1): button.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -879,7 +878,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): dom/manipulator.js
+   * Bootstrap (v5.1.1): dom/manipulator.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -953,7 +952,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): dom/selector-engine.js
+   * Bootstrap (v5.1.1): dom/selector-engine.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -1023,7 +1022,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): collapse.js
+   * Bootstrap (v5.1.1): collapse.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -1057,7 +1056,7 @@
   const CLASS_NAME_HORIZONTAL = 'collapse-horizontal';
   const WIDTH = 'width';
   const HEIGHT = 'height';
-  const SELECTOR_ACTIVES = '.show, .collapsing';
+  const SELECTOR_ACTIVES = '.collapse.show, .collapse.collapsing';
   const SELECTOR_DATA_TOGGLE$2 = '[data-bs-toggle="collapse"]';
   /**
    * ------------------------------------------------------------------------
@@ -1506,9 +1505,17 @@
     var scaleY = 1;
 
     if (isHTMLElement(element) && includeScale) {
+      var offsetHeight = element.offsetHeight;
+      var offsetWidth = element.offsetWidth; // Do not attempt to divide by 0, otherwise we get `Infinity` as scale
       // Fallback to 1 in case both values are `0`
-      scaleX = rect.width / element.offsetWidth || 1;
-      scaleY = rect.height / element.offsetHeight || 1;
+
+      if (offsetWidth > 0) {
+        scaleX = rect.width / offsetWidth || 1;
+      }
+
+      if (offsetHeight > 0) {
+        scaleY = rect.height / offsetHeight || 1;
+      }
     }
 
     return {
@@ -1774,6 +1781,10 @@
     requiresIfExists: ['preventOverflow']
   };
 
+  function getVariation(placement) {
+    return placement.split('-')[1];
+  }
+
   var unsetSides = {
     top: 'auto',
     right: 'auto',
@@ -1800,6 +1811,7 @@
     var popper = _ref2.popper,
         popperRect = _ref2.popperRect,
         placement = _ref2.placement,
+        variation = _ref2.variation,
         offsets = _ref2.offsets,
         position = _ref2.position,
         gpuAcceleration = _ref2.gpuAcceleration,
@@ -1826,7 +1838,7 @@
       if (offsetParent === getWindow(popper)) {
         offsetParent = getDocumentElement(popper);
 
-        if (getComputedStyle$1(offsetParent).position !== 'static') {
+        if (getComputedStyle$1(offsetParent).position !== 'static' && position === 'absolute') {
           heightProp = 'scrollHeight';
           widthProp = 'scrollWidth';
         }
@@ -1835,14 +1847,14 @@
 
       offsetParent = offsetParent;
 
-      if (placement === top) {
+      if (placement === top || (placement === left || placement === right) && variation === end) {
         sideY = bottom; // $FlowFixMe[prop-missing]
 
         y -= offsetParent[heightProp] - popperRect.height;
         y *= gpuAcceleration ? 1 : -1;
       }
 
-      if (placement === left) {
+      if (placement === left || (placement === top || placement === bottom) && variation === end) {
         sideX = right; // $FlowFixMe[prop-missing]
 
         x -= offsetParent[widthProp] - popperRect.width;
@@ -1857,7 +1869,7 @@
     if (gpuAcceleration) {
       var _Object$assign;
 
-      return Object.assign({}, commonStyles, (_Object$assign = {}, _Object$assign[sideY] = hasY ? '0' : '', _Object$assign[sideX] = hasX ? '0' : '', _Object$assign.transform = (win.devicePixelRatio || 1) < 2 ? "translate(" + x + "px, " + y + "px)" : "translate3d(" + x + "px, " + y + "px, 0)", _Object$assign));
+      return Object.assign({}, commonStyles, (_Object$assign = {}, _Object$assign[sideY] = hasY ? '0' : '', _Object$assign[sideX] = hasX ? '0' : '', _Object$assign.transform = (win.devicePixelRatio || 1) <= 1 ? "translate(" + x + "px, " + y + "px)" : "translate3d(" + x + "px, " + y + "px, 0)", _Object$assign));
     }
 
     return Object.assign({}, commonStyles, (_Object$assign2 = {}, _Object$assign2[sideY] = hasY ? y + "px" : '', _Object$assign2[sideX] = hasX ? x + "px" : '', _Object$assign2.transform = '', _Object$assign2));
@@ -1875,6 +1887,7 @@
 
     var commonStyles = {
       placement: getBasePlacement(state.placement),
+      variation: getVariation(state.placement),
       popper: state.elements.popper,
       popperRect: state.rects.popper,
       gpuAcceleration: gpuAcceleration
@@ -2177,10 +2190,6 @@
     return clippingRect;
   }
 
-  function getVariation(placement) {
-    return placement.split('-')[1];
-  }
-
   function computeOffsets(_ref) {
     var reference = _ref.reference,
         element = _ref.element,
@@ -2266,11 +2275,10 @@
         padding = _options$padding === void 0 ? 0 : _options$padding;
     var paddingObject = mergePaddingObject(typeof padding !== 'number' ? padding : expandToHashMap(padding, basePlacements));
     var altContext = elementContext === popper ? reference : popper;
-    var referenceElement = state.elements.reference;
     var popperRect = state.rects.popper;
     var element = state.elements[altBoundary ? altContext : elementContext];
     var clippingClientRect = getClippingRect(isElement(element) ? element : element.contextElement || getDocumentElement(state.elements.popper), boundary, rootBoundary);
-    var referenceClientRect = getBoundingClientRect(referenceElement);
+    var referenceClientRect = getBoundingClientRect(state.elements.reference);
     var popperOffsets = computeOffsets({
       reference: referenceClientRect,
       element: popperRect,
@@ -2918,7 +2926,8 @@
       var isDestroyed = false;
       var instance = {
         state: state,
-        setOptions: function setOptions(options) {
+        setOptions: function setOptions(setOptionsAction) {
+          var options = typeof setOptionsAction === 'function' ? setOptionsAction(state.options) : setOptionsAction;
           cleanupModifierEffects();
           state.options = Object.assign({}, defaultOptions, state.options, options);
           state.scrollParents = {
@@ -3117,7 +3126,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): dropdown.js
+   * Bootstrap (v5.1.1): dropdown.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -3579,7 +3588,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): util/scrollBar.js
+   * Bootstrap (v5.1.1): util/scrollBar.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -3683,7 +3692,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): util/backdrop.js
+   * Bootstrap (v5.1.1): util/backdrop.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -3807,7 +3816,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): util/focustrap.js
+   * Bootstrap (v5.1.1): util/focustrap.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -3910,7 +3919,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): modal.js
+   * Bootstrap (v5.1.1): modal.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -3950,6 +3959,7 @@
   const CLASS_NAME_FADE$1 = 'fade';
   const CLASS_NAME_SHOW$1 = 'show';
   const CLASS_NAME_STATIC = 'modal-static';
+  const OPEN_SELECTOR = '.modal.show';
   const SELECTOR_DIALOG = '.modal-dialog';
   const SELECTOR_MODAL_BODY = '.modal-body';
   const SELECTOR_DATA_TOGGLE = '[data-bs-toggle="modal"]';
@@ -4315,7 +4325,14 @@
           this.focus();
         }
       });
-    });
+    }); // avoid conflict when clicking moddal toggler while another one is open
+
+    const allReadyOpen = SelectorEngine.findOne(OPEN_SELECTOR);
+
+    if (allReadyOpen) {
+      Modal.getInstance(allReadyOpen).hide();
+    }
+
     const data = Modal.getOrCreateInstance(target);
     data.toggle(this);
   });
@@ -4331,7 +4348,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): toast.js
+   * Bootstrap (v5.1.1): toast.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -4561,7 +4578,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): index.umd.js
+   * Bootstrap (v5.1.1): index.umd.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */

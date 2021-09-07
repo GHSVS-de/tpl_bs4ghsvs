@@ -1,5 +1,5 @@
 /*!
-  * Bootstrap v5.1.0 (https://getbootstrap.com/)
+  * Bootstrap v5.1.1 (https://getbootstrap.com/)
   * Copyright 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
@@ -33,7 +33,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): util/index.js
+   * Bootstrap (v5.1.1): util/index.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -306,7 +306,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): dom/event-handler.js
+   * Bootstrap (v5.1.1): dom/event-handler.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -369,7 +369,6 @@
             event.delegateTarget = target;
 
             if (handler.oneOff) {
-              // eslint-disable-next-line unicorn/consistent-destructuring
               EventHandler.off(element, event.type, selector, fn);
             }
 
@@ -595,7 +594,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): dom/data.js
+   * Bootstrap (v5.1.1): dom/data.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -649,7 +648,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): base-component.js
+   * Bootstrap (v5.1.1): base-component.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -659,7 +658,7 @@
    * ------------------------------------------------------------------------
    */
 
-  const VERSION = '5.1.0';
+  const VERSION = '5.1.1';
 
   class BaseComponent {
     constructor(element) {
@@ -715,7 +714,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): util/component-functions.js
+   * Bootstrap (v5.1.1): util/component-functions.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -741,7 +740,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): alert.js
+   * Bootstrap (v5.1.1): alert.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -830,7 +829,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): button.js
+   * Bootstrap (v5.1.1): button.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -901,7 +900,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): dom/manipulator.js
+   * Bootstrap (v5.1.1): dom/manipulator.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -975,7 +974,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): dom/selector-engine.js
+   * Bootstrap (v5.1.1): dom/selector-engine.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -1045,7 +1044,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): collapse.js
+   * Bootstrap (v5.1.1): collapse.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -1079,7 +1078,7 @@
   const CLASS_NAME_HORIZONTAL = 'collapse-horizontal';
   const WIDTH = 'width';
   const HEIGHT = 'height';
-  const SELECTOR_ACTIVES = '.show, .collapsing';
+  const SELECTOR_ACTIVES = '.collapse.show, .collapse.collapsing';
   const SELECTOR_DATA_TOGGLE$2 = '[data-bs-toggle="collapse"]';
   /**
    * ------------------------------------------------------------------------
@@ -1363,7 +1362,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): dropdown.js
+   * Bootstrap (v5.1.1): dropdown.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -1825,7 +1824,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): util/scrollBar.js
+   * Bootstrap (v5.1.1): util/scrollBar.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -1929,7 +1928,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): util/backdrop.js
+   * Bootstrap (v5.1.1): util/backdrop.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -2053,7 +2052,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): util/focustrap.js
+   * Bootstrap (v5.1.1): util/focustrap.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -2156,7 +2155,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): modal.js
+   * Bootstrap (v5.1.1): modal.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -2196,6 +2195,7 @@
   const CLASS_NAME_FADE$1 = 'fade';
   const CLASS_NAME_SHOW$1 = 'show';
   const CLASS_NAME_STATIC = 'modal-static';
+  const OPEN_SELECTOR = '.modal.show';
   const SELECTOR_DIALOG = '.modal-dialog';
   const SELECTOR_MODAL_BODY = '.modal-body';
   const SELECTOR_DATA_TOGGLE = '[data-bs-toggle="modal"]';
@@ -2561,7 +2561,14 @@
           this.focus();
         }
       });
-    });
+    }); // avoid conflict when clicking moddal toggler while another one is open
+
+    const allReadyOpen = SelectorEngine.findOne(OPEN_SELECTOR);
+
+    if (allReadyOpen) {
+      Modal.getInstance(allReadyOpen).hide();
+    }
+
     const data = Modal.getOrCreateInstance(target);
     data.toggle(this);
   });
@@ -2577,7 +2584,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): toast.js
+   * Bootstrap (v5.1.1): toast.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -2807,7 +2814,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): index.umd.js
+   * Bootstrap (v5.1.1): index.umd.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */

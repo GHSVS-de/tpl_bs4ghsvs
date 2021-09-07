@@ -150,7 +150,7 @@ async function getChecksum(path, Digest)
 					`${targetPath}`
 				).then(
 					answer => console.log(chalk.yellowBright(
-						`Copied self compiled bootstrap.bundle JS to ${targetPath}.`))
+						`Copied self compiled bootstrap.bundle JS to template's *override* folder ${targetPath}.`))
 				);
 			}
 			else
