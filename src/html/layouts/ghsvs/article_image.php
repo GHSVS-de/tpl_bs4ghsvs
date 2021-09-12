@@ -140,7 +140,7 @@ if (!empty($imgs[0]) && is_array($imgs[0]))
 	$mediaQueries = array(
 		'(max-width: 380px)' => '_s',
 		'(max-width: 490px)' => '_m',
-		'(max-width: 2600)' => '_l',
+		'(max-width: 2600px)' => '_l',
 
 		// Largest <source> without mediaQuery. Also for fallback <img> src, width and height calculation.
 		// Value only if you want to force one. Otherwise _x or fallback _u is used.
