@@ -171,6 +171,10 @@ JS;
 				</div><!--/articleBody-->
 			</div><!--/TOC_GHSVS -->
 
+			<?php echo HTMLHelper::_('bs3ghsvs.layout', 'ghsvs.cite',
+				['item' => $this->item]
+			) ?>
+
 			<?php echo HTMLHelper::_('bs3ghsvs.layout', 'ghsvs.extension',
 				$this->item->id
 			) ?>
