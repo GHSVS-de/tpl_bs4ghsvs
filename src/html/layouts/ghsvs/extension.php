@@ -6,43 +6,33 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\Registry\Registry;
 
 /**
- * $displayData is item->id
+ * $item = article object.
 */
 
-JLoader::register(
-	'Bs3ghsvsArticle',
-	JPATH_PLUGINS . '/system/bs3ghsvs/Helper/ArticleHelper.php'
-);
+extract($displayData);
 
-JLoader::register(
-	'Bs3ghsvsItem',
-	JPATH_PLUGINS . '/system/bs3ghsvs/Helper/ItemHelper.php'
-);
-
-$displayData = Bs3ghsvsArticle::getExtensionData($displayData);
-
-if (false === $displayData)
+if (empty($item->bs3ghsvsFields['extension']['bs3ghsvs_extension_active']))
 {
-	return '';
+	return;
 }
 
-$displayData = new Registry($displayData);
+$extensionData = new Registry($item->bs3ghsvsFields['extension']);
 ?>
 <div class="block-download" aria-labelledby="EXTENSION_INFO">
 <h3 id="EXTENSION_INFO"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_EXTENSION_INFO'); ?></h3>
 
 <h4 class="h6"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_EXTENSION_NAME'); ?></h4>
 <p class="breakall">
-	<?php echo Text::_($displayData->get('name')); ?>
+	<?php echo Text::_($extensionData->get('name')); ?>
 </p>
 
 <h4 class="h6"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_EXTENSION_DESCRIPTION'); ?></h4>
 <p>
-	<?php echo nl2br($displayData->get('description')); ?>
+	<?php echo nl2br($extensionData->get('description')); ?>
 </p>
 
 <?php
-if (($out = trim($displayData->get('inspiredby'))))
+if (($out = trim($extensionData->get('inspiredby'))))
 {
 	if (strpos($out, ' ') === false && Bs3ghsvsItem::hasScheme($out))
 	{
@@ -58,27 +48,46 @@ if (($out = trim($displayData->get('inspiredby'))))
 
 <h4 class="h6"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_EXTENSION_URL'); ?></h4>
 <p>
-	<a href="<?php echo $displayData->get('url'); ?>" class="btn btn-catcolor">
+	<a href="<?php echo $extensionData->get('url'); ?>" class="btn btn-catcolor">
 		<span class="sr-only"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_EXTENSION_URL_DESC')?></span>
 		{svg{bi/download}}
 	</a>
 </p>
 
 <?php
-if ($displayData->get('updateserver'))
-{ ?>
-<h4 class="h6"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_EXTENSION_UPDATESERVER'); ?></h4>
+// Is array or not exists if nothing selected in list.
+if (!empty($extensionData->get('tergetplatform')))
+{
+	$targetplatforms = $extensionData->get('tergetplatform');
+
+	foreach ($targetplatforms as $key => $version)
+	{
+		$targetplatforms[$key] = Text::_(
+			'PLG_SYSTEM_BS3GHSVS_EXTENSION_TERGETPLATFORM_' . $version
+		);
+	} ?>
+<h4 class="h6"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_EXTENSION_TERGETPLATFORM'); ?></h4>
 <p>
-	<?php echo Text::_('PLG_SYSTEM_BS3GHSVS_EXTENSION_UPDATESERVER_'
-		. $displayData->get('updateserver')); ?>
+	<?php echo implode(', ', $targetplatforms); ?>
 </p>
 <?php
 } ?>
 
 <?php
-if ($displayData->get('languages'))
+if ($extensionData->get('updateserver'))
+{ ?>
+<h4 class="h6"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_EXTENSION_UPDATESERVER'); ?></h4>
+<p>
+	<?php echo Text::_('PLG_SYSTEM_BS3GHSVS_EXTENSION_UPDATESERVER_'
+		. $extensionData->get('updateserver')); ?>
+</p>
+<?php
+} ?>
+
+<?php
+if ($extensionData->get('languages'))
 {
-	$flags = Bs3ghsvsArticle::buildFlagImages($displayData->get('languages'));	
+	$flags = Bs3ghsvsArticle::buildFlagImages($extensionData->get('languages'));
 ?>
 <h4 class="h6"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_EXTENSION_LANGUAGES'); ?></h4>
 <p>
@@ -88,7 +97,7 @@ if ($displayData->get('languages'))
 } ?>
 
 <?php
-if (($out = trim($displayData->get('project'))))
+if (($out = trim($extensionData->get('project'))))
 { ?>
 <h4 class="h6"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_EXTENSION_PROJECT'); ?></h4>
 <p>
@@ -101,7 +110,7 @@ if (($out = trim($displayData->get('project'))))
 } ?>
 
 <?php
-if (($out = trim($displayData->get('comment'))))
+if (($out = trim($extensionData->get('comment'))))
 { ?>
 <h4 class="h6"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_EXTENSION_COMMENT'); ?></h4>
 <p>
@@ -111,7 +120,7 @@ if (($out = trim($displayData->get('comment'))))
 } ?>
 
 <?php
-if (($out = trim($displayData->get('history'))))
+if (($out = trim($extensionData->get('history'))))
 { ?>
 <h4 class="h6"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_EXTENSION_HISTORY'); ?></h4>
 <p>
