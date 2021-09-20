@@ -176,7 +176,7 @@ JS;
 			) ?>
 
 			<?php echo HTMLHelper::_('bs3ghsvs.layout', 'ghsvs.extension',
-				$this->item->id
+				['item' => $this->item]
 			) ?>
 
 			<?php
