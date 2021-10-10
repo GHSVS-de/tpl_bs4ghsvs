@@ -11,9 +11,6 @@ $isRobot = $this->params->get('isRobot');
 
 if ($done = PluginHelper::isEnabled('system', 'astroidghsvs'))
 {
-	JLoader::register('AstroidGhsvsHelper',
-		JPATH_PLUGINS . '/system/astroidghsvs/src/Helper/AstroidGhsvsHelper.php');
-
 	/*
 	 * OPTIONAL possibility to override all or some parameters of
 	 *  AstroidGhsvsHelper::$compileSettingsDefault (= Settings of plg__astroidghsvs).
@@ -22,22 +19,21 @@ if ($done = PluginHelper::isEnabled('system', 'astroidghsvs'))
 	 * Heads up! The Helper does not protect you in the case of incorrect
 	 * 	entries like wrong folders or so.
 	 */
-	/*AstroidGhsvsHelper::$compileSettingsCustom = [
-		'sourceMaps' => false,
-		'scssFolder' => 'scss-ghsvs',
+		AstroidGhsvsHelper::$compileSettingsCustom = [
+		// 'sourceMaps' => false,
+		// 'scssFolder' => 'scss-ghsvs',
 		// ## Needs AstroidGhsvsHelper::$replaceThis comment in template index.php:
-		'placeHolderMode' => true,
+		'placeHolderMode' => false,
 		// ## Set to -1 if you want to disable compiling completely.
-		'forceSCSSCompilingGhsvs' => 0,
-		'includeStyleId' => true,
-	];*/
+		//'forceSCSSCompilingGhsvs' => 0,
+		//'includeStyleId' => true,
+	];
 
 	if ($isRobot)
 	{
 		AstroidGhsvsHelper::$compileSettingsCustom = [
-			'forceSCSSCompilingGhsvs' => -1,
+			'forceSCSSCompilingGhsvs' => -2,
 		];
-		$done = false;
 	}
 	else
 	{
@@ -66,7 +62,7 @@ if ($done = PluginHelper::isEnabled('system', 'astroidghsvs'))
 
 		/* Because this is a non-Astroid template the plugin method
 		onAfterAstroidRender() is not fired. Therefore: */
-		$done = AstroidGhsvsHelper::runScssGhsvs('');
+		AstroidGhsvsHelper::runScssGhsvs('');
 	}
 }
 
@@ -94,15 +90,6 @@ if (!$isRobot && $this->params->get('HidePageHeader', 0))
 $app  = Factory::getApplication();
 $this->setHtml5(true);
 HTMLHelper::_('bs3ghsvs.templatejs');
-
-// PhpScss compilation failed or deactivated?
-if ($done === false)
-{
-	HTMLHelper::_('stylesheet',
-		'templates/' . $this->template . '/' . $this->params->get('templateCSS', 'css/template.min') . '.css',
-		array('version' => 'auto', 'relative' => false)
-	);
-}
 
 ####START - LOGO, SEITENTITEL, SITEDESCRIPTION.
 $sitetitleHide = $this->params->get('sitetitleHide', 0);
