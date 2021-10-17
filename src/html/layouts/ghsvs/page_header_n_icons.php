@@ -16,6 +16,7 @@ use Joomla\Registry\Registry;
 use Joomla\CMS\Router\Route;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Factory;
+use Joomla\CMS\Layout\LayoutHelper;
 
 $params = $displayData['item']->params;
 $print = $displayData['print'];
@@ -24,25 +25,8 @@ $displayData = $displayData['item'];
 
 // com_tags-Views
 $typeAlias = isset($displayData->type_alias) ? $displayData->type_alias : false;
-
-$articlesubtitle = '';
-
-if ($params->get('show_title'))
-{
-	JLoader::register('Bs3ghsvsArticle', JPATH_PLUGINS . '/system/bs3ghsvs/Helper/ArticleHelper.php');
-	$various = new Registry(Bs3ghsvsArticle::getVariousData($displayData->id));
-
-	if ($params->get('show_articlesubtitle') !== 0)
-	{
-		$articlesubtitle = htmlspecialchars($various->get('articlesubtitle'), ENT_COMPAT, 'utf-8');
-	}
-
-	$articleStatus = $various->get('articleStatus', 0);
-}
-
-#HTMLHelper::addIncludePath(JPATH_COMPONENT . '/helpers/html');
-
-\JLoader::register('ContentHelperRoute', JPATH_SITE . '/components/com_content/helpers/route.php');
+\JLoader::register('ContentHelperRoute', JPATH_SITE
+	. '/components/com_content/helpers/route.php');
 
 $linkHeadline = ($params->get('link_titles') && $params->get('access-view'));
 $maskHClass = ($params->get('mask_pageheaderclass_ghsvs', 0) ? 'Masked' : '');
@@ -73,8 +57,6 @@ if ($linkHeadline && empty($displayData->linkGhsvs))
 <?php if ($params->get('show_title'))
 { ?>
 <div class="page-header<?php echo $maskHClass;?> state<?php echo $displayData->state ?>">
-
-
 	<?php
 		$title = $this->escape($displayData->title);
 	?>
@@ -87,27 +69,11 @@ if ($linkHeadline && empty($displayData->linkGhsvs))
 		echo $title;
 	endif; ?>
 	<?php
-		if ($articlesubtitle)
-		{ ?>
-		<small class="articlesubtitle text-muted fst-italic">(<?php echo $articlesubtitle; ?>)</small>
-		<?php } ?><?php echo '</' . $titletag . '>' ?>
-
+		echo LayoutHelper::render('ghsvs.articleSubtitle', ['item' => $displayData]);
+	?><?php echo '</' . $titletag . '>' ?>
 	<?php
-	if ($articleStatus
-	# && Factory::getApplication()->input->get('view') === 'article'
-	)
-	{
-		if ($articleStatus > 0)
-		{
-			Factory::getDocument()->setMetadata('robots', 'noindex, follow');
-		}
-		?>
-	<p class="articleStatus articleStatus_<?php echo $articleStatus; ?> bg-warning p-2">
-		<?php echo Text::_('PLG_SYSTEM_BS3GHSVS_ARTICLESTATUS_' . $articleStatus); ?>
-	</p>
-	<?php
-	} ?>
-
+		echo LayoutHelper::render('ghsvs.articleStatus', ['item' => $displayData]);
+	?>
 	<?php if (1== 2 && !empty($displayData->pagination))
 	{ ?>
 	<div class="articlePagination above">
