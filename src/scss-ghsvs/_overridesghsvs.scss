@@ -181,26 +181,18 @@ a.btn
 	}
 }
 
-
-
 .articleStatus
 {
 	font-size: 1.1rem;
+	@include block();
 }
-.articleStatus_1
-{
-	@extend .block-danger;
-}
+
 .articlesubtitle
 {
 	@extend .text-muted;
 	@extend .small;
 	font-style: italic;
-	//display: block;
-	//margin-top: ($spacer * 0.5);
 }
-
-
 
 // .iconGhsvs
 // {
