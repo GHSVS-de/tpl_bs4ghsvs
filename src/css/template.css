@@ -267,7 +267,7 @@ abbr {
   color: black;
 }
 
-.block-danger, .articleStatus_1 {
+.block-danger {
   color: black;
   background-color: #ebccd6;
   border-color: #990134;
@@ -277,7 +277,7 @@ abbr {
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   margin-bottom: 1rem !important;
 }
-.block-danger .alert-link, .articleStatus_1 .alert-link {
+.block-danger .alert-link {
   color: black;
 }
 
@@ -1101,9 +1101,9 @@ pre code {
   --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
-  margin-top: calc(var(--bs-gutter-y) * -1);
-  margin-right: calc(var(--bs-gutter-x) * -.5);
-  margin-left: calc(var(--bs-gutter-x) * -.5);
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-.5 * var(--bs-gutter-x));
+  margin-left: calc(-.5 * var(--bs-gutter-x));
 }
 .row > * {
   flex-shrink: 0;
@@ -2414,8 +2414,8 @@ pre code {
 .table > thead {
   vertical-align: bottom;
 }
-.table > :not(:last-child) > :last-child > * {
-  border-bottom-color: currentColor;
+.table > :not(:first-child) {
+  border-top: 2px solid currentColor;
 }
 
 .caption-top {
@@ -2436,8 +2436,11 @@ pre code {
 .table-borderless > :not(caption) > * > * {
   border-bottom-width: 0;
 }
+.table-borderless > :not(:first-child) {
+  border-top-width: 0;
+}
 
-.table-striped > tbody > tr:nth-of-type(odd) {
+.table-striped > tbody > tr:nth-of-type(odd) > * {
   --bs-table-accent-bg: var(--bs-table-striped-bg);
   color: var(--bs-table-striped-color);
 }
@@ -2447,7 +2450,7 @@ pre code {
   color: var(--bs-table-active-color);
 }
 
-.table-hover > tbody > tr:hover {
+.table-hover > tbody > tr:hover > * {
   --bs-table-accent-bg: var(--bs-table-hover-bg);
   color: var(--bs-table-hover-color);
 }
@@ -11495,6 +11498,11 @@ a.btn {
 
 .articleStatus {
   font-size: 1.1rem;
+  border-width: 3px !important;
+  border-style: solid !important;
+  padding: 6px !important;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem !important;
 }
 
 .articlesubtitle {

@@ -25,6 +25,10 @@ body.bodyPrint.ausdruck [class*=" block-"] {
   color: #000 !important;
   background-color: #fff;
 }
+body.bodyPrint.ausdruck abbr, body.bodyPrint.ausdruck code {
+  color: #000 !important;
+  background-color: #fff !important;
+}
 body.bodyPrint.ausdruck .page-header, body.bodyPrint.ausdruck .articleIntrotext {
   background-color: #fff !important;
 }
