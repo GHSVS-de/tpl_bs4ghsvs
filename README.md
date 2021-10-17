@@ -7,7 +7,7 @@ Das ist kein Template, das man installiert und dann läuft es reibungslos. Es br
 ----------------
 # My personal build procedure (WSL 1, Debian, Win 10)
 
-## If a new Bootstrap release? Special step !!!!! Build reduced `bootstrap.bundle` JS!!!!!!
+## If a new Bootstrap release? Special step (1)!!!!! Build reduced `bootstrap.bundle` JS!!!!!!
 - - You should first build a new `plg_system_bs3ghsvs_bs5`. Makes the whole release procedure a little bit easier.
 
 - Delete everything in `/mnt/z/git-kram/bootstrap/`
@@ -62,8 +62,15 @@ export default {
 - Copy `git-kram/bootstrap/js/index.umd.js` in this new folder.
 - `tpl_bs4ghsvs` needs it like this for build prodedure!!!
 
-### **Old** variant:
-- Copy files to target from `git-kram/bootstrap/dist/js/` inclusive folder `/_ghsvsBootstrapBundleVersion_`.
+## If a new Bootstrap release or changed scss-ghsvs/? Special step  (2) !!!!! Compile SCSS to CSS!!!!!!
+- - You should first build a new `plg_system_bs3ghsvs_bs5`. Makes the whole release procedure a little bit easier.
+- - Needs `/mnt/z/git-kram/media/plg_system_bs3ghsvs/scss/bootstrap` that will be populated during `plg_system_bs3ghsvs_bs5` build.
+-
+```
+cd /mnt/z/git-kram/sass_compile_prefixghsvs;
+node prepareProject.js p_tpl_bs4ghsvs;
+sh run-p_tpl_bs4ghsvs.sh;
+```
 
 ## Next step: Build package for this repository
 - Prepare/adapt `./package.json`.
