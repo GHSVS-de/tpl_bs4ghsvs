@@ -57,7 +57,7 @@ elseif (strpos($inputAttrs['class'], $addClass) === false)
 	<?php if (empty($options['hiddenLabel'])) : ?>
 			<?php echo $label; ?>
 			<?php if (!$required && !$typeOfSpacer) : ?>
-				<span class="optional sr-only"><?php echo JText::_('COM_CONTACT_OPTIONAL'); ?></span>
+				<span class="optional visually-hidden"><?php echo JText::_('COM_CONTACT_OPTIONAL'); ?></span>
 			<?php endif; ?>
 	<?php endif; ?>
 	<?php echo $input; ?>

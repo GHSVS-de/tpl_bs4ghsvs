@@ -176,7 +176,7 @@ $aAttributes['class'] = implode(' ', $aClass);
 			<?php echo $picture; ?>
 			<div class="iconGhsvs text-end">
 				<a <?php echo ArrayHelper::toString($aAttributes); ?>>
-					<span class="sr-only"><?php echo Text::_($aTitle); ?></span>
+					<span class="visually-hidden"><?php echo Text::_($aTitle); ?></span>
 					{svg{bi/zoom-in}}
 				</a>
 			</div>

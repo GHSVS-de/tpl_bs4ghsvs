@@ -11,7 +11,7 @@ $upper_limit = Factory::getLanguage()->getUpperLimitSearchWord();
 
 <?php if ($this->params->get('search_phrases', 1)) : ?>
 	<div class="form-group phrases">
-		<legend class="sr-only"><?php echo Text::_('COM_SEARCH_FOR');?></legend>
+		<legend class="visually-hidden"><?php echo Text::_('COM_SEARCH_FOR');?></legend>
 		<div class="phrases-box">
 			<?php echo $this->lists['searchphrase']; ?>
 		</div>
@@ -27,14 +27,14 @@ $upper_limit = Factory::getLanguage()->getUpperLimitSearchWord();
 
 	<div class="form-group">
 		<div class="input-group">
-			<label for="search-searchword" class="sr-only">
+			<label for="search-searchword" class="visually-hidden">
 				<?php echo Text::_('COM_SEARCH_SEARCH_KEYWORD'); ?>
 			</label>
 			<input type="text" name="searchword"
 				placeholder="<?php echo Text::_('COM_SEARCH_SEARCH_KEYWORD'); ?>" id="search-searchword"
 				value="<?php echo $this->escape($this->origkeyword); ?>" class="form-control" />
 			<button name="Search" class="btn btn-danger" onclick="this.form.submit()" type="submit">
-				<span class="sr-only"><?php echo Text::_('JSEARCH_FILTER_SUBMIT'); ?></span>
+				<span class="visually-hidden"><?php echo Text::_('JSEARCH_FILTER_SUBMIT'); ?></span>
 				{svg{solid/search}}
 			</button>
 		</div><!-- /input-group -->
@@ -56,7 +56,7 @@ $upper_limit = Factory::getLanguage()->getUpperLimitSearchWord();
 		if ($counter = $this->pagination->getPagesCounter())
 		{ ?>
 		<p class="counter my-3">
-			<span class="sr-only"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_SEARCH_YOU_ARE_HERE'); ?></span>
+			<span class="visually-hidden"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_SEARCH_YOU_ARE_HERE'); ?></span>
 			<?php echo $counter; ?>
 		</p>
 		<?php

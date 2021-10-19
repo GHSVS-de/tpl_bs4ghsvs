@@ -28,7 +28,7 @@ if (version_compare(JVERSION, '4', 'ge'))
 
 			if (!$params->get('showHere', 1))
 			{
-				$showHereClass = ' sr-only';
+				$showHereClass = ' visually-hidden';
 			} ?>
 			<li class="breadcrumb-item">
 				{svg{bi/geo-fill}}

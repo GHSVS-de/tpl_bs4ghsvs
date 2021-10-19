@@ -61,7 +61,7 @@ HTMLHelper::addIncludePath(JPATH_COMPONENT . '/helpers');
 				{ ?>
 				<div class="card-footer">
 					<div class="div4article-info_categoryItem">
-						<h3 class="sr-only">Kategorie-Infos</h3>
+						<h3 class="visually-hidden">Kategorie-Infos</h3>
 						<dl class="article-info">
 							<dd class="num-items">
 							<?php echo Text::_('COM_CONTENT_NUM_ITEMS'); ?>:

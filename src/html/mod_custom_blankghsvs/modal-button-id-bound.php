@@ -2,7 +2,7 @@
 /*
 Für Buttons, die über einen connector-key (eindeutige id) mit Modals verbunden
 werden können.
-Wenn man sr-only oder aria-xy-Zeugs in der Buttonbeschriftung haben möchte,
+Wenn man visually-hidden oder aria-xy-Zeugs in der Buttonbeschriftung haben möchte,
 kann man das z.B. über Sprachstring machen.
 Für die Button-Class wird das "Modulklassensuffix" "missbraucht". Es reicht z.B.
 "btn-danger", um das default "btn-warning" zu überschreiben. Nicht ganz schön,

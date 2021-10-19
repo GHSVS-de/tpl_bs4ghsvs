@@ -170,7 +170,7 @@ if ($image = $images->get('image_intro'))
 		<div class="iconGhsvs text-end">
 			<a href="<?php echo $image; ?>" data-title="<?php echo $caption; ?>"
 				class="<?php echo implode(' ', $aClass); ?>">
-				<span class="sr-only"><?php echo Text::_($aTitle); ?></span>
+				<span class="visually-hidden"><?php echo Text::_($aTitle); ?></span>
 				{svg{bi/zoom-in}}
 			</a>
 		</div>

@@ -24,7 +24,7 @@ HTMLHelper::_('bs3ghsvs.addsprungmarke', '.pager.page-nav');
 				<?php
 				if ($showSrOnly)
 				{ ?>
-				<span class="sr-only">
+				<span class="visually-hidden">
 					<?php echo Text::sprintf('JPREVIOUS_TITLE', htmlspecialchars($Title)); ?>
 				</span>
 				<?php
@@ -49,7 +49,7 @@ HTMLHelper::_('bs3ghsvs.addsprungmarke', '.pager.page-nav');
 				<?php
 				if ($showSrOnly)
 				{ ?>
-				<span class="sr-only">
+				<span class="visually-hidden">
 					<?php echo Text::sprintf('JNEXT_TITLE', htmlspecialchars($Title)); ?>
 				</span>
 				<?php

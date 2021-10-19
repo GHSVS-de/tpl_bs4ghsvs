@@ -12,7 +12,7 @@ echo JHtml::_(
 	'ghsvs.addclass_form-control',
 	array(
 	 'formSelector' => '.form4registration',
-		'additionalScript' => '$(".form-group.field-spacer").addClass("sr-only");'
+		'additionalScript' => '$(".form-group.field-spacer").addClass("visually-hidden");'
 	)
 );
 ?>
@@ -49,7 +49,7 @@ echo JHtml::_(
 					{
 					 echo JText::_($fieldset->label);
 					}
-					
+
 					?>
      <!--</legend>-->
 				<?php endif; ?>
@@ -63,7 +63,7 @@ echo JHtml::_(
 					<?php if ($field->hidden) : ?>
 						<?php echo $field->input; ?>
 					<?php else : ?>
-     
+
 
      <?php echo $field->renderField();
 					if ($field->fieldname == 'password1')
@@ -81,12 +81,12 @@ echo JHtml::_(
 				</fieldset>
 			<?php endif; ?>
 		<?php endforeach; ?>
-  
+
 <div id="form-login-submit" class="form-group">
  <button type="submit" class="btn btn-primary validate"><?php echo JText::_('JREGISTER'); ?></button>
  <!--<a class="btn btn-default" href="<?php echo JRoute::_(''); ?>" title="<?php echo JText::_('JCANCEL'); ?>"><?php echo JText::_('JCANCEL'); ?></a>-->
 </div>
-  
+
 
  <input type="hidden" name="option" value="com_users" />
  <input type="hidden" name="task" value="registration.register" />

@@ -107,7 +107,7 @@ if (version_compare(JVERSION, '4', 'ge'))
 				<h3><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_VCARD'); ?></h3>
 				<p>
 					<a class="btn btn-primary" href="<?php echo Route::_('index.php?option=com_contact&amp;view=contact&amp;id=' . $this->contact->id . '&amp;format=vcf'); ?>">{svg{solid/download}}
-						<span class="sr-only"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_VCARD_DOWNLOAD'); ?></span>
+						<span class="visually-hidden"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_VCARD_DOWNLOAD'); ?></span>
 					</a>
 				</p>
 
