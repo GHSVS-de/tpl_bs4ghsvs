@@ -11601,6 +11601,9 @@ a.btn {
   margin: 0 auto;
   z-index: 1055;
 }
+.modalFallback .alert {
+  margin-bottom: 0;
+}
 
 .invalid {
   border: 2px solid #990134;
