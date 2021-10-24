@@ -1,0 +1,14 @@
+@import "importerMin";
+
+.mod_volleyghsvs
+{
+	@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/tables";
+
+	caption
+	{
+		padding-top: $table-cell-padding-y;
+		padding-bottom: $table-cell-padding-y;
+		color: $table-caption-color;
+		text-align: left;
+	}
+}
