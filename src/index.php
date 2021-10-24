@@ -325,5 +325,12 @@ HTMLHelper::_('script', 'custom.js', array('version' => 'auto', 'relative' => tr
 		<script src="templates/<?php echo $this->template; ?>/js/template.min.js"></script>
 	</div><!--/mainBackground-->
 	<div id="BOTTOM"></div>
+	<?php
+	if (version_compare(JVERSION, '4', 'lt'))
+	{	// Needed for JLayout messages.php JavaScript part. Don't use HTMLHelper!
+	?>
+		<script src="templates/<?php echo $this->template; ?>/js/core-mine.js"></script>
+	<?php
+	} ?>
  </body>
 </html>

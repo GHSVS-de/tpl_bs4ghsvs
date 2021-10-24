@@ -344,6 +344,11 @@ a.btn
 	max-width: 95%;
 	margin: 0 auto;
 	z-index: $zindex-modal;
+
+	.alert
+	{
+		margin-bottom: 0;
+	}
 }
 
 .invalid
