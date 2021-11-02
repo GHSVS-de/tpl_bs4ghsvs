@@ -28,6 +28,17 @@ if (empty($image))
 echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/'. basename(__FILE__) . '-->' . PHP_EOL;
 
 $imgAttributes = $attributes->toArray();
+
+$imgClasses = explode(' ', $attributes->get('class', ''));
+$imgClasses = array_map('trim', $imgClasses);
+
+if (in_array('IMG_DoNotTouch', $imgClasses))
+{ ?>
+	<img src="<?php echo $image; ?>" <?php echo ArrayHelper::toString($imgAttributes); ?>>
+<?php
+	return;
+}
+
 $aAttributes = [];
 $options = new Registry(isset($options) ? $displayData['options'] : []);
 $venobox = '';
@@ -106,9 +117,6 @@ $imgAttributes['class'] = isset($imgAttributes['class']) ?
 
 if (PluginHelper::isEnabled('system', 'venoboxghsvs'))
 {
-	$imgClasses = explode(' ', $attributes->get('class', ''));
-	$imgClasses = array_map('trim', $imgClasses);
-
 	if (!in_array('EXCLUDEVENOBOX', $imgClasses)
 		&& !in_array('excludevenobox', $imgClasses)
 	){
@@ -156,6 +164,9 @@ else
 // And because other $imgs collections can contain more than just 1 image.
 $sources = Bs3ghsvsItem::getSources($imgs, $mediaQueries, $image);
 $sources = $sources[0];
+
+unset($imgAttributes['style']);
+
 $imgAttributes['width'] = $sources['assets']['width'];
 $imgAttributes['height'] = $sources['assets']['height'];
 $imgAttributes['src'] = $sources['assets']['img'];
