@@ -24,7 +24,7 @@
 		"lastTests": [
 			"Joomla 3.10",
 			"Joomla 4.0",
-			"PHP8"
+			"PHP 8"
 		]
 	},
 	"minimumPhp": "7.4.0",
