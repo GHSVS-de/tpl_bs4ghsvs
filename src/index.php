@@ -52,6 +52,7 @@ if ($done = PluginHelper::isEnabled('system', 'astroidghsvs'))
 		"public function onAfterAstroidRender()" abgefeuert.
 		*/
 		AstroidGhsvsHelper::$filesToCompile = [
+			'editorghsvs|noInsert',
 			'editor-inserttagsghsvs|noInsert',
 			'editor-prism|noInsert',
 			'print|noInsert',
