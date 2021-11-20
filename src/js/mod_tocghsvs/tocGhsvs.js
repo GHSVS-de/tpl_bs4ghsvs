@@ -113,6 +113,11 @@
 			Muss PHP-seitig mittels JUri detektiert und übergeben werden.
 			*/
 			currentUri: '',
+			/*
+			Accordion-Buttons und ähnliche, die kein tabindex=-1 bekommen sollen,
+			damit z.B. outline/boxshadow bei ::focus nicht gekillt wird.
+			*/
+			noTabindexClasses: ['accordion-toggle', 'accordion-button'],
 		},
 
 		// merge custom options.
@@ -391,7 +396,12 @@ Siehe in template.js. Das hier ist Schmarrn.
 					id += '_' + i;
 				}
 
-				heading.tabIndex = "-1";
+				if (!this.config.noTabindexClasses.some(className =>
+					heading.classList.contains(className))
+				){
+  				heading.tabIndex = "-1";
+				}
+
 				heading.setAttribute('id', id);
 
 				heading.setAttribute('class', 'isATocId ' + heading.className);
