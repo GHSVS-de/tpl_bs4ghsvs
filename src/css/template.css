@@ -21,6 +21,10 @@ Deaktiivert in templates\bs4ghsvs\scss\_overridesghsvs.scss
   }
 }
 /* STARTMARKER _text-styles.scss */
+.IMG_DoNotTouch {
+  cursor: inherit;
+}
+
 .EXCLUDEVENOBOX {
   cursor: inherit;
 }
