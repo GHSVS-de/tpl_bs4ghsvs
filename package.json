@@ -10,7 +10,10 @@
 		"folder": "",
 		"client": "site",
 		"tag": "stable",
-		"targetplatform": ".*"
+		"targetplatform": [
+			"3.*",
+			"4.*"
+		]
 	},
 	"releaseTxt": {
 		"title": "Joomla site template tpl_bs4ghsvs (Bootstrap 5.1 variant)"
