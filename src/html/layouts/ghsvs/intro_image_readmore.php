@@ -21,7 +21,7 @@ $options = new Registry(isset(
 $item = $displayData['item'];
 $images = Bs3ghsvsItem::getItemImagesghsvs($item);
 
-if ($image = $images->get('image_intro'))
+if ($image = $images->get('image_intro', ''))
 {
 	echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/'. basename(__FILE__) . '-->' . PHP_EOL;
 
@@ -73,8 +73,8 @@ if ($image = $images->get('image_intro'))
 		$aTitle = 'GHSVS_HIGHER_RESOLUTION_0';
 	}
 
-	$alt = $images->get('image_intro_alt');
-	$caption = $images->get('image_intro_caption');
+	$alt = $images->get('image_intro_alt', '');
+	$caption = $images->get('image_intro_caption', '');
 	$alt = htmlspecialchars(($alt ? $alt : $caption), ENT_QUOTES, 'UTF-8');
 	$caption = htmlspecialchars($caption, ENT_QUOTES, 'UTF-8');
 
