@@ -13,7 +13,7 @@ use Joomla\Registry\Registry;
 $item = $displayData['item'];
 $images = Bs3ghsvsItem::getItemImagesghsvs($item);
 
-if ($image = $images->get('image_fulltext'))
+if ($image = $images->get('image_fulltext', ''))
 {
 	echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/'. basename(__FILE__) . '-->' . PHP_EOL;
 
@@ -47,8 +47,8 @@ if ($image = $images->get('image_fulltext'))
 		$aTitle = 'GHSVS_HIGHER_RESOLUTION_0';
 	}
 
-	$alt = $images->get('image_fulltext_alt');
-	$caption = $images->get('image_fulltext_caption');
+	$alt = $images->get('image_fulltext_alt', '');
+	$caption = $images->get('image_fulltext_caption', '');
 	$alt = htmlspecialchars(($alt ? $alt : $caption), ENT_QUOTES, 'UTF-8');
 	$caption = htmlspecialchars($caption, ENT_QUOTES, 'UTF-8');
 	$picture = array('<picture>');
