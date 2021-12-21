@@ -73,7 +73,7 @@
 	},
 	"devDependencies": {
 		"adm-zip": "0.5.9",
-		"chalk": "^4.1.2",
+		"chalk": "<5",
 		"fs-extra": "10.0.0",
 		"line-reader": "^0.4",
 		"path": "^0.12.7",
