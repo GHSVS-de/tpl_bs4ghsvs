@@ -57,7 +57,8 @@ if ($done = PluginHelper::isEnabled('system', 'astroidghsvs'))
 			'editor-prism|noInsert',
 			'print|noInsert',
 			'prism-ghsvs|noInsert',
-			'venobox|noInsert',
+			// JQuery free Venobox 2 doesn't need that anymore.
+			// 'venobox|noInsert',
 			'template',
 		];
 
