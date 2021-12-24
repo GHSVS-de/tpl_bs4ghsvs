@@ -92,33 +92,12 @@ if ($this->item->params->get('show_introimage_blogview_ghsvs', 0))
 	}
 }
 ?>
-
-
-	<?php
-	// Introtext kürzen
-	$limit = (int) $this->item->params->get('introtext_limit_ghsvs', 250);
-
-	if ($limit > 20)
-	{
-		$truncated = HTMLHelper::_('string.truncateComplex',
-			$this->item->introtext, $limit
-	 );
-
-	 // Bisschen plump:
-	 if (!$this->item->readmore && mb_substr($truncated, -3) == '...')
-	 {
-		 $this->item->readmore = true;
-	 }
-	 // Und jetzt statt Introtext:
-	 $cardText = $truncated;
-	}
-	else
-	{
-		$cardText = $this->item->introtext;
-	}
-	?>
-
-
+<?php
+$cardText = LayoutHelper::render('ghsvs.truncateComplex',
+	['item' => &$this->item, 'text' => $this->item->introtext,
+		'length' => (int) $this->item->params->get('introtext_limit_ghsvs', 250)]
+);
+?>
 <?php if ($this->item->params->get('show_readmore') && $this->item->readmore) :
 	if ($this->item->params->get('access-view')) :
 		$link = Route::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid));
