@@ -10,10 +10,10 @@
 	<fields name="request">
 		<fieldset name="request"
 			addfieldpath="/administrator/components/com_contact/models/fields"
+			addfieldprefix="Joomla\Component\Contact\Administrator\Field"
 		>
 			<field name="id"
 				type="modal_contact"
-				description="COM_CONTACT_SELECT_CONTACT_DESC"
 				label="COM_CONTACT_SELECT_CONTACT_LABEL"
 				required="true"
 				edit="true"
