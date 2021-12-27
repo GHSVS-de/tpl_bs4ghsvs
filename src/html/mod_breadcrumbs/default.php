@@ -4,13 +4,26 @@ defined('_JEXEC') or die;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
+use Joomla\CMS\Router\Route;
 
 // Stupid outputs by com_tags.
 $option = Factory::getApplication()->input->get('option', '');
 
 if (version_compare(JVERSION, '4', 'ge'))
 {
-  $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
+  $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx', ''), ENT_COMPAT, 'UTF-8');
+}
+
+// Fixes https://github.com/GHSVS-de/tpl_bs4ghsvs/issues/25
+if (version_compare(JVERSION, '3', 'gt'))
+{
+	foreach ($list as $key => $item)
+	{
+		if (!empty($item->link))
+		{
+			$list[$key]->link = Route::_($item->link);
+		}
+	}
 }
 ?>
 <?php
@@ -68,7 +81,6 @@ if (version_compare(JVERSION, '4', 'ge'))
 			// Make a link if not the last item in the breadcrumbs
 			$show_last = $params->get('showLast', 1);
 			?>
-
 			<?php foreach ($list as $key => $item)
 			{ ?>
 				<?php if ($key !== $last_item_key)
