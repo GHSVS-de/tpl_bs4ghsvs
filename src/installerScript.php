@@ -16,6 +16,7 @@ class  bs4ghsvsInstallerScript extends InstallerScript
 	protected $deleteFiles = [
 		'/templates/bs4ghsvs/html/com_content/category/blogghsvs-bs_footableghsvs.php',
 		'/templates/bs4ghsvs/html/com_content/category/blogghsvs-bs_listeghsvs.php',
+		'/templates/bs4ghsvs/favicon.ico',
 		// JQuery free Venobox 2 doesn't need that anymore.
 		'/templates/bs4ghsvs/css/venobox.css',
 		'/templates/bs4ghsvs/css/venobox.css.map',

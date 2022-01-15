@@ -38,7 +38,7 @@
 	<files>
 		<filename>component.php</filename>
 		<filename>error.php</filename>
-		<filename>favicon.ico</filename>
+		<!-- <filename>favicon.ico</filename> -->
 		<filename>index.php</filename>
 		<filename>installerScript.php</filename>
 		<filename>LICENSE.txt</filename>

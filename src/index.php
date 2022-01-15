@@ -6,6 +6,7 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Uri\Uri;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Plugin\PluginHelper;
+use Joomla\CMS\Layout\LayoutHelper;
 
 $isRobot = $this->params->get('isRobot');
 
@@ -146,6 +147,7 @@ HTMLHelper::_('script', 'custom.js', array('version' => 'auto', 'relative' => tr
 		HidePageHeader = <?php echo (int) $HidePageHeader; ?>;
 	</script>
 	<jdoc:include type="head" />
+	<?php echo LayoutHelper::render('ghsvs.favicons'); ?>
 </head>
 <body class="<?php echo $BodyClasses; ?> pb-4rem" id="TOP">
 <div id="mainBackground">
