@@ -82,14 +82,17 @@ if ($this->params->get('show_page_heading'))
 			$js = <<<JS
 ;(function(){
 document.addEventListener('DOMContentLoaded',function(){
-// Declare a fragment:
-var fragment = document.createDocumentFragment();
+	// Added by my Joomls-Module.
+	let target = document.getElementById('PRINTBUTTON_TARGET');
 
-// Append desired element to the fragment:
-fragment.appendChild(document.getElementById("$printBtnId"));
-
-// Append fragment to desired element:
-document.getElementById('PRINTBUTTON_TARGET').appendChild(fragment);
+	if (target)
+	{
+		// Declare a fragment:
+		let fragment = document.createDocumentFragment();
+		// Append desired element to the fragment:
+		fragment.appendChild(document.getElementById("$printBtnId"));
+		target.appendChild(fragment);
+	}
 });})();
 JS;
 			Factory::getDocument()->addScriptDeclaration($js);
