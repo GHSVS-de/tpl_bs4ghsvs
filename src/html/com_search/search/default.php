@@ -32,39 +32,5 @@ $this->params->set('show_page_heading', 0);
 			<?php endif; ?>
 		</div>
 	</div>
-	<div class="page-header">
-		<h2>Alternativ: Google-Suche für Domain www.ghsvs.de</h2>
-	</div>
-<p class="block-warning">
-- Bei Aktivierung und Nutzung der Suche wird eine Verbindung zu Google aufgebaut und Google schreibt Cookies in Ihren Browser. Wenn Sie keine Vorbehalte gegen die "normale" Google-Suche haben, die das ebenfalls tut, klicken Sie den Aktivieren-Knopf, um das Suchfeld einzublenden. <a href="datenschutz#datenschutz-google-cse">Siehe auch Datenschutzerklärung zu Google-CSE</a><br />
-- Google-Suche-Ergebnisse zeigen (meist oben) auch Werbung an, die Google einfügt. Diese sind mit einem Label "Anzeige" versehen.</p>
-<div class="google-suche">
-<?php echo HTMLHelper::_('script', 'loadCse.js',
-	array('relative' => true, 'version' =>'auto')
-); ?>
-
-<gcse:search></gcse:search>
-<button onclick="loadCse();this.classList.add('d-none');return false;" class="btn btn-primary">
-Google-Suche aktivieren
-</button>
-
-<style>
-div.google-suche{
-	position:relative;
-	min-height:40px;
-}
-div.gsc-control-cse{
-	padding: 1em 0;
-}
-div.gsc-control-cse div{
-	min-height:34px;
-}
-td.gsc-search-button input{
-	height:34px;
-	width:34px;
-	padding:6px;
-	display: inline-block;
-}
-</style>
 </div>
 </div>
