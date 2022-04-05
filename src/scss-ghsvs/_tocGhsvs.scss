@@ -32,3 +32,12 @@
 		font-style: italic;
 	}
 }
+
+// Add a marker to scroll targets.
+.isATocId:target::before
+{
+	font: 70% sans-serif;
+	content: "►";
+	color: $red;
+	margin-right: .25em;
+}
