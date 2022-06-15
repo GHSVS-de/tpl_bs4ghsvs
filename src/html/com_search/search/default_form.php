@@ -19,8 +19,8 @@ $upper_limit = Factory::getLanguage()->getUpperLimitSearchWord();
 	<div class="form-group phrases">
 		<label for="ordering" class="ordering">
 			<?php echo Text::_('COM_SEARCH_ORDERING'); ?>
-			<p class="block-info"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_SEARCH_ORDERING_HINT'); ?></p>
 		</label>
+		<p class="block-info mt-1"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_SEARCH_ORDERING_HINT'); ?></p>
 		<?php echo $this->lists['ordering'];?>
 	</div>
 <?php endif; ?>
