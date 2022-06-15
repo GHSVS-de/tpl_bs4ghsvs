@@ -33,4 +33,3 @@ $this->params->set('show_page_heading', 0);
 		</div>
 	</div>
 </div>
-</div>
