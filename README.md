@@ -85,6 +85,13 @@ sh run-p_tpl_bs4ghsvs.sh;
 
 - `node build.js`
 
+## PHP Codestyle
+If you think it's worth it.
+- `cd /mnt/z/git-kram/php-cs-fixer-ghsvs`
+- `npm run tpl_bs4ghsvsDry` (= dry test run).
+- `npm run tpl_bs4ghsvs` (= cleans code).
+- `cd /mnt/z/git-kram/tpl_bs4ghsvs` (back to this repo).
+
 ## Build installable ZIP package
 - `node build.js`
 - New, installable ZIP is in `./dist` afterwards.
