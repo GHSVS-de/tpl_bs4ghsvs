@@ -55,22 +55,35 @@ HTMLHelper::_(
 	['defer' => true]
 );
 
-$document->addScriptDeclaration("document.addEventListener('DOMContentLoaded', function() {
-	window.tocGhsvsInit(Joomla.getOptions('tocGhsvs-settings" . $module->id . "'));
-});");
-
-######### Close modal after action.
-/* $document->addScriptDeclaration(
-'jQuery(function(){jQuery("#' . $id . ' a[href*=\"#\"]").not("[href=\"#\"]").not("[href=\"#0\"]").on("click", function(event){jQuery("#' . $id . '").modal("hide");jQuery("#' . $id . ' .dropdown").removeClass("open");});});'
-); */
-// BS5
 $document->addScriptDeclaration(
-	'jQuery(function(){
- var myModalEl' . $module->id . ' = new bootstrap.Modal("#' . $id . '");
- jQuery("#' . $id . ' a[href*=\"#\"]").not("[href=\"#\"]").not("[href=\"#0\"]").on("click",
-  function(event){myModalEl' . $module->id . '.hide();}
- );});'
-);
+<<<JS
+document.addEventListener('DOMContentLoaded', function()
+{
+	window.tocGhsvsInit(Joomla.getOptions("tocGhsvs-settings$module->id"));
+
+	var myModalEl$module->id = new bootstrap.Modal("#$id");
+	let elem = document.getElementById("$id");
+	document.getElementById("$id").querySelectorAll("#$id a[href*=\"#\"]")
+		.forEach((link) =>
+		{
+			/*
+			JQuery would simply use .not("[href=\"#\"]").not("[href=\"#0\"]")
+			but vanilla is too stupid for CSS :not()-selectors.
+			*/
+			let parts = link.href.split('#');
+
+			if (! parts[1] || parts[1] === '0')
+			{
+				return;
+			}
+
+			link.addEventListener('click', (e) => {
+				myModalEl$module->id.hide();
+				//e.stopImmediatePropagation();
+			});
+	});
+});
+JS);
 ?>
 <div class="HIDEIFNOTHINGFOUND<?php echo $id; ?>">
 	<div class="modal fade" id="<?php echo $id; ?>" tabindex="-1" role="dialog"
