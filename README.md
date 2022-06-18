@@ -7,6 +7,8 @@ Das ist kein Template, das man installiert und dann läuft es reibungslos. Es br
 ----------------
 # My personal build procedure (WSL 1, Debian, Win 10)
 
+**@since > v2022.03.31: Build procedure uses local repo fork of https://github.com/GHSVS-de/buildKramGhsvs**
+
 ## If a new Bootstrap release? Special step (1)!!!!! Build reduced `bootstrap.bundle` JS!!!!!!
 - - You should first build a new `plg_system_bs3ghsvs_bs5`. Makes the whole release procedure a little bit easier.
 
