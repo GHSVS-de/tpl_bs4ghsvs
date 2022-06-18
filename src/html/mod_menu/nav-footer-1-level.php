@@ -1,8 +1,8 @@
 <?php
 defined('_JEXEC') or die;
 
-use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Helper\ModuleHelper;
+use Joomla\CMS\Layout\LayoutHelper;
 
 if ($tagId = $params->get('tag_id', ''))
 {
@@ -66,7 +66,7 @@ foreach ($list as $item)
 		$item->id == $active_id
 		|| ($item->type === 'alias'
 			&& $itemParams->get('aliasoptions') == $active_id)
-	){
+	) {
 		$item->liClass[] = 'current';
 		$item->aAttributes['aria-current'] = 'page';
 		$aClass[] = 'active disabled';
@@ -116,13 +116,13 @@ foreach ($list as $item)
 }
 ?>
 <?php
-echo LayoutHelper::render('ghsvs.moduleColDiv.start', array(
+echo LayoutHelper::render('ghsvs.moduleColDiv.start', [
 	'module' => $module,
 	'params' => $params,
 	'prependClass' => '',
 	// leading space!
-	'attribs' => ' role="navigation"'
-));
+	'attribs' => ' role="navigation"',
+]);
 ?>
 <ul class="nav nav-pills h-100 flex-column<?php echo $class_sfx; ?>
 	<?php echo $ulClass; ?>" id="<?php echo $id; ?>">
@@ -136,7 +136,8 @@ echo LayoutHelper::render('ghsvs.moduleColDiv.start', array(
 			case 'component':
 			case 'heading':
 			case 'url':
-				require ModuleHelper::getLayoutPath('mod_menu',
+				require ModuleHelper::getLayoutPath(
+					'mod_menu',
 					'ghsvsDefault_' . $item->type
 				);
 			break;

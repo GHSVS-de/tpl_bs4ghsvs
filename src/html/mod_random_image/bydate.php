@@ -8,13 +8,14 @@ defined('_JEXEC') or die;
 $comparisonFormat = 'Ymd'; // Jahr, Monat, Tag
 $now = JFactory::getDate(time(), 'UTC');
 $now = $now->format($comparisonFormat); // z.B. 20160106
+
 foreach ($images as $img)
 {
- if (strpos($img->name, $now) === 0)
- {
-  $image = $img;
-  break;
- }
+	if (strpos($img->name, $now) === 0)
+	{
+		$image = $img;
+		break;
+	}
 }
 ?>
 <div class="random-image<?php echo $moduleclass_sfx; ?>">

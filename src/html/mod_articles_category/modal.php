@@ -3,11 +3,10 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
-use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\Utilities\ArrayHelper;
 
 $jinput = Factory::getApplication()->input;
-$views = array('article', 'category');
+$views = ['article', 'category'];
 
 // Wenn empty($list) kommen wir hier gar nicht an. Muss also nicht prüfen.
 if (!in_array($jinput->get('view'), $views))
@@ -51,8 +50,7 @@ $catsTitle = Text::_($catsTitle) . ': ' . implode(', ', $cats);
 						<?php
 						foreach ($list as $item)
 						{
-							$liclass = 'list-group-item' . ($item->active ? ' active disabled' : '');
-							?>
+							$liclass = 'list-group-item' . ($item->active ? ' active disabled' : ''); ?>
 							 <li class="<?php echo $liclass; ?>">
 							 	<a href="<?php echo $item->link; ?>">
 									<?php echo $item->title; ?>

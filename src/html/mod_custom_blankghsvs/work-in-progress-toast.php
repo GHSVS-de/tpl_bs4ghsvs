@@ -1,12 +1,11 @@
 <?php
 defined('_JEXEC') or die;
 
-use Joomla\Application\Web\WebClient;
+use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
-use Joomla\CMS\HTML\HTMLHelper;
-use Joomla\CMS\Factory;
 use Joomla\Input\Cookie;
+
 ?>
 <?php
 if ($params->get('robotsHide', 0) === 1 && $params->get('isRobot') === 1)
@@ -36,7 +35,7 @@ $session->set($node, 1);
 // 14 days 60 * 60 * 24 * 14
 $cookie_time = 60 * 60 * 24 * 60;
 
-$cookieOptions = array(
+$cookieOptions = [
 	'expires' => time() + $cookie_time,
 	// Wichtig! Damit Cookie sowohl unter /de/ als auch /en/ verfügbar.
 	'path' => '/',
@@ -48,10 +47,11 @@ $cookieOptions = array(
 	*/
 	'httponly' => true,
 	'samesite' => 'strict',
-	'secure' => true
-);
+	'secure' => true,
+];
 
-$cookie->set($node,
+$cookie->set(
+	$node,
 	1,
 	$cookieOptions
 );
@@ -71,8 +71,10 @@ $toastId = 'thisToast' . $module->id;
 	data-bs-autohide="false">
   <div class="toast-header">
 		<strong class="me-auto"><?php echo Text::_('SINFOTPL_WIP_LBL'); ?></strong>
-		<?php echo LayoutHelper::render('ghsvs.closeButtonTop',
-			array('options' => ['dismissType' => 'toast'])); ?>
+		<?php echo LayoutHelper::render(
+	'ghsvs.closeButtonTop',
+	['options' => ['dismissType' => 'toast']]
+); ?>
   </div>
   <div class="toast-body">
     <?php echo Text::_('SINFOTPL_WIP_TXT'); ?>

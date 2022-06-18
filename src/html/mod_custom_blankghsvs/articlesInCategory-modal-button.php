@@ -3,10 +3,9 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
-use Joomla\CMS\Application\ApplicationHelper;
 
 $view = Factory::getApplication()->input->get('view');
-$views = array('article', 'category');
+$views = ['article', 'category'];
 
 // Wenn empty($list) kommen wir hier gar nicht an. Muss also nicht prüfen.
 if (!in_array($view, $views))

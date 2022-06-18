@@ -37,9 +37,7 @@ if ($page_heading || $page_subheading)
 		? $displayData['bs3ghsvs.rendermodules-position'] :'';
 
 	// Eine CSS-Klasse für den page-header-DIV, die Modulposition enthält, falls angegben.
-	$class .= ($position ? ' rendermodules-position ' . $position : '');
-
-?>
+	$class .= ($position ? ' rendermodules-position ' . $position : ''); ?>
 <div class="<?php echo $class ?> div4hyphens">
 	<h1 class="page_heading fst-italic text-muted">
 		<?php echo $page_heading; ?>
@@ -49,9 +47,8 @@ if ($page_heading || $page_subheading)
 <?php
  if ($position)
  {
-	echo JHtml::_('bs3ghsvs.rendermodules', $position);
- }
- ?>
+ 	echo JHtml::_('bs3ghsvs.rendermodules', $position);
+ } ?>
 
 </div><!--/page-header h1-->
 <?php

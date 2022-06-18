@@ -5,7 +5,7 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 
 $jinput = Factory::getApplication()->input;
-$views = array('article', 'category');
+$views = ['article', 'category'];
 
 // Wenn empty($list) kommen wir hier gar nicht an. Muss also nicht prüfen.
 if (!in_array($jinput->get('view'), $views))

@@ -5,12 +5,13 @@ Fügt Venobox-Konfiguration in Beitrag "Integration von Venobox via JHtml/HTMLHe
 defined('_JEXEC') or die;
 use Joomla\CMS\HTML\HTMLHelper;
 
-HTMLHelper::_('plgvenoboxghsvs.venobox',
+HTMLHelper::_(
+	'plgvenoboxghsvs.venobox',
 	[
 		'titleBackground' => '#f00',
 		'titleColor' => '#fff',
 		'closeColor' => '#d2d2d2',
-		'share' => ['download']
+		'share' => ['download'],
 	]
 );
 ?>

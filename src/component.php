@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-$this->_scripts = $this->_styleSheets = $this->_script = $this->_style = $this->_script = $this->_custom = $this->_scriptText = array();
+$this->_scripts = $this->_styleSheets = $this->_script = $this->_style = $this->_script = $this->_custom = $this->_scriptText = [];
 $this->link = '';
 $this->setMetadata('robots', 'noindex,nofollow');
 $this->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/template.css');

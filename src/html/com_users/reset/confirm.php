@@ -9,10 +9,10 @@ JHtml::_('behavior.formvalidator');
 echo JHtml::_(
 	'bs3ghsvs.layout',
 	'ghsvs.addclass_form-control',
-	array(
+	[
 	 'formSelector' => '.form4reset',
 		'additionalScript' => '',
-	)
+	]
 );
 ?>
 <div class="reset-confirm<?php echo $this->pageclass_sfx; ?>">

@@ -6,24 +6,24 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\HTML\HTMLHelper;
-use Joomla\CMS\Router\Route;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\Router\Route;
 
 HTMLHelper::_('behavior.keepalive');
 HTMLHelper::_('behavior.formvalidator');
 
 JLoader::register('Bs3GhsvsFormHelper', __DIR__ . '/Helper/FormHelper.php');
 
-$overrides = array(
-	'contact_name' => array('str' => 'SINFOTPL_CONTACT_NAME_DESC', 'group' => ''),
-	'contact_email' => array('str' => 'SINFOTPL_CONTACT_EMAIL_DESC', 'group' => ''),
-	'contact_subject' => array('str' => 'SINFOTPL_CONTACT_SUBJECT_DESC', 'group' => ''),
-	'contact_message' => array('str' => 'SINFOTPL_CONTACT_MESSAGE_DESC', 'group' => ''),
+$overrides = [
+	'contact_name' => ['str' => 'SINFOTPL_CONTACT_NAME_DESC', 'group' => ''],
+	'contact_email' => ['str' => 'SINFOTPL_CONTACT_EMAIL_DESC', 'group' => ''],
+	'contact_subject' => ['str' => 'SINFOTPL_CONTACT_SUBJECT_DESC', 'group' => ''],
+	'contact_message' => ['str' => 'SINFOTPL_CONTACT_MESSAGE_DESC', 'group' => ''],
 	//'contact_phoneghsvs'=> array('str' => '', 'group' => ''),
-	
+
 	// GHSVS 2018 neue Datenschutz-Checkbox
 	//'contact-datenschutz' => 'onlyClasses',
-);
+];
 
 // add BS3 form-control class and Placeholders.
 Bs3GhsvsFormHelper::prepareFormFields($this->form, 'description', $overrides);

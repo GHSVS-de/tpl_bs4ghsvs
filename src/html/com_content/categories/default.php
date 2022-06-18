@@ -2,12 +2,11 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Router\Route;
-use Joomla\CMS\Language\Text;
-use Joomla\Registry\Registry;
 
-echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/'. basename(__FILE__) . '-->' . PHP_EOL;
+echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/' . basename(__FILE__) . '-->' . PHP_EOL;
 
 HTMLHelper::addIncludePath(JPATH_COMPONENT . '/helpers');
 ?>
@@ -26,8 +25,9 @@ HTMLHelper::addIncludePath(JPATH_COMPONENT . '/helpers');
 			foreach ($this->items[$this->parent->id] as $id => $item)
 			{
 				$catLink = Route::_(ContentHelperRoute::getCategoryRoute(
-					$item->id, $item->language));
-			?>
+					$item->id,
+					$item->language
+				)); ?>
 			<div class="col">
 			<div class="card h-100 border-danger">
 				<div class="card-body">
@@ -41,20 +41,25 @@ HTMLHelper::addIncludePath(JPATH_COMPONENT . '/helpers');
 						&& $item->description !== ''
 					){ ?>
 					<div class="card-text lead">
-					<?php echo HTMLHelper::_('content.prepare', $item->description, '',
-						'com_content.categories'); ?>
+					<?php echo HTMLHelper::_(
+						'content.prepare',
+						$item->description,
+						'',
+						'com_content.categories'
+					); ?>
 					</div><!--/card-text lead-->
 					<?php
 					} ?>
 					<div class="card-text">
 					<?php
-					echo LayoutHelper::render('ghsvs.readmore',
-						[
+					echo LayoutHelper::render(
+							'ghsvs.readmore',
+							[
 							'item' => $item,
 							'params' => $this->params,
-							'link' => $catLink
-						]);
-					?>
+							'link' => $catLink,
+						]
+						); ?>
 					</div>
 				</div><!--/card-body-->
 				<?php if ($this->params->get('show_cat_num_articles_cat') == 1)

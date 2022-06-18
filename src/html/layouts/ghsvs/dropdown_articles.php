@@ -7,12 +7,13 @@ BEACHTE ALSO ZUSAMMENHANG MIT MODULPOSITION buttonGruppeGhsvs: Sowie Alternative
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
-use Joomla\Registry\Registry;
 use Joomla\CMS\HTML\HTMLHelper;
-use Joomla\Utilities\ArrayHelper;
 use Joomla\CMS\Language\Text;
+use Joomla\Registry\Registry;
+use Joomla\Utilities\ArrayHelper;
 
-HTMLHelper::_('bs3ghsvs.addsprungmarke',
+HTMLHelper::_(
+	'bs3ghsvs.addsprungmarke',
 	'.dropdown-articles ul.dropdown-menu'
 );
 
@@ -23,18 +24,19 @@ $views = (array) $options->get('views');
 if (
 	($views && ! in_array(Factory::getApplication()->input->get('view'), $views))
 	|| !($items = (array) $options->get('items'))
-){
+) {
 	return '';
 }
 
 $module = new Registry($options->get('module', new stdClass));
-$class = array();
+$class = [];
 $class[] = 'dropdown-articles makeBackdrop';
 
 if (!empty($displayData['bootstrapsize']))
 {
 	$class[] = 'span' . $displayData['bootstrapsize'];
 }
+
 if ($class = implode(' ', $class))
 {
 	$class = ' class ="' . $class . '"';
@@ -74,17 +76,16 @@ foreach ($items as $item)
 	$link = $item->link;
 	$liclass = $item->active ? ' class="active"' : '';
 
- // Vorsicht mit $item->title direkt. $items wird referenziert übergeben, also
+	// Vorsicht mit $item->title direkt. $items wird referenziert übergeben, also
 	// auch die Blogitem-Überschrift geändert!
- $title = str_replace(array('"', "'", '-', '«', '»'), ' ', $item->title);
-?>
-   <li<?php echo $liclass; ?>><a href="<?php echo $item->link; ?>"><?php echo $title;?></a></li>
+	$title = str_replace(['"', "'", '-', '«', '»'], ' ', $item->title); ?>
+   <li<?php echo $liclass; ?>><a href="<?php echo $item->link; ?>"><?php echo $title; ?></a></li>
 <?php
  if (!($cnt % 10))
-	{
-		echo $close2;
-	}
-}; ?>
+ {
+ 	echo $close2;
+ }
+} ?>
   </ul>
 </div>
 </div>

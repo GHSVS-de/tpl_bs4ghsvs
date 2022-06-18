@@ -1,8 +1,5 @@
 <?php
-\defined('_JEXEC') or die;
-
-use Joomla\CMS\HTML\HTMLHelper;
-use Joomla\CMS\Language\Text;
+defined('_JEXEC') or die;
 
 $module = $displayData['module'];
 $params = $displayData['params'];
@@ -15,10 +12,11 @@ if (!is_file($includeFile))
 	return;
 }
 
-if ((bool) $module->showtitle){
+if ((bool) $module->showtitle)
+{
 	$headerTag = htmlspecialchars($params->get('header_tag', 'h3'));
 	$headerClass = $params->get('header_class');
 	$headerClass = !empty($headerClass) ? ' class="' . htmlspecialchars($headerClass) . '"' : '';
-	echo '<' . $headerTag . $headerClass .'>' . $module->title .'</' . $headerTag . '>';
+	echo '<' . $headerTag . $headerClass . '>' . $module->title . '</' . $headerTag . '>';
 }
-require_once($includeFile);
+require_once $includeFile;

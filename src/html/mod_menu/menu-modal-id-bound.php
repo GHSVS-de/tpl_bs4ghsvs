@@ -4,24 +4,25 @@ defined('_JEXEC') or die;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Helper\ModuleHelper;
 use Joomla\CMS\Language\Text;
-use Joomla\String\StringHelper;
 use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Uri\Uri;
+use Joomla\String\StringHelper;
 
 if (
 	$params->get('robotsHide', 0) === 1
 	&& Factory::getApplication()->client->robot
-){
+) {
 	return '';
 }
 
-echo '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/'. basename(__FILE__) . '-->';
+echo '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/' . basename(__FILE__) . '-->';
 
 $uri = Uri::getInstance()->getPath();
 
 /* To calculate a unique id for both participating modules (button and modal)
 	we need a	identical base in both modules. */
-JLoader::register('Bs3ghsvsArticle',
+JLoader::register(
+	'Bs3ghsvsArticle',
 	JPATH_PLUGINS . '/system/bs3ghsvs/Helper/ArticleHelper.php'
 );
 $modalId = Bs3ghsvsArticle::buildUniqueIdFromJinput(
@@ -97,7 +98,7 @@ foreach ($list as $item)
 		$item->id == $active_id
 		|| ($item->type === 'alias'
 			&& $itemParams->get('aliasoptions') == $active_id)
-	){
+	) {
 		// Exclude articles in category.
 		if ($uri === $item->flink)
 		{
@@ -153,23 +154,28 @@ foreach ($list as $item)
 			<div class="modal-body">
 				<div class="<?php echo 'list-group' . $class_sfx; ?>">
 					<?php foreach ($list as &$item)
-					{
-						$item->title = $item->prefix . $item->title;
-						switch ($item->type)
+{
+	$item->title = $item->prefix . $item->title;
+
+	switch ($item->type)
 						{
 							case 'separator':
 							case 'component':
 							case 'heading':
 							case 'url':
-								require ModuleHelper::getLayoutPath('mod_menu',
-									'ghsvsDefault_' . $item->type);
+								require ModuleHelper::getLayoutPath(
+									'mod_menu',
+									'ghsvsDefault_' . $item->type
+								);
 								break;
 							default:
-								require ModuleHelper::getLayoutPath('mod_menu',
-									'ghsvsDefault_url');
+								require ModuleHelper::getLayoutPath(
+									'mod_menu',
+									'ghsvsDefault_url'
+								);
 								break;
 						}
-					} ?>
+} ?>
 				</div><!--/list-group-->
 			</div><!--/modal-body-->
 			<div class="modal-footer">

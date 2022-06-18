@@ -1,5 +1,5 @@
 <?php
-\defined('_JEXEC') or die;
+defined('_JEXEC') or die;
 
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
@@ -19,10 +19,12 @@ if (!is_file($includeFile))
 if ($spoilerOn = $params->get('spoiler', 1))
 {
 	// $spoiler_in = $params->get('spoiler_in', 0);
-	JLoader::register('Bs3ghsvsPagebreak',
-		JPATH_PLUGINS . '/system/bs3ghsvs/Helper/PagebreakHelper.php');
+	JLoader::register(
+		'Bs3ghsvsPagebreak',
+		JPATH_PLUGINS . '/system/bs3ghsvs/Helper/PagebreakHelper.php'
+	);
 	$options = [
-		'activeToSession' => 0
+		'activeToSession' => 0,
 	];
 }
 
@@ -32,12 +34,12 @@ if ((bool) $module->showtitle)
 	$headerClass = $params->get('header_class');
 	$headerClass = !empty($headerClass) ? ' class="'
 		. htmlspecialchars($headerClass) . '"' : '';
-	echo '<' . $headerTag . $headerClass .'>' . $module->title
+	echo '<' . $headerTag . $headerClass . '>' . $module->title
 		. '</' . $headerTag . '>';
 }
 
 ob_start();
-require_once($includeFile);
+require_once $includeFile;
 $text_1 = ob_get_clean();
 
 $includeFile_ = basename($includeFile);
@@ -59,7 +61,7 @@ if ($spoilerOn)
 		. Text::sprintf('GHSVS_MODULES_SPOILER_BTN_TEXT', $includeFile_)
 		. '" title2=""}' . $text_2;
 
-		Bs3ghsvsPagebreak::buildSliders($text, $module->id . '-sp1', $options);
+	Bs3ghsvsPagebreak::buildSliders($text, $module->id . '-sp1', $options);
 }
 else
 {

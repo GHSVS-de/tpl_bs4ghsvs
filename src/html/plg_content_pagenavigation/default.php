@@ -1,7 +1,6 @@
 <?php
 defined('JPATH_BASE') or die;
 
-use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 
@@ -17,8 +16,7 @@ HTMLHelper::_('bs3ghsvs.addsprungmarke', '.pager.page-nav');
 			if ($row->prev)
 			{
 				$Title = $rows[$location - 1]->title;
-				$showSrOnly = $Title != $row->prev_label;
-			?>
+				$showSrOnly = $Title != $row->prev_label; ?>
 			<a class="btn btn-warning my-1 text-start" href="<?php echo $row->prev; ?>" rel="prev"
 				title="<?php echo htmlspecialchars($Title); ?>">
 				<?php
@@ -30,7 +28,7 @@ HTMLHelper::_('bs3ghsvs.addsprungmarke', '.pager.page-nav');
 				<?php
 				} ?>
 				{svg{bi/skip-backward-fill}}
-				<span<?php echo ($showSrOnly ? ' aria-hidden="true"' : ''); ?> class="articleLabel">
+				<span<?php echo($showSrOnly ? ' aria-hidden="true"' : ''); ?> class="articleLabel">
 					<?php echo HTMLHelper::_('string.truncate', $row->prev_label, $lengthLimit, false); ?>
 				</span>
 			</a>
@@ -42,8 +40,7 @@ HTMLHelper::_('bs3ghsvs.addsprungmarke', '.pager.page-nav');
 			if ($row->next)
 			{
 				$Title = $rows[$location + 1]->title;
-				$showSrOnly = $Title != $row->next_label;
-			?>
+				$showSrOnly = $Title != $row->next_label; ?>
 			<a class="btn btn-warning my-1 text-right" href="<?php echo $row->next; ?>" rel="next"
 					title="<?php echo htmlspecialchars($Title); ?>">
 				<?php
@@ -54,7 +51,7 @@ HTMLHelper::_('bs3ghsvs.addsprungmarke', '.pager.page-nav');
 				</span>
 				<?php
 				} ?>
-				<span<?php echo ($showSrOnly ? ' aria-hidden="true"' : ''); ?> class="articleLabel">
+				<span<?php echo($showSrOnly ? ' aria-hidden="true"' : ''); ?> class="articleLabel">
 					<?php echo HTMLHelper::_('string.truncate', $row->next_label, $lengthLimit, false); ?>
 				</span>
 				{svg{bi/skip-forward-fill}}

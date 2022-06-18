@@ -8,19 +8,18 @@ Ich will verschachtelte Tags darstellen
 
 defined('JPATH_BASE') or die;
 
-use Joomla\CMS\Factory;
 use Joomla\CMS\Access\Access;
+use Joomla\CMS\Factory;
 use Joomla\CMS\Helper\TagsHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Router\Route;
-use Joomla\Registry\Registry;
 
 JLoader::register('TagsHelperRoute', JPATH_BASE . '/components/com_tags/helpers/route.php');
 
 $tagsCatGhsvs = $tags = false;
 
 // itemprop="keywords"
-$keywords = array();
+$keywords = [];
 
 if (is_array($displayData))
 {
@@ -52,38 +51,37 @@ if (!empty($displayData->tags->itemTags))
 <?php if ($tagsCatGhsvs || $tags)
 {
 	$authorizedLevels = Access::getAuthorisedViewLevels(
-		Factory::getUser()->get('id'));
-	?>
+		Factory::getUser()->get('id')
+	); ?>
 	<div class="tags my-2">
 	<?php if ($tags)
 	{ ?>
 		<div>
 			<h4 class="h6"><?php echo Text::_('GHSVS_TAGS_ITEM'); ?></h4>
 			<?php foreach ($tags as $i => $tag)
-			{
-				if (in_array($tag->access, $authorizedLevels))
+	{
+		if (in_array($tag->access, $authorizedLevels))
 				:
 					$tagtxt = (!empty($tag->text) ? $tag->text : $tag->title);
-					$keywords[] = $tagtxt;
+		$keywords[] = $tagtxt;
 
-					if ($linkTags)
-					{
-						$link_class = 'label';
-					?>
+		if ($linkTags)
+		{
+			$link_class = 'label'; ?>
 			<a href="<?php echo Route::_(
-				TagsHelperRoute::getTagRoute($tag->tag_id . '-' . $tag->alias)) ?>"
+				TagsHelperRoute::getTagRoute($tag->tag_id . '-' . $tag->alias)
+			) ?>"
 				class="<?php echo $link_class; ?>">
 				<?php echo $tagtxt; ?>
 			</a>
 <?php
-}
-else
-{
-	$link_class = 'label label-default';
-?>
+		}
+		else
+		{
+			$link_class = 'label label-default'; ?>
 	<span class="<?php echo $link_class; ?>"><?php echo $tagtxt; ?></span>
 <?php
-} ?>
+		} ?>
 		<?php endif; ?>
 	<?php
 	} // foreach $tags ?>
@@ -97,7 +95,7 @@ else
 <h4 class="h6"><?php echo Text::_('GHSVS_TAGS_CATEGORY'); ?></h4>
 <?php foreach ($tagsCatGhsvs as $i => $tag) :
 
-$collect = array();
+$collect = [];
 $spanClass = 'label label-categorytag categorytag';
 
 if ($linkTags)

@@ -3,8 +3,8 @@
 defined('JPATH_BASE') or die;
 
 use Joomla\CMS\HTML\HTMLHelper;
-use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\Registry\Registry;
 
 // NEIN NEIN NEIN! Da Prüfung auf empty() fehlschlägt! Also runter
@@ -15,16 +15,17 @@ $images = Bs3ghsvsItem::getItemImagesghsvs($item);
 
 if ($image = $images->get('image_fulltext', ''))
 {
-	echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/'. basename(__FILE__) . '-->' . PHP_EOL;
+	echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/' . basename(__FILE__) . '-->' . PHP_EOL;
 
-	$options = new Registry(isset(
+	$options = new Registry(
+		isset(
 		$displayData['options']) ? $displayData['options'] : []
 	);
 	$venobox = '';
 	$figureClasses = ['autoLimited item-image image_fulltext'];
 
 	// Siehe Beschreibung in der Datei.
-	require(__DIR__ . '/imgClassTranslator.php');
+	require __DIR__ . '/imgClassTranslator.php';
 	$figureClass = $images->get('float_intro', 'ghsvs_img-default');
 
 	if (!empty($imgClassTranslator[$figureClass]))
@@ -51,7 +52,7 @@ if ($image = $images->get('image_fulltext', ''))
 	$caption = $images->get('image_fulltext_caption', '');
 	$alt = htmlspecialchars(($alt ? $alt : $caption), ENT_QUOTES, 'UTF-8');
 	$caption = htmlspecialchars($caption, ENT_QUOTES, 'UTF-8');
-	$picture = array('<picture>');
+	$picture = ['<picture>'];
 
 	// From plg_system_bs3ghsvs. If resizer active.
 	// Returns empty array if nothing.
@@ -65,7 +66,7 @@ if ($image = $images->get('image_fulltext', ''))
 		medium 470
 		small 360
 		*/
-		$mediaQueries = array(
+		$mediaQueries = [
 			'(max-width: 380px)' => '_s',
 			'(max-width: 490px)' => '_m',
 			'(max-width: 767.98px)' => '_l',
@@ -76,7 +77,7 @@ if ($image = $images->get('image_fulltext', ''))
 			// Largest <source> without mediaQuery. Also for fallback <img> src, width and height calculation.
 			// Value only if you want to force one. Otherwise _x or fallback _u is used.
 			'srcSetKey' => '',
-		);
+		];
 	}
 
 	// Use $imgs not $imgs[0] because of ['order'] index.
@@ -94,8 +95,7 @@ if ($image = $images->get('image_fulltext', ''))
 	$picture[] = '</picture>';
 	$picture = implode('', $picture);
 	$aClass[] = $venobox;
-	$figureClasses = implode(' ', $figureClasses);
-?>
+	$figureClasses = implode(' ', $figureClasses); ?>
 <div class="<?php echo $classes; ?>">
 	<figure class="<?php echo $figureClasses; ?>">
 		<div class="position-relative">

@@ -2,13 +2,11 @@
 defined('_JEXEC') or die;
 
  $uri = JUri::getInstance();
+
 	if (strpos($uri->toString(), 'com_users') !== false)
 	{
 		return;
 	}
-
-
-
 
 JHtml::_('behavior.keepalive');
 JHtml::_('behavior.formvalidator');
@@ -17,10 +15,10 @@ JHtml::_('behavior.formvalidator');
 echo JHtml::_(
 	'bs3ghsvs.layout',
 	'ghsvs.addclass_form-control',
-	array(
+	[
 	 'formSelector' => '.form4login',
 		'additionalScript' => '',
-	)
+	]
 );
 ?>
 <div class="login<?php echo $this->pageclass_sfx; ?>">
@@ -90,6 +88,7 @@ echo JHtml::_(
 		</li>
 		<?php
 		$usersConfig = JComponentHelper::getParams('com_users');
+
 		if ($usersConfig->get('allowUserRegistration')) : ?>
 		<li>
 			<a href="<?php echo JRoute::_('index.php?option=com_users&view=registration'); ?>">

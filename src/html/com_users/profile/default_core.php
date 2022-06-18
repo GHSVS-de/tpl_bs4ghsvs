@@ -3,8 +3,6 @@ defined('_JEXEC') or die;
 
 return;
 
-
-
 ?>
 
 <fieldset id="users-profile-core">

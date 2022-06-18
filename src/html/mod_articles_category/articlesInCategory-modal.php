@@ -2,13 +2,12 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
-use Joomla\CMS\Language\Text;
 use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Language\Text;
 use Joomla\Utilities\ArrayHelper;
-use Joomla\CMS\Application\ApplicationHelper;
 
 $jinput = Factory::getApplication()->input;
-$views = array('article', 'category');
+$views = ['article', 'category'];
 
 // Wenn empty($list) kommen wir hier gar nicht an. Muss also nicht prüfen.
 if (!in_array($jinput->get('view'), $views))
@@ -61,8 +60,7 @@ $catsTitle = Text::_($catsTitle) . ': ' . implode(', ', $cats);
 							{
 								$liclass .= ' active disabled';
 								$ariaCurrent = ' aria-current="page"';
-							}
-							?>
+							} ?>
 							 <li class="<?php echo $liclass; ?>">
 							 	<a href="<?php echo $item->link; ?>"<?php echo $ariaCurrent; ?>>
 									<?php echo $item->title; ?>

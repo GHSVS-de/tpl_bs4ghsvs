@@ -42,15 +42,16 @@ use Joomla\CMS\Layout\LayoutHelper;
 
 		#echo ' 4654sd48sa7d98sD81s8d71dsa <pre>' . print_r($this->pagination, true) . '</pre>';exit;
 		$this->params->set('show_pagination', 1);
-		echo LayoutHelper::render('ghsvs.pagination_dropdown',
+		echo LayoutHelper::render(
+			'ghsvs.pagination_dropdown',
 			[
 				'pagination' => $this->pagination,
 				'params' => $this->params,
 				'options' => [
 					// 'cloneIt' => false,
 					// 'align' => 'dropdown-menu-end',
-				'anchor' => '#ABOVEBUTTONGRUPPE'
-					]
+				'anchor' => '#ABOVEBUTTONGRUPPE',
+					],
 			]
 		); ?>
 	</div><!--/paginationToClone-->

@@ -1,9 +1,10 @@
 <?php
 defined('_JEXEC') or die;
 
-use Joomla\CMS\Language\Text;
 use Joomla\CMS\Helper\ModuleHelper;
+use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
+
 //use Joomla\CMS\Utility\Utility;
 //use Joomla\Utilities\ArrayHelper;
 
@@ -89,7 +90,7 @@ foreach ($list as $item)
 		$item->id == $active_id
 		|| ($item->type === 'alias'
 			&& $itemParams->get('aliasoptions') == $active_id)
-	){
+	) {
 		$item->liClass[] = 'current';
 		$item->aAttributes['aria-current'] = 'page';
 		$aClass[] = 'active';
@@ -98,7 +99,7 @@ foreach ($list as $item)
 	if (in_array($item->id, $path))
 	{
 		$item->liClass[] = 'active';
-		// $aClass[] = 'active';
+	// $aClass[] = 'active';
 	}
 	elseif ($item->type === 'alias')
 	{
@@ -107,7 +108,7 @@ foreach ($list as $item)
 		if (count($path) > 0 && $aliasToId == $path[count($path) - 1])
 		{
 			$item->liClass[] = 'active';
-			//$aClass[] = 'active';
+		//$aClass[] = 'active';
 		}
 		elseif (in_array($aliasToId, $path))
 		{
@@ -139,11 +140,11 @@ foreach ($list as $item)
 #echo ' 4654sd48sa7d98sD81s8d71dsa <pre>' . print_r($list, true) . '</pre>';exit;
 ?>
 <?php
-echo LayoutHelper::render('ghsvs.moduleColDiv.start', array(
+echo LayoutHelper::render('ghsvs.moduleColDiv.start', [
 	'module' => $module,
 	'params' => $params,
 	'prependClass' => '',
-));
+]);
 ?>
 <nav class="navbar navbar-expand-md navbar-custom<?php echo $class_sfx; ?>"
 	id="<?php echo $id; ?>">
@@ -158,16 +159,17 @@ echo LayoutHelper::render('ghsvs.moduleColDiv.start', array(
 		<div class="collapse navbar-collapse" id="<?php echo $dataTarget; ?>">
 			<ul class="navbar-nav">
 				<?php foreach ($list as $i => &$item)
-				{
-					echo '<li class="' . $item->liClass . '">';
+{
+	echo '<li class="' . $item->liClass . '">';
 
-					switch ($item->type)
+	switch ($item->type)
 					{
 					case 'separator':
 					case 'component':
 					case 'heading':
 					case 'url':
-						require ModuleHelper::getLayoutPath('mod_menu',
+						require ModuleHelper::getLayoutPath(
+							'mod_menu',
 							'ghsvsDefault_' . $item->type
 						);
 					break;
@@ -177,24 +179,24 @@ echo LayoutHelper::render('ghsvs.moduleColDiv.start', array(
 					break;
 					}
 
-					// The next item is deeper.
-					if ($item->deeper)
-					{
-						echo '<ul class="dropdown-menu nav-child"' . $item->ulLabelledBy
+	// The next item is deeper.
+	if ($item->deeper)
+	{
+		echo '<ul class="dropdown-menu nav-child"' . $item->ulLabelledBy
 							. '>';
-					}
-					// The next item is shallower.
-					elseif ($item->shallower)
-					{
-						echo '</li>';
-						echo str_repeat('</ul></li>', $item->level_diff);
-					}
-					// The next item is on the same level.
-					else
-					{
-						echo '</li>';
-					}
-				} ?>
+	}
+	// The next item is shallower.
+	elseif ($item->shallower)
+	{
+		echo '</li>';
+		echo str_repeat('</ul></li>', $item->level_diff);
+	}
+	// The next item is on the same level.
+	else
+	{
+		echo '</li>';
+	}
+} ?>
 			</ul>
 		</div>
 	</div><!--/container-fluid-->

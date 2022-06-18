@@ -3,7 +3,7 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\HTML\HTMLHelper;
 
-echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/'. basename(__FILE__) . '-->' . PHP_EOL;
+echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/' . basename(__FILE__) . '-->' . PHP_EOL;
 
 HTMLHelper::addIncludePath(JPATH_COMPONENT . '/helpers');
 
@@ -18,7 +18,7 @@ if (!$this->params->get('show_empty_categories_cat', 0))
 {
 	foreach ($this->intro_items as $key => $item)
 	{
-  if (!$item->numitems && !count($item->getChildren()))
+		if (!$item->numitems && !count($item->getChildren()))
 		{
 			unset($this->intro_items[$key]);
 		}
@@ -63,8 +63,9 @@ exit;*/
 		$key = ($key - $leadingcount) + 1;
 		$rowcount = (((int) $key - 1) % (int) $this->columns) + 1;
 		$row = $counter / $this->columns;
+
 		if ($rowcount == 1) : ?>
-		<div class="items-row cols-<?php echo (int) $this->columns;?> <?php echo 'row-'.$row; ?> row-fluid">
+		<div class="items-row cols-<?php echo (int) $this->columns;?> <?php echo 'row-' . $row; ?> row-fluid">
 		<?php endif; ?>
 			<div class="item column-<?php echo $rowcount;?><?php echo $item->state == 0 ? ' system-unpublished' : null; ?> span<?php echo round((12 / $this->columns));?>">
 			<?php

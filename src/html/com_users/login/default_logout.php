@@ -10,13 +10,11 @@
 defined('_JEXEC') or die;
 
  $uri = JUri::getInstance();
+
 	if (strpos($uri->toString(), 'com_users') !== false)
 	{
 		return;
 	}
-
-
-
 
 ?>
 <div class="logout<?php echo $this->pageclass_sfx; ?>">

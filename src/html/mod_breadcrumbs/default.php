@@ -11,7 +11,7 @@ $option = Factory::getApplication()->input->get('option', '');
 
 if (version_compare(JVERSION, '4', 'ge'))
 {
-  $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx', ''), ENT_COMPAT, 'UTF-8');
+	$moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx', ''), ENT_COMPAT, 'UTF-8');
 }
 
 // Fixes https://github.com/GHSVS-de/tpl_bs4ghsvs/issues/25
@@ -59,7 +59,7 @@ if (version_compare(JVERSION, '3', 'gt'))
 					&& !empty($list[$i]->link)
 					&& !empty($list[$i - 1]->link)
 					&& $list[$i]->link === $list[$i - 1]->link
-				){
+				) {
 					unset($list[$i]);
 					continue;
 				}
@@ -103,7 +103,7 @@ if (version_compare(JVERSION, '3', 'gt'))
 				</li>
 				<?php
 				}
-				elseif ($show_last && !in_array($option, array('com_tags', 'com_osmap')))
+				elseif ($show_last && !in_array($option, ['com_tags', 'com_osmap']))
 				{ ?>
 				<li class="breadcrumb-item active fst-italic" aria-current="location">
 					<?php echo $item->name; ?>

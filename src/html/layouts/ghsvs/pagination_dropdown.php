@@ -6,7 +6,7 @@ Für zweiteres ein Modul in Position 'buttonGruppe' (oder anderstwo) mit HTML
 Das wird ersetzt durch #PAGINATION_TO_CLONE.
 
 */
-\defined('_JEXEC') or die;
+defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
@@ -19,11 +19,11 @@ if (
 	(int) $params->get('show_pagination') < 1
 	|| (int) $pagination->pagesTotal < 2
 	|| ! ($PaginationPages = $pagination->getPaginationPages())
-){
+) {
 	return;
 }
 
-$options = new Registry (isset($displayData['options']) ? $displayData['options']
+$options = new Registry(isset($displayData['options']) ? $displayData['options']
 	: []);
 $alignClass = $options->get('align', 'dropdown-menu-end');
 $items = [];
@@ -54,8 +54,11 @@ foreach ($PaginationPages as $key => $page)
 				$numbered['class'] = $numbered['data']->active ?
 					' class="dropdown-item active disabled" aria-current="page" aria-disabled="true"'
 					: ' class="dropdown-item"';
-				$numbered['text'] = Text::sprintf('JLIB_HTML_PAGE_CURRENT_OF_TOTAL',
-					$numbered['data']->text, $total);
+				$numbered['text'] = Text::sprintf(
+					'JLIB_HTML_PAGE_CURRENT_OF_TOTAL',
+					$numbered['data']->text,
+					$total
+				);
 				$items[] = $numbered;
 			}
 		}
@@ -68,29 +71,31 @@ foreach ($PaginationPages as $key => $page)
 	<span class="visually-hidden">
 		<?php echo Text::_('PLG_SYSTEM_BS3GHSVS_CHANGE_OVERVIEW_PAGE'); ?>
 	</span>
-	<?php echo Text::sprintf('GHSVS_PAGINATION_CURRENT_PAGE',
-		$pagination->pagesCurrent, $pagination->pagesTotal); ?>
+	<?php echo Text::sprintf(
+	'GHSVS_PAGINATION_CURRENT_PAGE',
+	$pagination->pagesCurrent,
+	$pagination->pagesTotal
+); ?>
 	 {svg{bi/book}}
 </button>
 <ul class="dropdown-menu <?php echo $alignClass; ?>"
 	aria-labelledby="seitenPaginationButton">
 <?php foreach ($items as $item)
-{
-	$data = $item['data'];
-	?>
+		{
+			$data = $item['data']; ?>
 	<li>
 		<a href="<?php echo $data->link . $anchor; ?>"<?php echo $item['class']; ?>>
 			<?php echo $item['text']; ?>
 		</a>
 	</li>
 	<?php
-} ?>
+		} ?>
 </ul>
 <?php
 if ($options->get('cloneIt', true) === true)
-{
-$js = ';jQuery(window).on("load", function(){'
+		{
+			$js = ';jQuery(window).on("load", function(){'
 	. 'jQuery.fn.paginationClone("#PAGINATION_TO_CLONE", "#PAGINATION_CLONE");'
 	. '});';
-Factory::getDocument()->addScriptDeclaration($js);
-}
+			Factory::getDocument()->addScriptDeclaration($js);
+		}

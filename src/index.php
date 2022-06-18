@@ -3,10 +3,10 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
-use Joomla\CMS\Uri\Uri;
 use Joomla\CMS\Language\Text;
-use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\CMS\Layout\LayoutHelper;
+use Joomla\CMS\Plugin\PluginHelper;
+use Joomla\CMS\Uri\Uri;
 
 $isRobot = $this->params->get('isRobot');
 
@@ -20,7 +20,7 @@ if ($done = PluginHelper::isEnabled('system', 'astroidghsvs'))
 	 * Heads up! The Helper does not protect you in the case of incorrect
 	 * 	entries like wrong folders or so.
 	 */
-		AstroidGhsvsHelper::$compileSettingsCustom = [
+	AstroidGhsvsHelper::$compileSettingsCustom = [
 		// 'sourceMaps' => false,
 		// 'scssFolder' => 'scss-ghsvs',
 		// ## Needs AstroidGhsvsHelper::$replaceThis comment in template index.php:
@@ -120,7 +120,7 @@ if ($sitedescription = $this->params->get('sitedescription', ''))
 $logo = $sitetitle . $logo . $sitedescription;
 ####ENDE - LOGO, SEITENTITEL, SITEDESCRIPTION, SITENAME
 
-$BodyClasses = $this->params->get('BodyClasses', array(), 'array');
+$BodyClasses = $this->params->get('BodyClasses', [], 'array');
 
 if ($HidePageHeader === true)
 {
@@ -129,10 +129,10 @@ if ($HidePageHeader === true)
 $BodyClasses = trim(implode(' ', $BodyClasses));
 
 // Check for a custom CSS file
-HTMLHelper::_('stylesheet', 'custom.css', array('version' => 'auto', 'relative' => true));
+HTMLHelper::_('stylesheet', 'custom.css', ['version' => 'auto', 'relative' => true]);
 
 // Check for a custom js file
-HTMLHelper::_('script', 'custom.js', array('version' => 'auto', 'relative' => true));
+HTMLHelper::_('script', 'custom.js', ['version' => 'auto', 'relative' => true]);
 ?>
 <!DOCTYPE html>
 <html  class="no-js jsNotActive"
@@ -245,7 +245,7 @@ HTMLHelper::_('script', 'custom.js', array('version' => 'auto', 'relative' => tr
 					</div><!--/CfMain-->
 				</div><!--/#CfMain cf-outer-->
 
-				<?php if($this->countModules('unter-component'))
+				<?php if ($this->countModules('unter-component'))
 				{ ?>
 				<div id="CfUnterComponent">
 					<div class="cf-inner">
@@ -257,7 +257,7 @@ HTMLHelper::_('script', 'custom.js', array('version' => 'auto', 'relative' => tr
 
 			</div><!--/TOC_GHSVS_SPECIAL-->
 
-				<?php if($this->countModules('unter-main-bs'))
+				<?php if ($this->countModules('unter-main-bs'))
 				{ ?>
 				<div id="CfUnterMain" class="cf-outer mb-3">
 					<div class="cf-inner">
@@ -273,11 +273,11 @@ HTMLHelper::_('script', 'custom.js', array('version' => 'auto', 'relative' => tr
 		</div><!--/div4mainPadder-->
 
 		<?php
-		if($this->countModules('footer-bs') || $this->countModules('copyright-bs'))
+		if ($this->countModules('footer-bs') || $this->countModules('copyright-bs'))
 		{ ?>
 		<footer class="footer">
 			<?php
-			if($this->countModules('footer-bs'))
+			if ($this->countModules('footer-bs'))
 			{ ?>
 			<div id="CfFooter" class="cf-outer bg-light">
 				<div class="CfFooterInner cf-inner">
@@ -292,7 +292,7 @@ HTMLHelper::_('script', 'custom.js', array('version' => 'auto', 'relative' => tr
 			}?>
 
 			<?php
-			if($this->countModules('copyright-bs'))
+			if ($this->countModules('copyright-bs'))
 			{ ?>
 			<div id="CfCopyright" class="cf-outer py-2">
 				<div class="CfCopyrightInner cf-inner">
@@ -312,7 +312,7 @@ HTMLHelper::_('script', 'custom.js', array('version' => 'auto', 'relative' => tr
 
 		<?php if (!$isRobot)
 		{
-		 echo HTMLHelper::_('bs3ghsvs.toTop');
+			echo HTMLHelper::_('bs3ghsvs.toTop');
 		} ?>
 
 		<?php

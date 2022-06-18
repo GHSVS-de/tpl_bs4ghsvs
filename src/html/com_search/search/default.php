@@ -2,18 +2,20 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\HTML\HTMLHelper;
+
 ?>
 <?php
 #### SEITENÜBERSCHRIFT (Menü)
 if ($this->params->get('show_page_heading'))
 {
- echo HTMLHelper::_('bs3ghsvs.layout',
-  'ghsvs.page_heading',
-  array(
+	echo HTMLHelper::_(
+		'bs3ghsvs.layout',
+		'ghsvs.page_heading',
+		[
 		'params' => $this->params,
-		'bs3ghsvs.rendermodules-position' => ''
-	)
- );
+		'bs3ghsvs.rendermodules-position' => '',
+	]
+	);
 }
 $this->params->set('show_page_heading', 0);
 #### ENDE - SEITENÜBERSCHRIFT (Menü)

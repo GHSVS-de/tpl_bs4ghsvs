@@ -10,24 +10,24 @@ JHtml::_('behavior.formvalidator');
 echo JHtml::_(
 	'bs3ghsvs.layout',
 	'ghsvs.addclass_form-control',
-	array(
+	[
 	 'formSelector' => '.form4registration',
-		'additionalScript' => '$(".form-group.field-spacer").addClass("visually-hidden");'
-	)
+		'additionalScript' => '$(".form-group.field-spacer").addClass("visually-hidden");',
+	]
 );
 ?>
 <div class="registration<?php echo $this->pageclass_sfx; ?>">
 <?php
  echo JHtml::_(
-	 'bs3ghsvs.layout',
-		'ghsvs.page_heading',
-		array(
+	'bs3ghsvs.layout',
+	'ghsvs.page_heading',
+	[
 		 'params' => LibHelpGhsvs::$TEMPLATEPARAMS->get('menuParams'),
 		 // Falls keine Seitenüberschrift im Menü aktiviert.
 			'ifNoPage_heading' => '',
-			'bs3ghsvs.rendermodules-position' => 'rendermodules-registration'
-		)
-	);
+			'bs3ghsvs.rendermodules-position' => 'rendermodules-registration',
+		]
+);
 ?>
 
 	<form id="member-registration" action="<?php echo JRoute::_('index.php?option=com_users&task=registration.register'); ?>" method="post" class="form-validate form4registration" enctype="multipart/form-data">
@@ -42,12 +42,12 @@ echo JHtml::_(
 					<!--<legend>-->
 					<?php
      if ($fieldset->name == 'default')
-					{
-						echo JHtml::_('bs3ghsvs.spoiler', JText::_($fieldset->label), JText::_('GHSVS_TOGGLE_HINT'));
-					}
+     {
+     	echo JHtml::_('bs3ghsvs.spoiler', JText::_($fieldset->label), JText::_('GHSVS_TOGGLE_HINT'));
+     }
 					else
 					{
-					 echo JText::_($fieldset->label);
+						echo JText::_($fieldset->label);
 					}
 
 					?>
@@ -66,13 +66,14 @@ echo JHtml::_(
 
 
      <?php echo $field->renderField();
+
 					if ($field->fieldname == 'password1')
 					{
-      echo JHtml::_(
-       'bs3ghsvs.layout',
-       'ghsvs.password_hint',
-       array('style' => '.p4password_hint_button{margin-top:-14px}')
-      );
+						echo JHtml::_(
+							'bs3ghsvs.layout',
+							'ghsvs.password_hint',
+							['style' => '.p4password_hint_button{margin-top:-14px}']
+						);
 					}
 					?>
 

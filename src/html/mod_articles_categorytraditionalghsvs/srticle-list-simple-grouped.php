@@ -1,8 +1,8 @@
 <?php
 defined('_JEXEC') or die;
 
-use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Layout\LayoutHelper;
+
 ?>
 <?php
 if ($params->get('robotsHide', 0) === 1 && $params->get('isRobot') === 1)
@@ -29,9 +29,13 @@ if ($params->get('robotsHide', 0) === 1 && $params->get('isRobot') === 1)
 	$html = ob_get_clean();
 	$title = htmlspecialchars($module->title);
 	$html = '{pagebreakghsvs-slider title="' . $title . '"}' . $html;
-	JLoader::register('Bs3ghsvsPagebreak',
-		JPATH_PLUGINS . '/system/bs3ghsvs/Helper/PagebreakHelper.php');
-	Bs3ghsvsPagebreak::buildSliders($html, $module->id,
+	JLoader::register(
+		'Bs3ghsvsPagebreak',
+		JPATH_PLUGINS . '/system/bs3ghsvs/Helper/PagebreakHelper.php'
+	);
+	Bs3ghsvsPagebreak::buildSliders(
+		$html,
+		$module->id,
 		['headingTagGhsvs' => 'h2',
 		'activeToSession' => 0,
 		'parent' => true,

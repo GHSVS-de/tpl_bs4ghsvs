@@ -1,5 +1,5 @@
 <?php
-\defined('_JEXEC') or die;
+defined('_JEXEC') or die;
 
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
@@ -28,18 +28,20 @@ if ($showDate || $show_category || $show_parent_category)
 	<dl class="article-info">
 		<?php if ($params->get('show_author')
 			&& !(empty($item->author) && empty($item->created_by_alias)))
-		{
-			echo LayoutHelper::render('ghsvs.info_block.author',
-				['item' => $item, 'params' => $params]);
-		} ?>
+{
+	echo LayoutHelper::render(
+		'ghsvs.info_block.author',
+		['item' => $item, 'params' => $params]
+	);
+} ?>
 
 	<?php
 		if (
 			!isset($item->combinedCatsGhsvs) ||
 			(!$params->get('ghsvs_combine_categories', 0) &&
 			!$item->params->get('ghsvs_combine_categories', 0))
-		){
-		?>
+		) {
+			?>
 			<?php if ($show_parent_category || $show_category)
 			{ ?>
 				<dt class="visually-hidden"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_CATEGORIES'); ?></dt>
@@ -58,7 +60,7 @@ if ($showDate || $show_category || $show_parent_category)
 		}
 		else
 		{
-		?>
+			?>
 			<dt class="visually-hidden"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_CATEGORIES'); ?></dt>
 			<?php
 			$item->params->set('ghsvs_combine_categories', 0);
@@ -82,15 +84,19 @@ if ($showDate || $show_category || $show_parent_category)
 
 		<?php if ($params->get('show_create_date')) : ?>
 		<dd class="create">
-			<?php echo Text::sprintf('COM_CONTENT_CREATED_DATE_ON',
-				HTMLHelper::_('date', $item->created, Text::_('DATE_FORMAT_LC3'))); ?>
+			<?php echo Text::sprintf(
+				'COM_CONTENT_CREATED_DATE_ON',
+				HTMLHelper::_('date', $item->created, Text::_('DATE_FORMAT_LC3'))
+			); ?>
 		</dd>
 		<?php endif; ?>
 
 		<?php if ($params->get('show_modify_date')) : ?>
 		<dd class="modified">
-			<?php echo Text::sprintf('COM_CONTENT_LAST_UPDATED',
-				HTMLHelper::_('date', $item->modified, Text::_('DATE_FORMAT_LC3'))); ?>
+			<?php echo Text::sprintf(
+					'COM_CONTENT_LAST_UPDATED',
+					HTMLHelper::_('date', $item->modified, Text::_('DATE_FORMAT_LC3'))
+				); ?>
 		</dd>
 		<?php endif; ?>
 	</dl><!--/article-info-->

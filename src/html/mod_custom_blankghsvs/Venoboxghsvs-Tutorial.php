@@ -5,11 +5,12 @@ Fügt Venobox-Konfiguration in Beitrag "Integration von Venobox via JHtml/HTMLHe
 defined('_JEXEC') or die;
 use Joomla\CMS\HTML\HTMLHelper;
 
-HTMLHelper::_('plgvenoboxghsvs.venobox',
+HTMLHelper::_(
+	'plgvenoboxghsvs.venobox',
 	[
 	'selector' => '.thickbox',
 	'titleattr' => 'title',
-	'share' => ['twitter', 'pinterest']
+	'share' => ['twitter', 'pinterest'],
 	]
 );?>
 <p>

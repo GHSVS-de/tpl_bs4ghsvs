@@ -1,10 +1,10 @@
 <?php
 defined('_JEXEC') or die;
 
-use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Factory;
-use Joomla\CMS\Router\Route;
+use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Layout\LayoutHelper;
+use Joomla\CMS\Router\Route;
 
 /*
 GHSVS 2014-12-22
@@ -28,9 +28,10 @@ $info    = $this->item->params->get('info_block_position', 0);
 
 $this->item->params->set('show_articlesubtitle', 0);
 
-$cardHeader = LayoutHelper::render('ghsvs.page_header_n_icons',
-	array('item' => $this->item, 'print' => false)
-	);
+$cardHeader = LayoutHelper::render(
+	'ghsvs.page_header_n_icons',
+	['item' => $this->item, 'print' => false]
+);
 ?>
 <?php
  $useDefList = (
@@ -39,7 +40,8 @@ $cardHeader = LayoutHelper::render('ghsvs.page_header_n_icons',
 	$this->item->params->get('show_create_date') ||
 	$this->item->params->get('show_category') ||
 	$this->item->params->get('show_parent_category') ||
-	$this->item->params->get('show_author') );
+	$this->item->params->get('show_author')
+);
 ?>
 
 <?php echo $this->item->event->beforeDisplayContent; ?>
@@ -64,7 +66,8 @@ if ($this->item->params->get('show_introimage_blogview_ghsvs', 0))
 		$imageClasses = '';
 	}
 
-	$cardImage = trim(LayoutHelper::render('ghsvs.intro_image_readmore',
+	$cardImage = trim(LayoutHelper::render(
+		'ghsvs.intro_image_readmore',
 		[
 			'item' => $this->item,
 			'options' => [
@@ -72,7 +75,7 @@ if ($this->item->params->get('show_introimage_blogview_ghsvs', 0))
 				// 'link' => '',
 				// Marker for image sources in layout intro_image_readmore.php.
 				'whichItem' => $this->whichItem,
-			]
+			],
 		]
 	));
 
@@ -93,9 +96,10 @@ if ($this->item->params->get('show_introimage_blogview_ghsvs', 0))
 }
 ?>
 <?php
-$cardText = LayoutHelper::render('ghsvs.truncateComplex',
+$cardText = LayoutHelper::render(
+	'ghsvs.truncateComplex',
 	['item' => &$this->item, 'text' => $this->item->introtext,
-		'length' => (int) $this->item->params->get('introtext_limit_ghsvs', 250)]
+		'length' => (int) $this->item->params->get('introtext_limit_ghsvs', 250), ]
 );
 ?>
 <?php if ($this->item->params->get('show_readmore') && $this->item->readmore) :
@@ -111,12 +115,14 @@ $cardText = LayoutHelper::render('ghsvs.truncateComplex',
 		$link->setVar('return', base64_encode($returnURL));
 	endif; ?>
 
-	<?php $cardReadmore = LayoutHelper::render('ghsvs.readmore',
-		array(
+	<?php $cardReadmore = LayoutHelper::render(
+		'ghsvs.readmore',
+		[
 			'item' => $this->item,
 			'params' => $this->item->params,
-			'link' => $link
-		)); ?>
+			'link' => $link,
+		]
+	); ?>
 
 <?php endif; ?>
 
@@ -125,16 +131,17 @@ $cardText = LayoutHelper::render('ghsvs.truncateComplex',
 	// Output of <div class="div4article-info">.
 	if (($useDefList && is_numeric($info)) || $this->item->params->get('show_tags', 1))
 	{
-		$cardInfos = LayoutHelper::render('ghsvs.tags_n_article-info-combined',
-			array(
+		$cardInfos = LayoutHelper::render(
+			'ghsvs.tags_n_article-info-combined',
+			[
 				'item' => $this->item,
 				'params' => $this->item->params,
 				'position' => 'below',
 				'useDefList' => $useDefList,
 				/* Klasse, die div4article-info angehängt wird (ohne Space), da ich z.B.
 				im Blog, was Cards verwendet keine spezielle Formatierung haben will */
-				'addDivClass' => '_blogItem'
-			)
+				'addDivClass' => '_blogItem',
+			]
 		);
 	} ?>
 

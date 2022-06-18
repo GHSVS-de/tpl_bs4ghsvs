@@ -12,10 +12,11 @@ if (version_compare(JVERSION, '4', 'ge'))
 ?>
 <div class="contact<?php echo $this->pageclass_sfx?>">
 	<?php
-	echo HTMLHelper::_('bs3ghsvs.layout',
-		'ghsvs.page_heading',
-		array('params' => $this->params)
-	);
+	echo HTMLHelper::_(
+	'bs3ghsvs.layout',
+	'ghsvs.page_heading',
+	['params' => $this->params]
+);
 	?>
 	<div class="item-page div4hyphens">
 		<?php if ($this->contact->name && $this->params->get('show_name'))
@@ -32,10 +33,11 @@ if (version_compare(JVERSION, '4', 'ge'))
 			if ($this->contact->image)
 			{ ?>
 			<div class="contact-image mt-4">
-			<?php echo HTMLHelper::_('image',
+			<?php echo HTMLHelper::_(
+				'image',
 				$this->contact->image,
 				Text::_('COM_CONTACT_IMAGE_DETAILS'),
-				array('align' => 'middle')
+				['align' => 'middle']
 			); ?>
 			</div>
 			<?php
@@ -62,13 +64,14 @@ if (version_compare(JVERSION, '4', 'ge'))
 			echo HTMLHelper::_(
 				'bootstrap.startAccordion',
 				$selector,
-				array(
+				[
 					// Damit mehrere geöffnet werden können auf FALSE!
-					'parent' => false
-				)
+					'parent' => false,
+				]
 			); ?>
 			<?php
-			echo HTMLHelper::_('bootstrap.addSlide',
+			echo HTMLHelper::_(
+				'bootstrap.addSlide',
 				$selector,
 				Text::_('COM_CONTACT_DETAILS'), // $text
 				$selector . '-' . $i, // $id
@@ -115,10 +118,11 @@ if (version_compare(JVERSION, '4', 'ge'))
 
 			<?php
 			$i++;
-			$href = $selector.'-'.$i;
+			$href = $selector . '-' . $i;
 			$class = 'system-pagebreak';
 			$alt = Text::_('PLG_SYSTEM_BS3GHSVS_SEND_EMAIL');
-			echo HTMLHelper::_('bootstrap.addSlide',
+			echo HTMLHelper::_(
+				'bootstrap.addSlide',
 				$selector,
 				Text::_('COM_CONTACT_EMAIL_FORM'),
 				$href,

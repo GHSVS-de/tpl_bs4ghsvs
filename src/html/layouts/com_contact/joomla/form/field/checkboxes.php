@@ -78,7 +78,7 @@ $alt = preg_replace('/[^a-zA-Z0-9_\-]/', '_', $name);
 
 			$oid        = $id . $i;
 			$value      = htmlspecialchars($option->value, ENT_COMPAT, 'UTF-8');
-			$attributes = array_filter(array($checked, $optionClass, $optionDisabled, $onchange, $onclick));
+			$attributes = array_filter([$checked, $optionClass, $optionDisabled, $onchange, $onclick]);
 		?>
 
 <?php echo $option->text; ?><?php echo sprintf($format, $oid, $name, $value, implode(' ', $attributes)); ?>  

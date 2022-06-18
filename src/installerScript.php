@@ -30,7 +30,6 @@ class  bs4ghsvsInstallerScript extends InstallerScript
 	 * @var    array
 	 * @since  2.0
 	 */
-
 	protected $deleteFolders = [
 		'/templates/bs4ghsvs/html/com_tags',
 		'/templates/bs4ghsvs/less',
@@ -121,12 +120,13 @@ class  bs4ghsvsInstallerScript extends InstallerScript
 	 *
 	 * @since   version after 2019.05.29
 	 */
-	 protected function removeOldUpdateservers()
- 	{
- 		$db = Factory::getDbo();
- 		try
- 		{
- 			$query = $db->getQuery(true);
+	protected function removeOldUpdateservers()
+	{
+		$db = Factory::getDbo();
+
+		try
+		{
+			$query = $db->getQuery(true);
 
 			$query->select('update_site_id')
 				->from($db->qn('#__update_sites'))
@@ -140,8 +140,8 @@ class  bs4ghsvsInstallerScript extends InstallerScript
 				return;
 			}
 
-			$ids = \array_keys($ids);
-			$ids =\implode(',', $ids);
+			$ids = array_keys($ids);
+			$ids =implode(',', $ids);
 
 			// Delete from update sites
 			$db->setQuery(
@@ -161,5 +161,5 @@ class  bs4ghsvsInstallerScript extends InstallerScript
 		{
 			return;
 		}
- 	}
+	}
 }

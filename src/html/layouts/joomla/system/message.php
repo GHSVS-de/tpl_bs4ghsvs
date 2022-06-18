@@ -6,8 +6,6 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 
 use Joomla\CMS\Layout\LayoutHelper;
-use Joomla\CMS\Uri\Uri;
-use Joomla\CMS\HTML\HTMLHelper;
 
 if (version_compare(JVERSION, '4', 'ge'))
 {
@@ -24,7 +22,7 @@ if (version_compare(JVERSION, '4', 'ge'))
 		CMSApplication::MSG_NOTICE    => 'info',
 		CMSApplication::MSG_INFO      => 'info',
 		CMSApplication::MSG_DEBUG     => 'info',
-		'message'                     => 'success'
+		'message'                     => 'success',
 	];
 
 	// Load JavaScript message titles
@@ -52,8 +50,10 @@ if (version_compare(JVERSION, '4', 'ge'))
 			// JS loaded messages
 			$messages[] = [$alert[$type] ?? $type => $msgs];
 			// Noscript fallback
-			if (!empty($msgs)) {
+			if (!empty($msgs))
+			{
 				$msgOutput .= '<div class="alert alert-' . ($alert[$type] ?? $type) . '">';
+
 				foreach ($msgs as $msg) :
 					$msgOutput .= $msg;
 				endforeach;
@@ -83,17 +83,17 @@ elseif (version_compare(JVERSION, '4', 'lt'))
 		return;
 	}
 
-	$alerts = array
-	(
+	$alerts = [
 		'error' => 'danger',
 		'message' => 'dark',
 		'notice' => 'info',
 		'warning' => 'warning',
 		'warn' => 'warning',
-		'success' => 'success'
-	);
+		'success' => 'success',
+	];
 
 	$cnt = 0;
+
 	foreach ($msgList as $type => $msgs)
 	{
 		if (!empty($msgs))
@@ -129,11 +129,10 @@ elseif (version_compare(JVERSION, '4', 'lt'))
 				</div>
 				<div class="modal-body container-fluid">
 					<?php foreach ($msgList as $type => $msgs)
-					{
-						if (!empty($msgs))
-						{
-							$class = isset($alerts[$type]) ? $alerts[$type] : 'dark';
-						?>
+	{
+		if (!empty($msgs))
+		{
+			$class = isset($alerts[$type]) ? $alerts[$type] : 'dark'; ?>
 						<h6 class="h4 border-<?php echo $class; ?> text-<?php echo $class; ?>">
 							<?php echo Text::_($type); ?>
 						</h6>
@@ -147,9 +146,9 @@ elseif (version_compare(JVERSION, '4', 'lt'))
 							} ?>
 						</ol>
 						<?php
-						} ?>
+		} ?>
 					<?php
-					} ?>
+	} ?>
 				</div>
 				<div class="modal-footer">
 					<?php echo LayoutHelper::render('ghsvs.closeButton'); ?>

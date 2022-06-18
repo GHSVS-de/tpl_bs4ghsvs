@@ -11,8 +11,6 @@ defined('_JEXEC') or die;
 
 return;
 
-
-
 JHtml::_('behavior.keepalive');
 JHtml::_('behavior.formvalidator');
 ?>

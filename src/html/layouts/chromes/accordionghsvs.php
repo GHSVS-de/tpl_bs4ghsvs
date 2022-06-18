@@ -1,8 +1,7 @@
 <?php
-\defined('_JEXEC') or die;
+defined('_JEXEC') or die;
 
 use Joomla\CMS\HTML\HTMLHelper;
-use Joomla\CMS\Language\Text;
 
 $module = $displayData['module'];
 $params = $displayData['params'];
@@ -20,10 +19,10 @@ $headerClass    = $params->get('header_class');
 $headerClass    = !empty($headerClass) ? ' class="'
 	. htmlspecialchars($headerClass) . '"' : '';
 
-$selector = $dataParent = 'modChrome_accordionghsvs'.$module->id;
-$href = $selector.'-0';
+$selector = $dataParent = 'modChrome_accordionghsvs' . $module->id;
+$href = $selector . '-0';
 
-if (!empty ($module->content)) : ?>
+if (!empty($module->content)) : ?>
 	<<?php echo $moduleTag; ?> class="moduletable<?php
 		echo htmlspecialchars($params->get('moduleclass_sfx')) . $moduleClass; ?>">
 
@@ -31,13 +30,13 @@ if (!empty ($module->content)) : ?>
 echo HTMLHelper::_(
 	'bootstrap.startAccordion',
 	$selector,
-	array(
+	[
 		// Damit mehrere geöffnet werden können auf FALSE!
-		'parent' => false
-	)
+		'parent' => false,
+	]
 );
 echo HTMLHelper::_(
-'bootstrap.addSlide',
+	'bootstrap.addSlide',
 	$selector,
 	$title = $module->title,
 	$href,

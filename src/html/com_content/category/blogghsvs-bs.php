@@ -4,7 +4,6 @@ defined('_JEXEC') or die;
 use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
-use Joomla\CMS\Uri\Uri;
 use Joomla\CMS\Layout\LayoutHelper;
 
 $this->isRobot = Factory::getApplication()->client->robot;
@@ -25,7 +24,7 @@ $viewlevels[] = 0;
 
 // Siehe bspw. templates\protostarbs3ghsvs\html\com_content\category\blogghsvs.xml
 $hideToggler = $this->isRobot || !count(array_intersect(
-	$this->params->get('accesslevel_for_toggler', array(-9999), 'ARRAY'),
+	$this->params->get('accesslevel_for_toggler', [-9999], 'ARRAY'),
 	$viewlevels
 ));
 
@@ -34,10 +33,10 @@ if (!$hideToggler)
 	// Hier verboten Klasse 'hide'
 	// DENKE an Sprachplatzhalter, also hier Großschrift:
 	// DEFAULT IMMER ALS ERSTEN!!!! Wird an JS weitergegeben!
-	$btnClasses = array(
+	$btnClasses = [
 		'SHOWLIST',
-		'SHOWBLOG'
-	);
+		'SHOWBLOG',
+	];
 
 	// Vorsicht mit nur 'TOGGLER'. Derzeit noch was in template.js, was Konflikt machen könnte.
 	$TOGGLER = 'BLOGLISTTOGGLER';
@@ -106,7 +105,7 @@ $allEmpty = (
 	&& empty($this->intro_items)
 );
 ?>
-<div class="blog<?php echo $this->pageclass_sfx; ?><?php echo ($this->alternateView ? ' footabled' : ''); ?>">
+<div class="blog<?php echo $this->pageclass_sfx; ?><?php echo($this->alternateView ? ' footabled' : ''); ?>">
 
  <?php echo LayoutHelper::render('ghsvs.category_header', $this); ?>
  <?php $output = ''; ?>
@@ -115,12 +114,13 @@ $allEmpty = (
 if (
 	!$this->isRobot && !$this->alternateView
 	&& $this->params->get('show_dropdown_sprungmarken', 0)
-){
-	$output .= HTMLHelper::_('bs3ghsvs.layout',
-	'ghsvs.scroll-to-article-modal',
-	array(
-	'items' => array_merge($this->lead_items, $this->intro_items)
-	)
+) {
+	$output .= HTMLHelper::_(
+		'bs3ghsvs.layout',
+		'ghsvs.scroll-to-article-modal',
+		[
+	'items' => array_merge($this->lead_items, $this->intro_items),
+	]
 	);
 }
 	?>
@@ -132,9 +132,9 @@ if (
 	?>
 	<?php
 	 if (!$this->isRobot)
-		{
-		 $output .= HTMLHelper::_('bs3ghsvs.rendermodules', 'buttonGruppeGhsvs-bs');
-		}
+	 {
+	 	$output .= HTMLHelper::_('bs3ghsvs.rendermodules', 'buttonGruppeGhsvs-bs');
+	 }
 	?>
 	<?php
 		$output .= $div4toggler;
@@ -142,7 +142,7 @@ if (
 	<?php
 		if (trim($output))
 		{
-			echo '<div class="buttonGruppeGhsvs">' .$output. '</div>';
+			echo '<div class="buttonGruppeGhsvs">' . $output . '</div>';
 		}
  ?>
 	<?php if (!$this->alternateView && $allEmpty
@@ -155,13 +155,12 @@ if (
 <?php } ?>
 
 <?php if (!$this->alternateView)
-{ //Blog START
-	if (!empty($this->lead_items))
-	{
-		$leadingcount = 0;
-		// Marker for image sources in layout intro_image_readmore.php.
-		$this->whichItem = 'leadItem';
-	?>
+	           { //Blog START
+	           	if (!empty($this->lead_items))
+	           	{
+	           		$leadingcount = 0;
+	           		// Marker for image sources in layout intro_image_readmore.php.
+	           		$this->whichItem = 'leadItem'; ?>
 	<div class="items-leading">
 		<?php foreach ($this->lead_items as &$item)
 		{ ?>
@@ -177,15 +176,14 @@ if (
 		} //foreach ?>
 	</div><!--/items-leading-->
 	<?php
-	} ?>
+	           	} ?>
 
 	<?php
 	if (!empty($this->intro_items))
 	{
 		$introcount = 0;
 		// Marker for image sources in layout intro_image_readmore.php.
-		$this->whichItem = 'introItem';
-	?>
+		$this->whichItem = 'introItem'; ?>
 
 	<div class="items-intro row row-cols-1 row-cols-lg-2  row-cols-xl-3 g-2">
 
@@ -201,7 +199,7 @@ if (
 	} // if (!empty($this->intro_items) ?>
 
 <?php
-} //Blog ENDE ?>
+	           } //Blog ENDE ?>
 
 <?php
 	if ($this->alternateView) : ?>
@@ -233,16 +231,17 @@ if (
 	<?php if (!empty($this->items))
 	{ ?>
 	<div class="paginationToClone">
-		<?php echo LayoutHelper::render('ghsvs.pagination_dropdown',
-			[
+		<?php echo LayoutHelper::render(
+		'ghsvs.pagination_dropdown',
+		[
 				'pagination' => $this->pagination,
 				'params' => $this->params,
 				'options' => [
 					// 'cloneIt' => false,
 					// 'align' => 'dropdown-menu-end'
-					]
+					],
 			]
-		); ?>
+	); ?>
 	</div><!--/paginationToClone-->
 	<?php
 	} ?>

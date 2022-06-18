@@ -3,18 +3,24 @@ defined('_JEXEC') or die;
 
 return;
 
-
-
 JLoader::register('JHtmlUsers', JPATH_COMPONENT . '/helpers/html/users.php');
-JHtml::register('users.spacer', array('JHtmlUsers', 'spacer'));
-
+JHtml::register('users.spacer', ['JHtmlUsers', 'spacer']);
 
 $fieldsets = $this->form->getFieldsets();
-if (isset($fieldsets['core']))   unset($fieldsets['core']);
-if (isset($fieldsets['params'])) unset($fieldsets['params']);
+
+if (isset($fieldsets['core']))
+{
+	unset($fieldsets['core']);
+}
+
+if (isset($fieldsets['params']))
+{
+	unset($fieldsets['params']);
+}
 
 foreach ($fieldsets as $group => $fieldset): // Iterate through the form fieldsets
 	$fields = $this->form->getFieldset($group);
+
 	if (count($fields)):
 ?>
 

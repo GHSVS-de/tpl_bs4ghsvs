@@ -7,13 +7,14 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Layout\LayoutHelper;
+
 ?>
 <?php
-echo LayoutHelper::render('ghsvs.moduleColDiv.start', array(
+echo LayoutHelper::render('ghsvs.moduleColDiv.start', [
 	'module' => $module,
 	'params' => $params,
 	'prependClass' => '',
-));
+]);
 ?>
 <?php echo $module->content; ?>
 <?php echo LayoutHelper::render('ghsvs.moduleColDiv.end'); ?>

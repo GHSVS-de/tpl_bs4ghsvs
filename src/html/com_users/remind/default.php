@@ -10,10 +10,10 @@ JHtml::_('behavior.formvalidator');
 echo JHtml::_(
 	'bs3ghsvs.layout',
 	'ghsvs.addclass_form-control',
-	array(
+	[
 	 'formSelector' => '.form4remind',
 		'additionalScript' => '',
-	)
+	]
 );
 ?>
 <div class="remind<?php echo $this->pageclass_sfx; ?>">

@@ -3,15 +3,12 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
-use Joomla\CMS\HTML\HTMLHelper;
-use Joomla\Utilities\ArrayHelper;
-use Joomla\CMS\Application\ApplicationHelper;
 use Joomla\CMS\Router\Route;
 
 $jinput = Factory::getApplication()->input;
 $view = $jinput->get('view');
 
-$views = array('article', 'category');
+$views = ['article', 'category'];
 
 // Wenn empty($list) kommen wir hier gar nicht an. Muss also nicht prüfen.
 if (!in_array($view, $views))
@@ -62,8 +59,7 @@ $id = Bs3ghsvsArticle::buildUniqueIdFromJinput('articlesCategoriesModal');
 						{
 							$item->link = Route::_(ContentHelperRoute::getCategoryRoute($item->id));
 							$item->active = (int) $item->id === $activeCatId;
-							$liclass = 'list-group-item' . ($item->active ? ' active' : '');
-							?>
+							$liclass = 'list-group-item' . ($item->active ? ' active' : ''); ?>
 							<li class="<?php echo $liclass; ?>">
 							 	<a href="<?php echo $item->link; ?>"><?php echo $item->title; ?>
 								<?php if ($item->description = trim(strip_tags($item->description)))

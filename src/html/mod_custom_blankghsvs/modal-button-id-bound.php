@@ -13,18 +13,19 @@ defined('_JEXEC') or die;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 
-echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/'. basename(__FILE__) . '-->' . PHP_EOL;
+echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/' . basename(__FILE__) . '-->' . PHP_EOL;
 
 if (
 	$params->get('robotsHide', 0) === 1
 	&& Factory::getApplication()->client->robot
-){
+) {
 	return '';
 }
 
 /* To calculate a unique id for both participating modules (button and modal)
 we need a identical base id in both modules. */
-JLoader::register('Bs3ghsvsArticle',
+JLoader::register(
+	'Bs3ghsvsArticle',
 	JPATH_PLUGINS . '/system/bs3ghsvs/Helper/ArticleHelper.php'
 );
 $modalId = Bs3ghsvsArticle::buildUniqueIdFromJinput(

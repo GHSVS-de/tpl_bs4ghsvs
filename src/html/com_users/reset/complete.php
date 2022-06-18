@@ -9,10 +9,10 @@ JHtml::_('behavior.formvalidator');
 echo JHtml::_(
 	'bs3ghsvs.layout',
 	'ghsvs.addclass_form-control',
-	array(
+	[
 	 'formSelector' => '.form4complete',
 		'additionalScript' => '',
-	)
+	]
 );
 ?>
 <div class="reset-complete<?php echo $this->pageclass_sfx; ?>">
@@ -30,13 +30,14 @@ echo JHtml::_(
 				<p><?php echo JText::_($fieldset->label); ?></p>
 				<?php foreach ($this->form->getFieldset($fieldset->name) as $name => $field) : ?>
 <?php echo $field->renderField();
+
 					if ($field->fieldname == 'password1')
 					{
-      echo JHtml::_(
-       'bs3ghsvs.layout',
-       'ghsvs.password_hint',
-       array('style' => '.p4password_hint_button{margin-top:-14px}')
-      );
+						echo JHtml::_(
+							'bs3ghsvs.layout',
+							'ghsvs.password_hint',
+							['style' => '.p4password_hint_button{margin-top:-14px}']
+						);
 					}
 					?>
 				<?php endforeach; ?>

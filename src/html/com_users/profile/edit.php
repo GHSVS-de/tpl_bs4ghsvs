@@ -11,8 +11,6 @@ defined('_JEXEC') or die;
 
 return;
 
-
-
 JHtml::_('behavior.keepalive');
 JHtml::_('behavior.formvalidator');
 JHtml::_('formbehavior.chosen', 'select');
@@ -97,11 +95,11 @@ $lang->load('plg_user_profile', JPATH_ADMINISTRATOR);
 					</label>
 				</div>
 				<div class="controls">
-					<?php echo JHtml::_('select.genericlist', $this->twofactormethods, 'jform[twofactor][method]', array('onchange' => 'Joomla.twoFactorMethodChange()'), 'value', 'text', $this->otpConfig->method, 'jform_twofactor_method', false); ?>
+					<?php echo JHtml::_('select.genericlist', $this->twofactormethods, 'jform[twofactor][method]', ['onchange' => 'Joomla.twoFactorMethodChange()'], 'value', 'text', $this->otpConfig->method, 'jform_twofactor_method', false); ?>
 				</div>
 			</div>
 			<div id="com_users_twofactor_forms_container">
-				<?php foreach($this->twofactorform as $form) : ?>
+				<?php foreach ($this->twofactorform as $form) : ?>
 				<?php $style = $form['method'] == $this->otpConfig->method ? 'display: block' : 'display: none'; ?>
 				<div id="com_users_twofactor_<?php echo $form['method']; ?>" style="<?php echo $style; ?>">
 					<?php echo $form['form']; ?>

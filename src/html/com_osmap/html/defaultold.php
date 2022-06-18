@@ -9,22 +9,23 @@
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
-JHtml::addIncludePath(JPATH_COMPONENT.'/helpers');
+JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 
 // Create shortcut to parameters.
 $params = $this->item->params;
 
-if ($this->displayer->canEdit) {
-    $live_site = JURI::root();
-// GHSVS 2015-11-08: Mootools-Killer umgehen.
-JHtml::_('tplhtmlghsvs.framework', true);
-    $ajaxurl = "{$live_site}index.php?option=com_osmap&format=json&task=ajax.editElement&action=toggleElement&".JSession::getFormToken().'=1';
+if ($this->displayer->canEdit)
+{
+	$live_site = JURI::root();
+	// GHSVS 2015-11-08: Mootools-Killer umgehen.
+	JHtml::_('tplhtmlghsvs.framework', true);
+	$ajaxurl = "{$live_site}index.php?option=com_osmap&format=json&task=ajax.editElement&action=toggleElement&" . JSession::getFormToken() . '=1';
 
-    $css = '.osmapexcl img{ border:0px; }'."\n";
-    $css .= '.osmapexcloff { text-decoration:line-through; }';
-    //$css .= "\n.".$this->item->classname .' li {float:left;}';
+	$css = '.osmapexcl img{ border:0px; }' . "\n";
+	$css .= '.osmapexcloff { text-decoration:line-through; }';
+	//$css .= "\n.".$this->item->classname .' li {float:left;}';
 
-    $js = "
+	$js = "
         window.addEvent('domready',function (){
             $$('.osmapexcl').each(function(el){
                 el.onclick = function(){
@@ -56,9 +57,9 @@ JHtml::_('tplhtmlghsvs.framework', true);
             }
         }";
 
-    $doc = JFactory::getDocument();
-    $doc->addStyleDeclaration ($css);
-    $doc->addScriptDeclaration ($js);
+	$doc = JFactory::getDocument();
+	$doc->addStyleDeclaration($css);
+	$doc->addScriptDeclaration($js);
 }
 ?>
 <div id="osmap" class="sitemap<?php echo $params->get('pageclass_sfx'); ?>">
@@ -78,24 +79,24 @@ if ($params->get('show_page_heading')) :
     <?php if (!$this->print) : ?>
         <?php if ($params->get('show_print_icon')) : ?>
         <li>
-            <?php echo JHtml::_('icon.print_popup',  $this->item, $params); ?>
+            <?php echo JHtml::_('icon.print_popup', $this->item, $params); ?>
         </li>
         <?php endif; ?>
 
         <?php if ($params->get('show_email_icon')) : ?>
         <li>
-            <?php echo JHtml::_('icon.email',  $this->item, $params); ?>
+            <?php echo JHtml::_('icon.email', $this->item, $params); ?>
         </li>
         <?php endif; ?>
     <?php else : ?>
         <li>
-            <?php echo JHtml::_('icon.print_screen',  $this->item, $params); ?>
+            <?php echo JHtml::_('icon.print_screen', $this->item, $params); ?>
         </li>
     <?php endif; ?>
     </ul>
 <?php endif; ?>
 
-<?php if ($params->get('showintro', 1) )  : ?>
+<?php if ($params->get('showintro', 1))  : ?>
     <?php echo $this->item->introtext; ?>
 <?php endif; ?>
 

@@ -1,22 +1,23 @@
 <?php
 defined('_JEXEC') or die;
 
-use Joomla\Utilities\ArrayHelper;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
+use Joomla\Utilities\ArrayHelper;
 
 if (
 	!$list
 	|| ($params->get('robotsHide', 0) === 1
 		&& Factory::getApplication()->client->robot)
-){
+) {
 	return;
 }
 
 // To calculate a unique id for both participating modules (button and modal) we need a
 // identical base in both modules.
-JLoader::register('Bs3ghsvsArticle',
+JLoader::register(
+	'Bs3ghsvsArticle',
 	JPATH_PLUGINS . '/system/bs3ghsvs/Helper/ArticleHelper.php'
 );
 $modalId = Bs3ghsvsArticle::buildUniqueIdFromJinput(
@@ -51,18 +52,17 @@ $catsTitle = Text::_($catsTitle) . ' "' . implode('", "', $cats) . '"';
 			<div class="modal-body">
 				<div class="list-group">
 					<?php foreach ($list as $item)
-					{
-						$aAttributes = [
+{
+	$aAttributes = [
 							'class' => 'list-group-item list-group-item-action',
 							'href' => $item->link,
 						];
 
-						if ($item->active)
-						{
-							$aAttributes['aria-current'] = 'page';
-							$aAttributes['class'] .= ' active disabled';
-						}
-						?>
+	if ($item->active)
+	{
+		$aAttributes['aria-current'] = 'page';
+		$aAttributes['class'] .= ' active disabled';
+	} ?>
 						<a <?php echo ArrayHelper::toString($aAttributes); ?>>
 							<?php echo $item->title; ?>
 							<?php
@@ -76,7 +76,7 @@ $catsTitle = Text::_($catsTitle) . ' "' . implode('", "', $cats) . '"';
 							} ?>
 						</a>
 					<?php
-					} ?>
+} ?>
 				</div><!--/list-group-->
 			</div><!--/modal-body-->
 			<div class="modal-footer">

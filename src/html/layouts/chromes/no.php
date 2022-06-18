@@ -1,8 +1,5 @@
 <?php
-\defined('_JEXEC') or die;
-
-use Joomla\CMS\HTML\HTMLHelper;
-use Joomla\CMS\Language\Text;
+defined('_JEXEC') or die;
 
 $module = $displayData['module'];
 $params = $displayData['params'];

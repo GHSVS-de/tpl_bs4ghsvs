@@ -9,11 +9,11 @@ if (!$lineone)
 }
 ?>
 <?php
-echo LayoutHelper::render('ghsvs.moduleColDiv.start', array(
+echo LayoutHelper::render('ghsvs.moduleColDiv.start', [
 	'module' => $module,
 	'params' => $params,
 	'prependClass' => '',
-));
+]);
 ?>
 	<div class="footerghsvs<?php echo $moduleclass_sfx ?>" aria-label="Copyright">
 		<?php echo $lineone; ?>

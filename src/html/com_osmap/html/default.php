@@ -5,23 +5,28 @@ use Alledia\OSMap;
 use Joomla\CMS\HTML\HTMLHelper;
 
 // Check if we need to inject the CSS
-if ($this->params->get('use_css', 1)) {
-    HTMLHelper::stylesheet('media/com_osmap/css/sitemap_html.min.css');
+if ($this->params->get('use_css', 1))
+{
+	HTMLHelper::stylesheet('media/com_osmap/css/sitemap_html.min.css');
 }
 
 // If debug is enabled, use text content type
-if ($this->debug) {
-    OSMap\Factory::getApplication()->input->set('tmpl', 'component');
-    HTMLHelper::stylesheet('media/com_osmap/css/sitemap_html_debug.min.css');
+if ($this->debug)
+{
+	OSMap\Factory::getApplication()->input->set('tmpl', 'component');
+	HTMLHelper::stylesheet('media/com_osmap/css/sitemap_html_debug.min.css');
 }
 
 // Check if we have parameters from a menu, acknowledging we have a menu
-if (!is_null($this->params->get('menu_text'))) {
-    // We have a menu, so let's use its params to display the heading
-    $pageHeading = $this->params->get('page_heading', $this->params->get('page_title'));
-} else {
-    // We don't have a menu, so lets use the sitemap name
-    $pageHeading = $this->sitemap->name;
+if (!is_null($this->params->get('menu_text')))
+{
+	// We have a menu, so let's use its params to display the heading
+	$pageHeading = $this->params->get('page_heading', $this->params->get('page_title'));
+}
+else
+{
+	// We don't have a menu, so lets use the sitemap name
+	$pageHeading = $this->sitemap->name;
 }
 $this->params->set('page_heading', $pageHeading)
 ?>
@@ -30,13 +35,14 @@ $this->params->set('page_heading', $pageHeading)
 #### SEITENÜBERSCHRIFT (Menü)
 if ($this->params->get('show_page_heading'))
 {
- echo HTMLHelper::_('bs3ghsvs.layout',
-  'ghsvs.page_heading',
-  array(
+	echo HTMLHelper::_(
+		'bs3ghsvs.layout',
+		'ghsvs.page_heading',
+		[
 		'params' => $this->params,
-		'bs3ghsvs.rendermodules-position' => ''
-	)
- );
+		'bs3ghsvs.rendermodules-position' => '',
+	]
+	);
 }
 #### ENDE - SEITENÜBERSCHRIFT (Menü)
 ?>

@@ -1,12 +1,12 @@
 <?php
 defined('JPATH_BASE') or die;
 
-use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Factory;
+use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
 
-echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/'. basename(__FILE__) . '-->' . PHP_EOL;
+echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/' . basename(__FILE__) . '-->' . PHP_EOL;
 
 // Unbedingt nötig für Print.
 HTMLHelper::addIncludePath(JPATH_COMPONENT . '/helpers');
@@ -23,7 +23,7 @@ $isRobot = Factory::getApplication()->client->robot;
 $info = $this->item->params->get('info_block_position', 0);
 
 $useDefList = (
- $this->item->params->get('show_modify_date')
+	$this->item->params->get('show_modify_date')
  || $this->item->params->get('show_publish_date')
  || $this->item->params->get('show_create_date')
  || $this->item->params->get('show_category')
@@ -36,11 +36,11 @@ $page_heading_article = (string) $this->item->params->get('page_heading_article_
 
 if ($page_heading_article === '1')
 {
- $this->params->set('show_page_heading', 1);
+	$this->params->set('show_page_heading', 1);
 }
 elseif ($page_heading_article === '0')
 {
- $this->params->set('show_page_heading', 0);
+	$this->params->set('show_page_heading', 0);
 }
 
 ?>
@@ -48,26 +48,30 @@ elseif ($page_heading_article === '0')
 #### SEITENÜBERSCHRIFT (Menü)
 if ($this->params->get('show_page_heading'))
 {
- echo LayoutHelper::render('ghsvs.page_heading',
-  [
+	echo LayoutHelper::render(
+		'ghsvs.page_heading',
+		[
 		'params' => $this->params,
-		'bs3ghsvs.rendermodules-position' => ''
+		'bs3ghsvs.rendermodules-position' => '',
 	]
- );
+	);
 }
 #### ENDE - SEITENÜBERSCHRIFT (Menü)
 ?>
 <div class="item-page<?php echo $this->pageclass_sfx; ?>">
 	<?php if (!$isRobot)
-	{
-	$rendermodules = HTMLHelper::_('bs3ghsvs.rendermodules',
-		'buttonGruppeGhsvs-bs');
+{
+	$rendermodules = HTMLHelper::_(
+		'bs3ghsvs.rendermodules',
+		'buttonGruppeGhsvs-bs'
+	);
 	$output = '';
 
 	if ($this->item->params->get('show_print_icon'))
 	{
 		$printBtnId = 'ARTICLE_PRINT_BTN' . $this->item->id;
-		$output = trim(HTMLHelper::_('icon.print_popup',
+		$output = trim(HTMLHelper::_(
+			'icon.print_popup',
 			$this->item,
 			$this->item->params,
 			['class' => 'btn btn-success', 'id' => $printBtnId],
@@ -104,7 +108,7 @@ JS;
 		echo '<div class="buttonGruppeGhsvs">' . $rendermodules . $output
 			. '</div>';
 	}
-	} // !$isRobot ?>
+} // !$isRobot ?>
 
 		<article class="itemscope-Article div4hyphens">
 			<div class="TOC_GHSVS">
@@ -112,7 +116,8 @@ JS;
 				// Weil ich ihn oben schon separat anzeige.
 				$this->item->params->set('show_print_icon', false);
 
-				$aricleTitle = HTMLHelper::_('bs3ghsvs.layout',
+				$aricleTitle = HTMLHelper::_(
+					'bs3ghsvs.layout',
 					'ghsvs.page_header_n_icons',
 					['item' => $this->item, 'print' => $this->print]
 				);?>
@@ -126,16 +131,16 @@ JS;
 
 				if ($urls && $this->item->params->get('urls_position') == 0)
 				{
-				 echo $this->loadTemplate('links');
- 				}
+					echo $this->loadTemplate('links');
+				}
 				?>
 				<?php	if ($this->item->params->get('access-view')):
 				?>
 
-					<?php if (isset ($this->item->toc))
-					{
-						echo $this->item->toc;
-					} ?>
+					<?php if (isset($this->item->toc))
+				{
+					echo $this->item->toc;
+				} ?>
 
 				<div class="articleBody">
 
@@ -143,13 +148,13 @@ JS;
 					// Selbst, wenn das irritierend ist, wird so gewährleistet, dass item->text nur den Rest enthält:
 					if (!$this->item->params->get('show_intro'))
 					{
-
-						$image = trim(LayoutHelper::render('ghsvs.full_image_venobox',
+						$image = trim(LayoutHelper::render(
+							'ghsvs.full_image_venobox',
 							[
 								'item' => $this->item,
 								'options' => [
-									'classes' => 'col-12 col-md-5 order-first order-md-last text-center text-md-end'
-								]
+									'classes' => 'col-12 col-md-5 order-first order-md-last text-center text-md-end',
+								],
 							]
 						));
 
@@ -160,7 +165,7 @@ JS;
 						<div class="articleIntrotext border bg-modal mb-3 row
 							align-items-center">
 							<?php echo $aricleTitle; ?>
-							<div class="col-12 col-md-<?php echo ($image ? '7' : '12'); ?>">
+							<div class="col-12 col-md-<?php echo($image ? '7' : '12'); ?>">
 								<?php echo $this->item->introtext; ?>
 							</div>
 							<?php echo $image; ?>
@@ -174,11 +179,15 @@ JS;
 				</div><!--/articleBody-->
 			</div><!--/TOC_GHSVS -->
 
-			<?php echo HTMLHelper::_('bs3ghsvs.layout', 'ghsvs.cite',
-				['item' => $this->item]
-			) ?>
+			<?php echo HTMLHelper::_(
+						'bs3ghsvs.layout',
+						'ghsvs.cite',
+						['item' => $this->item]
+					) ?>
 
-			<?php echo HTMLHelper::_('bs3ghsvs.layout', 'ghsvs.extension',
+			<?php echo HTMLHelper::_(
+				'bs3ghsvs.layout',
+				'ghsvs.extension',
 				['item' => $this->item]
 			) ?>
 
@@ -186,14 +195,15 @@ JS;
 			// Output of <div class="div4article-info">.
 			if (($useDefList && is_numeric($info)) || $this->item->params->get('show_tags', 1))
 			{
-				echo HTMLHelper::_('bs3ghsvs.layout',
+				echo HTMLHelper::_(
+					'bs3ghsvs.layout',
 					'ghsvs.tags_n_article-info-combined',
-					array(
+					[
 						'item' => $this->item,
 						'params' => $this->item->params,
 						'position' => 'below',
 						'useDefList' => $useDefList,
-					)
+					]
 				);
 			} ?>
 		</article><!--/itemscope-Article-->
@@ -218,6 +228,7 @@ elseif ($this->item->params->get('show_noauth') == true && $user->get('guest')) 
    echo Text::_('COM_CONTENT_REGISTER_TO_READ_MORE');
   elseif ($readmore = $this->item->alternative_readmore) :
    echo $readmore;
+
    if ($this->item->params->get('show_readmore_title', 0) != 0) :
     echo HTMLHelper::_('string.truncate', ($this->item->title), $this->item->params->get('readmore_limit'));
    endif;

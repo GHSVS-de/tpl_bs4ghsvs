@@ -93,6 +93,7 @@ function pagination_list_render($list)
 	$currentPage = 1;
 	$range = 1;
 	$step = 5;
+
 	foreach ($list['pages'] as $k => $page)
 	{
 		if (!$page['active'])
@@ -100,6 +101,7 @@ function pagination_list_render($list)
 			$currentPage = $k;
 		}
 	}
+
 	if ($currentPage >= $step)
 	{
 		if ($currentPage % $step === 0)
@@ -134,6 +136,7 @@ function pagination_list_render($list)
 
 	$html .= '</ul>';
 	$html .= '</nav>';
+
 	return $html;
 }
 
@@ -187,7 +190,6 @@ function pagination_item_active(&$item)
 	}
 
 	return '<li' . $class . '><a title="' . $item->text . '" href="' . $item->link . '" class="pagenav" aria-label="' . $aria . '">' . $display . '</a></li>';
-
 }
 
 /**

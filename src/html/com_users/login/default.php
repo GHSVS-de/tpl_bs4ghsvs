@@ -2,12 +2,13 @@
 defined('_JEXEC') or die;
 
 $uri = JUri::getInstance();
+
 if (
  $uri->getVar('option') == 'com_users'
  || strpos($uri->getPath(), '/component/users') !== false
-){
- throw new RuntimeException(JText::_('Ich mag dich nicht!'), '403');
- die;
+) {
+	throw new RuntimeException(JText::_('Ich mag dich nicht!'), '403');
+	die;
 }
 
 $cookieLogin = $this->user->get('cookieLogin');

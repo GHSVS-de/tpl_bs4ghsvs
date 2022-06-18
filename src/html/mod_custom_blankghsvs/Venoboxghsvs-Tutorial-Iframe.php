@@ -5,7 +5,8 @@ Fügt Venobox-Konfiguration in Beitrag "Integration von Venobox via JHtml/HTMLHe
 defined('_JEXEC') or die;
 use Joomla\CMS\HTML\HTMLHelper;
 
-\Joomla\CMS\HTML\HTMLHelper::_('plgvenoboxghsvs.venobox',
+\Joomla\CMS\HTML\HTMLHelper::_(
+	'plgvenoboxghsvs.venobox',
 	[
 		'selector' => '.popup-iframe',
 		'framewidth' => '400px',

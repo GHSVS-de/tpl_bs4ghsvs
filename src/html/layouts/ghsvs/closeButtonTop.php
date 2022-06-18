@@ -6,7 +6,7 @@ defined('_JEXEC') or die;
 use Joomla\CMS\Language\Text;
 use Joomla\Registry\Registry;
 
-$options = new Registry (isset($displayData['options']) ? $displayData['options']
+$options = new Registry(isset($displayData['options']) ? $displayData['options']
 	: []);
 $dismissType = $options->get('dismissType', 'modal');
 $class = $options->get('class', '');

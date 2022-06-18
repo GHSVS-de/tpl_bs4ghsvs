@@ -1,8 +1,6 @@
 <?php
 defined('_JEXEC') or die;
 
-use Joomla\CMS\HTML\HTMLHelper;
-use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
 
 /*
@@ -10,19 +8,21 @@ use Joomla\CMS\Layout\LayoutHelper;
  */
 function modChrome_no($module, &$params, &$attribs)
 {
-	echo LayoutHelper::render('chromes.no',
-	['module' => $module,
+	echo LayoutHelper::render(
+		'chromes.no',
+		['module' => $module,
 	'params' => $params,
-	'attribs' => $attribs]
+	'attribs' => $attribs, ]
 	);
 }
 
 function modChrome_divOnly($module, &$params, &$attribs)
 {
-	echo LayoutHelper::render('chromes.divOnly',
-	['module' => $module,
+	echo LayoutHelper::render(
+		'chromes.divOnly',
+		['module' => $module,
 	'params' => $params,
-	'attribs' => $attribs]
+	'attribs' => $attribs, ]
 	);
 }
 
@@ -33,10 +33,11 @@ Siehe /media/php-includes_ghsvs/ReadMe.txt
 */
 function modChrome_includePHPGhsvs_bs($module, &$params, &$attribs)
 {
-	echo LayoutHelper::render('chromes.includePHPGhsvs_bs',
-	['module' => $module,
+	echo LayoutHelper::render(
+		'chromes.includePHPGhsvs_bs',
+		['module' => $module,
 	'params' => $params,
-	'attribs' => $attribs]
+	'attribs' => $attribs, ]
 	);
 }
 
@@ -47,10 +48,11 @@ Modulinhalt klappt auf.
 */
 function modChrome_accordionghsvs($module, &$params, &$attribs)
 {
-	echo LayoutHelper::render('chromes.accordionghsvs',
-	['module' => $module,
+	echo LayoutHelper::render(
+		'chromes.accordionghsvs',
+		['module' => $module,
 	'params' => $params,
-	'attribs' => $attribs]
+	'attribs' => $attribs, ]
 	);
 }
 
@@ -62,9 +64,10 @@ Dieser Stil zeigt zusätzlich den PHP-Quellcode der ausgeführten Datei an.
 */
 function modChrome_includePHPAndShowSourceGhsvs($module, &$params, &$attribs)
 {
-	echo LayoutHelper::render('chromes.includePHPAndShowSourceGhsvs',
-	['module' => $module,
+	echo LayoutHelper::render(
+		'chromes.includePHPAndShowSourceGhsvs',
+		['module' => $module,
 	'params' => $params,
-	'attribs' => $attribs]
+	'attribs' => $attribs, ]
 	);
 }

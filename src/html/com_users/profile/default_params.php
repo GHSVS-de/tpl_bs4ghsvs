@@ -11,15 +11,13 @@ defined('_JEXEC') or die;
 
 return;
 
-
-
 JLoader::register('JHtmlUsers', JPATH_COMPONENT . '/helpers/html/users.php');
-JHtml::register('users.spacer', array('JHtmlUsers', 'spacer'));
-JHtml::register('users.helpsite', array('JHtmlUsers', 'helpsite'));
-JHtml::register('users.templatestyle', array('JHtmlUsers', 'templatestyle'));
-JHtml::register('users.admin_language', array('JHtmlUsers', 'admin_language'));
-JHtml::register('users.language', array('JHtmlUsers', 'language'));
-JHtml::register('users.editor', array('JHtmlUsers', 'editor'));
+JHtml::register('users.spacer', ['JHtmlUsers', 'spacer']);
+JHtml::register('users.helpsite', ['JHtmlUsers', 'helpsite']);
+JHtml::register('users.templatestyle', ['JHtmlUsers', 'templatestyle']);
+JHtml::register('users.admin_language', ['JHtmlUsers', 'admin_language']);
+JHtml::register('users.language', ['JHtmlUsers', 'language']);
+JHtml::register('users.editor', ['JHtmlUsers', 'editor']);
 
 ?>
 <?php $fields = $this->form->getFieldset('params'); ?>

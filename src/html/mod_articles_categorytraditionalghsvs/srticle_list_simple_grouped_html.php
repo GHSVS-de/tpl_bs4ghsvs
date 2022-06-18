@@ -1,8 +1,6 @@
 <?php
 defined('_JEXEC') or die;
 
-use Joomla\CMS\HTML\HTMLHelper;
-
 ?>
 <?php foreach ($list as $group_name => $group)
 { #echo ' 4654sd48sa7d98sD81s8d71dsa <pre>' . print_r(array_values($group)[0]->displayCategoryLink, true) . '</pre>';exit; ?>
@@ -13,6 +11,7 @@ use Joomla\CMS\HTML\HTMLHelper;
 		<ul>
 		<?php
 		unset($group['myCatId']);
+
 		foreach ($group as $i => $item)
 		{ ?>
 		<li>

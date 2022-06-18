@@ -2,14 +2,14 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
+use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Uri\Uri;
-use Joomla\CMS\HTML\HTMLHelper;
 
 $app = Factory::getApplication();
 $params = $app->getTemplate(true)->params;
 
-if ( ($erroremail = $params->get('erroremail', '')) )
+if (($erroremail = $params->get('erroremail', '')))
 {
 	if ($erroremail == 'fromEmail')
 	{
@@ -52,7 +52,10 @@ if ( ($erroremail = $params->get('erroremail', '')) )
 							<?php echo $this->error->getCode(); ?>
 							-
 							<?php echo htmlspecialchars(
-								$this->error->getMessage(), ENT_COMPAT, 'UTF-8'); ?>
+								$this->error->getMessage(),
+								ENT_COMPAT,
+								'UTF-8'
+							); ?>
 						</p>
 					</div><!--/#errorboxheader-->
 
@@ -86,8 +89,11 @@ if ( ($erroremail = $params->get('erroremail', '')) )
 								$ownStr = 'JERROR_LAYOUT_PLEASE_CONTACT_THE_SYSTEM_ADMINISTRATOR';
 							}
 
-							echo Text::sprintf($ownStr, Uri::getInstance()->toString(),
-								($erroremail ? HTMLHelper::_('email.cloak', $erroremail) : ''));
+							echo Text::sprintf(
+								$ownStr,
+								Uri::getInstance()->toString(),
+								($erroremail ? HTMLHelper::_('email.cloak', $erroremail) : '')
+							);
 							?>
 						</p>
 
@@ -99,8 +105,11 @@ if ( ($erroremail = $params->get('erroremail', '')) )
 								<p>
 									<?php echo $this->error->getCode(); ?>
 									-
-									<?php echo htmlspecialchars($this->error->getMessage(),
-										ENT_QUOTES, 'UTF-8'); ?>
+									<?php echo htmlspecialchars(
+								$this->error->getMessage(),
+								ENT_QUOTES,
+								'UTF-8'
+							); ?>
 								</p>
 
 								<?php echo $this->renderBacktrace(); ?>
@@ -116,8 +125,11 @@ if ( ($erroremail = $params->get('erroremail', '')) )
 											<?php echo Text::_('JERROR_LAYOUT_PREVIOUS_ERROR'); ?>
 										</strong></p>
 										<p>
-											<?php echo htmlspecialchars($this->_error->getMessage(),
-												ENT_QUOTES, 'UTF-8'); ?>
+											<?php echo htmlspecialchars(
+											$this->_error->getMessage(),
+											ENT_QUOTES,
+											'UTF-8'
+										); ?>
 										</p>
 										<?php echo $this->renderBacktrace(); ?>
 										<?php $loop = $this->setError($this->_error->getPrevious()); ?>

@@ -2,26 +2,25 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
-use Joomla\CMS\Router\Route;
-use Joomla\CMS\Helper\ModuleHelper;
 use Joomla\CMS\Language\Text;
-use Joomla\String\StringHelper;
 use Joomla\CMS\Layout\LayoutHelper;
+use Joomla\CMS\Router\Route;
 
-echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/'. basename(__FILE__) . '-->' . PHP_EOL;
+echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/' . basename(__FILE__) . '-->' . PHP_EOL;
 
 $app = Factory::getApplication();
 
 if (
 	$params->get('robotsHide', 0) === 1
 	&& $app->client->robot
-){
+) {
 	return '';
 }
 
 /* To calculate a unique id for both participating modules (button and modal)
 we need a identical base id in both modules. */
-JLoader::register('Bs3ghsvsArticle',
+JLoader::register(
+	'Bs3ghsvsArticle',
 	JPATH_PLUGINS . '/system/bs3ghsvs/Helper/ArticleHelper.php'
 );
 $modalId = Bs3ghsvsArticle::buildUniqueIdFromJinput(
@@ -65,8 +64,7 @@ $class = 'list-group-item list-group-item-action';
 						{
 							$item->link = Route::_(ContentHelperRoute::getCategoryRoute($item->id));
 							$item->active = (int) $item->id === $activeCatId;
-							$aClass = $class . ($item->active ? ' active' : '');
-							?>
+							$aClass = $class . ($item->active ? ' active' : ''); ?>
 							<a href="<?php echo $item->link; ?>" class="<?php echo $aClass; ?>">
 								<?php echo $item->title; ?>
 							<?php if ($item->description = trim(strip_tags($item->description)))

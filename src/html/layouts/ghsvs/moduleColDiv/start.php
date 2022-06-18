@@ -11,8 +11,6 @@
 */
 defined('_JEXEC') or die;
 
-use Joomla\CMS\Language\Text;
-
 /**
  * $module mandatory
  * $params mandatory
@@ -35,7 +33,8 @@ if (empty($prependClass))
 	$prependClass = '';
 }
 
-$collectClasses = trim(implode(' ',
+$collectClasses = trim(implode(
+	' ',
 	[
 		$prependClass,
 		$params->get('colClass', ''),

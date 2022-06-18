@@ -9,7 +9,7 @@
 
 defined('_JEXEC') or die;
 
-$attributes = isset($preAttributes) ? $preAttributes : array();
+$attributes = isset($preAttributes) ? $preAttributes : [];
 
 if ($item->anchor_title)
 {

@@ -3,7 +3,7 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
-use Joomla\CMS\HTML\HTMLHelper;
+
 ?>
 <?php
 if ($params->get('robotsHide', 1) === 1 && $params->get('isRobot') === 1)
@@ -11,11 +11,11 @@ if ($params->get('robotsHide', 1) === 1 && $params->get('isRobot') === 1)
 	return;
 }
 
-echo LayoutHelper::render('ghsvs.moduleColDiv.start', array(
+echo LayoutHelper::render('ghsvs.moduleColDiv.start', [
 	'module' => $module,
 	'params' => $params,
 	'prependClass' => '',
-));
+]);
 ?>
 <div class="teilenSuchenButtons">
 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#TeilenSuchePanel">

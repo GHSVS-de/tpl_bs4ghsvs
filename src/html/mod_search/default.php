@@ -1,9 +1,9 @@
 <?php
 defined('_JEXEC') or die;
 
-use Joomla\CMS\Router\Route;
-use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\Layout\LayoutHelper;
+use Joomla\CMS\Router\Route;
 
 $description = Text::_($params->get('text'));
 $button_text = Text::_($params->get('label'));
