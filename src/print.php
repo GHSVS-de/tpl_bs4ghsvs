@@ -3,7 +3,7 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Uri\Uri;
 
-$this->_scripts = $this->_styleSheets = $this->_script = $this->_style = $this->_script = $this->_custom = $this->_scriptText = [];
+//$this->_scripts = $this->_styleSheets = $this->_script = $this->_style = $this->_script = $this->_custom = $this->_scriptText = [];
 $this->link = '';
 $this->setMetadata('robots', 'noindex,nofollow');
 $this->addStyleSheet(Uri::root() . 'templates/' . $this->template . '/css/template.min.css');
