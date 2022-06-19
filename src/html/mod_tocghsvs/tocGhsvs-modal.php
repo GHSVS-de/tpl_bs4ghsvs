@@ -4,8 +4,6 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
 
-echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/' . basename(__FILE__) . '-->' . PHP_EOL;
-
 /* To calculate a unique id for both participating modules (button and modal) we need a
 identical base in both modules. */
 // Set already otherwise? E.g. in layout buttonAndModal.php.
@@ -56,11 +54,10 @@ HTMLHelper::_(
 );
 
 $document->addScriptDeclaration(
-<<<JS
+	<<<JS
 document.addEventListener('DOMContentLoaded', function()
 {
 	window.tocGhsvsInit(Joomla.getOptions("tocGhsvs-settings$module->id"));
-
 	var myModalEl$module->id = new bootstrap.Modal("#$id");
 	let elem = document.getElementById("$id");
 	document.getElementById("$id").querySelectorAll("#$id a[href*=\"#\"]")
@@ -79,11 +76,11 @@ document.addEventListener('DOMContentLoaded', function()
 
 			link.addEventListener('click', (e) => {
 				myModalEl$module->id.hide();
-				//e.stopImmediatePropagation();
 			});
 	});
 });
-JS);
+JS
+);
 ?>
 <div class="HIDEIFNOTHINGFOUND<?php echo $id; ?>">
 	<div class="modal fade" id="<?php echo $id; ?>" tabindex="-1" role="dialog"
