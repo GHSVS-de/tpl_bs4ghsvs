@@ -90,6 +90,12 @@ if (!$isRobot && $this->params->get('HidePageHeader', 0))
 	}
 }
 
+// Set by Http-Header-plugin?
+if ($nonce = Factory::getApplication()->get('csp_nonce', ''))
+{
+	$nonce = ' nonce="' . $nonce . '"';
+}
+
 $app  = Factory::getApplication();
 $this->setHtml5(true);
 HTMLHelper::_('bs3ghsvs.templatejs');
@@ -133,6 +139,9 @@ HTMLHelper::_('stylesheet', 'custom.css', ['version' => 'auto', 'relative' => tr
 
 // Check for a custom js file
 HTMLHelper::_('script', 'custom.js', ['version' => 'auto', 'relative' => true]);
+
+// Suche nach "stickyCompensation" für Antwort, was das soll.
+$this->addCustomTag('<style' . $nonce . ' type="text/css" id="stickyCompensation"></style>');
 ?>
 <!DOCTYPE html>
 <html  class="no-js jsNotActive"
@@ -141,7 +150,7 @@ HTMLHelper::_('script', 'custom.js', ['version' => 'auto', 'relative' => true]);
 >
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-	<script>
+	<script<?php echo $nonce; ?>>
 		JURIROOT = "<?php echo Uri::root(true)?>"; //No var! "super-global"
 		JURIROOT2 = "<?php echo Uri::root()?>"; //No var! "super-global"
 		HidePageHeader = <?php echo (int) $HidePageHeader; ?>;
