@@ -85,8 +85,6 @@ sh run-p_tpl_bs4ghsvs.sh;
 - `npm run update` (if needed) or (faster) `npm update --save-dev`
 - `npm install` (if needed)
 
-- `node build.js`
-
 ## PHP Codestyle
 If you think it's worth it.
 - `cd /mnt/z/git-kram/php-cs-fixer-ghsvs`
