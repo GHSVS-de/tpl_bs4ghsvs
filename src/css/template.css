@@ -11356,6 +11356,13 @@ body:not(.bodyPrint) a[href^="//"]:not([href*="ghsvs.de"])::after {
   font-style: italic;
 }
 
+.isATocId:target::before {
+  font: 70% sans-serif;
+  content: "►";
+  color: #990134;
+  margin-right: 0.25em;
+}
+
 /* _pagebreak-sliders-custom.scss pagebrteakGhsvs-Zeugs */
 @media (max-width: 767.98px) {
   .pageBreakSlideTitle {
