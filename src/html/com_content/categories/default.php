@@ -6,8 +6,6 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Router\Route;
 
-echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/' . basename(__FILE__) . '-->' . PHP_EOL;
-
 HTMLHelper::addIncludePath(JPATH_COMPONENT . '/helpers');
 ?>
 <div class="categories-list<?php echo $this->pageclass_sfx; ?>">
