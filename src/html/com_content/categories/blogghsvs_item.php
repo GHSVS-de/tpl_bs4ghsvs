@@ -4,7 +4,10 @@ GHSVS 2015-01-06
 */
 
 defined('_JEXEC') or die;
-JHtml::addIncludePath(JPATH_COMPONENT . '/helpers/html');
+
+use Joomla\CMS\HTML\HTMLHelper;
+
+HTMLHelper::addIncludePath(JPATH_COMPONENT . '/helpers/html');
 
 // $this->params sind die im Menüeintrag eingestellten Parameter.
 // Im Unterschied zu.
@@ -48,7 +51,7 @@ $this->item->alternative_readmore = '';
 $info = $this->item->params->get('info_block_position', 0);
 ?>
 <?php
-echo JHtml::_(
+echo HTMLHelper::_(
 	'bs3ghsvs.layout',
 	'ghsvs.page_header_n_icons',
 	[
@@ -60,7 +63,7 @@ echo JHtml::_(
 <?php
 if ($this->params->get('show_introimage_blogview_ghsvs', 1))
 {
-	echo JHtml::_(
+	echo HTMLHelper::_(
 		'bs3ghsvs.layout',
 		'ghsvs.category_image_readmore',
 		[
@@ -71,7 +74,7 @@ if ($this->params->get('show_introimage_blogview_ghsvs', 1))
 }
 ?>
 <?php if ($this->params->get('show_cat_num_articles_cat')) :?>
-	<p><span class="badge badge-info tip hasTooltip" title="<?php echo JHtml::tooltipText('COM_CONTENT_NUM_ITEMS'); ?>">
+	<p><span class="badge badge-info tip hasTooltip" title="<?php echo HTMLHelper::tooltipText('COM_CONTENT_NUM_ITEMS'); ?>">
 		<?php echo $this->item->numitems; ?>
 	</span></p>
 <?php endif; ?>
@@ -83,7 +86,7 @@ if ($this->params->get('show_introimage_blogview_ghsvs', 1))
 
 <?php
 if ($this->item->params->get('show_intro')) :
-	$truncated = JHtml::_(
+	$truncated = HTMLHelper::_(
 		'string.truncateComplex',
 		$this->item->description,
 		$this->item->params->get('introtext_limit', 500)
@@ -96,16 +99,16 @@ if ($this->item->params->get('show_intro')) :
 	// Und jetzt statt Introtext:;
 	echo '
 <div class="category-desc">
-' . JHtml::_('content.prepare', $truncated, '', 'com_content.categories') . '
+' . HTMLHelper::_('content.prepare', $truncated, '', 'com_content.categories') . '
 </div><!--/category-desc-->
 ';
 endif; ?>
 <?php if ($this->item->params->get('show_readmore') && $this->item->readmore) :?>
-	<?php echo JHtml::_('bs3ghsvs.layout', 'joomla.content.readmore', ['item' => $this->item, 'params' => $this->item->params, 'link' => $this->item->linkGhsvs]); ?>
+	<?php echo HTMLHelper::_('bs3ghsvs.layout', 'joomla.content.readmore', ['item' => $this->item, 'params' => $this->item->params, 'link' => $this->item->linkGhsvs]); ?>
 <?php endif; ?>
 <?php if ($this->item->params->get('show_tags'))
 {
-	echo JHtml::_(
+	echo HTMLHelper::_(
 		'bs3ghsvs.layout',
 		'ghsvs.tags_n_tagscat',
 		$this->item
