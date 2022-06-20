@@ -3,8 +3,6 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\HTML\HTMLHelper;
 
-echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/' . basename(__FILE__) . '-->' . PHP_EOL;
-
 HTMLHelper::addIncludePath(JPATH_COMPONENT . '/helpers');
 
 // Benötigt in JLayout ghsvs.tags_n_tagscat
@@ -24,27 +22,6 @@ if (!$this->params->get('show_empty_categories_cat', 0))
 		}
 	}
 }
-
-##### NUR FÜR DEBUG !!!! ####
-/*
-Paar Properties entfernen für lesbare Ausgabe eines einzelnen Items.
-Vorsicht!! Damit werden ggf. andere, ganze Items gelöscht!!! Kein Plan warum!
-*/
-/*foreach ($this->intro_items as $key => $item)
-{
-	if (is_object($item))
-	{
-		$item->set("_parent", null);
-		$item->set("_constructor", null);
-		$item->set("_rightSibling", null);
-		$item->set("_rightsibling", null);
-		$item->set("_leftSibling", null);
-	}else{
-	}
-}
-exit;*/
-##### ENDE - NUR FÜR DEBUG !!!! ####
-
 ?>
 <div class="blog-featured<?php echo $this->pageclass_sfx;?>">
 
