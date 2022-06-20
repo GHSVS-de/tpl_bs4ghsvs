@@ -25,6 +25,7 @@ class  bs4ghsvsInstallerScript extends InstallerScript
 		'/templates/bs4ghsvs/html/com_osmap/html/defaultold.php',
 		'/templates/bs4ghsvs/scss-ghsvs/__________venobox.scss',
 		'/templates/bs4ghsvs/scss-ghsvs/_____________venobox.scss',
+		'/templates/bs4ghsvs/scss-ghsvs/_reboot-bug-fix-5.1.0.scss',
 	];
 
 	/**
