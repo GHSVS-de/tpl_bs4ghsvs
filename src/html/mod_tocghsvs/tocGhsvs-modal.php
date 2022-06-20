@@ -59,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function()
 {
 	window.tocGhsvsInit(Joomla.getOptions("tocGhsvs-settings$module->id"));
 	var myModalEl$module->id = new bootstrap.Modal("#$id");
-	let elem = document.getElementById("$id");
 	document.getElementById("$id").querySelectorAll("#$id a[href*=\"#\"]")
 		.forEach((link) =>
 		{
