@@ -9,7 +9,7 @@ Das ist kein Template, das man installiert und dann läuft es reibungslos. Es br
 
 **@since > v2022.03.31: Build procedure uses local repo fork of https://github.com/GHSVS-de/buildKramGhsvs**
 
-## If a new Bootstrap release? Special step (1)!!!!! Build reduced `bootstrap.bundle` JS!!!!!!
+## New Bootstrap release? Special step (1)!!!!! Build reduced `bootstrap.bundle` JS!!!!!!
 - - You should first build a new `plg_system_bs3ghsvs_bs5`. Makes the whole release procedure a little bit easier.
 
 - Delete everything in `/mnt/z/git-kram/bootstrap/`
@@ -62,11 +62,11 @@ export default {
 ### !!!Don't forget then!!!
 - Craete new folder `git-kram/bootstrap/dist/js/_ghsvsBootstrapBundleVersion_`.
 - Copy `git-kram/bootstrap/js/index.umd.js` in this new folder.
-- `tpl_bs4ghsvs` needs it like this for build prodedure!!!
+- `tpl_bs4ghsvs` needs it like this for build prodedure!
 
-## If a new Bootstrap release or changed scss-ghsvs/? Special step  (2) !!!!! Compile SCSS to CSS!!!!!!
-- - You should first build a new `plg_system_bs3ghsvs_bs5`. Makes the whole release procedure a little bit easier.
-- - Needs `/mnt/z/git-kram/media/plg_system_bs3ghsvs/scss/bootstrap` that will be populated during `plg_system_bs3ghsvs_bs5` build.
+## If a new Bootstrap release or changed scss-ghsvs/? Special step  (2) ! Compile SCSS to CSS!
+- You should first build a new `plg_system_bs3ghsvs_bs5`. Makes the whole release procedure a little bit easier.
+- Needs `/mnt/z/git-kram/media/plg_system_bs3ghsvs/scss/bootstrap` that will be populated during `plg_system_bs3ghsvs_bs5` build.
 -
 ```
 cd /mnt/z/git-kram/sass_compile_prefixghsvs;
