@@ -22,6 +22,7 @@ class  bs4ghsvsInstallerScript extends InstallerScript
 		'/templates/bs4ghsvs/css/venobox.css.map',
 		'/templates/bs4ghsvs/css/venobox.min.css',
 		'/templates/bs4ghsvs/css/venobox.min.css.map',
+		'/templates/bs4ghsvs/html/com_osmap/html/defaultold.php',
 	];
 
 	/**
