@@ -144,7 +144,6 @@ HTMLHelper::_('script', 'custom.js', ['version' => 'auto', 'relative' => true]);
 // Der Dummy-Inhalt ist Pflicht, wenn JCH verwednet wird.
 $this->addCustomTag('<style' . $nonce . ' type="text/css" id="stickyCompensation">.dummyByGhsvs{cursor: default};</style>');
 ?>
-?>
 <!DOCTYPE html>
 <html  class="no-js jsNotActive"
 	lang="<?php echo $this->language; ?>"
