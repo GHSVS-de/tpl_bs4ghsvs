@@ -141,7 +141,9 @@ HTMLHelper::_('stylesheet', 'custom.css', ['version' => 'auto', 'relative' => tr
 HTMLHelper::_('script', 'custom.js', ['version' => 'auto', 'relative' => true]);
 
 // Suche nach "stickyCompensation" für Antwort, was das soll.
-$this->addCustomTag('<style' . $nonce . ' type="text/css" id="stickyCompensation"></style>');
+// Der Dummy-Inhalt ist Pflicht, wenn JCH verwednet wird.
+$this->addCustomTag('<style' . $nonce . ' type="text/css" id="stickyCompensation">.dummyByGhsvs{cursor: default};</style>');
+?>
 ?>
 <!DOCTYPE html>
 <html  class="no-js jsNotActive"
