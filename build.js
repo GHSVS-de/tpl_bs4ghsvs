@@ -120,22 +120,11 @@ let versionSub = 0;
 	];
 	await helper.cleanOut(cleanOuts);
 
-	from = `./src`;
-	to = `./package`;
-	await fse.copy(from, to
-	).then(
-		answer => console.log(
-			pc.yellow(pc.bold(`Copied "${from}" into "${to}".`))
-		)
-	);
+	from = './src'
+	to = './package'
+	await helper.copy(from, to)
 
-	if (!(await fse.exists("./dist")))
-	{
-		await fse.mkdir("./dist"
-		).then(
-			answer => console.log(pc.yellow(pc.bold(`Created "./dist".`)))
-		);
-  }
+	await helper.mkdir('./dist');
 
 	const zipFilename = `${name}-${version}_${versionSub}.zip`;
 
