@@ -161,6 +161,8 @@ $cardText = LayoutHelper::render(
 	<?php
 	}?>
 </div><!--/card-body-->
+<?php if (trim(strip_tags($cardInfos))) { ?>
 <div class="card-footer"><?php echo $cardInfos; ?></div>
+<?php } ?>
 </div><!--/card-->
 </div><!--/col-->
