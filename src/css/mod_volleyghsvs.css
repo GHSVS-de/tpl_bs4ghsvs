@@ -13,19 +13,21 @@
   }
 }
 .mod_volleyghsvs .table {
+  --bs-table-color: var(--bs-body-color);
   --bs-table-bg: transparent;
+  --bs-table-border-color: var(--bs-border-color);
   --bs-table-accent-bg: transparent;
-  --bs-table-striped-color: #212529;
+  --bs-table-striped-color: var(--bs-body-color);
   --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
-  --bs-table-active-color: #212529;
+  --bs-table-active-color: var(--bs-body-color);
   --bs-table-active-bg: rgba(0, 0, 0, 0.1);
-  --bs-table-hover-color: #212529;
+  --bs-table-hover-color: var(--bs-body-color);
   --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
   width: 100%;
   margin-bottom: 1rem;
-  color: #212529;
+  color: var(--bs-table-color);
   vertical-align: top;
-  border-color: #dee2e6;
+  border-color: var(--bs-table-border-color);
 }
 .mod_volleyghsvs .table > :not(caption) > * > * {
   padding: 0.5rem 0.5rem;
@@ -39,8 +41,8 @@
 .mod_volleyghsvs .table > thead {
   vertical-align: bottom;
 }
-.mod_volleyghsvs .table > :not(:first-child) {
-  border-top: 2px solid currentColor;
+.mod_volleyghsvs .table-group-divider {
+  border-top: 2px solid currentcolor;
 }
 .mod_volleyghsvs .caption-top {
   caption-side: top;
@@ -64,6 +66,10 @@
   --bs-table-accent-bg: var(--bs-table-striped-bg);
   color: var(--bs-table-striped-color);
 }
+.mod_volleyghsvs .table-striped-columns > :not(caption) > tr > :nth-child(even) {
+  --bs-table-accent-bg: var(--bs-table-striped-bg);
+  color: var(--bs-table-striped-color);
+}
 .mod_volleyghsvs .table-active {
   --bs-table-accent-bg: var(--bs-table-active-bg);
   color: var(--bs-table-active-color);
@@ -73,92 +79,108 @@
   color: var(--bs-table-hover-color);
 }
 .mod_volleyghsvs .table-primary {
+  --bs-table-color: #000;
   --bs-table-bg: #cfe2ff;
+  --bs-table-border-color: #bacbe6;
   --bs-table-striped-bg: #c5d7f2;
   --bs-table-striped-color: #000;
   --bs-table-active-bg: #bacbe6;
   --bs-table-active-color: #000;
   --bs-table-hover-bg: #bfd1ec;
   --bs-table-hover-color: #000;
-  color: #000;
-  border-color: #bacbe6;
+  color: var(--bs-table-color);
+  border-color: var(--bs-table-border-color);
 }
 .mod_volleyghsvs .table-secondary {
+  --bs-table-color: #000;
   --bs-table-bg: #e2e3e5;
+  --bs-table-border-color: #cbccce;
   --bs-table-striped-bg: #d7d8da;
   --bs-table-striped-color: #000;
   --bs-table-active-bg: #cbccce;
   --bs-table-active-color: #000;
   --bs-table-hover-bg: #d1d2d4;
   --bs-table-hover-color: #000;
-  color: #000;
-  border-color: #cbccce;
+  color: var(--bs-table-color);
+  border-color: var(--bs-table-border-color);
 }
 .mod_volleyghsvs .table-success {
+  --bs-table-color: #000;
   --bs-table-bg: #d1e7dd;
+  --bs-table-border-color: #bcd0c7;
   --bs-table-striped-bg: #c7dbd2;
   --bs-table-striped-color: #000;
   --bs-table-active-bg: #bcd0c7;
   --bs-table-active-color: #000;
   --bs-table-hover-bg: #c1d6cc;
   --bs-table-hover-color: #000;
-  color: #000;
-  border-color: #bcd0c7;
+  color: var(--bs-table-color);
+  border-color: var(--bs-table-border-color);
 }
 .mod_volleyghsvs .table-info {
+  --bs-table-color: #000;
   --bs-table-bg: #cff4fc;
+  --bs-table-border-color: #badce3;
   --bs-table-striped-bg: #c5e8ef;
   --bs-table-striped-color: #000;
   --bs-table-active-bg: #badce3;
   --bs-table-active-color: #000;
   --bs-table-hover-bg: #bfe2e9;
   --bs-table-hover-color: #000;
-  color: #000;
-  border-color: #badce3;
+  color: var(--bs-table-color);
+  border-color: var(--bs-table-border-color);
 }
 .mod_volleyghsvs .table-warning {
+  --bs-table-color: #000;
   --bs-table-bg: #fff3cd;
+  --bs-table-border-color: #e6dbb9;
   --bs-table-striped-bg: #f2e7c3;
   --bs-table-striped-color: #000;
   --bs-table-active-bg: #e6dbb9;
   --bs-table-active-color: #000;
   --bs-table-hover-bg: #ece1be;
   --bs-table-hover-color: #000;
-  color: #000;
-  border-color: #e6dbb9;
+  color: var(--bs-table-color);
+  border-color: var(--bs-table-border-color);
 }
 .mod_volleyghsvs .table-danger {
+  --bs-table-color: #000;
   --bs-table-bg: #ebccd6;
+  --bs-table-border-color: #d4b8c1;
   --bs-table-striped-bg: #dfc2cb;
   --bs-table-striped-color: #000;
   --bs-table-active-bg: #d4b8c1;
   --bs-table-active-color: #000;
   --bs-table-hover-bg: #d9bdc6;
   --bs-table-hover-color: #000;
-  color: #000;
-  border-color: #d4b8c1;
+  color: var(--bs-table-color);
+  border-color: var(--bs-table-border-color);
 }
 .mod_volleyghsvs .table-light {
+  --bs-table-color: #000;
   --bs-table-bg: #f8f9fa;
+  --bs-table-border-color: #dfe0e1;
   --bs-table-striped-bg: #ecedee;
   --bs-table-striped-color: #000;
   --bs-table-active-bg: #dfe0e1;
   --bs-table-active-color: #000;
   --bs-table-hover-bg: #e5e6e7;
   --bs-table-hover-color: #000;
-  color: #000;
-  border-color: #dfe0e1;
+  color: var(--bs-table-color);
+  border-color: var(--bs-table-border-color);
 }
 .mod_volleyghsvs .table-dark {
+  --bs-table-color: #fff;
   --bs-table-bg: #212529;
+  --bs-table-border-color: #373b3e;
   --bs-table-striped-bg: #2c3034;
   --bs-table-striped-color: #fff;
   --bs-table-active-bg: #373b3e;
   --bs-table-active-color: #fff;
   --bs-table-hover-bg: #323539;
   --bs-table-hover-color: #fff;
-  color: #fff;
-  border-color: #373b3e;
+  color: var(--bs-table-color);
+  border-color: var(--bs-table-border-color);
 }
 .mod_volleyghsvs .table-responsive {
   overflow-x: auto;

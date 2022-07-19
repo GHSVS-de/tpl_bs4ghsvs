@@ -131,13 +131,11 @@ body.bodyPrint.ausdruck .printThis {
     display: none !important;
     visibility: hidden !important;
   }
-
   .collapse,
 .printThis {
     display: block !important;
     visibility: visible !important;
   }
-
   *,
 *:before,
 *:after {

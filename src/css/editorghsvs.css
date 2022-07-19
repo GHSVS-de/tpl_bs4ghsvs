@@ -169,9 +169,9 @@ abbr {
 }
 
 .block-primary {
-  color: black;
-  background-color: #cfe2ff;
-  border-color: #0d6efd;
+  --bs-alert-color: black;
+  --bs-alert-bg: #cfe2ff;
+  --bs-alert-border-color: #0d6efd;
   border-width: 3px !important;
   border-style: solid !important;
   padding: 6px !important;
@@ -188,9 +188,9 @@ abbr {
 }
 
 .block-secondary {
-  color: black;
-  background-color: #e2e3e5;
-  border-color: #6c757d;
+  --bs-alert-color: black;
+  --bs-alert-bg: #e2e3e5;
+  --bs-alert-border-color: #6c757d;
   border-width: 3px !important;
   border-style: solid !important;
   padding: 6px !important;
@@ -207,9 +207,9 @@ abbr {
 }
 
 .block-success {
-  color: black;
-  background-color: #d1e7dd;
-  border-color: #198754;
+  --bs-alert-color: black;
+  --bs-alert-bg: #d1e7dd;
+  --bs-alert-border-color: #198754;
   border-width: 3px !important;
   border-style: solid !important;
   padding: 6px !important;
@@ -226,9 +226,9 @@ abbr {
 }
 
 .block-info {
-  color: black;
-  background-color: #cff4fc;
-  border-color: #0dcaf0;
+  --bs-alert-color: black;
+  --bs-alert-bg: #cff4fc;
+  --bs-alert-border-color: #0dcaf0;
   border-width: 3px !important;
   border-style: solid !important;
   padding: 6px !important;
@@ -245,9 +245,9 @@ abbr {
 }
 
 .block-warning {
-  color: black;
-  background-color: #fff3cd;
-  border-color: #ffc107;
+  --bs-alert-color: black;
+  --bs-alert-bg: #fff3cd;
+  --bs-alert-border-color: #ffc107;
   border-width: 3px !important;
   border-style: solid !important;
   padding: 6px !important;
@@ -264,9 +264,9 @@ abbr {
 }
 
 .block-danger {
-  color: black;
-  background-color: #ebccd6;
-  border-color: #990134;
+  --bs-alert-color: black;
+  --bs-alert-bg: #ebccd6;
+  --bs-alert-border-color: #990134;
   border-width: 3px !important;
   border-style: solid !important;
   padding: 6px !important;
@@ -283,9 +283,9 @@ abbr {
 }
 
 .block-light {
-  color: black;
-  background-color: #fefefe;
-  border-color: #f8f9fa;
+  --bs-alert-color: black;
+  --bs-alert-bg: #fefefe;
+  --bs-alert-border-color: #f8f9fa;
   border-width: 3px !important;
   border-style: solid !important;
   padding: 6px !important;
@@ -302,9 +302,9 @@ abbr {
 }
 
 .block-dark {
-  color: black;
-  background-color: #d3d3d4;
-  border-color: #212529;
+  --bs-alert-color: black;
+  --bs-alert-bg: #d3d3d4;
+  --bs-alert-border-color: #212529;
   border-width: 3px !important;
   border-style: solid !important;
   padding: 6px !important;
