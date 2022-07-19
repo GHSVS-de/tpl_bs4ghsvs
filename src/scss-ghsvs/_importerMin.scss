@@ -1,9 +1,15 @@
+@import "mixins/banner";
+
+
 @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/functions";
 @import "variables-pre";
 @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/variables";
 
 // Neu von mir in BS5
 @import "variables-custom-bs5";
+
+// @since BS 5.2.0
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/maps";
 
 @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/mixins";
 @import "mixins-custom";

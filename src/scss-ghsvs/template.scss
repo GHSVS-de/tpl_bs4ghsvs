@@ -2,9 +2,10 @@
 -- Ich habe aus BS3 die .label-Klasse "gerettet".
 Die verwendet mixin badge-variant(...), die es aber auch nicht mehr gibt.
 Deaktiivert in templates\bs4ghsvs\scss\_overridesghsvs.scss
-
-
 */
+
+@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/mixins/banner";
+@include bsBanner("");
 
 @import "importerMin";
 
@@ -77,18 +78,10 @@ Deaktiivert in templates\bs4ghsvs\scss\_overridesghsvs.scss
 //@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/pagination";
 @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/badge";
 
-// Nicht mehr in BS5. Verwendete ich auch in BS4 nicht.
-// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/jumbotron";
-
-
 @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/alert";
 
 // Verwendete ich auch in BS4 nicht.
 // @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/progress";
-
-// Nicht mehr in BS5.
-// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/media";
-
 
 @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/list-group";
 @import "list-group";
@@ -114,9 +107,6 @@ Deaktiivert in templates\bs4ghsvs\scss\_overridesghsvs.scss
 
 // Seit BS5.1.0
 // @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/placeholders";
-
-// Nicht mehr in BS5.
-// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/print";
 
 // Neu in BS5
 @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/helpers";
