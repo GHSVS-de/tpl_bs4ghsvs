@@ -139,10 +139,7 @@ if ($title === '')
 if (!empty($imgs[0]) && is_array($imgs[0]))
 {
 	/* Derzeit folgende Größen im plg_system_bs3ghsvs
-	x-large 850
-	large 650
-	medium 470
-	small 360
+
 	*/
 	$mediaQueries = [
 		'(max-width: 380px)' => '_s',
