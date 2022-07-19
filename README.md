@@ -10,14 +10,14 @@ Das ist kein Template, das man installiert und dann läuft es reibungslos. Es br
 **@since > v2022.03.31: Build procedure uses local repo fork of https://github.com/GHSVS-de/buildKramGhsvs**
 
 ## New Bootstrap release? Special step (1)!!!!! Build reduced `bootstrap.bundle` JS!!!!!!
-- - You should first build a new `plg_system_bs3ghsvs_bs5`. Makes the whole release procedure a little bit easier.
+  - You should first build a new `plg_system_bs3ghsvs_bs5`. Makes the whole release procedure a little bit easier.
 
 - Delete everything in `/mnt/z/git-kram/bootstrap/`
-- - but don't delete `./.git`!
-- - but don't delete `./node_modules`!
+  - but don't delete `./.git`!
+  - but don't delete `./node_modules`!
 - Get from https://github.com/twbs/bootstrap correct version:
-- - Select in tags dropdown the wished release.
-- - Download ZIP and unzip into `/mnt/z/git-kram/bootstrap/`.
+  - Select in tags dropdown the wished release.
+  - Download ZIP and unzip into `/mnt/z/git-kram/bootstrap/`.
 - Open Github Desktop and let it do it's work ("refresh with new files").
 - `cd /mnt/z/git-kram/bootstrap/`
 - `unlink package-lock.json`
@@ -100,5 +100,5 @@ If you think it's worth it.
 
 ### For Joomla update and changelog server
 - Create new release with new tag.
-- - See release description in `dist/release.txt`.
+  - See release description in `dist/release.txt`.
 - Extracts(!) of the update and changelog XML for update and changelog servers are in `./dist` as well. Copy/paste and necessary additions.
