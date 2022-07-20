@@ -207,9 +207,7 @@ $this->addCustomTag('<style' . $nonce . ' type="text/css" id="stickyCompensation
 		if ($this->countModules('toasts'))
 		{ ?>
 		<div id="CfToasts" class="container-fluid">
-			<div class="cf-inner toast-container">
 				<jdoc:include type="modules" name="toasts" style="none" />
-			</div>
 		</div><!--/#CfToasts-->
 		<?php
 		} ?>
