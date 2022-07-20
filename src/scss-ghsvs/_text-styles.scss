@@ -152,7 +152,7 @@ abbr
     $alert-color: mix($value, color-contrast($alert-background), abs($block-color-scale-custom));
   }
   .block-#{$state} {
-    @include alert-variant($alert-background, $alert-border, $alert-color);
+    @include alert-variant-bs513($alert-background, $alert-border, $alert-color);
 		@include block();
   }
 	.inline-#{$state} {

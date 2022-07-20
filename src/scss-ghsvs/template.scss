@@ -53,10 +53,15 @@ Deaktiivert in templates\bs4ghsvs\scss\_overridesghsvs.scss
 // Nicht mehr in BS5.
 // @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/custom-forms";
 
+// In 5.2.0 nervtötender Scheiß. Dauert mir zu lang, das zu checken, warum meine Farben nicht mehr wirken.
+// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/nav";
+@import "nav-bs513";
 
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/nav";
 @import "nav-custom";
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/navbar";
+
+// In 5.2.0 nervtötender Scheiß. Dauert mir zu lang, das zu checken, warum meine Farben nicht mehr wirken.
+// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/navbar";
+@import "navbar-bs513";
 
 // Hat mehrere Bugs in BS5. Später testen.
 // @import "navbar"; Stattdessen:
