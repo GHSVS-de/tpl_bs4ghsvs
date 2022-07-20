@@ -37,7 +37,7 @@ class  bs4ghsvsInstallerScript extends InstallerScript
 	protected $deleteFolders = [
 		'/templates/bs4ghsvs/html/com_tags',
 		'/templates/bs4ghsvs/less',
-		'/templates/html/layouts/com_contact/joomla/system',
+		'/templates/bs4ghsvs/html/layouts/com_contact/joomla/system',
 		'/templates/bs4ghsvs/js/system',
 	];
 
