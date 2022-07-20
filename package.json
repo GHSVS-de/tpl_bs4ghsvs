@@ -2,7 +2,7 @@
 	"name": "tpl_bs4ghsvs",
 	"nameReal": "",
 	"filename": "bs4ghsvs",
-	"version": "2022.07.19",
+	"version": "2022.07.20",
 	"versionCompare": "2022.06.20",
 	"ghsvsBootstrapBundleVersion": "5.2.0",
 	"update": {
@@ -34,7 +34,8 @@
 		"lastTests": [
 			"Joomla 3.10",
 			"Joomla 4.1",
-			"PHP 8.0"
+			"PHP 8.0",
+			"PHP 8.1"
 		]
 	},
 	"minimumPhp": "7.4.0",
