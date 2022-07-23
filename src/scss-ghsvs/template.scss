@@ -1,123 +1,111 @@
-/* ToDo für BS5:
--- Ich habe aus BS3 die .label-Klasse "gerettet".
-Die verwendet mixin badge-variant(...), die es aber auch nicht mehr gibt.
-Deaktiivert in templates\bs4ghsvs\scss\_overridesghsvs.scss
-*/
-
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/mixins/banner";
-@include bsBanner("");
+/* template.scss */
+// "../../../media/assetghsvs/scss/bootstrap/51/"
 
 @import "importerMin";
 
-@import "text-styles";
-
-// DRAN DENKEN auf Echtseite deaktivieren!!!!!!!!!!!!!!!
-// @import "text-styles-fuer-Arbeitsseite.scss";
-
-
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/root";
+@import "../../../media/assetghsvs/scss/bootstrap/51/root";
 @import "root";
 
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/reboot";
 
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/type";
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/images";
+@import "../../../media/assetghsvs/scss/bootstrap/51/reboot";
+
+@import "../../../media/assetghsvs/scss/bootstrap/51/type";
+@import "../../../media/assetghsvs/scss/bootstrap/51/images";
 @import "figure-and-images";
 
 // Neu in BS5
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/containers";
+@import "../../../media/assetghsvs/scss/bootstrap/51/containers";
 
 @import "spacings-custom";
 
 // Nicht mehr in BS5. Variablen fehlen, falls aus BS4 übernehmen willst.
-//@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/code";
-@import "code";
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/grid";
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/tables";
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/forms";
+@import "../../../media/assetghsvs/scss/bootstrap/51/grid";
+@import "../../../media/assetghsvs/scss/bootstrap/51/tables";
+@import "../../../media/assetghsvs/scss/bootstrap/51/forms";
 @import "forms-custom";
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/buttons";
+@import "../../../media/assetghsvs/scss/bootstrap/51/buttons";
 
 // Hat mehrere Bugs in BS5. Später testen.
 // @import "buttons";
 @import "buttons-bs5";
 
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/transitions";
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/dropdown";
-@import "dropdown";
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/button-group";
+@import "../../../media/assetghsvs/scss/bootstrap/51/transitions";
+@import "../../../media/assetghsvs/scss/bootstrap/51/dropdown";
+@import "../../../media/assetghsvs/scss/bootstrap/51/button-group";
 
 // Nicht mehr in BS5.
-// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/input-group";
+// @import "../../../media/assetghsvs/scss/bootstrap/51/input-group";
 
 // Nicht mehr in BS5.
-// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/custom-forms";
+// @import "../../../media/assetghsvs/scss/bootstrap/51/custom-forms";
 
-// In 5.2.0 nervtötender Scheiß. Dauert mir zu lang, das zu checken, warum meine Farben nicht mehr wirken.
-// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/nav";
-@import "nav-bs513";
 
+@import "../../../media/assetghsvs/scss/bootstrap/51/nav";
 @import "nav-custom";
-
-// In 5.2.0 nervtötender Scheiß. Dauert mir zu lang, das zu checken, warum meine Farben nicht mehr wirken.
-// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/navbar";
-@import "navbar-bs513";
+@import "../../../media/assetghsvs/scss/bootstrap/51/navbar";
 
 // Hat mehrere Bugs in BS5. Später testen.
 // @import "navbar"; Stattdessen:
-@import "navbar-custom-bs5";
+//@import "navbar-custom-bs5";
 
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/card";
-@import "card-custom";
-
+@import "../../../media/assetghsvs/scss/bootstrap/51/card";
 
 // Neu in BS5. Verwende ich aber noch nicht so, dass sich das lohnt.
-//@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/accordion";
+@import "../../../media/assetghsvs/scss/bootstrap/51/accordion";
 
 // Kann kein word-wrap:
-// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/breadcrumb";
+@import "../../../media/assetghsvs/scss/bootstrap/51/breadcrumb";
 // Zurück zum Inline-Styling:
-@import "breadcrumb-custom";
+// @import "breadcrumb-custom";
 
+@import "../../../media/assetghsvs/scss/bootstrap/51/pagination";
+@import "../../../media/assetghsvs/scss/bootstrap/51/badge";
 
-//@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/pagination";
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/badge";
+// Nicht mehr in BS5. Verwendete ich auch in BS4 nicht.
+// @import "../../../media/assetghsvs/scss/bootstrap/51/jumbotron";
 
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/alert";
+@import "../../../media/assetghsvs/scss/bootstrap/51/alert";
 
 // Verwendete ich auch in BS4 nicht.
-// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/progress";
+// @import "../../../media/assetghsvs/scss/bootstrap/51/progress";
 
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/list-group";
+// Nicht mehr in BS5.
+// @import "../../../media/assetghsvs/scss/bootstrap/51/media";
+
+@import "../../../media/assetghsvs/scss/bootstrap/51/list-group";
 @import "list-group";
-@import "list";
+// @import "list";
 
 // BS5. Nervt wegen SVG.
-// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/close";
+// @import "../../../media/assetghsvs/scss/bootstrap/51/close";
 @import "close";
 
 
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/toasts";
+@import "../../../media/assetghsvs/scss/bootstrap/51/toasts";
 @import "toasts-custom";
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/modal";
+@import "../../../media/assetghsvs/scss/bootstrap/51/modal";
 
 // Verwendete ich ALLE auch in BS4 nicht.
-// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/tooltip";
-// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/popover";
-// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/carousel";
-// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/spinners";
+// @import "../../../media/assetghsvs/scss/bootstrap/51/tooltip";
+// @import "../../../media/assetghsvs/scss/bootstrap/51/popover";
+// @import "../../../media/assetghsvs/scss/bootstrap/51/carousel";
+// @import "../../../media/assetghsvs/scss/bootstrap/51/spinners";
 
 // Neu in BS5.
-// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/offcanvas";
+@import "../../../media/assetghsvs/scss/bootstrap/51/offcanvas";
+@import "offcanvas-custom";
 
 // Seit BS5.1.0
-// @import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/placeholders";
+// @import "../../../media/assetghsvs/scss/bootstrap/51/placeholders";
+
+// Nicht mehr in BS5.
+// @import "../../../media/assetghsvs/scss/bootstrap/51/print";
 
 // Neu in BS5
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/helpers";
+@import "../../../media/assetghsvs/scss/bootstrap/51/helpers";
 
 // Neu in BS5
-@import "../../../media/plg_system_bs3ghsvs/scss/bootstrap/utilities/api";
+@import "../../../media/assetghsvs/scss/bootstrap/51/utilities/api";
 
 // @import "fontawesome-free";
 
@@ -128,25 +116,27 @@ Deaktiivert in templates\bs4ghsvs\scss\_overridesghsvs.scss
 
 @import "bs4-bs5-translator";
 
-@import "mod_teaserghsvs";
+// Auch ein Loader. Und lädt Basis-Variablen.
+
+/* astroid/astroid.scss - START */
+@import "astroid/astroid";
+/* astroid/astroid.scss - END */
+
+/* one/style.scss - START */
+@import "one-style";
+/* one/style.scss - END */
+@import "mod_contactghsvs";
 @import "mod_footerghsvs";
 @import "noscript";
 @import "shariff";
 @import "borders";
 
-// fontawesome abhängig
-// @import "caret";
-
 @import "collapse";
-//@import "pagination";
-//@import "salvattore";
-@import "syntaxhighlighter";
-
-// Jetzt eigene Datei.
-// Aber JQuery free Venobox 2 doesn't need that anymore.
-// @import "venobox";
 
 @import "svg-icons";
-@import "tocGhsvs";
-@import "pagebreak-sliders-custom";
-@import "overridesghsvs";
+
+@import "mobilemenu-custom";
+@import "overridesGhsvs";
+
+// Siehe Kommentar in dieser Datei.
+@import "responsiveghsvs";

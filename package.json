@@ -20,7 +20,8 @@
 		"title": "Joomla site template tpl_bs4ghsvs (Bootstrap 5.2 variant)",
 		"requires": [
 			"plg_system_astroidghsvs",
-			"plg_system_bs3ghsvs_bs5"
+			"plg_system_bs3ghsvs_bs5",
+			"pkg_file_assetghsvs"
 		],
 		"uses": [],
 		"language": []
