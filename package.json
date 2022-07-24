@@ -4,6 +4,7 @@
 	"filename": "bs4ghsvs",
 	"version": "2022.07.24",
 	"versionCompare": "2022.07.20",
+	"bootstrapVersionsub": "5.2.0",
 	"update": {
 		"type": "template",
 		"folder": "",
