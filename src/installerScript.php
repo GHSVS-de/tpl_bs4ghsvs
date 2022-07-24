@@ -26,6 +26,12 @@ class  bs4ghsvsInstallerScript extends InstallerScript
 		'/templates/bs4ghsvs/scss-ghsvs/__________venobox.scss',
 		'/templates/bs4ghsvs/scss-ghsvs/_____________venobox.scss',
 		'/templates/bs4ghsvs/scss-ghsvs/_reboot-bug-fix-5.1.0.scss',
+		'/templates/bs4ghsvs/scss-ghsvs/_buttons.scss',
+		'/templates/bs4ghsvs/scss-ghsvs/_caret.scss',
+		'/templates/bs4ghsvs/scss-ghsvs/_collapse.scss',
+		'/templates/bs4ghsvs/scss-ghsvs/_dropdown.scss',
+		'/templates/bs4ghsvs/scss-ghsvs/_navbar-old.scss',
+		'/templates/bs4ghsvs/scss-ghsvs/_text-styles-fuer-Arbeitsseite.scss',
 	];
 
 	/**
