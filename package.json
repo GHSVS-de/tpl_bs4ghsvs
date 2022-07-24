@@ -64,7 +64,7 @@
 		"template"
 	],
 	"private": true,
-	"description": "Joomla site template. Needs plugin plg_system_bs3ghsvs_bs5.",
+	"description": "Joomla site template with several dependencies(!).",
 	"license": "GPL-3.0",
 	"repository": {
 		"type": "git",
