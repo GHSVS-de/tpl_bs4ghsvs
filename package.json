@@ -2,9 +2,8 @@
 	"name": "tpl_bs4ghsvs",
 	"nameReal": "",
 	"filename": "bs4ghsvs",
-	"version": "2022.07.20",
-	"versionCompare": "2022.06.20",
-	"ghsvsBootstrapBundleVersion": "5.2.0",
+	"version": "2022.07.24",
+	"versionCompare": "2022.07.20",
 	"update": {
 		"type": "template",
 		"folder": "",
