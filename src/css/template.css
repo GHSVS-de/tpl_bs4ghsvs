@@ -1,9 +1,5 @@
 @charset "UTF-8";
-/* ToDo für BS5:
--- Ich habe aus BS3 die .label-Klasse "gerettet".
-Die verwendet mixin badge-variant(...), die es aber auch nicht mehr gibt.
-Deaktiivert in templates\bs4ghsvs\scss\_overridesghsvs.scss
-*/
+/* template.scss */
 /*!
  * Bootstrap  v5.2.0 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
