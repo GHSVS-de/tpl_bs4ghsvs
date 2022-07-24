@@ -45,6 +45,7 @@ class  bs4ghsvsInstallerScript extends InstallerScript
 		'/templates/bs4ghsvs/less',
 		'/templates/bs4ghsvs/html/layouts/com_contact/joomla/system',
 		'/templates/bs4ghsvs/js/system',
+		'/templates/bs4ghsvs/js/plg_system_bs3ghsvs/bootstrap',
 	];
 
 	public function preflight($type, $parent)
