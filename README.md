@@ -9,75 +9,26 @@ Das ist kein Template, das man installiert und dann läuft es reibungslos. Es br
 
 **@since > v2022.03.31: Build procedure uses local repo fork of https://github.com/GHSVS-de/buildKramGhsvs**
 
-## New Bootstrap release? Special step (1)!!!!! Build reduced `bootstrap.bundle` JS!!!!!!
-  - You should first build a new `plg_system_bs3ghsvs_bs5`. Makes the whole release procedure a little bit easier.
+## New Bootstrap release that you want to use in this template?
+- You should first build a new `pkg_file_assetghsvs` with new version.
 
-- Delete everything in `/mnt/z/git-kram/bootstrap/`
-  - but don't delete `./.git`!
-  - but don't delete `./node_modules`!
-- Get from https://github.com/twbs/bootstrap correct version:
-  - Select in tags dropdown the wished release.
-  - Download ZIP and unzip into `/mnt/z/git-kram/bootstrap/`.
-- Open Github Desktop and let it do it's work ("refresh with new files").
-- `cd /mnt/z/git-kram/bootstrap/`
-- `unlink package-lock.json`
-- `rm -r dist/`
-- `rm -r js/dist/`
-- `npm install`
-- Change file `git-kram/bootstrap/js/index.umd.js`
-- Comment out unwanted parts. Each twice.
+### Special step (1). Build reduced `bootstrap.bundle` there.
+
+### Compile SCSS to CSS. Also if changed scss-ghsvs/.
+- Needs `/mnt/z/git-kram/media/assetghsvs/scss/bootstrap/xy` where `xy` is the wanted version in SCSS files of this template.
+- Therefore adapt the paths there if needed. Example for version 5.2:
+
+`@import "../../../media/assetghsvs/scss/bootstrap/52/root";`
 
 ```
-import Alert from './src/alert'
-import Button from './src/button'
-// import Carousel from './src/carousel'
-import Collapse from './src/collapse'
-import Dropdown from './src/dropdown'
-import Modal from './src/modal'
-// import Offcanvas from './src/offcanvas'
-// import Popover from './src/popover'
-// import ScrollSpy from './src/scrollspy'
-// import Tab from './src/tab'
-import Toast from './src/toast'
-// import Tooltip from './src/tooltip'
-
-export default {
-  Alert,
-  Button,
-  // Carousel,
-  Collapse,
-  Dropdown,
-  Modal,
-  // Offcanvas,
-  // Popover,
-  // ScrollSpy,
-  // Tab,
-  Toast,
-  // Tooltip
-}
-```
-
-- Compile: `npm run js`
-
-### !!!Don't forget then!!!
-- Craete new folder `git-kram/bootstrap/dist/js/_ghsvsBootstrapBundleVersion_`.
-- Copy `git-kram/bootstrap/js/index.umd.js` in this new folder.
-- `tpl_bs4ghsvs` needs it like this for build prodedure!
-
-## If a new Bootstrap release or changed scss-ghsvs/? Special step  (2) ! Compile SCSS to CSS!
-- You should first build a new `plg_system_bs3ghsvs_bs5`. Makes the whole release procedure a little bit easier.
-- Needs `/mnt/z/git-kram/media/plg_system_bs3ghsvs/scss/bootstrap` that will be populated during `plg_system_bs3ghsvs_bs5` build.
--
-```
-cd /mnt/z/git-kram/sass_compile_prefixghsvs;
-node prepareProject.js p_tpl_bs4ghsvs;
-sh run-p_tpl_bs4ghsvs.sh;
+cd /mnt/z/git-kram/sass_compile_prefixghsvs
+node prepareProject.js p_tpl_bs4ghsvs
+sh run-p_tpl_bs4ghsvs.sh
 ```
 
 ## Next step: Build package for this repository
 - Prepare/adapt `./package.json`.
-- Don't forget to adapt parameter `ghsvsBootstrapBundleVersion` !!!!
-
+  - Don't forget: Adapt parameter `bootstrapVersionsub`!
 - `cd /mnt/z/git-kram/tpl_bs4ghsvs`
 
 ## node/npm updates/installation
@@ -95,7 +46,7 @@ If you think it's worth it.
 ## Build installable ZIP package
 - `node build.js`
 - New, installable ZIP is in `./dist` afterwards.
-- Version after `_` in filename is version of self compiled smaller bootstrap.bundle and so.
+- Version after `_` in filename is version of used Bootstrap (Bundle JS, SCSS).
 - All packed files for this ZIP can be seen in `./package`. **But only if you disable deletion of this folder at the end of `build.js`**.s
 
 ### For Joomla update and changelog server
