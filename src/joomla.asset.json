@@ -3,6 +3,7 @@
 	"assets": [
 		{
 			"name": "template.custom",
+			"description": "WAM lädt das viel zu früh, egal, wo ich das abfeuere. Nicht in Verwendung dehalb.",
 			"type": "preset",
 			"dependencies": [
 				"template.custom#script",
@@ -11,11 +12,13 @@
 		},
 		{
 			"name": "template.custom",
+			"description": "WAM lädt das viel zu früh, egal, wo ich das abfeuere. Nicht in Verwendung dehalb.",
 			"type": "style",
 			"uri": "custom.css"
 		},
 		{
 			"name": "template.custom",
+			"description": "WAM lädt das viel zu früh, egal, wo ich das abfeuere. Nicht in Verwendung dehalb.",
 			"type": "script",
 			"uri": "custom.js"
 		},

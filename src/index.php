@@ -137,19 +137,10 @@ if ($HidePageHeader === true)
 }
 $BodyClasses = trim(implode(' ', $BodyClasses));
 
-// Check for a custom CSS and/or JS file
-if ($wa)
-{
-	$wa->usePreset('template.custom');
-}
-else
-{
-	HTMLHelper::_('stylesheet', 'custom.css', ['version' => 'auto', 'relative' => true]);
-	HTMLHelper::_('script', 'custom.js', ['version' => 'auto', 'relative' => true]);
-}
-
-// Suche nach "stickyCompensation" für Antwort, was das soll.
-// Der Dummy-Inhalt ist Pflicht, wenn JCH verwednet wird.
+/*
+Search for "stickyCompensation" for answer what this is about!
+The dummy content is mandatory when JCH is used.
+*/
 $this->addCustomTag('<style' . $nonce . ' type="text/css" id="stickyCompensation">.dummyByGhsvs{cursor: default};</style>');
 ?>
 <!DOCTYPE html>
@@ -342,15 +333,34 @@ $this->addCustomTag('<style' . $nonce . ' type="text/css" id="stickyCompensation
 		<jdoc:include type="modules" name="debug" style="none" />
 		<?php
 		} ?>
-		<script src="templates/<?php echo $this->template; ?>/js/template.min.js"></script>
 	</div><!--/mainBackground-->
 	<div id="BOTTOM"></div>
 	<?php
-	if (version_compare(JVERSION, '4', 'lt'))
-	{	// Needed for JLayout messages.php JavaScript part. Don't use HTMLHelper!
-	?>
-		<script src="templates/<?php echo $this->template; ?>/js/core-mine.js"></script>
-	<?php
+		/*
+			Neither WAM nor HTMLHelper load this sensibly in terms of sequence (= late).
+			Not even with tricks in the plugin. At the moment it's too annoying for me,
+			and I do it old-fashioned.
+		*/
+		$loadAssets = [
+		'js' =>
+			[
+				'templates/' . $this->template . '/js/template.min.js',
+				'templates/' . $this->template . '/js/custom.js',
+			],
+		'css' =>
+			[
+				'templates/' . $this->template . '/css/custom.css',
+			],
+		'nonce' => $nonce
+	];
+
+	if (PlgSystemBS3Ghsvs::$isJ3)
+	{
+		// Needed for JLayout messages.php JavaScript part. Don't use HTMLHelper!
+		$loadAssets['js'][] = 'templates/' . $this->template . '/js/core-mine.min.js';
 	} ?>
+	<!--ghsvs.assets-->
+	<?php echo LayoutHelper::render('ghsvs.assets', $loadAssets); ?>
+	<!--/ghsvs.assets-->
  </body>
 </html>
