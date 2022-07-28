@@ -9,6 +9,7 @@ use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\CMS\Uri\Uri;
 
 $isRobot = $this->params->get('isRobot');
+$wa = PlgSystemBS3Ghsvs::getWa();
 
 if ($done = PluginHelper::isEnabled('system', 'astroidghsvs'))
 {
@@ -98,6 +99,8 @@ if ($nonce = Factory::getApplication()->get('csp_nonce', ''))
 
 $app  = Factory::getApplication();
 $this->setHtml5(true);
+
+// Uses WAM if J4..
 HTMLHelper::_('bs3ghsvs.templatejs');
 
 ####START - LOGO, SEITENTITEL, SITEDESCRIPTION.
@@ -134,11 +137,16 @@ if ($HidePageHeader === true)
 }
 $BodyClasses = trim(implode(' ', $BodyClasses));
 
-// Check for a custom CSS file
-HTMLHelper::_('stylesheet', 'custom.css', ['version' => 'auto', 'relative' => true]);
-
-// Check for a custom js file
-HTMLHelper::_('script', 'custom.js', ['version' => 'auto', 'relative' => true]);
+// Check for a custom CSS and/or JS file
+if ($wa)
+{
+	$wa->usePreset('template.cuatom');
+}
+else
+{
+	HTMLHelper::_('stylesheet', 'custom.css', ['version' => 'auto', 'relative' => true]);
+	HTMLHelper::_('script', 'custom.js', ['version' => 'auto', 'relative' => true]);
+}
 
 // Suche nach "stickyCompensation" für Antwort, was das soll.
 // Der Dummy-Inhalt ist Pflicht, wenn JCH verwednet wird.
