@@ -140,7 +140,7 @@ $BodyClasses = trim(implode(' ', $BodyClasses));
 // Check for a custom CSS and/or JS file
 if ($wa)
 {
-	$wa->usePreset('template.cuatom');
+	$wa->usePreset('template.custom');
 }
 else
 {
