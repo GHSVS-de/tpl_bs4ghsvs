@@ -1,0 +1,143 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+	"assets": [
+		{
+			"name": "template.custom",
+			"type": "preset",
+			"dependencies": [
+				"template.custom#script",
+				"template.custom#style"
+			]
+		},
+		{
+			"name": "template.custom",
+			"type": "style",
+			"uri": "custom.css"
+		},
+		{
+			"name": "template.custom",
+			"type": "script",
+			"uri": "custom.js"
+		},
+		{
+			"name": "jquery-migrate",
+			"description": "Use only for debug purposes!",
+			"type": "script",
+			"uri": "assetghsvs/jquery-migrate/current/jquery-migrate.js",
+			"dependencies": [
+				"jquery"
+			]
+		},
+		{
+			"name": "jquery",
+			"type": "script",
+			"uri": "assetghsvs/jquery/current/jquery.slim.js"
+		},
+		{
+			"name": "bootstrap.css",
+			"type": "style",
+			"uri": "assetghsvs/bootstrap/52/bootstrap.min.css"
+		},
+		{
+			"name": "bootstrap.css.grid",
+			"type": "style",
+			"uri": "assetghsvs/bootstrap/52/bootstrap-grid.min.css",
+			"dependencies": [
+				"bootstrap.css"
+			]
+		},
+		{
+			"name": "bootstrap.es5",
+			"type": "script",
+			"uri": "assetghsvs/bootstrap/52/bootstrap.bundle.js"
+		},
+		{
+			"name": "bootstrap.alert",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		},
+		{
+			"name": "bootstrap.button",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		},
+		{
+			"name": "bootstrap.carousel",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		},
+		{
+			"name": "bootstrap.collapse",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		},
+		{
+			"name": "bootstrap.dropdown",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		},
+		{
+			"name": "bootstrap.modal",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		},
+		{
+			"name": "bootstrap.offcanvas",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		},
+		{
+			"name": "bootstrap.popover",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		},
+		{
+			"name": "bootstrap.scrollspy",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		},
+		{
+			"name": "bootstrap.tab",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		},
+		{
+			"name": "bootstrap.toast",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		}
+	]
+}
