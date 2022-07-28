@@ -75,10 +75,10 @@ if ($done = PluginHelper::isEnabled('system', 'astroidghsvs'))
 	}
 }
 
-// Don't show header after x pages seen
-$HidePageHeader = false;
+// Don't show header after x pages seen. A BODY CSS class.
+$HidePageHeader = '';
 
-if (!$isRobot && $this->params->get('HidePageHeader', 0))
+if (!$isRobot && $this->params->get('HidePageHeader', ''))
 {
 	$node = 'HidePageHeader';
 	$dontShowAfter = $this->params->get('HidePageHeaderAfter', 5);
@@ -87,7 +87,7 @@ if (!$isRobot && $this->params->get('HidePageHeader', 0))
 
 	if ($sessionData >= $dontShowAfter)
 	{
-		$HidePageHeader = true;
+		$HidePageHeader = $node;
 	}
 	else
 	{
@@ -103,6 +103,7 @@ if ($nonce = Factory::getApplication()->get('csp_nonce', ''))
 }
 
 $this->setHtml5(true);
+$this->setMetaData('viewport', 'width=device-width, initial-scale=1, shrink-to-fit=no');
 
 // Uses WAM if J4..
 HTMLHelper::_('bs3ghsvs.templatejs');
@@ -135,25 +136,31 @@ $logo = $sitetitle . $logo . $sitedescription;
 
 $BodyClasses = $this->params->get('BodyClasses', [], 'array');
 
-if ($HidePageHeader === true)
+if ($HidePageHeader !== '')
 {
-	$BodyClasses[] = 'HidePageHeader';
+	$BodyClasses[] = $HidePageHeader;
 }
+
 $BodyClasses = trim(implode(' ', $BodyClasses));
 
 /*
 Search for "stickyCompensation" for answer what this is about!
 The dummy content is mandatory when JCH is used.
 */
-$this->addCustomTag('<style' . $nonce . ' type="text/css" id="stickyCompensation">.dummyByGhsvs{cursor: default};</style>');
+if ($wa)
+{
+	// WAM sets $nonce.
+	$wa->useStyle('template.stickyCompensation');
+}
+else
+{
+	$this->addCustomTag('<style' . $nonce . ' type="text/css" id="stickyCompensation">.dummyByGhsvs{cursor: default};</style>');
+}
 ?>
 <!DOCTYPE html>
-<html  class="no-js jsNotActive"
-	lang="<?php echo $this->language; ?>"
-	dir="<?php echo $this->direction; ?>"
->
+<html class="no-js jsNotActive" lang="<?php echo $this->language; ?>"
+	dir="<?php echo $this->direction; ?>">
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
 	<script<?php echo $nonce; ?>>
 		JURIROOT = "<?php echo Uri::root(true)?>"; //No var! "super-global"
 		JURIROOT2 = "<?php echo Uri::root()?>"; //No var! "super-global"

@@ -2,6 +2,17 @@
   "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
 	"assets": [
 		{
+			"name": "template.stickyCompensation",
+			"description": "Inline STYLE tag that is used by JavaScript function. Compensate margin-top of scroll targets.",
+			"description2": "The dummy content is at least mandatory if JCH is used.",
+			"content": ".dummyByGhsvs{cursor:default}",
+			"inline": true,
+			"type": "style",
+			"attributes": {
+				"id": "stickyCompensation"
+			}
+		},
+		{
 			"name": "template.custom",
 			"description": "WAM lädt das viel zu früh, egal, wo ich das abfeuere. Nicht in Verwendung dehalb.",
 			"type": "preset",
