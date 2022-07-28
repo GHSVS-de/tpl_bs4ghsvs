@@ -31,6 +31,7 @@
 		<filename>LICENSE.txt</filename>
 		<filename>print.php</filename>
 		<filename>templateDetails.xml</filename>
+		<filename>joomla.asset.json</filename>
 		<folder>css</folder>
 		<folder>html</folder>
 		<folder>images</folder>
