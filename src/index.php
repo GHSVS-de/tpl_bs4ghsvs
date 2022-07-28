@@ -8,7 +8,12 @@ use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\CMS\Uri\Uri;
 
-$isRobot = $this->params->get('isRobot');
+if (!class_exists('PlgSystemBS3Ghsvs', false))
+{
+	throw new \InvalidArgumentException('Class "PlgSystemBS3Ghsvs" not found. Please install and/or activate plugin "PLG_SYSTEM_BS3GHSVS" to use this template.');
+}
+
+$isRobot = $this->params->get('isRobot', false);
 $wa = PlgSystemBS3Ghsvs::getWa();
 
 if ($done = PluginHelper::isEnabled('system', 'astroidghsvs'))
@@ -97,7 +102,6 @@ if ($nonce = Factory::getApplication()->get('csp_nonce', ''))
 	$nonce = ' nonce="' . $nonce . '"';
 }
 
-$app  = Factory::getApplication();
 $this->setHtml5(true);
 
 // Uses WAM if J4..
@@ -319,6 +323,7 @@ $this->addCustomTag('<style' . $nonce . ' type="text/css" id="stickyCompensation
 
 		<?php if (!$isRobot)
 		{
+			// Uses WAM if J4..
 			echo HTMLHelper::_('bs3ghsvs.toTop');
 		} ?>
 
@@ -335,13 +340,14 @@ $this->addCustomTag('<style' . $nonce . ' type="text/css" id="stickyCompensation
 		} ?>
 	</div><!--/mainBackground-->
 	<div id="BOTTOM"></div>
+	<!--ghsvs.assets-->
 	<?php
-		/*
-			Neither WAM nor HTMLHelper load this sensibly in terms of sequence (= late).
-			Not even with tricks in the plugin. At the moment it's too annoying for me,
-			and I do it old-fashioned.
-		*/
-		$loadAssets = [
+	/*
+		Neither WAM nor HTMLHelper load this sensibly in terms of sequence (= late).
+		Not even with tricks in the plugin. At the moment it's too annoying for me,
+		and I do it old-fashioned.
+	*/
+	$loadAssets = [
 		'js' =>
 			[
 				'templates/' . $this->template . '/js/template.min.js',
@@ -359,7 +365,6 @@ $this->addCustomTag('<style' . $nonce . ' type="text/css" id="stickyCompensation
 		// Needed for JLayout messages.php JavaScript part. Don't use HTMLHelper!
 		$loadAssets['js'][] = 'templates/' . $this->template . '/js/core-mine.min.js';
 	} ?>
-	<!--ghsvs.assets-->
 	<?php echo LayoutHelper::render('ghsvs.assets', $loadAssets); ?>
 	<!--/ghsvs.assets-->
  </body>
