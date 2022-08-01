@@ -150,11 +150,28 @@ The dummy content is mandatory when JCH is used.
 if ($wa)
 {
 	// WAM sets $nonce.
-	$wa->useStyle('template.stickyCompensation');
+	$wa->useStyle('template.stickyCompensation')
+		->usePreset('template.custom')
+		->useScript('template.js');
 }
 else
 {
 	$this->addCustomTag('<style' . $nonce . ' type="text/css" id="stickyCompensation">.dummyByGhsvs{cursor: default};</style>');
+
+	$loadAssets = [
+		'js' =>
+			[
+				'templates/' . $this->template . '/js/template.min.js',
+				'templates/' . $this->template . '/js/custom.js',
+				// Needed for JLayout messages.php JavaScript part. Don't use HTMLHelper!
+				'templates/' . $this->template . '/js/core-mine.min.js'
+			],
+		'css' =>
+			[
+				'templates/' . $this->template . '/css/custom.css',
+			],
+		'nonce' => $nonce
+	];
 }
 ?>
 <!DOCTYPE html>
@@ -349,30 +366,11 @@ else
 	<div id="BOTTOM"></div>
 	<!--ghsvs.assets-->
 	<?php
-	/*
-		Neither WAM nor HTMLHelper load this sensibly in terms of sequence (= late).
-		Not even with tricks in the plugin. At the moment it's too annoying for me,
-		and I do it old-fashioned.
-	*/
-	$loadAssets = [
-		'js' =>
-			[
-				'templates/' . $this->template . '/js/template.min.js',
-				'templates/' . $this->template . '/js/custom.js',
-			],
-		'css' =>
-			[
-				'templates/' . $this->template . '/css/custom.css',
-			],
-		'nonce' => $nonce
-	];
-
-	if (PlgSystemBS3Ghsvs::$isJ3)
+	if (!$wa)
 	{
 		// Needed for JLayout messages.php JavaScript part. Don't use HTMLHelper!
-		$loadAssets['js'][] = 'templates/' . $this->template . '/js/core-mine.min.js';
+		echo LayoutHelper::render('ghsvs.assets', $loadAssets);
 	} ?>
-	<?php echo LayoutHelper::render('ghsvs.assets', $loadAssets); ?>
 	<!--/ghsvs.assets-->
  </body>
 </html>

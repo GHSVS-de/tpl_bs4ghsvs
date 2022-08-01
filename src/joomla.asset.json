@@ -13,8 +13,18 @@
 			}
 		},
 		{
+			"name": "template.js",
+			"description": "",
+			"type": "script",
+			"uri": "template.js",
+			"weight": 900,
+			"dependencies": [
+				"plg_system_bs3ghsvs.templatejs"
+			]
+		},
+		{
 			"name": "template.custom",
-			"description": "WAM lädt das viel zu früh, egal, wo ich das abfeuere. Nicht in Verwendung dehalb.",
+			"description": "",
 			"type": "preset",
 			"dependencies": [
 				"template.custom#script",
@@ -23,15 +33,17 @@
 		},
 		{
 			"name": "template.custom",
-			"description": "WAM lädt das viel zu früh, egal, wo ich das abfeuere. Nicht in Verwendung dehalb.",
+			"description": "",
 			"type": "style",
-			"uri": "custom.css"
+			"uri": "custom.css",
+			"weight": 1000
 		},
 		{
 			"name": "template.custom",
-			"description": "WAM lädt das viel zu früh, egal, wo ich das abfeuere. Nicht in Verwendung dehalb.",
+			"description": "",
 			"type": "script",
-			"uri": "custom.js"
+			"uri": "custom.js",
+			"weight": 1000
 		},
 		{
 			"name": "jquery-migrate",
