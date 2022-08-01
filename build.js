@@ -38,7 +38,8 @@ const versionSub = bootstrapVersionsub;
 	to = './package'
 	await helper.copy(from, to)
 
-	await helper.gzip([`${to}/css`, `${to}/js`]);
+	await helper.gzip([`${to}/css`]);
+	await helper.gzip([`${to}/js`]);
 
 	await helper.mkdir('./dist');
 
