@@ -32,6 +32,10 @@ class  bs4ghsvsInstallerScript extends InstallerScript
 		'/templates/bs4ghsvs/scss-ghsvs/_dropdown.scss',
 		'/templates/bs4ghsvs/scss-ghsvs/_navbar-old.scss',
 		'/templates/bs4ghsvs/scss-ghsvs/_text-styles-fuer-Arbeitsseite.scss',
+		'/templates/bs4ghsvs/scss-ghsvs/_fontawesome-free.scss',
+		'/templates/bs4ghsvs/scss-ghsvs/_icomoon2fontawseome-free.scss',
+		'/templates/bs4ghsvs/scss-ghsvs/_icomoon2fontawseome-free_base.scss',
+		'/templates/bs4ghsvs/scss-ghsvs/_icomoon2fontawseome-free_small.scss',
 	];
 
 	/**
@@ -46,10 +50,6 @@ class  bs4ghsvsInstallerScript extends InstallerScript
 		'/templates/bs4ghsvs/html/layouts/com_contact/joomla/system',
 		'/templates/bs4ghsvs/js/system',
 		'/templates/bs4ghsvs/js/plg_system_bs3ghsvs/bootstrap',
-		'/templates/bs4ghsvs/scss-ghsvs/_fontawesome-free.scss',
-		'/templates/bs4ghsvs/scss-ghsvs/_icomoon2fontawseome-free.scss',
-		'/templates/bs4ghsvs/scss-ghsvs/_icomoon2fontawseome-free_base.scss',
-		'/templates/bs4ghsvs/scss-ghsvs/_icomoon2fontawseome-free_small.scss',
 	];
 
 	public function preflight($type, $parent)
