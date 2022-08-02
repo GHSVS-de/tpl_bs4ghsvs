@@ -47,6 +47,7 @@
 		},
 		{
 			"name": "jquery-migrate",
+			"version": "3.4.0-assetghsvs",
 			"description": "Use only for debug purposes!",
 			"type": "script",
 			"uri": "assetghsvs/jquery-migrate/current/jquery-migrate.js",
@@ -56,6 +57,7 @@
 		},
 		{
 			"name": "jquery",
+			"version": "3.6.0-assetghsvs",
 			"type": "script",
 			"uri": "assetghsvs/jquery/current/jquery.slim.js"
 		},
@@ -74,8 +76,9 @@
 		},
 		{
 			"name": "bootstrap.es5",
+			"version": "5.2.0-assetghsvs",
 			"type": "script",
-			"uri": "assetghsvs/bootstrap/52/bootstrap.bundle.js"
+			"uri": "assetghsvs/bootstrap/52/-_custom_-/bootstrap.bundle.js"
 		},
 		{
 			"name": "bootstrap.alert",
