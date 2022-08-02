@@ -368,7 +368,6 @@ else
 	<?php
 	if (!$wa)
 	{
-		// Needed for JLayout messages.php JavaScript part. Don't use HTMLHelper!
 		echo LayoutHelper::render('ghsvs.assets', $loadAssets);
 	} ?>
 	<!--/ghsvs.assets-->
