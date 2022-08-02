@@ -26,6 +26,9 @@ node prepareProject.js p_tpl_bs4ghsvs
 sh run-p_tpl_bs4ghsvs.sh
 ```
 
+## Adapt "version" parameters
+in `joomla.asset.json` if new versions (BS, JQuery ...) used.
+
 ## Next step: Build package for this repository
 - Prepare/adapt `./package.json`.
   - Don't forget: Adapt parameter `bootstrapVersionsub`!
