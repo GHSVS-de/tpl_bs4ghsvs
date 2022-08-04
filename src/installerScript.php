@@ -36,6 +36,7 @@ class  bs4ghsvsInstallerScript extends InstallerScript
 		'/templates/bs4ghsvs/scss-ghsvs/_icomoon2fontawseome-free.scss',
 		'/templates/bs4ghsvs/scss-ghsvs/_icomoon2fontawseome-free_base.scss',
 		'/templates/bs4ghsvs/scss-ghsvs/_icomoon2fontawseome-free_small.scss',
+		'/templates/bs4ghsvs/scss-ghsvs/_syntaxhighlighter.scss',
 	];
 
 	/**
