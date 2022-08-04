@@ -136,15 +136,18 @@ abbr
   text-align: center !important;
 }
 
-// @each $color, $value in $theme-colors {
-//   .block-#{$color} {
-//     border-color: var(--#{$variable-prefix}#{$color}) !important;
-// 		background-color: var(--#{$variable-prefix}light);
-// 		@include block();
-//   }
-// }
+$block-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     red,
+  "light":      $light,
+  "dark":       $dark
+) !default;
 
-@each $state, $value in $theme-colors {
+@each $state, $value in $block-colors {
   $alert-background: shift-color($value, $alert-bg-scale);
   $alert-border: $value;
   $alert-color: shift-color($value, $block-color-scale-custom);
@@ -152,7 +155,7 @@ abbr
     $alert-color: mix($value, color-contrast($alert-background), abs($block-color-scale-custom));
   }
   .block-#{$state} {
-    @include alert-variant-bs513($alert-background, $alert-border, $alert-color);
+    @include alert-variant-bs513($light, $alert-border, $alert-color);
 		@include block();
   }
 	.inline-#{$state} {
