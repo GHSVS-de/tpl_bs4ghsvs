@@ -33,9 +33,9 @@ $upper_limit = Factory::getLanguage()->getUpperLimitSearchWord();
 			<input type="text" name="searchword"
 				placeholder="<?php echo Text::_('COM_SEARCH_SEARCH_KEYWORD'); ?>" id="search-searchword"
 				value="<?php echo $this->escape($this->origkeyword); ?>" class="form-control" />
-			<button name="Search" class="btn btn-danger" onclick="this.form.submit()" type="submit">
+			<button name="Search" class="btn btn-danger" type="submit">
 				<span class="visually-hidden"><?php echo Text::_('JSEARCH_FILTER_SUBMIT'); ?></span>
-				{svg{solid/search}}
+				{svg{bi/search}}
 			</button>
 		</div><!-- /input-group -->
 	</div><!--/form-group-->
@@ -61,9 +61,23 @@ $upper_limit = Factory::getLanguage()->getUpperLimitSearchWord();
 		</p>
 		<?php
 		} ?>
-		<label for="limit"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_DISPLAY_NUM_PER_PAGE'); ?></label>
-	 <?php echo $this->pagination->getLimitBox(); ?>
  </div>
+
+	<div class="form-group limitBox">
+		<label for="limit">
+			<?php echo Text::_('PLG_SYSTEM_BS3GHSVS_DISPLAY_NUM_PER_PAGE'); ?>
+		</label>
+		<div class="input-group">
+			<?php
+			$limitBox = $this->pagination->getLimitBox();
+			$limitBox = str_replace([' class="', ' onchange='], [' class="form-control ', ' onchangeKilled='], $limitBox );
+			echo $limitBox; ?>
+			<button name="LimitButton" class="btn btn-danger" type="submit">
+				<span class="visually-hidden"><?php echo Text::_('TPL_BS4GHSVS_APPLY_LIMIT'); ?></span>
+				{svg{bi/fast-forward-fill}}
+			</button>
+		</div><!-- /input-group -->
+	</div><!--/form-group-->
 <?php endif; ?>
 
 <?php if ($this->params->get('search_areas', 1)) : ?>

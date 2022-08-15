@@ -24,8 +24,7 @@ $button_text = Text::_($params->get('label'));
 			aria-describedby="button<?php echo $module->id; ?>"
 			placeholder="<?php echo $description; ?>">
 		<button type="submit" class="btn btn-danger"
-			id="button<?php echo $module->id; ?>"
-			onclick="this.form.searchword.focus();">
+			id="button<?php echo $module->id; ?>">
 			{svg{bi/search}}
 			<span class="visually-hidden"><?php echo $button_text; ?></span>
 		</button>
