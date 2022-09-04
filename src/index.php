@@ -105,7 +105,7 @@ if ($nonce = Factory::getApplication()->get('csp_nonce', ''))
 $this->setHtml5(true);
 $this->setMetaData('viewport', 'width=device-width, initial-scale=1, shrink-to-fit=no');
 
-// Uses WAM if J4..
+// Uses WAM if J4. Standalone here as long is J3.
 HTMLHelper::_('bs3ghsvs.templatejs');
 
 ####START - LOGO, SEITENTITEL, SITEDESCRIPTION.

@@ -11,7 +11,14 @@ const replaceXml = require(`${pathBuildKram}/build/replaceXml.js`);
 const helper = require(`${pathBuildKram}/build/helper.js`);
 const pc = require(`${pathBuildKram}/node_modules/picocolors`);
 
-let replaceXmlOptions = {};
+let replaceXmlOptions = {
+	"xmlFile": '',
+	"zipFilename": '',
+	"checksum": '',
+	"dirname": __dirname,
+	"jsonString": '',
+	"versionSub": ''
+};
 let zipOptions = {};
 let from = "";
 let to = "";
@@ -45,18 +52,20 @@ const versionSub = bootstrapVersionsub;
 
 	const zipFilename = `${name}-${version}_${versionSub}.zip`;
 
-	replaceXmlOptions = {
-		"xmlFile": Manifest,
-		"zipFilename": zipFilename,
-		"checksum": "",
-		"dirname": __dirname
-	};
+	replaceXmlOptions.xmlFile = Manifest
+	replaceXmlOptions.zipFilename = zipFilename
 
 	await replaceXml.main(replaceXmlOptions);
 
 	from = Manifest;
 	to = `./dist/${manifestFileName}`;
 	await helper.copy(from, to)
+
+	from = `./package/joomla.asset.json`;
+	to = `./dist/joomla.asset.json`;
+	replaceXmlOptions.xmlFile = from;
+	await replaceXml.main(replaceXmlOptions);
+	await helper.copy(from, to);
 
 	// Create zip file and detect checksum then.
 	const zipFilePath = path.resolve(`./dist/${zipFilename}`);

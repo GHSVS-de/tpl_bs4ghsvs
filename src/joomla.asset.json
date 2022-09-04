@@ -1,5 +1,10 @@
 {
   "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "{{name}}",
+  "version": "{{version}}",
+	"versionSub": "{{versionSub}}",
+  "description": "{{description}}",
+  "license": "{{licenseLong}}",
 	"assets": [
 		{
 			"name": "template.stickyCompensation",
@@ -18,6 +23,7 @@
 			"type": "script",
 			"uri": "template.js",
 			"weight": 900,
+			"version": "{{version}}",
 			"dependencies": [
 				"plg_system_bs3ghsvs.templatejs"
 			]
@@ -36,14 +42,16 @@
 			"description": "",
 			"type": "style",
 			"uri": "custom.css",
-			"weight": 1000
+			"weight": 1000,
+			"version": "{{version}}"
 		},
 		{
 			"name": "template.custom",
 			"description": "",
 			"type": "script",
 			"uri": "custom.js",
-			"weight": 1000
+			"weight": 1000,
+			"version": "{{version}}"
 		},
 		{
 			"name": "jquery-migrate",
@@ -64,12 +72,14 @@
 		{
 			"name": "bootstrap.css",
 			"type": "style",
-			"uri": "assetghsvs/bootstrap/52/bootstrap.min.css"
+			"uri": "assetghsvs/bootstrap/52/bootstrap.min.css",
+			"version": "52-assetghsvs"
 		},
 		{
 			"name": "bootstrap.css.grid",
 			"type": "style",
 			"uri": "assetghsvs/bootstrap/52/bootstrap-grid.min.css",
+			"version": "5.2.0-assetghsvs",
 			"dependencies": [
 				"bootstrap.css"
 			]
