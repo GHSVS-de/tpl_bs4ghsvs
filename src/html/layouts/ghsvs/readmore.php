@@ -23,7 +23,7 @@ $aClass = 'btn';
 				<?php echo $icon; ?>
 				<?php echo Text::_('COM_CONTENT_REGISTER_TO_READ_MORE'); ?>
 		</a>
-	<?php elseif ($readmore = @$item->alternative_readmore) : ?>
+		<?php elseif (isset($item->alternative_readmore) && $readmore = $item->alternative_readmore) : ?>
 		<a class="<?php echo $aClass; ?>" href="<?php echo $displayData['link']; ?>" aria-label="<?php echo htmlspecialchars($item->title, ENT_QUOTES, 'UTF-8'); ?>">
 			<?php echo $icon; ?>
 			<?php echo $readmore; ?>
