@@ -6,7 +6,7 @@ use Joomla\CMS\Language\Text;
 
 $lengthLimit = 50;
 
-HTMLHelper::_('bs3ghsvs.addsprungmarke', '.pager.page-nav');
+HTMLHelper::_('bs3ghsvs.addsprungmarke', ['selector' => '.pager.page-nav']);
 ?>
 <nav class="pager page-nav"
 	aria-label="<?php echo Text::_('PLG_SYSTEM_BS3GHSVS_PREVIOUS_NEXT_ARTICLE_NAVIGATION'); ?>">
