@@ -22,16 +22,16 @@ $extensionData = new Registry($item->bs3ghsvsFields['extension']);
 
 <h4 class="h6"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_EXTENSION_NAME'); ?></h4>
 <p class="breakall">
-	<?php echo Text::_($extensionData->get('name')); ?>
+	<?php echo Text::_($extensionData->get('name', '')); ?>
 </p>
 
 <h4 class="h6"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_EXTENSION_DESCRIPTION'); ?></h4>
 <p>
-	<?php echo nl2br($extensionData->get('description')); ?>
+	<?php echo nl2br($extensionData->get('description', '')); ?>
 </p>
 
 <?php
-if (($out = trim($extensionData->get('inspiredby'))))
+if (($out = trim($extensionData->get('inspiredby', ''))))
 {
 	if (strpos($out, ' ') === false && Bs3ghsvsItem::hasScheme($out))
 	{
@@ -94,7 +94,7 @@ if ($extensionData->get('languages'))
 		} ?>
 
 <?php
-if (($out = trim($extensionData->get('project'))))
+if (($out = trim($extensionData->get('project', ''))))
 { ?>
 <h4 class="h6"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_EXTENSION_PROJECT'); ?></h4>
 <p>
@@ -107,7 +107,7 @@ if (($out = trim($extensionData->get('project'))))
 } ?>
 
 <?php
-if (($out = trim($extensionData->get('comment'))))
+if (($out = trim($extensionData->get('comment', ''))))
 { ?>
 <h4 class="h6"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_EXTENSION_COMMENT'); ?></h4>
 <p>
@@ -117,7 +117,7 @@ if (($out = trim($extensionData->get('comment'))))
 } ?>
 
 <?php
-if (($out = trim($extensionData->get('history'))))
+if (($out = trim($extensionData->get('history', ''))))
 { ?>
 <h4 class="h6"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_EXTENSION_HISTORY'); ?></h4>
 <p>
