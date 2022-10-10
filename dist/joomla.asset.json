@@ -1,0 +1,182 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "tpl_bs4ghsvs",
+  "version": "2022.10.10",
+	"versionSub": "",
+  "description": "Joomla site template with several dependencies(!).",
+  "license": "GNU General Public License version 3 or later; see LICENSE.txt.",
+	"assets": [
+		{
+			"name": "template.stickyCompensation",
+			"description": "Inline STYLE tag that is used by JavaScript function. Compensate margin-top of scroll targets.",
+			"description2": "The dummy content is at least mandatory if JCH is used.",
+			"content": ".dummyByGhsvs{cursor:default}",
+			"inline": true,
+			"type": "style",
+			"attributes": {
+				"id": "stickyCompensation"
+			}
+		},
+		{
+			"name": "template.js",
+			"description": "",
+			"type": "script",
+			"uri": "template.js",
+			"weight": 900,
+			"version": "2022.10.10",
+			"dependencies": [
+				"plg_system_bs3ghsvs.templatejs"
+			]
+		},
+		{
+			"name": "template.custom",
+			"description": "",
+			"type": "preset",
+			"dependencies": [
+				"template.custom#script",
+				"template.custom#style"
+			]
+		},
+		{
+			"name": "template.custom",
+			"description": "",
+			"type": "style",
+			"uri": "custom.css",
+			"weight": 1000,
+			"version": "2022.10.10"
+		},
+		{
+			"name": "template.custom",
+			"description": "",
+			"type": "script",
+			"uri": "custom.js",
+			"weight": 1000,
+			"version": "2022.10.10"
+		},
+		{
+			"name": "jquery-migrate",
+			"version": "3.4.0-assetghsvs",
+			"description": "Use only for debug purposes!",
+			"type": "script",
+			"uri": "assetghsvs/jquery-migrate/current/jquery-migrate.js",
+			"dependencies": [
+				"jquery"
+			]
+		},
+		{
+			"name": "jquery",
+			"version": "3.6.1-assetghsvs",
+			"type": "script",
+			"uri": "assetghsvs/jquery/current/jquery.slim.js"
+		},
+		{
+			"name": "bootstrap.css",
+			"type": "style",
+			"uri": "assetghsvs/bootstrap/52/bootstrap.min.css",
+			"version": "5.2.2-assetghsvs"
+		},
+		{
+			"name": "bootstrap.css.grid",
+			"type": "style",
+			"uri": "assetghsvs/bootstrap/52/bootstrap-grid.min.css",
+			"version": "5.2.2-assetghsvs",
+			"dependencies": [
+				"bootstrap.css"
+			]
+		},
+		{
+			"name": "bootstrap.es5",
+			"version": "5.2.2-assetghsvs",
+			"type": "script",
+			"uri": "assetghsvs/bootstrap/52/-_custom_-/bootstrap.bundle.js"
+		},
+		{
+			"name": "bootstrap.alert",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		},
+		{
+			"name": "bootstrap.button",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		},
+		{
+			"name": "bootstrap.carousel",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		},
+		{
+			"name": "bootstrap.collapse",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		},
+		{
+			"name": "bootstrap.dropdown",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		},
+		{
+			"name": "bootstrap.modal",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		},
+		{
+			"name": "bootstrap.offcanvas",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		},
+		{
+			"name": "bootstrap.popover",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		},
+		{
+			"name": "bootstrap.scrollspy",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		},
+		{
+			"name": "bootstrap.tab",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		},
+		{
+			"name": "bootstrap.toast",
+			"type": "script",
+			"uri": "",
+			"dependencies": [
+				"bootstrap.es5"
+			]
+		}
+	]
+}
