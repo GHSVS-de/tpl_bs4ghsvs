@@ -65,7 +65,7 @@
 		},
 		{
 			"name": "jquery",
-			"version": "3.6.0-assetghsvs",
+			"version": "3.6.1-assetghsvs",
 			"type": "script",
 			"uri": "assetghsvs/jquery/current/jquery.slim.js"
 		},
@@ -73,20 +73,20 @@
 			"name": "bootstrap.css",
 			"type": "style",
 			"uri": "assetghsvs/bootstrap/52/bootstrap.min.css",
-			"version": "52-assetghsvs"
+			"version": "5.2.2-assetghsvs"
 		},
 		{
 			"name": "bootstrap.css.grid",
 			"type": "style",
 			"uri": "assetghsvs/bootstrap/52/bootstrap-grid.min.css",
-			"version": "5.2.0-assetghsvs",
+			"version": "5.2.2-assetghsvs",
 			"dependencies": [
 				"bootstrap.css"
 			]
 		},
 		{
 			"name": "bootstrap.es5",
-			"version": "5.2.0-assetghsvs",
+			"version": "5.2.2-assetghsvs",
 			"type": "script",
 			"uri": "assetghsvs/bootstrap/52/-_custom_-/bootstrap.bundle.js"
 		},
