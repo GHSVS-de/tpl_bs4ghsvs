@@ -1,0 +1,4 @@
+# Wenn in der Haupt-.htaccess ein Verzeichnisschutz liegt, blockt das komischerweise im Firefox manche Dateien hier (wars XML oder JSON). So werden auch diese nach Anmeldung zugänglich.
+
+AuthType None
+Require all granted
