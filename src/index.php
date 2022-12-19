@@ -150,9 +150,9 @@ The dummy content is mandatory when JCH is used.
 if ($wa)
 {
 	// WAM sets $nonce.
-	$wa->useStyle('template.stickyCompensation')
-		->useScript('template.js')
-		->usePreset('template.custom');
+	$wa->useStyle('template.' . $this->template . '.stickyCompensation')
+		->useScript('template.' . $this->template . 'js')
+		->usePreset('template.' . $this->template . 'custom');
 }
 else
 {

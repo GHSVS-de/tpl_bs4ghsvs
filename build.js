@@ -11,14 +11,6 @@ const replaceXml = require(`${pathBuildKram}/build/replaceXml.js`);
 const helper = require(`${pathBuildKram}/build/helper.js`);
 const pc = require(`${pathBuildKram}/node_modules/picocolors`);
 
-let replaceXmlOptions = {
-	"xmlFile": '',
-	"zipFilename": '',
-	"checksum": '',
-	"dirname": __dirname,
-	"jsonString": '',
-	"versionSub": ''
-};
 let zipOptions = {};
 let from = "";
 let to = "";
@@ -26,8 +18,17 @@ let to = "";
 const {
 	name,
 	version,
-	bootstrapVersionsub
+	versionSub
 } = require("./package.json");
+
+let replaceXmlOptions = {
+	"xmlFile": '',
+	"zipFilename": '',
+	"checksum": '',
+	"dirname": __dirname,
+	"jsonString": '',
+	"versionSub": versionSub
+};
 
 const manifestFileName = `templateDetails.xml`;
 const Manifest = `${__dirname}/package/${manifestFileName}`;

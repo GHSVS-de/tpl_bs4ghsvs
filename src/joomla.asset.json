@@ -7,7 +7,7 @@
   "license": "{{licenseLong}}",
 	"assets": [
 		{
-			"name": "template.stickyCompensation",
+			"name": "template.{{filename}}.stickyCompensation",
 			"description": "Inline STYLE tag that is used by JavaScript function. Compensate margin-top of scroll targets.",
 			"description2": "The dummy content is at least mandatory if JCH is used.",
 			"content": ".dummyByGhsvs{cursor:default}",
@@ -18,7 +18,7 @@
 			}
 		},
 		{
-			"name": "template.js",
+			"name": "template.{{filename}}.js",
 			"description": "",
 			"type": "script",
 			"uri": "template.js",
@@ -29,7 +29,7 @@
 			]
 		},
 		{
-			"name": "template.custom",
+			"name": "template.{{filename}}.custom",
 			"description": "",
 			"type": "preset",
 			"dependencies": [
@@ -38,7 +38,7 @@
 			]
 		},
 		{
-			"name": "template.custom",
+			"name": "template.{{filename}}.custom",
 			"description": "",
 			"type": "style",
 			"uri": "custom.css",
@@ -46,7 +46,7 @@
 			"version": "{{version}}"
 		},
 		{
-			"name": "template.custom",
+			"name": "template.{{filename}}.custom",
 			"description": "",
 			"type": "script",
 			"uri": "custom.js",
@@ -55,40 +55,40 @@
 		},
 		{
 			"name": "jquery-migrate",
-			"version": "3.4.0-assetghsvs",
 			"description": "Use only for debug purposes!",
 			"type": "script",
 			"uri": "assetghsvs/jquery-migrate/current/jquery-migrate.js",
 			"dependencies": [
 				"jquery"
-			]
+			],
+			"version": "{{versionsSub.jquery-migrate}}"
 		},
 		{
 			"name": "jquery",
-			"version": "3.6.1-assetghsvs",
 			"type": "script",
-			"uri": "assetghsvs/jquery/current/jquery.slim.js"
+			"uri": "assetghsvs/jquery/current/jquery.slim.js",
+			"version": "{{versionsSub.jquery}}"
 		},
 		{
 			"name": "bootstrap.css",
 			"type": "style",
 			"uri": "assetghsvs/bootstrap/52/bootstrap.min.css",
-			"version": "5.2.2-assetghsvs"
+			"version": "{{versionsSub.bootstrap}}"
 		},
 		{
 			"name": "bootstrap.css.grid",
 			"type": "style",
 			"uri": "assetghsvs/bootstrap/52/bootstrap-grid.min.css",
-			"version": "5.2.2-assetghsvs",
 			"dependencies": [
 				"bootstrap.css"
-			]
+			],
+			"version": "{{versionsSub.bootstrap}}"
 		},
 		{
 			"name": "bootstrap.es5",
-			"version": "5.2.2-assetghsvs",
 			"type": "script",
-			"uri": "assetghsvs/bootstrap/52/-_custom_-/bootstrap.bundle.js"
+			"uri": "assetghsvs/bootstrap/52/-_custom_-/bootstrap.bundle.js",
+			"version": "{{versionsSub.bootstrap}}"
 		},
 		{
 			"name": "bootstrap.alert",

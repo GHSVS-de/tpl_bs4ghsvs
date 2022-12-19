@@ -4,8 +4,14 @@
 	"filename": "bs4ghsvs",
 	"version": "2022.10.10",
 	"versionCompare": "2022.07.24",
-	"bootstrapVersionsub": "5.2.2",
+	"versionSub": "5.2.3",
 	"update": {
+		"versionsSubComment": "Für joomla.asset.json. Dort auszeichnen als {{versionsSub.bootstrap}} etc.",
+		"versionsSub": {
+			"bootstrap": "5.2.3-assetghsvs",
+			"jquery": "3.6.2-assetghsvs",
+			"jquery-migrate": "3.4.0-assetghsvs"
+		},
 		"type": "template",
 		"folder": "",
 		"client": "site",
@@ -14,7 +20,8 @@
 			"3.*",
 			"4.*"
 		],
-		"namespace": ""
+		"namespace": "GHSVS\\Template\\Bs4Ghsvs",
+		"inheritable": 0
 	},
 	"releaseTxt": {
 		"title": "Joomla site template tpl_bs4ghsvs (Bootstrap 5.2 variant)",
