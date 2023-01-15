@@ -64,6 +64,7 @@ if ($done = PluginHelper::isEnabled('system', 'astroidghsvs'))
 			'editor-prism|noInsert',
 			'print|noInsert',
 			'prism-ghsvs|noInsert',
+			'toTop|noInsert',
 			// JQuery free Venobox 2 doesn't need that anymore.
 			// 'venobox|noInsert',
 			'template',
@@ -345,11 +346,10 @@ else
 		}?>
 	</div><!--/#div4all-->
 
-		<?php if (!$isRobot)
-		{
-			// Uses WAM if J4..
-			echo HTMLHelper::_('bs3ghsvs.toTop');
-		} ?>
+	<?php if (!$isRobot)
+	{
+		echo LayoutHelper::render('ghsvs.toTop', ['template' => $this->template]);
+	} ?>
 
 		<?php
 		if (!$isRobot)

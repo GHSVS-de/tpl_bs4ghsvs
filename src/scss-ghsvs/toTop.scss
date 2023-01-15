@@ -1,0 +1,24 @@
+@import "importerMin";
+
+#toTop
+{
+	z-index:989;
+	text-align:center;
+
+	position:fixed;
+	right:0.8rem;
+	bottom:0.8rem;
+	cursor:pointer;
+	display:none;
+color: $red;
+	&.btn
+	{
+		padding: 0;
+		line-height: 1;
+	}
+}
+
+#toTop.visible
+{
+	display: block;
+}

@@ -177,6 +177,25 @@
 			"dependencies": [
 				"bootstrap.es5"
 			]
+		},
+		{
+			"name": "template.{{filename}}.toTop",
+			"description": "Override im Zusammenspiel mit JLayout etc.. Leider geht das nicht, dass man nur Style plg_system_bs3ghsvs.toTop unten �berschreibt.",
+			"type": "preset",
+			"dependencies": [
+				"plg_system_bs3ghsvs.toTop#script",
+				"template.{{filename}}.toTop#style"
+			]
+		},
+		{
+			"name": "template.{{filename}}.toTop",
+			"description": "Override im Zusammenspiel mit JLayout etc. Leider geht das nicht, dass man hier Style plg_system_bs3ghsvs.toTop verwendet.",
+			"type": "style",
+			"uri": "toTop.css",
+			"version": "{{version}}",
+			"attributes": {
+				"defer": true
+			}
 		}
 	]
 }
