@@ -27,6 +27,10 @@ if (($erroremail = $params->get('erroremail', '')))
 		<meta charset="utf-8" />
 		<title><?php echo $this->error->getCode(); ?> - <?php echo htmlspecialchars($this->error->getMessage(), ENT_QUOTES, 'UTF-8'); ?></title>
 		<link href="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/css/error.css" rel="stylesheet" />
+<script src="/media/system/js/core.min.js"></script>
+<script src="/media/vendor/webcomponentsjs/js/webcomponents-bundle.min.js" nomodule defer></script>
+<script src="/media/system/js/joomla-hidden-mail-es5.min.js" nomodule></script>
+	<script src="/media/system/js/joomla-hidden-mail.min.js" type="module"></script>
 	</head>
 	<body>
 		<div class="error">
