@@ -7,7 +7,7 @@ defined('_JEXEC') or die;
 
 $aktuellerSeitenPfad = JUri::getInstance()->getPath();
 ?>
-<p>
+<p class=block-download>
 Der aktuelle Pfad ohne Domain und Query-String dieser Seite in der Adresszeile lautet:
 <b><?php echo $aktuellerSeitenPfad; ?></b>.
 </p>
