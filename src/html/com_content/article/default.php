@@ -61,13 +61,14 @@ if ($this->params->get('show_page_heading'))
 <div class="item-page<?php echo $this->pageclass_sfx; ?>">
 	<?php if (!$isRobot)
 {
+	// Meist nicht mehr genutzt, die Position buttonGruppeGhsvs-bs.
 	$rendermodules = HTMLHelper::_(
 		'bs3ghsvs.rendermodules',
 		'buttonGruppeGhsvs-bs'
 	);
 	$output = '';
 
-	if ($this->item->params->get('show_print_icon'))
+	if ($this->item->params->get('show_print_icon', 1))
 	{
 		$printBtnId = 'ARTICLE_PRINT_BTN' . $this->item->id;
 		$output = trim(HTMLHelper::_(
@@ -105,6 +106,7 @@ JS;
 
 	if (($rendermodules = trim($rendermodules)) || $output)
 	{
+		// Beachte, dass der Print-Button von hier per JS verschoben wird.
 		echo '<div class="buttonGruppeGhsvs">' . $rendermodules . $output
 			. '</div>';
 	}
@@ -180,16 +182,16 @@ JS;
 			</div><!--/TOC_GHSVS -->
 
 			<?php echo HTMLHelper::_(
-						'bs3ghsvs.layout',
-						'ghsvs.cite',
-						['item' => $this->item]
-					) ?>
-
-			<?php echo HTMLHelper::_(
 				'bs3ghsvs.layout',
 				'ghsvs.extension',
 				['item' => $this->item]
 			) ?>
+
+			<?php echo HTMLHelper::_(
+						'bs3ghsvs.layout',
+						'ghsvs.cite',
+						['item' => $this->item]
+					) ?>
 
 			<?php
 			// Output of <div class="div4article-info">.
