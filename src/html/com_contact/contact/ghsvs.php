@@ -62,7 +62,7 @@ if (version_compare(JVERSION, '4', 'ge'))
 			$class = 'system-pagebreak';
 
 			echo HTMLHelper::_(
-				'bootstrap.startAccordion',
+				'pagebreaksliderghsvs.startAccordion',
 				$selector,
 				[
 					// Damit mehrere geöffnet werden können auf FALSE!
@@ -71,7 +71,7 @@ if (version_compare(JVERSION, '4', 'ge'))
 			); ?>
 			<?php
 			echo HTMLHelper::_(
-				'bootstrap.addSlide',
+				'pagebreaksliderghsvs.addSlide',
 				$selector,
 				Text::_('COM_CONTACT_DETAILS'), // $text
 				$selector . '-' . $i, // $id
@@ -114,7 +114,7 @@ if (version_compare(JVERSION, '4', 'ge'))
 					</a>
 				</p>
 
-			<?php echo HTMLHelper::_('bootstrap.endSlide');?>
+			<?php echo HTMLHelper::_('pagebreaksliderghsvs.endSlide');?>
 
 			<?php
 			$i++;
@@ -122,7 +122,7 @@ if (version_compare(JVERSION, '4', 'ge'))
 			$class = 'system-pagebreak';
 			$alt = Text::_('PLG_SYSTEM_BS3GHSVS_SEND_EMAIL');
 			echo HTMLHelper::_(
-				'bootstrap.addSlide',
+				'pagebreaksliderghsvs.addSlide',
 				$selector,
 				Text::_('COM_CONTACT_EMAIL_FORM'),
 				$href,
@@ -131,12 +131,12 @@ if (version_compare(JVERSION, '4', 'ge'))
 				$alt
 			); ?>
 				<?php  echo $this->loadTemplate('form');  ?>
-			<?php echo HTMLHelper::_('bootstrap.endSlide');?>
-			<?php echo HTMLHelper::_('bootstrap.endAccordion');?>
+			<?php echo HTMLHelper::_('pagebreaksliderghsvs.endSlide');?>
+			<?php echo HTMLHelper::_('pagebreaksliderghsvs.endAccordion');?>
 		</div><!--/articleBody-->
 		<?php
 		// Aktive Slides öffnen bzw. bei Klick Status in Session schreiben.
-		//echo HTMLHelper::_('bs3ghsvs.activeToSession', $selector);
+		//echo HTMLHelper::_('pagebreaksliderghsvs.activeToSession', $selector);
 		?>
 	</div><!--/item-page-->
 </div><!--/contact<?php echo $this->pageclass_sfx?>-->

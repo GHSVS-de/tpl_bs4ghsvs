@@ -3,6 +3,7 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
+use GHSVS\Plugin\System\PagebreakSliderGhsvs\Helper\PagebreakSliderGhsvsHelper;
 
 $module = $displayData['module'];
 $params = $displayData['params'];
@@ -18,11 +19,6 @@ if (!is_file($includeFile))
 
 if ($spoilerOn = $params->get('spoiler', 1))
 {
-	// $spoiler_in = $params->get('spoiler_in', 0);
-	JLoader::register(
-		'Bs3ghsvsPagebreak',
-		JPATH_PLUGINS . '/system/bs3ghsvs/Helper/PagebreakHelper.php'
-	);
 	$options = [
 		'activeToSession' => 0,
 	];
@@ -61,7 +57,7 @@ if ($spoilerOn)
 		. Text::sprintf('GHSVS_MODULES_SPOILER_BTN_TEXT', $includeFile_)
 		. '" title2=""}' . $text_2;
 
-	Bs3ghsvsPagebreak::buildSliders($text, $module->id . '-sp1', $options);
+	PagebreakSliderGhsvsHelper::buildSlidersStatic($text, $module->id . '-sp1', $options);
 }
 else
 {
