@@ -24,6 +24,6 @@ if ($articleStatus > 0 && Factory::getApplication()->input->get('view')
 }
 ?>
 <p class="articleStatus articleStatus_<?php echo $articleStatus; ?>
-	alert alert-warning mb-0">
+	alert alert-warning border-danger mb-0">
 	<?php echo Text::_('PLG_SYSTEM_BS3GHSVS_ARTICLESTATUS_' . $articleStatus); ?>
 </p>
