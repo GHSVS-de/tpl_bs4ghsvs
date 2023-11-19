@@ -4,13 +4,15 @@
 {
 	z-index:989;
 	text-align:center;
-
+	padding: 2px;
 	position:fixed;
 	right:0.8rem;
 	bottom:0.8rem;
 	cursor:pointer;
 	display:none;
-color: $red;
+	color: $red;
+background-color: #fff;
+border-radius: 50%;
 	&.btn
 	{
 		padding: 0;

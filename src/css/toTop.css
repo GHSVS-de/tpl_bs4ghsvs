@@ -1,0 +1,27 @@
+@keyframes blink {
+  50% {
+    background-color: #990134;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+#toTop {
+  z-index: 989;
+  text-align: center;
+  padding: 2px;
+  position: fixed;
+  right: 0.8rem;
+  bottom: 0.8rem;
+  cursor: pointer;
+  display: none;
+  color: #990134;
+  background-color: #fff;
+  border-radius: 50%;
+}
+#toTop.btn {
+  padding: 0;
+  line-height: 1;
+}
+#toTop.visible {
+  display: block;
+}

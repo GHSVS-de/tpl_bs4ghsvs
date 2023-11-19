@@ -11,10 +11,10 @@ $wa->usePreset('template.' . $displayData['template'] . '.toTop');
 // Auf mehrseitigen Blogansichten wechselt sonst die Seite.
 $uri = Uri::getInstance()->toString();
 ?>
-<a href="<?php echo $uri; ?>#TOP" class="btnsss btn-lightsss" id="toTop" tabindex="-1">
+<a href="<?php echo $uri; ?>#TOP" id="toTop" tabindex="-1">
 	<span class="visually-hidden">
 		<?php echo Text::_('PLG_SYSTEM_BS3GHSVS_TO_TOP'); ?>
 	</span>
-	{svg{bi/arrow-up-circle}class="bg-whitesss"}</a>
+	{svg{bi/arrow-up-circle}class="bg-white fw-bold"}</a>
 
 <!--/ arrow-up-square arrow-up-->
