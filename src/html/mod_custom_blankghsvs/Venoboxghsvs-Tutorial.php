@@ -10,7 +10,7 @@ HTMLHelper::_(
 	[
 	'selector' => '.thickbox',
 	'titleattr' => 'title',
-	'share' => ['twitter', 'pinterest'],
+	'share' => true,
 	]
 );?>
 <p>
@@ -24,6 +24,6 @@ HTMLHelper::_(
  <a href="images/erweiterungen/plg_venoboxghsvs/Demobild_700x2000px.jpg" class="venobox"
  data-title="Hallo, ich bin der data-title des Bild-Links."
  title="Ich bin der title des Bild-Links und hab nix zu tun.">
-  Und ich bin ein PopUp, dass weiterhin die Klasse 'venobox' verwendet und die Grundkonfiguration des Plugins.
+  Und ich bin ein PopUp, das weiterhin die Klasse 'venobox' verwendet und die Grundkonfiguration des Plugins.
  </a>
 </p>
