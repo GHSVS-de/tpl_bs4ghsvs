@@ -3,7 +3,7 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
-use Joomla\Module\TocGhsvs\Site\Helper\TocGhsvsHelper;
+use GHSVS\Module\TocGhsvs\Site\Helper\TocGhsvsHelper;
 
 /* To calculate a unique id for both participating modules (button and modal) we need a
 identical base in both modules. */
