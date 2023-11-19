@@ -155,8 +155,8 @@ if ($wa)
 {
 	// WAM sets $nonce.
 	$wa->useStyle('template.' . $this->template . '.stickyCompensation')
-		->useScript('template.' . $this->template . 'js')
-		->usePreset('template.' . $this->template . 'custom');
+		->useScript('template.' . $this->template . '.js')
+		->usePreset('template.' . $this->template . '.custom');
 }
 else
 {
