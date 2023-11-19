@@ -11,7 +11,7 @@ HTMLHelper::_(
 		'titleBackground' => '#f00',
 		'titleColor' => '#fff',
 		'closeColor' => '#d2d2d2',
-		'share' => ['download'],
+		'share' => true,
 	]
 );
 ?>
