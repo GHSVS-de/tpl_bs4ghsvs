@@ -1,7 +1,9 @@
 <?php
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Factory;
 use Joomla\CMS\Layout\LayoutHelper;
+use GHSVS\Plugin\System\PagebreakSliderGhsvs\Helper\PagebreakSliderGhsvsHelper;
 
 ?>
 <?php
@@ -29,11 +31,20 @@ if ($params->get('robotsHide', 0) === 1 && $params->get('isRobot') === 1)
 	$html = ob_get_clean();
 	$title = htmlspecialchars($module->title);
 	$html = '{pagebreakghsvs-slider title="' . $title . '"}' . $html;
-	JLoader::register(
-		'Bs3ghsvsPagebreak',
-		JPATH_PLUGINS . '/system/bs3ghsvs/Helper/PagebreakHelper.php'
-	);
-	Bs3ghsvsPagebreak::buildSliders(
+
+	/*
+Auch möglich:
+Factory::getApplication()->bootPlugin('pagebreaksliderghsvs', 'system')
+	->helper->buildSliders(
+		$html,
+		$module->id,
+['headingTagGhsvs' => 'h2',
+'activeToSession' => 0,
+'parent' => true,
+'toggleContainer' => 'div',
+]
+	); */
+	PagebreakSliderGhsvsHelper::buildSlidersStatic(
 		$html,
 		$module->id,
 		['headingTagGhsvs' => 'h2',

@@ -5,6 +5,8 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\Utilities\ArrayHelper;
+// @since 2023-11
+use GHSVS\Plugin\System\Bs3Ghsvs\Helper\Bs3GhsvsArticleHelper as Bs3ghsvsArticle;
 
 if (
 	!$list
@@ -16,10 +18,6 @@ if (
 
 // To calculate a unique id for both participating modules (button and modal) we need a
 // identical base in both modules.
-JLoader::register(
-	'Bs3ghsvsArticle',
-	JPATH_PLUGINS . '/system/bs3ghsvs/Helper/ArticleHelper.php'
-);
 $modalId = Bs3ghsvsArticle::buildUniqueIdFromJinput(
 	$params->get('connectorKey', '')
 );

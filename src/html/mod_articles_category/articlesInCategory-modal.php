@@ -6,6 +6,9 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\Utilities\ArrayHelper;
 
+// @since 2023-11
+use GHSVS\Plugin\System\Bs3Ghsvs\Helper\Bs3GhsvsArticleHelper as Bs3ghsvsArticle;
+
 $jinput = Factory::getApplication()->input;
 $views = ['article', 'category'];
 
@@ -17,7 +20,6 @@ if (!in_array($jinput->get('view'), $views))
 
 // To calculate a unique id for both participating modules (button and modal) we need a
 // identical base in both modules.
-JLoader::register('Bs3ghsvsArticle', JPATH_PLUGINS . '/system/bs3ghsvs/Helper/ArticleHelper.php');
 $id = Bs3ghsvsArticle::buildUniqueIdFromJinput('articlesInCategoryModal');
 HTMLHelper::_('bs3ghsvs.addsprungmarke', '#' . $id . ' .list-group');
 

@@ -11,8 +11,8 @@ use Joomla\Registry\Registry;
 // NEIN NEIN NEIN! Da Prüfung auf empty() fehlschlägt! Also runter
 #echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/'. basename(__FILE__) . '-->' . PHP_EOL;
 
-JLoader::register('Bs3ghsvsItem', JPATH_PLUGINS
-	. '/system/bs3ghsvs/Helper/ItemHelper.php');
+// @since 2023-11
+use GHSVS\Plugin\System\Bs3Ghsvs\Helper\Bs3GhsvsItemHelper as Bs3ghsvsItem;
 
 $options = new Registry(
 	isset(

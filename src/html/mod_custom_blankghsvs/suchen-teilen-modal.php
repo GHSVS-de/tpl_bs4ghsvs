@@ -5,7 +5,10 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
 
-echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/' . basename(__FILE__) . '-->' . PHP_EOL;
+// @since 2023-11
+use GHSVS\Plugin\System\Bs3Ghsvs\Helper\Bs3GhsvsArticleHelper as Bs3ghsvsArticle;
+
+//echo PHP_EOL . '<!--File: ' . str_replace(JPATH_SITE, '', dirname(__FILE__)) . '/' . basename(__FILE__) . '-->' . PHP_EOL;
 
 if ($params->get('robotsHide', 1) === 1 && $params->get('isRobot') === 1)
 {
@@ -14,10 +17,6 @@ if ($params->get('robotsHide', 1) === 1 && $params->get('isRobot') === 1)
 
 /* To calculate a unique id for both participating modules (button and modal)
 we need a identical base id in both modules. */
-JLoader::register(
-	'Bs3ghsvsArticle',
-	JPATH_PLUGINS . '/system/bs3ghsvs/Helper/ArticleHelper.php'
-);
 $modalId = Bs3ghsvsArticle::buildUniqueIdFromJinput(
 	$params->get('connectorKey', '')
 );
@@ -54,6 +53,22 @@ $modalId = Bs3ghsvsArticle::buildUniqueIdFromJinput(
 					'com_content.article'
 				);
 				?>
+				<h3 class="h4"><?php echo Text::_('Besuch mich'); ?></h3>
+				<?php /* echo HTMLHelper::_(
+					'content.prepare',
+					'{shariff}',
+					'',
+					'com_content.article'
+				); */
+				?>
+				<?php echo HTMLHelper::_(
+	'content.prepare',
+	'{loadposition besuch-mich}',
+	'',
+	'com_content.article'
+);
+				?>
+
 			</div><!--/modal-body-->
 			<div class="modal-footer">
 				<?php echo LayoutHelper::render('ghsvs.closeButton'); ?>

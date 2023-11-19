@@ -5,6 +5,9 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Router\Route;
 
+// @since 2023-11
+use GHSVS\Plugin\System\Bs3Ghsvs\Helper\Bs3GhsvsArticleHelper as Bs3ghsvsArticle;
+
 $jinput = Factory::getApplication()->input;
 $view = $jinput->get('view');
 
@@ -29,7 +32,6 @@ $activeCatId = (int) $activeCatId;
 
 // To calculate a unique id for both participating modules (button and modal) we need a
 // identical base in both modules.
-JLoader::register('Bs3ghsvsArticle', JPATH_PLUGINS . '/system/bs3ghsvs/Helper/ArticleHelper.php');
 $id = Bs3ghsvsArticle::buildUniqueIdFromJinput('articlesCategoriesModal');
 ?>
 <div id="<?php echo $id; ?>"

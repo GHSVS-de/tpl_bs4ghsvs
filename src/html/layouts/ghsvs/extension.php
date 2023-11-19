@@ -4,6 +4,10 @@ defined('JPATH_BASE') or die;
 use Joomla\CMS\Language\Text;
 use Joomla\Registry\Registry;
 
+// @since 2023-11
+use GHSVS\Plugin\System\Bs3Ghsvs\Helper\Bs3GhsvsItemHelper as Bs3ghsvsItem;
+use GHSVS\Plugin\System\Bs3Ghsvs\Helper\Bs3GhsvsArticleHelper;
+
 /**
  * $item = article object.
 */
@@ -85,7 +89,7 @@ if ($extensionData->get('updateserver'))
 <?php
 if ($extensionData->get('languages'))
 		{
-			$flags = Bs3ghsvsArticle::buildFlagImages($extensionData->get('languages')); ?>
+			$flags = Bs3GhsvsArticleHelper::buildFlagImages($extensionData->get('languages')); ?>
 <h4 class="h6"><?php echo Text::_('PLG_SYSTEM_BS3GHSVS_EXTENSION_LANGUAGES'); ?></h4>
 <p>
 	<?php echo implode(' ', $flags); ?>:

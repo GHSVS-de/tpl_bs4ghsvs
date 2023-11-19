@@ -8,6 +8,9 @@ use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Uri\Uri;
 use Joomla\String\StringHelper;
 
+// @since 2023-11
+use GHSVS\Plugin\System\Bs3Ghsvs\Helper\Bs3GhsvsArticleHelper as Bs3ghsvsArticle;
+
 if (
 	$params->get('robotsHide', 0) === 1
 	&& Factory::getApplication()->client->robot
@@ -21,10 +24,6 @@ $uri = Uri::getInstance()->getPath();
 
 /* To calculate a unique id for both participating modules (button and modal)
 	we need a	identical base in both modules. */
-JLoader::register(
-	'Bs3ghsvsArticle',
-	JPATH_PLUGINS . '/system/bs3ghsvs/Helper/ArticleHelper.php'
-);
 $modalId = Bs3ghsvsArticle::buildUniqueIdFromJinput(
 	$params->get('connectorKey', '')
 );

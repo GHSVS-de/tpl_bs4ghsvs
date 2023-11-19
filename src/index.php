@@ -8,13 +8,16 @@ use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\CMS\Uri\Uri;
 
-if (!class_exists('PlgSystemBS3Ghsvs', false))
+// @since 2023-11
+use GHSVS\Plugin\System\Bs3Ghsvs\Helper\Bs3GhsvsHelper;
+
+if (!class_exists(Bs3GhsvsHelper::class))
 {
-	throw new \InvalidArgumentException('Class "PlgSystemBS3Ghsvs" not found. Please install and/or activate plugin "PLG_SYSTEM_BS3GHSVS" to use this template.');
+	throw new \InvalidArgumentException('Please install and/or activate plugin "PLG_SYSTEM_BS3GHSVS" to use this template.');
 }
 
 $isRobot = $this->params->get('isRobot', false);
-$wa = PlgSystemBS3Ghsvs::getWa();
+$wa = Bs3GhsvsHelper::getWa();
 
 if ($done = PluginHelper::isEnabled('system', 'astroidghsvs'))
 {
