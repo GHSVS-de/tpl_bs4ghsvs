@@ -26,6 +26,7 @@ $pathToFavicons = Uri::root(true) . '/templates/bs4ghsvs/images/favicons';
 	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo $pathToFavicons; ?>/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="<?php echo $pathToFavicons; ?>/favicon-96x96.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo $pathToFavicons; ?>/favicon-16x16.png">
+	<link rel="mask-icon" href="<?php echo $pathToFavicons; ?>/safari-pinned-tab.svg" color="#990134">
 	<meta name="msapplication-config" content="<?php echo $pathToFavicons; ?>/browserconfig.xml">
 	<link rel="manifest" href="<?php echo $pathToFavicons; ?>/manifest.json">
 	<meta name="msapplication-TileColor" content="#ffffff">
