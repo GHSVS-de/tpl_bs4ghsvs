@@ -9,10 +9,11 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Router\Route;
 
+// @since 2023-11
+use GHSVS\Plugin\System\Bs3Ghsvs\Helper\Bs3GhsvsFormHelper;
+
 HTMLHelper::_('behavior.keepalive');
 HTMLHelper::_('behavior.formvalidator');
-
-JLoader::register('Bs3GhsvsFormHelper', __DIR__ . '/Helper/FormHelper.php');
 
 $overrides = [
 	'contact_name' => ['str' => 'SINFOTPL_CONTACT_NAME_DESC', 'group' => ''],
