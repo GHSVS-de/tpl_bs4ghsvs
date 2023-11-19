@@ -25,7 +25,8 @@
 			"weight": 900,
 			"version": "{{version}}",
 			"dependencies": [
-				"plg_system_bs3ghsvs.templatejs"
+				"plg_system_bs3ghsvs.templatejs",
+				"jquery-migrate"
 			]
 		},
 		{

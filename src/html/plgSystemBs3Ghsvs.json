@@ -1,33 +1,3 @@
 {
-	"comment": "See https://hash.online-convert.com/sha384-generator, https://getbootstrap.com/docs/4.4/getting-started/introduction/, https://www.bootstrapcdn.com/",
-
-	"bootstrapJs": {
-		"LoadComment": "'media' or empty for 'ignore'",
-		"Load": "media",
-		"media": "assetghsvs/bootstrap/52",
-		"otherFileNameComment": "Falls abweichend vom 'Standard'-Dateinamen 'bootstrap'. Ohne .min.js oder .js",
-		"otherFileName": "-_custom_-/bootstrap.bundle"
-	},
-
-	"bootstrapCss": {
-		"LoadComment": "'media' or empty for 'ignore'",
-		"Load": "",
-		"media": "assetghsvs/bootstrap/52"
-	},
-
-	"jquery": {
-		"comment": "Umbenennen zu 'jquery', wenn slim gewünscht. See https://code.jquery.com/jquery/, https://code.jquery.com/",
-		"LoadComment": "'media' or empty for 'ignore'",
-		"Load": "media",
-		"media": "assetghsvs/jquery/current",
-		"otherFileNameComment": "Statt nur 'jquery-slim'. z.B. '3.4.1/jquery-3.4.1.slim'. Ohne min.js oder .js",
-		"otherFileName": "jquery.slim"
-	},
-
-	"jquery-migrate": {
-		"comment": "See https://jquery.com/download/ . Musst du da blöd runterladen.",
-		"LoadComment": "'media' or empty for 'ignore'",
-		"Load": "media",
-		"media": "assetghsvs/jquery-migrate/current"
-	}
+	"comment": "See https://hash.online-convert.com/sha384-generator, https://getbootstrap.com/docs/4.4/getting-started/introduction/, https://www.bootstrapcdn.com/"
 }
