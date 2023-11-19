@@ -22,3 +22,20 @@
 	background-color: $gray-300;;
 }
 
+ul.directoryStructure
+{
+	li
+	{
+		padding-left: 1rem;
+		margin-bottom: 0;
+
+		ul li
+		{
+			margin-bottom: 0;
+		}
+	}
+	ul
+	{
+		margin-top: 0 !important;
+	}
+}

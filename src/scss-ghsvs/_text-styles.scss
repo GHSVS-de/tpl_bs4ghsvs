@@ -147,8 +147,7 @@ $block-colors: (
   "dark":       $dark
 ) !default;
 
-@each $state, $value in $block-colors
-{
+@each $state, $value in $block-colors {
   $alert-background: shift-color($value, $alert-bg-scale);
   $alert-border: $value;
   $alert-color: shift-color($value, $block-color-scale-custom);
@@ -156,16 +155,11 @@ $block-colors: (
   @if (contrast-ratio($alert-background, $alert-color) < $min-contrast-ratio) {
     $alert-color: mix($value, color-contrast($alert-background), abs($block-color-scale-custom));
   }
-
-  .block-#{$state}
-	{
-		// Alle mit hellgrauem Hintergrund.
+  .block-#{$state} {
     @include alert-variant-bs513($light, $alert-border, $alert-color);
 		@include block();
   }
-
-	.inline-#{$state}
-	{
+	.inline-#{$state} {
 		@include gradient-bg($alert-background);
 		color: $alert-color;
   }
