@@ -28,7 +28,10 @@
 		"requires": [
 			"plg_system_astroidghsvs",
 			"plg_system_bs3ghsvs_bs5",
-			"pkg_file_assetghsvs"
+			"pkg_file_assetghsvs",
+			"plg_system_iconsghsvs",
+			"pkg_file_iconsghsvs",
+			"plg_system_pagebreaksliderghsvs"
 		],
 		"uses": [],
 		"language": []
