@@ -72,7 +72,7 @@ if ($this->params->get('show_page_heading'))
 	{
 		$printBtnId = 'ARTICLE_PRINT_BTN' . $this->item->id;
 		$output = trim(HTMLHelper::_(
-			'icon.print_popup',
+			'iconghsvs.print_popup',
 			$this->item,
 			$this->item->params,
 			['class' => 'btn btn-success', 'id' => $printBtnId],
