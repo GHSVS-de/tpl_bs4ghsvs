@@ -329,7 +329,10 @@ a.btn
 
 .highlight
 {
+	// Holt passende CSS-Variablen.
 	@extend .alert-warning;
+
+	background-color: var(--bs-alert-bg);
 }
 
 // JS driven #system-message-container
