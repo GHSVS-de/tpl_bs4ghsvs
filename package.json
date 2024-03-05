@@ -6,7 +6,7 @@
 	"versionCompare": "2022.07.24",
 	"versionSub": "5.2.3",
 	"update": {
-		"versionsSubComment": "Für joomla.asset.json. Dort auszeichnen als {{versionsSub.bootstrap}} etc.",
+		"versionsSubComment": "Für joomla.asset.json. Dort z.B. auszeichnen als {{versionsSub.bootstrap}} etc.",
 		"versionsSub": {
 			"bootstrap": "5.2.3-assetghsvs",
 			"jquery": "3.7.1-assetghsvs",
